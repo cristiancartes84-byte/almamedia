@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -24,7 +24,7 @@ model Article {
   content          String   @default("")
   category         String   @default("")
   author           String   @default("Editor")
-  tags             String[] @default([])
+  tags             String   @default("")
   metaTitle        String   @default("")
   metaDescription  String   @default("")
   metaKeywords     String   @default("")
@@ -58,7 +58,7 @@ model SidebarBanner {
 model MediaGallery {
   id          String   @id @default(cuid())
   filename    String
-  imageData   String   @db.Text
+  imageData   String
   size        Int
   uploadedBy  String   @default("admin")
   createdAt   DateTime @default(now())
@@ -94,11 +94,9 @@ model LandingPage {
   ctaColor        String   @default("#C8FF00")
 
   // Content
-  content         String   @db.Text
-
+  content         String   
   // Pricing (JSON)
-  pricingPlans    String   @default("[]") @db.Text
-
+  pricingPlans    String   @default("[]") 
   // SEO
   metaTitle       String   @default("")
   metaDescription String   @default("")
@@ -106,7 +104,7 @@ model LandingPage {
   excerpt         String   @default("")
 
   // Design Options
-  customCSS       String   @default("") @db.Text
+  customCSS       String   @default("")
   layout          String   @default("default")
 
   // Status
@@ -129,7 +127,7 @@ model Service {
   description String   @default("")
   icon        String   @default("")
   price       String   @default("")
-  features    String[] @default([])
+  features    String   @default("")
   isActive    Boolean  @default(true)
   order       Int      @default(0)
   createdAt   DateTime @default(now())
