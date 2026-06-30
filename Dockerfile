@@ -20,6 +20,9 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV SKIP_ENV_VALIDATION=true
 
+# Generar Prisma Client
+RUN npx prisma generate
+
 RUN npm run build
 
 # Imagen de producción
