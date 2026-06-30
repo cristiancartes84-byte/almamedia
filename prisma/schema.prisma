@@ -79,6 +79,49 @@ model Page {
   updatedAt       DateTime @updatedAt
 }
 
+model LandingPage {
+  id              String   @id @default(cuid())
+  title           String
+  slug            String   @unique
+
+  // Hero Section
+  badge           String   @default("")
+  badgeColor      String   @default("#C8FF00")
+  heroTitle       String   @default("")
+  heroSubtitle    String   @default("")
+  ctaText         String   @default("Cotizar Mi Sitio Web")
+  ctaLink         String   @default("/contacto")
+  ctaColor        String   @default("#C8FF00")
+
+  // Content
+  content         String   @db.Text
+
+  // Pricing (JSON)
+  pricingPlans    String   @default("[]") @db.Text
+
+  // SEO
+  metaTitle       String   @default("")
+  metaDescription String   @default("")
+  metaKeywords    String   @default("")
+  excerpt         String   @default("")
+
+  // Design Options
+  customCSS       String   @default("") @db.Text
+  layout          String   @default("default")
+
+  // Status
+  status          String   @default("published")
+  author          String   @default("Admin Alma Media")
+
+  // Timestamps
+  publishedAt     DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([slug])
+  @@index([status])
+}
+
 model Service {
   id          String   @id @default(cuid())
   name        String
