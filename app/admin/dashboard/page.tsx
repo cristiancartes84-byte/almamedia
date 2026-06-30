@@ -56,6 +56,7 @@ export default function DashboardPage() {
   const quickActions = [
     { name: 'Nuevo Artículo', href: '/admin/articles/new', icon: '➕', color: 'bg-green-600' },
     { name: 'Mis Artículos', href: '/admin/articles', icon: '📚', color: 'bg-blue-600' },
+    { name: 'Landing Pages', href: '/admin/pages', icon: '📄', color: 'bg-purple-600' },
     { name: 'Mantenedor Inicio', href: '/admin/homepage', icon: '🏠', color: 'bg-teal-600' },
     { name: 'Banners Laterales', href: '/admin/sidebar-banners', icon: '📌', color: 'bg-orange-600' },
     { name: 'Configuración', href: '/admin/settings', icon: '⚙️', color: 'bg-gray-600' },
