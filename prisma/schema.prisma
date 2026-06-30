@@ -1,0 +1,94 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String   @default("Admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Article {
+  id               String   @id @default(cuid())
+  title            String
+  slug             String   @unique
+  excerpt          String   @default("")
+  content          String   @default("")
+  category         String   @default("")
+  author           String   @default("Editor")
+  tags             String[] @default([])
+  metaTitle        String   @default("")
+  metaDescription  String   @default("")
+  metaKeywords     String   @default("")
+  featuredImage    String   @default("")
+  featuredImageAlt String   @default("")
+  status           String   @default("draft")
+  publishedAt      DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  createdAt        DateTime @default(now())
+}
+
+model SidebarBanner {
+  id             String   @id @default(cuid())
+  title          String
+  description    String   @default("")
+  buttonText     String   @default("Ver más")
+  link           String
+  image          String   @default("")
+  bgColor        String   @default("#10B981")
+  textColor      String   @default("#ffffff")
+  order          Int      @default(0)
+  isActive       Boolean  @default(true)
+  isSticky       Boolean  @default(false)
+  visibility     String   @default("global")
+  targetCategory String   @default("")
+  targetSlug     String   @default("")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model MediaGallery {
+  id          String   @id @default(cuid())
+  filename    String
+  imageData   String   @db.Text
+  size        Int
+  uploadedBy  String   @default("admin")
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model Page {
+  id              String   @id @default(cuid())
+  title           String
+  slug            String   @unique
+  content         String   @default("")
+  metaTitle       String   @default("")
+  metaDescription String   @default("")
+  metaKeywords    String   @default("")
+  status          String   @default("published")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String   @default("")
+  icon        String   @default("")
+  price       String   @default("")
+  features    String[] @default([])
+  isActive    Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
