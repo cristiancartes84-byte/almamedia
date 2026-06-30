@@ -17,9 +17,8 @@ export default function Header() {
         </Link>
 
         <ul className="hidden md:flex gap-8 items-center">
-          <li><Link href="#servicios" className="text-[var(--color-muted)] hover:text-white transition-colors">Servicios</Link></li>
+          <li><Link href="/servicios" className="text-[var(--color-muted)] hover:text-white transition-colors">Servicios</Link></li>
           <li><Link href="/nosotros" className="text-[var(--color-muted)] hover:text-white transition-colors">Nosotros</Link></li>
-          <li><Link href="#casos" className="text-[var(--color-muted)] hover:text-white transition-colors">Casos</Link></li>
           <li><Link href="/contacto" className="text-[var(--color-muted)] hover:text-white transition-colors">Contacto</Link></li>
           <li>
             <Link href="/contacto" className="px-6 py-2 border border-[var(--color-border)] rounded-lg hover:border-[var(--color-accent)] transition-all font-semibold">
