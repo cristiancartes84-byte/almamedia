@@ -92,5 +92,5 @@ export default function ParticlesBackground() {
     }
   }, []);
 
-  return <div id="particles-js" />;
+  return <div id="particles-js" className="fixed w-full h-full top-0 left-0 z-0 pointer-events-none" />;
 }
