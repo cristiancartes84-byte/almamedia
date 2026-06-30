@@ -13,6 +13,22 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
+
+        // Credenciales hardcodeadas de emergencia para Alma Media
+        const ADMIN_EMAIL = 'admin@almamedia.cl';
+        const ADMIN_PASSWORD = 'AlmaMedia2026!';
+
+        // Verificar credenciales hardcodeadas primero (solo para admin@almamedia.cl)
+        if (credentials.email === ADMIN_EMAIL && credentials.password === ADMIN_PASSWORD) {
+          return {
+            id: 'admin-almamedia',
+            email: ADMIN_EMAIL,
+            name: 'Admin Alma Media',
+            role: 'admin'
+          };
+        }
+
+        // Si no son las credenciales hardcodeadas, verificar en BD
         try {
           const user = await prisma.user.findUnique({ where: { email: credentials.email } });
           if (!user) return null;
