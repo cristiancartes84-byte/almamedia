@@ -83,6 +83,8 @@ export default function NewArticlePage() {
 
     setAutoSaveStatus('idle');
 
+    console.log('⏰ Timer creado: guardará en 2 segundos si no hay más cambios');
+
     autoSaveTimerRef.current = setTimeout(async () => {
       console.log('🔄 Auto-save iniciado... Título:', formData.title);
       setAutoSaveStatus('saving');
