@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-interface AlmaSEOProps {
+interface RankMathSidebarProps {
   metaTitle: string;
   metaDescription: string;
   metaKeywords: string;
@@ -24,7 +24,7 @@ interface SEOTest {
   maxPoints: number;
 }
 
-export default function AlmaSEO({
+export default function RankMathSidebar({
   metaTitle,
   metaDescription,
   metaKeywords,
@@ -35,7 +35,7 @@ export default function AlmaSEO({
   featuredImage,
   featuredImageAlt,
   onChange,
-}: AlmaSEOProps) {
+}: RankMathSidebarProps) {
   const [keywords, setKeywords] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [openSection, setOpenSection] = useState<string | null>("basic");
@@ -166,8 +166,10 @@ export default function AlmaSEO({
     }
 
     // 3. KEYWORD IN URL (10 points)
+    // Convierte espacios a guiones para comparar keyword con slug (ej: "dólar peso" → "dolar-peso")
+    const keywordAsSlug = normalizeText(primaryKeyword).replace(/\s+/g, '-');
     maxScore += 10;
-    if (primaryKeyword && containsKeyword(slug, primaryKeyword)) {
+    if (primaryKeyword && normalizeText(slug).includes(keywordAsSlug)) {
       newTests.push({
         id: 'keyword-in-url',
         label: 'Keyword en URL',
