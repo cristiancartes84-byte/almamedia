@@ -7,11 +7,72 @@ import Link from "@tiptap/extension-link";
 import Image from "@tiptap/extension-image";
 import TextAlign from "@tiptap/extension-text-align";
 import Placeholder from "@tiptap/extension-placeholder";
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback, useState, useRef } from "react";
+
+export interface HtmlImportData {
+  title?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  metaKeywords?: string;
+  excerpt?: string;
+  content: string;
+  featuredImage?: string;
+  featuredImageAlt?: string;
+}
+
+function extractFromHtml(rawHtml: string): HtmlImportData {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(rawHtml, 'text/html');
+
+  const metaTitle =
+    doc.querySelector('meta[property="og:title"]')?.getAttribute('content') ||
+    doc.querySelector('title')?.textContent?.trim() || '';
+
+  const metaDescription =
+    doc.querySelector('meta[name="description"]')?.getAttribute('content') ||
+    doc.querySelector('meta[property="og:description"]')?.getAttribute('content') || '';
+
+  const metaKeywords =
+    doc.querySelector('meta[name="keywords"]')?.getAttribute('content') || '';
+
+  const ogImage =
+    doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
+
+  const title =
+    doc.querySelector('h1')?.textContent?.trim() ||
+    doc.querySelector('title')?.textContent?.trim() || '';
+
+  // Prefer <article> or <main> for content, fallback to <body>
+  const contentEl =
+    doc.querySelector('article') ||
+    doc.querySelector('main') ||
+    doc.body;
+  const content = contentEl?.innerHTML?.trim() || rawHtml;
+
+  // Excerpt from first <p>
+  const firstP = contentEl?.querySelector('p');
+  const excerpt = (firstP?.textContent || doc.body?.textContent || '').trim().substring(0, 300);
+
+  // Featured image: og:image first, then first <img> in content
+  const firstImg = contentEl?.querySelector('img');
+  const featuredImage = ogImage || firstImg?.getAttribute('src') || '';
+  const featuredImageAlt = firstImg?.getAttribute('alt') || '';
+
+  return { title, metaTitle: metaTitle || title, metaDescription, metaKeywords, excerpt, content, featuredImage, featuredImageAlt };
+}
+
+export interface SelectedImageAttrs {
+  src: string;
+  alt: string;
+  title: string;
+}
 
 interface ClassicEditorProps {
   initialValue?: string;
   onChange: (content: string) => void;
+  onHtmlImport?: (data: HtmlImportData) => void;
+  onImageSelect?: (attrs: SelectedImageAttrs | null) => void;
+  pendingImageUpdate?: { alt: string; title: string } | null;
 }
 
 // Interfaz para las imágenes de la galería
@@ -22,8 +83,13 @@ interface GalleryImage {
   uploadedAt: string;
 }
 
-// Extensión personalizada de Image con redimensionamiento
+// Extensión personalizada de Image con redimensionamiento.
+// parseHTML sobrescrito para aceptar data: URIs — sin esto Tiptap ignora las
+// imágenes base64 al cargar contenido guardado (comportamiento por defecto: allowBase64=false).
 const ResizableImage = Image.extend({
+  parseHTML() {
+    return [{ tag: 'img[src]' }];
+  },
   addAttributes() {
     return {
       ...this.parent?.(),
@@ -41,13 +107,38 @@ const ResizableImage = Image.extend({
           return { height: attributes.height };
         },
       },
+      align: {
+        default: 'center',
+        renderHTML: attributes => {
+          return { 'data-align': attributes.align };
+        },
+      },
+      title: {
+        default: '',
+        renderHTML: attributes => {
+          if (!attributes.title) return {};
+          return { title: attributes.title };
+        },
+      },
     };
   },
   addNodeView() {
     return ({ node, getPos, editor }) => {
+      const align = node.attrs.align || 'center';
+
       const container = document.createElement('div');
       container.className = 'image-wrapper';
-      container.style.cssText = 'position: relative; display: inline-block; max-width: 100%; user-select: none;';
+
+      // Aplicar alineación
+      let containerStyle = 'position: relative; max-width: 100%; user-select: none; margin: 1rem 0;';
+      if (align === 'left') {
+        containerStyle += 'display: inline-block; float: left; margin-right: 1rem; margin-bottom: 0.5rem;';
+      } else if (align === 'right') {
+        containerStyle += 'display: inline-block; float: right; margin-left: 1rem; margin-bottom: 0.5rem;';
+      } else {
+        containerStyle += 'display: block; margin-left: auto; margin-right: auto; text-align: center;';
+      }
+      container.style.cssText = containerStyle;
 
       const img = document.createElement('img');
       img.src = node.attrs.src;
@@ -66,20 +157,20 @@ const ResizableImage = Image.extend({
       const sizeLabel = document.createElement('div');
       sizeLabel.style.cssText = `
         position: absolute;
-        top: -32px;
+        top: -40px;
         left: 50%;
         transform: translateX(-50%);
-        background: rgba(59, 130, 246, 0.95);
+        background: #22c55e;
         color: white;
-        padding: 4px 12px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 700;
         white-space: nowrap;
         pointer-events: none;
         display: none;
         z-index: 20;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
       `;
       container.appendChild(sizeLabel);
 
@@ -92,22 +183,31 @@ const ResizableImage = Image.extend({
         handle.className = `resize-handle resize-${position}`;
         handle.style.cssText = `
           position: absolute;
-          width: 14px;
-          height: 14px;
-          background: #3b82f6;
-          border: 2px solid white;
+          width: 24px;
+          height: 24px;
+          background: #22c55e;
+          border: 4px solid white;
           border-radius: 50%;
           cursor: ${position.includes('n') ? (position.includes('w') ? 'nw' : 'ne') : (position.includes('w') ? 'sw' : 'se')}-resize;
           z-index: 10;
           display: none;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+          box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+          transition: transform 0.15s ease;
         `;
 
+        // Efecto hover
+        handle.onmouseenter = () => {
+          handle.style.transform = 'scale(1.2)';
+        };
+        handle.onmouseleave = () => {
+          handle.style.transform = 'scale(1)';
+        };
+
         // Posicionar handles en las esquinas
-        if (position.includes('n')) handle.style.top = '-7px';
-        if (position.includes('s')) handle.style.bottom = '-7px';
-        if (position.includes('w')) handle.style.left = '-7px';
-        if (position.includes('e')) handle.style.right = '-7px';
+        if (position.includes('n')) handle.style.top = '-12px';
+        if (position.includes('s')) handle.style.bottom = '-12px';
+        if (position.includes('w')) handle.style.left = '-12px';
+        if (position.includes('e')) handle.style.right = '-12px';
 
         // Lógica de redimensionamiento
         handle.addEventListener('mousedown', (e) => {
@@ -177,22 +277,31 @@ const ResizableImage = Image.extend({
 
       container.appendChild(img);
 
-      // Mostrar/ocultar handles al hacer clic en la imagen
-      let selected = false;
-      img.addEventListener('click', (e) => {
-        e.stopPropagation();
-        selected = !selected;
-        handleElements.forEach(h => h.style.display = selected ? 'block' : 'none');
-      });
+      // Mostrar handles SIEMPRE (más fácil de usar)
+      handleElements.forEach(h => h.style.display = 'block');
+      container.style.outline = '3px dashed #22c55e';
+      container.style.outlineOffset = '4px';
 
-      // Ocultar handles al hacer clic fuera
-      document.addEventListener('click', (e) => {
-        if (!container.contains(e.target as Node)) {
-          selected = false;
-          handleElements.forEach(h => h.style.display = 'none');
-          sizeLabel.style.display = 'none';
-        }
-      });
+      // Agregar instrucciones visibles
+      const instructionLabel = document.createElement('div');
+      instructionLabel.textContent = '↔️ Arrastra las esquinas verdes para redimensionar';
+      instructionLabel.style.cssText = `
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #22c55e;
+        color: white;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 5;
+        box-shadow: 0 2px 6px rgba(34, 197, 94, 0.3);
+      `;
+      container.appendChild(instructionLabel);
 
       return { dom: container };
     };
@@ -230,13 +339,12 @@ function Divider() {
   return <span className="w-px h-5 bg-gray-300 mx-1" />;
 }
 
-export default function ClassicEditor({ initialValue = "", onChange }: ClassicEditorProps) {
+export default function ClassicEditor({ initialValue = "", onChange, onHtmlImport, onImageSelect, pendingImageUpdate }: ClassicEditorProps) {
   const [showGallery, setShowGallery] = useState(false);
   const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
-  const [showSizePanel, setShowSizePanel] = useState(false);
-  const [sizeInput, setSizeInput] = useState('');
-  const [viewMode, setViewMode] = useState<'visual' | 'html'>('visual');
-  const [htmlContent, setHtmlContent] = useState('');
+  const [editorMode, setEditorMode] = useState<'visual' | 'html'>('visual');
+  const [htmlSource, setHtmlSource] = useState('');
+  const htmlDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const editor = useEditor({
     extensions: [
@@ -251,11 +359,20 @@ export default function ClassicEditor({ initialValue = "", onChange }: ClassicEd
     editorProps: {
       attributes: {
         class:
-          "min-h-[450px] px-5 py-4 focus:outline-none prose prose-lg max-w-none text-gray-900 prose-headings:text-gray-900 prose-p:text-gray-900 prose-a:text-green-700",
+          "min-h-[450px] px-5 py-4 focus:outline-none prose prose-lg max-w-none prose-headings:text-gray-900 prose-a:text-green-700",
       },
     },
     onUpdate({ editor }) {
       onChange(editor.getHTML());
+    },
+    onSelectionUpdate({ editor }) {
+      const { selection } = editor.state;
+      const node = (selection as { node?: { type: { name: string }; attrs: Record<string, string> } }).node;
+      if (node?.type?.name === 'image') {
+        onImageSelect?.({ src: node.attrs.src || '', alt: node.attrs.alt || '', title: node.attrs.title || '' });
+      } else {
+        onImageSelect?.(null);
+      }
     },
   });
 
@@ -284,21 +401,26 @@ export default function ClassicEditor({ initialValue = "", onChange }: ClassicEd
     return () => { editor?.destroy(); };
   }, [editor]);
 
-  // Sincronizar HTML cuando se cambia de modo
+  useEffect(() => {
+    if (!editor || !pendingImageUpdate) return;
+    editor.chain().focus().updateAttributes('image', {
+      alt: pendingImageUpdate.alt,
+      title: pendingImageUpdate.title,
+    }).run();
+  }, [pendingImageUpdate, editor]);
+
   const switchToHtml = useCallback(() => {
-    if (editor) {
-      setHtmlContent(editor.getHTML());
-      setViewMode('html');
-    }
+    setHtmlSource(editor?.getHTML() || '');
+    setEditorMode('html');
   }, [editor]);
 
   const switchToVisual = useCallback(() => {
-    if (editor && viewMode === 'html') {
-      editor.commands.setContent(htmlContent);
-      onChange(htmlContent);
-    }
-    setViewMode('visual');
-  }, [editor, htmlContent, onChange, viewMode]);
+    const extracted = extractFromHtml(htmlSource);
+    editor?.commands.setContent(extracted.content);
+    onChange(extracted.content);
+    if (onHtmlImport) onHtmlImport(extracted);
+    setEditorMode('visual');
+  }, [editor, htmlSource, onChange, onHtmlImport]);
 
   const addLink = useCallback(() => {
     const url = window.prompt("URL del enlace:");
@@ -364,29 +486,71 @@ export default function ClassicEditor({ initialValue = "", onChange }: ClassicEd
     setShowGallery(false);
   }, [editor]);
 
-  const applyImageSize = useCallback(() => {
-    const w = parseInt(sizeInput);
-    if (w > 0) {
-      editor?.chain().focus().updateAttributes('image', { width: w, height: null }).run();
-    }
-    setShowSizePanel(false);
-    setSizeInput('');
-  }, [editor, sizeInput]);
-
-  const resetImageSize = useCallback(() => {
-    editor?.chain().focus().updateAttributes('image', { width: null, height: null }).run();
-    setShowSizePanel(false);
-    setSizeInput('');
-  }, [editor]);
-
   const isImageActive = editor?.isActive('image') ?? false;
 
   if (!editor) return null;
 
   return (
     <div className="border border-gray-300 rounded-lg bg-white shadow-sm overflow-hidden flex flex-col">
-      {/* Toolbar */}
-      <div className="flex flex-wrap items-center gap-0.5 p-2 border-b border-gray-200 bg-gray-50 sticky top-0 z-10 rounded-t-lg flex-shrink-0">
+      {/* Tab switcher */}
+      <div className="flex items-center justify-between px-3 py-1.5 border-b border-gray-100 bg-gray-50">
+        <div className="flex gap-0.5">
+          <button
+            type="button"
+            onClick={switchToVisual}
+            className={`px-3 py-1 text-xs font-semibold rounded transition-colors ${
+              editorMode === 'visual'
+                ? 'bg-white border border-gray-300 text-gray-900 shadow-sm'
+                : 'text-gray-500 hover:text-gray-800'
+            }`}
+          >
+            Visual
+          </button>
+          <button
+            type="button"
+            onClick={switchToHtml}
+            className={`px-3 py-1 text-xs font-semibold rounded transition-colors ${
+              editorMode === 'html'
+                ? 'bg-white border border-gray-300 text-gray-900 shadow-sm'
+                : 'text-gray-500 hover:text-gray-800'
+            }`}
+          >
+            HTML
+          </button>
+        </div>
+        {editorMode === 'html' && (
+          <span className="text-xs text-blue-600 italic">
+            Pega tu artículo HTML · al cambiar a Visual se importa el SEO automáticamente
+          </span>
+        )}
+      </div>
+
+      {/* HTML textarea mode */}
+      {editorMode === 'html' && (
+        <textarea
+          value={htmlSource}
+          onChange={(e) => {
+            const raw = e.target.value;
+            setHtmlSource(raw);
+            // Debounce: notifica al padre con el contenido parseado para
+            // que el auto-save se active igual que en modo Visual
+            if (htmlDebounceRef.current) clearTimeout(htmlDebounceRef.current);
+            htmlDebounceRef.current = setTimeout(() => {
+              const extracted = extractFromHtml(raw);
+              onChange(extracted.content);
+              if (onHtmlImport) onHtmlImport(extracted);
+            }, 1000);
+          }}
+          className="w-full h-[540px] px-5 py-4 font-mono text-sm text-gray-800 bg-white resize-none outline-none border-0"
+          placeholder="Pega aquí tu artículo en HTML..."
+          spellCheck={false}
+        />
+      )}
+
+      {/* Toolbar + editor — solo en modo Visual */}
+      {editorMode === 'visual' && (
+      <>
+      <div className="flex flex-wrap items-center gap-0.5 p-2 border-b border-gray-200 bg-gray-50 sticky top-0 z-10 flex-shrink-0">
         {/* Headings */}
         <select
           value={
@@ -475,117 +639,31 @@ export default function ClassicEditor({ initialValue = "", onChange }: ClassicEd
           🎨 Galería ({galleryImages.length})
         </ToolbarButton>
 
-        {/* Image resize button */}
-        <div className="relative">
-          <ToolbarButton
-            onClick={() => {
-              if (!isImageActive) return;
-              const currentWidth = editor.getAttributes('image').width ?? '';
-              setSizeInput(String(currentWidth));
-              setShowSizePanel(v => !v);
-            }}
-            active={showSizePanel}
-            title={isImageActive ? 'Cambiar tamaño de la imagen seleccionada' : 'Selecciona una imagen para redimensionar'}
-          >
-            <span className={isImageActive ? '' : 'opacity-40'}>📐 Tamaño</span>
-          </ToolbarButton>
-
-          {showSizePanel && (
-            <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-xl p-3 z-50 w-52">
-              <p className="text-xs font-semibold text-gray-700 mb-2">Ancho de imagen (px)</p>
-              <div className="flex gap-2 mb-2">
-                <input
-                  type="number"
-                  value={sizeInput}
-                  onChange={e => setSizeInput(e.target.value)}
-                  onKeyDown={e => { if (e.key === 'Enter') applyImageSize(); if (e.key === 'Escape') setShowSizePanel(false); }}
-                  placeholder="ej: 600"
-                  className="flex-1 px-2 py-1.5 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-blue-500 outline-none"
-                  min="50"
-                  max="1200"
-                  autoFocus
-                />
-                <button
-                  type="button"
-                  onClick={applyImageSize}
-                  className="px-2.5 py-1.5 bg-blue-600 text-white rounded-lg text-xs font-medium hover:bg-blue-700"
-                >
-                  OK
-                </button>
-              </div>
-              <p className="text-xs text-gray-400 mb-2">Alto se ajusta automáticamente</p>
-              <button
-                type="button"
-                onClick={resetImageSize}
-                className="w-full text-xs text-gray-500 hover:text-gray-800 py-1 border border-gray-200 rounded-lg hover:bg-gray-50"
-              >
-                Restablecer tamaño original
-              </button>
-            </div>
-          )}
-        </div>
-
-        <Divider />
-
-        {/* Undo / Redo */}
-        <ToolbarButton onClick={() => editor.chain().focus().undo().run()} title="Deshacer (Ctrl+Z)">
-          ↩
-        </ToolbarButton>
-        <ToolbarButton onClick={() => editor.chain().focus().redo().run()} title="Rehacer (Ctrl+Y)">
-          ↪
+        {/* Image resize button - ahora con icono de tijeras */}
+        <ToolbarButton
+          onClick={() => {
+            if (!isImageActive) {
+              alert('Primero selecciona una imagen haciendo clic sobre ella');
+              return;
+            }
+            // Aquí simplemente recordamos al usuario que debe usar las esquinas
+            alert('💡 Para escalar la imagen:\n\n1. Haz clic sobre la imagen en el editor\n2. Aparecerán círculos verdes en las 4 esquinas\n3. Arrastra cualquier esquina para redimensionar\n4. El tamaño se muestra en tiempo real mientras arrastras');
+          }}
+          active={isImageActive}
+          title={isImageActive ? 'Instrucciones para escalar imagen' : 'Selecciona una imagen para redimensionar'}
+        >
+          <span className={isImageActive ? '' : 'opacity-40'}>✂️ Escalar</span>
         </ToolbarButton>
 
-        <div className="flex-grow" />
 
-        {/* Visual / HTML Toggle */}
-        <div className="flex items-center bg-white border border-gray-300 rounded-md overflow-hidden">
-          <button
-            type="button"
-            onClick={switchToVisual}
-            className={`px-3 py-1 text-sm font-medium transition-colors ${
-              viewMode === 'visual'
-                ? 'bg-gray-800 text-white'
-                : 'text-gray-700 hover:bg-gray-100'
-            }`}
-          >
-            Visual
-          </button>
-          <button
-            type="button"
-            onClick={switchToHtml}
-            className={`px-3 py-1 text-sm font-medium transition-colors ${
-              viewMode === 'html'
-                ? 'bg-gray-800 text-white'
-                : 'text-gray-700 hover:bg-gray-100'
-            }`}
-          >
-            HTML
-          </button>
-        </div>
       </div>
 
       {/* Editor area con scroll */}
-      <div className="overflow-y-auto h-[540px] relative">
-        {viewMode === 'visual' ? (
-          <EditorContent editor={editor} />
-        ) : (
-          <div className="relative h-full">
-            <div className="absolute top-2 right-2 text-xs text-blue-600 bg-blue-50 px-3 py-1.5 rounded-md border border-blue-200 z-10">
-              Pega tu artículo HTML · al cambiar a Visual se importa el SEO automáticamente
-            </div>
-            <textarea
-              value={htmlContent}
-              onChange={(e) => {
-                setHtmlContent(e.target.value);
-                onChange(e.target.value);
-              }}
-              className="w-full h-full px-5 py-4 pt-12 font-mono text-sm text-gray-900 bg-white focus:outline-none resize-none"
-              spellCheck={false}
-              placeholder="Pega tu HTML aquí..."
-            />
-          </div>
-        )}
+      <div className="overflow-y-auto h-[540px]">
+        <EditorContent editor={editor} />
       </div>
+      </>
+      )} {/* fin editorMode === 'visual' */}
 
       {/* Modal Galería */}
       {showGallery && (
@@ -657,14 +735,61 @@ export default function ClassicEditor({ initialValue = "", onChange }: ClassicEd
         </div>
       )}
 
-      {/* Estilos para handles de redimensionamiento */}
+      {/* Estilos para handles de redimensionamiento y alineación */}
       <style jsx global>{`
         .ProseMirror .image-wrapper {
           margin: 0.5rem 0;
         }
 
-        .ProseMirror img {
+        .ProseMirror .image-wrapper img {
           display: block;
+        }
+
+        /* Limpiar floats después de imágenes flotantes */
+        .ProseMirror p:has(+ .image-wrapper[style*="float"]) {
+          clear: both;
+        }
+
+        /* Asegurar que el contenido fluya alrededor de imágenes flotantes */
+        .ProseMirror .image-wrapper[style*="float: left"],
+        .ProseMirror .image-wrapper[style*="float: right"] {
+          max-width: 50%;
+        }
+
+        /* Estilos visuales de encabezados en el editor */
+        .ProseMirror h2 {
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 1.3;
+          margin-top: 2rem;
+          margin-bottom: 0.75rem;
+          color: #064E38;
+          border-bottom: 2px solid #ECFDF5;
+          padding-bottom: 0.25rem;
+        }
+
+        .ProseMirror h3 {
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 1.3;
+          margin-top: 2rem;
+          margin-bottom: 0.75rem;
+          color: #064E38;
+          border-bottom: 2px solid #ECFDF5;
+          padding-bottom: 0.25rem;
+        }
+
+        .ProseMirror h4 {
+          font-size: 1.05rem;
+          font-weight: 600;
+          margin-top: 1.25rem;
+          margin-bottom: 0.4rem;
+          color: #374151;
+        }
+
+        .ProseMirror p {
+          margin-bottom: 0.75rem;
+          line-height: 1.7;
         }
       `}</style>
     </div>
