@@ -359,7 +359,7 @@ export default function ClassicEditor({ initialValue = "", onChange, onHtmlImpor
     editorProps: {
       attributes: {
         class:
-          "min-h-[450px] px-5 py-4 focus:outline-none prose prose-lg max-w-none prose-headings:text-gray-900 prose-a:text-green-700",
+          "min-h-[450px] px-5 py-4 focus:outline-none prose prose-lg max-w-none text-gray-900 prose-headings:text-gray-900 prose-p:text-gray-900 prose-li:text-gray-900 prose-strong:text-gray-900 prose-a:text-green-700",
       },
     },
     onUpdate({ editor }) {
