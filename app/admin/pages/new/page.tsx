@@ -72,8 +72,9 @@ export default function NewArticlePage() {
     if (!formData.title) return;
     if (autoSaveTimerRef.current) clearTimeout(autoSaveTimerRef.current);
 
+    setAutoSaveStatus('idle');
+
     autoSaveTimerRef.current = setTimeout(async () => {
-      if (autoSaveStatus === 'saving') return;
       setAutoSaveStatus('saving');
       try {
         const tags = formData.tags.split(',').map(t => t.trim()).filter(Boolean);
@@ -103,14 +104,17 @@ export default function NewArticlePage() {
         if (res.ok) {
           setAutoSaveStatus('saved');
           setAutoSavedAt(new Date().toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' }));
+          // Volver a idle después de 1 segundo
+          setTimeout(() => setAutoSaveStatus('idle'), 1000);
         } else {
           setAutoSaveStatus('error');
         }
-      } catch {
+      } catch (error) {
+        console.error('Auto-save error:', error);
         setAutoSaveStatus('error');
       }
     }, 2000);
-  }, [formData, autoSaveStatus]);
+  }, [formData]);
 
   // Cleanup timer on unmount
   useEffect(() => {

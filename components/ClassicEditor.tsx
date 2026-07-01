@@ -235,6 +235,8 @@ export default function ClassicEditor({ initialValue = "", onChange }: ClassicEd
   const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
   const [showSizePanel, setShowSizePanel] = useState(false);
   const [sizeInput, setSizeInput] = useState('');
+  const [viewMode, setViewMode] = useState<'visual' | 'html'>('visual');
+  const [htmlContent, setHtmlContent] = useState('');
 
   const editor = useEditor({
     extensions: [
@@ -281,6 +283,22 @@ export default function ClassicEditor({ initialValue = "", onChange }: ClassicEd
   useEffect(() => {
     return () => { editor?.destroy(); };
   }, [editor]);
+
+  // Sincronizar HTML cuando se cambia de modo
+  const switchToHtml = useCallback(() => {
+    if (editor) {
+      setHtmlContent(editor.getHTML());
+      setViewMode('html');
+    }
+  }, [editor]);
+
+  const switchToVisual = useCallback(() => {
+    if (editor && viewMode === 'html') {
+      editor.commands.setContent(htmlContent);
+      onChange(htmlContent);
+    }
+    setViewMode('visual');
+  }, [editor, htmlContent, onChange, viewMode]);
 
   const addLink = useCallback(() => {
     const url = window.prompt("URL del enlace:");
@@ -516,11 +534,51 @@ export default function ClassicEditor({ initialValue = "", onChange }: ClassicEd
         <ToolbarButton onClick={() => editor.chain().focus().redo().run()} title="Rehacer (Ctrl+Y)">
           ↪
         </ToolbarButton>
+
+        <div className="flex-grow" />
+
+        {/* Visual / HTML Toggle */}
+        <div className="flex items-center bg-white border border-gray-300 rounded-md overflow-hidden">
+          <button
+            type="button"
+            onClick={switchToVisual}
+            className={`px-3 py-1 text-sm font-medium transition-colors ${
+              viewMode === 'visual'
+                ? 'bg-gray-800 text-white'
+                : 'text-gray-700 hover:bg-gray-100'
+            }`}
+          >
+            Visual
+          </button>
+          <button
+            type="button"
+            onClick={switchToHtml}
+            className={`px-3 py-1 text-sm font-medium transition-colors ${
+              viewMode === 'html'
+                ? 'bg-gray-800 text-white'
+                : 'text-gray-700 hover:bg-gray-100'
+            }`}
+          >
+            HTML
+          </button>
+        </div>
       </div>
 
       {/* Editor area con scroll */}
       <div className="overflow-y-auto h-[540px]">
-        <EditorContent editor={editor} />
+        {viewMode === 'visual' ? (
+          <EditorContent editor={editor} />
+        ) : (
+          <textarea
+            value={htmlContent}
+            onChange={(e) => {
+              setHtmlContent(e.target.value);
+              onChange(e.target.value);
+            }}
+            className="w-full h-full px-5 py-4 font-mono text-sm text-gray-900 bg-white focus:outline-none resize-none"
+            spellCheck={false}
+          />
+        )}
       </div>
 
       {/* Modal Galería */}
