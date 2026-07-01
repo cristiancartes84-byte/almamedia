@@ -1,5 +1,6 @@
 import ParticlesBackground from '@/components/Particles';
 import FeatureCard from '@/components/FeatureCard';
+import ProcessTimeline from '@/components/ProcessTimeline';
 import Link from 'next/link';
 
 export const metadata = {
@@ -195,46 +196,46 @@ export default function DisenoWebBiobioPage() {
             Proceso transparente en 5 pasos. Sabes exactamente qué esperar en cada etapa.
           </p>
 
-          <div className="space-y-10">
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Paso 1: Descubrimiento (Semana 1)</h3>
-              <p className="text-lg leading-[1.8]">
-                Entrevista para entender tu negocio, audiencia, competencia y objetivos. Definimos estructura del sitio, páginas necesarias y funcionalidades.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Paso 2: Diseño (Semana 2)</h3>
-              <p className="text-lg leading-[1.8]">
-                Mockup de homepage y 1-2 páginas internas para aprobación. Definimos paleta de colores, tipografías, estilo general.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Paso 3: Desarrollo (Semana 3-4)</h3>
-              <p className="text-lg leading-[1.8]">
-                Construcción del sitio en WordPress. Todas las páginas, formularios, optimización de velocidad, responsive design.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Paso 4: Contenido + SEO (Semana 4)</h3>
-              <p className="text-lg leading-[1.8]">
-                Carga de contenidos (que tú proporcionas), optimización SEO on-page, integración de Analytics, pruebas de velocidad.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Paso 5: Lanzamiento (Semana 5)</h3>
-              <p className="text-lg leading-[1.8]">
-                Revisión final, configuración de dominio y hosting, publicación, capacitación para que puedas administrar el sitio.
-              </p>
-            </div>
-
-            <p className="text-lg mt-8 leading-[1.8]">
-              <strong className="text-[var(--color-accent)] font-bold">Tiempo total:</strong> 4-5 semanas desde el pago inicial hasta el lanzamiento.
-            </p>
-          </div>
+          <ProcessTimeline
+            steps={[
+              {
+                number: 1,
+                title: 'Descubrimiento',
+                subtitle: 'Semana 1',
+                description: 'Entrevista para entender tu negocio, audiencia, competencia y objetivos. Definimos estructura del sitio, páginas necesarias y funcionalidades.',
+                icon: '🔍',
+              },
+              {
+                number: 2,
+                title: 'Diseño',
+                subtitle: 'Semana 2',
+                description: 'Mockup de homepage y 1-2 páginas internas para aprobación. Definimos paleta de colores, tipografías, estilo general.',
+                icon: '🎨',
+              },
+              {
+                number: 3,
+                title: 'Desarrollo',
+                subtitle: 'Semana 3-4',
+                description: 'Construcción del sitio en WordPress. Todas las páginas, formularios, optimización de velocidad, responsive design.',
+                icon: '💻',
+              },
+              {
+                number: 4,
+                title: 'Contenido + SEO',
+                subtitle: 'Semana 4',
+                description: 'Carga de contenidos (que tú proporcionas), optimización SEO on-page, integración de Analytics, pruebas de velocidad.',
+                icon: '📝',
+              },
+              {
+                number: 5,
+                title: 'Lanzamiento',
+                subtitle: 'Semana 5',
+                description: 'Revisión final, configuración de dominio y hosting, publicación, capacitación para que puedas administrar el sitio.',
+                icon: '🚀',
+              },
+            ]}
+            totalTime="4-5 semanas desde el pago inicial hasta el lanzamiento"
+          />
         </section>
 
         {/* Tecnologías */}

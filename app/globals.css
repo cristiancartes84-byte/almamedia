@@ -254,3 +254,19 @@ a, button {
 .animate-write {
   animation: write 1s ease-out forwards;
 }
+
+/* Timeline Flow Animation */
+@keyframes flow {
+  0%, 100% {
+    stroke-dasharray: 0 100;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 50 50;
+    stroke-dashoffset: -25;
+  }
+}
+
+.animate-flow {
+  animation: flow 2s ease-in-out infinite;
+}
