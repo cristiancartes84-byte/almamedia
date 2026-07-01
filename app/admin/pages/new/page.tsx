@@ -9,11 +9,11 @@ import AlmaSEO from '@/components/AlmaSEO';
 
 type AutoSaveStatus = 'idle' | 'saving' | 'saved' | 'error';
 
-export default function NewArticlePage() {
+export default function NewLandingPagePage() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  const [postType, setPostType] = useState<'entrada' | 'pagina'>('entrada');
+  const [postType, setPostType] = useState<'entrada' | 'pagina'>('pagina');
   const metaSyncedRef = useRef(false);
 
   const [formData, setFormData] = useState({
@@ -21,7 +21,13 @@ export default function NewArticlePage() {
     slug: '',
     excerpt: '',
     content: '',
-    category: 'Almas',
+    badge: '',
+    badgeColor: '#C8FF00',
+    ctaText: 'Cotizar Mi Sitio Web',
+    ctaLink: '/contacto',
+    ctaColor: '#C8FF00',
+    pricingPlans: '[]',
+    customCSS: '',
     tags: '',
     metaTitle: '',
     metaDescription: '',
@@ -97,7 +103,7 @@ export default function NewArticlePage() {
           if (res.ok) {
             const created = await res.json();
             autoSavedIdRef.current = created.id;
-            window.history.replaceState({}, '', `/admin/landing-pages/${created.id}/edit`);
+            window.history.replaceState({}, '', `/admin/pages/${created.id}/edit`);
           }
         }
         if (res.ok) {
@@ -144,7 +150,7 @@ export default function NewArticlePage() {
         setPublishError(err.error || `Error ${res.status}`);
         return;
       }
-      router.push('/admin/landing-pages');
+      router.push('/admin/pages');
     } catch {
       setPublishError('Error de conexión al servidor');
     } finally {
@@ -207,8 +213,8 @@ export default function NewArticlePage() {
               {autoSaveStatus === 'error' && (
                 <span className="text-xs text-red-500">⚠ Error al guardar</span>
               )}
-              <Link href="/admin/landing-pages" className="text-sm text-gray-600 hover:text-gray-900">
-                ← Volver a artículos
+              <Link href="/admin/pages" className="text-sm text-gray-600 hover:text-gray-900">
+                ← Volver a páginas
               </Link>
             </div>
           </div>
@@ -221,7 +227,7 @@ export default function NewArticlePage() {
 
           {/* Post type selector */}
           <div className="mb-6">
-            <h1 className="text-2xl font-bold text-gray-900 mb-3">Nuevo Artículo</h1>
+            <h1 className="text-2xl font-bold text-gray-900 mb-3">Nueva Landing Page</h1>
             <div className="flex items-center gap-3">
               <span className="text-sm font-medium text-gray-600">Tipo:</span>
               <div className="flex rounded-lg border border-gray-300 overflow-hidden">
@@ -396,24 +402,31 @@ export default function NewArticlePage() {
                   />
                 </div>
 
-                {/* Category */}
-                {postType === 'entrada' && (
-                  <div className="p-3 border-b border-gray-200">
-                    <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Categoría *</h3>
-                    <select
-                      value={formData.category}
-                      onChange={e => setFormData({ ...formData, category: e.target.value })}
-                      className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-yellow-500 outline-none"
-                      required
-                    >
-                      <option value="Almas">Almas</option>
-                      <option value="Guías">Guías</option>
-                      <option value="Criptomonedas">Criptomonedas</option>
-                      <option value="Indicadores">Indicadores</option>
-                      <option value="Noticias">Noticias</option>
-                    </select>
-                  </div>
-                )}
+                {/* Badge & CTA */}
+                <div className="p-3 border-b border-gray-200">
+                  <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">🏷️ Badge & Botón</h3>
+                  <input
+                    type="text"
+                    value={formData.badge}
+                    onChange={e => setFormData({ ...formData, badge: e.target.value })}
+                    placeholder="Texto del badge"
+                    className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-yellow-500 outline-none mb-1.5"
+                  />
+                  <input
+                    type="text"
+                    value={formData.ctaText}
+                    onChange={e => setFormData({ ...formData, ctaText: e.target.value })}
+                    placeholder="Texto del botón CTA"
+                    className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-yellow-500 outline-none mb-1.5"
+                  />
+                  <input
+                    type="text"
+                    value={formData.ctaLink}
+                    onChange={e => setFormData({ ...formData, ctaLink: e.target.value })}
+                    placeholder="/contacto"
+                    className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-yellow-500 outline-none"
+                  />
+                </div>
 
                 {/* Excerpt */}
                 <div className="p-3 border-b border-gray-200">
@@ -446,7 +459,7 @@ export default function NewArticlePage() {
                     type="text"
                     value={formData.tags}
                     onChange={e => setFormData({ ...formData, tags: e.target.value })}
-                    placeholder="dólar, cambio, chile, uf"
+                    placeholder="diseño web, talcahuano, seo"
                     className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-yellow-500 outline-none"
                   />
                   <p className="text-xs text-gray-400 mt-1">Separadas por comas</p>
@@ -456,7 +469,7 @@ export default function NewArticlePage() {
             </div>
 
             <div className="flex items-center justify-start pt-6 border-t border-gray-200 mt-6">
-              <Link href="/admin/landing-pages" className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors">
+              <Link href="/admin/pages" className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors">
                 ← Cancelar
               </Link>
             </div>
@@ -487,9 +500,9 @@ export default function NewArticlePage() {
               <button onClick={() => setShowPreview(false)} className="text-gray-400 hover:text-gray-600 text-2xl leading-none">×</button>
             </div>
             <div className="px-8 py-6">
-              {formData.category && (
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white mb-4" style={{ backgroundColor: '#C8FF00' }}>
-                  {formData.category}
+              {formData.badge && (
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-gray-900 mb-4" style={{ backgroundColor: formData.badgeColor }}>
+                  {formData.badge}
                 </span>
               )}
               <h1 className="text-3xl font-bold text-gray-900 mb-3 leading-tight">
@@ -497,7 +510,6 @@ export default function NewArticlePage() {
               </h1>
               <div className="flex items-center gap-3 text-sm text-gray-500 mb-6 pb-6 border-b border-gray-100">
                 <span>{formData.author}</span>
-                {formData.category && <><span>•</span><span>{formData.category}</span></>}
               </div>
               {formData.featuredImage && (
                 <img src={formData.featuredImage} alt={formData.featuredImageAlt || formData.title} className="w-full h-64 object-cover rounded-lg mb-6" />
@@ -508,7 +520,7 @@ export default function NewArticlePage() {
                 </p>
               )}
               {formData.content ? (
-                <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-a:text-yellow-700" dangerouslySetInnerHTML={{ __html: formData.content }} />
+                <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-a:text-yellow-600" dangerouslySetInnerHTML={{ __html: formData.content }} />
               ) : (
                 <p className="text-gray-400 italic text-center py-12">Sin contenido aún</p>
               )}
