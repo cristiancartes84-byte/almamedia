@@ -20,9 +20,6 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV SKIP_ENV_VALIDATION=true
 
-# Generar Prisma Client
-RUN npx prisma generate
-
 RUN npm run build
 
 # Imagen de producción
@@ -31,13 +28,9 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
-ENV DATABASE_URL="file:./prisma/almamedia.db"
-ENV NEXTAUTH_SECRET="almamedia-secret-production-2026"
-ENV NEXTAUTH_URL="https://almamedia.cl"
 ENV NEXT_PUBLIC_BASE_URL="https://almamedia.cl"
 
-# Instalar dependencias necesarias para Prisma
-RUN apk add --no-cache openssl libc6-compat
+RUN apk add --no-cache libc6-compat
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
@@ -45,10 +38,6 @@ RUN adduser --system --uid 1001 nextjs
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules/@prisma ./node_modules/@prisma
-COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
 
 USER nextjs
 

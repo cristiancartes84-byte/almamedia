@@ -20,16 +20,6 @@ const nextConfig = {
       },
     ],
   },
-  // Incluir archivos necesarios en standalone build
-  experimental: {
-    outputFileTracingIncludes: {
-      '/': [
-        './prisma/**/*',
-        './node_modules/.prisma/**/*',
-        './node_modules/@prisma/client/**/*',
-      ],
-    },
-  },
 };
 
 export default nextConfig;
