@@ -53,12 +53,10 @@ export default function DisenoWebPage() {
         {/* Por qué necesitas web */}
         <section id="por-que-web" className="mb-20">
           <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Por qué necesitas un sitio web profesional?</h2>
-          <p className="text-xl mb-8 leading-[1.9] text-center max-w-3xl mx-auto">
-            En 2026, <strong className="text-[var(--color-accent)] font-bold">el 93% de las decisiones de compra comienzan con una búsqueda en Google</strong>. Si tu negocio no tiene presencia web, o tiene un sitio lento y desactualizado, estás perdiendo clientes todos los días.
-          </p>
-          </p>
-
           <div className="space-y-6">
+            <p className="text-xl leading-[1.8]">
+              En 2026, <strong className="text-[var(--color-accent)] font-bold">el 93% de las decisiones de compra comienzan con una búsqueda en Google</strong>. Si tu negocio no tiene presencia web, o tiene un sitio lento y desactualizado, estás perdiendo clientes todos los días.
+            </p>
             <p className="text-xl leading-[1.8]">
               Un sitio web profesional no es solo "estar en internet". Es tu vendedor 24/7, tu carta de presentación digital y la base de toda tu estrategia de marketing digital.
             </p>
