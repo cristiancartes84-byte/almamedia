@@ -92,7 +92,7 @@ export default function LandingPageRenderer({ page }: { page: LandingPageData })
       {/* Main Content */}
       <article className="relative z-10 max-w-4xl mx-auto px-8 py-12">
         <div
-          className="prose prose-invert prose-lg max-w-none"
+          className="prose prose-invert prose-lg max-w-none prose-headings:font-black prose-h2:text-4xl prose-h2:mb-6 prose-h2:mt-12 prose-h3:text-2xl prose-h3:mb-4 prose-h3:mt-8 prose-h4:text-xl prose-h4:mb-3 prose-h4:mt-6 prose-p:text-lg prose-p:leading-relaxed prose-p:mb-6 prose-ul:text-lg prose-ul:mb-6 prose-li:mb-2 prose-strong:text-[var(--color-accent)] prose-a:text-[var(--color-accent)] prose-a:no-underline hover:prose-a:underline"
           dangerouslySetInnerHTML={{ __html: page.content }}
         />
       </article>
