@@ -55,7 +55,7 @@ export default function NewLandingPagePage() {
   const [isPublishing, setIsPublishing] = useState(false);
   const [error, setError] = useState('');
 
-  // Auto-generar slug desde el título
+  // Auto-generar slug
   useEffect(() => {
     if (formData.title && !formData.slug) {
       const slug = formData.title
@@ -99,10 +99,10 @@ export default function NewLandingPagePage() {
 
   if (status === 'loading') {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a]">
+      <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-[#C8FF00] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-400">Cargando...</p>
+          <p className="text-gray-600">Cargando...</p>
         </div>
       </div>
     );
@@ -111,27 +111,27 @@ export default function NewLandingPagePage() {
   if (!session) return null;
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-[#1a1a1a] border-b border-[#2a2a2a] sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
             <Link href="/admin/dashboard" className="flex items-center gap-1">
               <span className="text-2xl font-black" style={{ color: '#C8FF00' }}>Alma</span>
-              <span className="text-2xl font-black text-white">Media</span>
+              <span className="text-2xl font-black text-gray-900">Media</span>
             </Link>
 
             <div className="flex items-center gap-4">
-              <Link href="/admin/pages" className="text-sm text-gray-400 hover:text-white">
-                ← Ver páginas
+              <Link href="/admin/pages" className="text-sm text-gray-600 hover:text-gray-900">
+                ← Volver a las páginas
               </Link>
               <button
                 onClick={handleSubmit}
                 disabled={isPublishing || !formData.title}
                 style={{ backgroundColor: '#C8FF00' }}
-                className="px-6 py-2.5 text-[#0a0a0a] font-bold rounded-lg hover:shadow-[0_0_20px_rgba(200,255,0,0.3)] transition-all disabled:opacity-50"
+                className="px-6 py-2 text-gray-900 font-semibold rounded hover:opacity-90 transition disabled:opacity-50"
               >
-                {isPublishing ? 'Guardando...' : 'Guardar Cambios'}
+                {isPublishing ? 'Guardando...' : 'Actualizar'}
               </button>
             </div>
           </div>
@@ -139,154 +139,127 @@ export default function NewLandingPagePage() {
       </header>
 
       {error && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="bg-red-900/20 border border-red-500/50 text-red-400 px-4 py-3 rounded-lg">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
             {error}
           </div>
         </div>
       )}
 
       {/* Main content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left column - Editor */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Información Básica */}
-            <div className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6">
-              <h2 className="text-lg font-bold text-white mb-4">Información Básica</h2>
-
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Título de la Página *
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.title}
-                    onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent"
-                    placeholder="Escribe un título"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Slug (URL) *
-                  </label>
-                  <div className="flex items-center gap-2">
-                    <span className="text-gray-500 text-sm">almamedia.cl/</span>
-                    <input
-                      type="text"
-                      value={formData.slug}
-                      onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
-                      className="flex-1 px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent"
-                      placeholder="mi-pagina"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Sección Hero */}
-            <div className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6">
-              <h2 className="text-lg font-bold text-white mb-4">Sección Hero</h2>
-
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Badge (etiqueta)
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.badge}
-                    onChange={(e) => setFormData({ ...formData, badge: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Color del Badge
-                  </label>
-                  <input
-                    type="color"
-                    value={formData.badgeColor}
-                    onChange={(e) => setFormData({ ...formData, badgeColor: e.target.value })}
-                    className="w-full h-12 bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg cursor-pointer"
-                  />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
-                      Texto del Botón
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.ctaText}
-                      onChange={(e) => setFormData({ ...formData, ctaText: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
-                      Link del Botón
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.ctaLink}
-                      onChange={(e) => setFormData({ ...formData, ctaLink: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Color del Botón
-                  </label>
-                  <input
-                    type="color"
-                    value={formData.ctaColor}
-                    onChange={(e) => setFormData({ ...formData, ctaColor: e.target.value })}
-                    className="w-full h-12 bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg cursor-pointer"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Contenido Principal */}
-            <div className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6">
-              <h2 className="text-lg font-bold text-white mb-4">Contenido Principal</h2>
-              <div className="min-h-[400px]">
-                <ClassicEditor
-                  content={formData.content}
-                  onChange={(content) => setFormData({ ...formData, content })}
-                />
-              </div>
-            </div>
-
-            {/* Planes de Precios (JSON) */}
-            <div className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6">
-              <h2 className="text-lg font-bold text-white mb-4">Planes de Precios (JSON)</h2>
-              <textarea
-                value={formData.pricingPlans}
-                onChange={(e) => setFormData({ ...formData, pricingPlans: e.target.value })}
-                rows={12}
-                className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg font-mono text-sm focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent resize-none"
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left column - Main Editor */}
+          <div className="lg:col-span-2">
+            {/* Título */}
+            <div className="mb-6">
+              <input
+                type="text"
+                value={formData.title}
+                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                className="w-full text-3xl font-bold px-0 py-2 border-0 border-b-2 border-gray-200 focus:border-gray-400 focus:ring-0 focus:outline-none"
+                placeholder="Escribe un título"
               />
+              <p className="text-sm text-gray-500 mt-2">
+                Permalink: <span className="text-blue-600">almamedia.cl/{formData.slug || 'slug-de-la-pagina'}</span>
+              </p>
             </div>
 
-            {/* CSS Personalizado */}
-            <div className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6">
-              <h2 className="text-lg font-bold text-white mb-4">CSS Personalizado</h2>
-              <textarea
-                value={formData.customCSS}
-                onChange={(e) => setFormData({ ...formData, customCSS: e.target.value })}
-                rows={8}
-                className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg font-mono text-sm focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent resize-none"
+            {/* Editor Visual/HTML */}
+            <div className="mb-6">
+              <div className="flex gap-2 mb-3">
+                <button className="px-4 py-1.5 bg-blue-600 text-white text-sm font-medium rounded">Visual</button>
+                <button className="px-4 py-1.5 bg-gray-200 text-gray-700 text-sm font-medium rounded">HTML</button>
+              </div>
+              <ClassicEditor
+                content={formData.content}
+                onChange={(content) => setFormData({ ...formData, content })}
               />
+              <p className="text-sm text-gray-500 mt-2 text-right">
+                <span className="text-blue-600">{formData.content.split(/\s+/).filter(w => w).length} palabras</span> — excelente
+              </p>
+            </div>
+
+            {/* Campos adicionales en acordeón simple */}
+            <div className="space-y-4 mt-8 pt-6 border-t border-gray-200">
+              <details className="bg-gray-50 rounded p-4">
+                <summary className="font-semibold cursor-pointer text-gray-900">Sección Hero</summary>
+                <div className="mt-4 space-y-3">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-sm mb-1 text-gray-700">Badge (etiqueta)</label>
+                      <input
+                        type="text"
+                        value={formData.badge}
+                        onChange={(e) => setFormData({ ...formData, badge: e.target.value })}
+                        className="w-full px-3 py-2 border border-gray-300 rounded text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm mb-1 text-gray-700">Color del Badge</label>
+                      <input
+                        type="color"
+                        value={formData.badgeColor}
+                        onChange={(e) => setFormData({ ...formData, badgeColor: e.target.value })}
+                        className="w-full h-10 border border-gray-300 rounded"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-sm mb-1 text-gray-700">Texto del Botón</label>
+                      <input
+                        type="text"
+                        value={formData.ctaText}
+                        onChange={(e) => setFormData({ ...formData, ctaText: e.target.value })}
+                        className="w-full px-3 py-2 border border-gray-300 rounded text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm mb-1 text-gray-700">Link del Botón</label>
+                      <input
+                        type="text"
+                        value={formData.ctaLink}
+                        onChange={(e) => setFormData({ ...formData, ctaLink: e.target.value })}
+                        className="w-full px-3 py-2 border border-gray-300 rounded text-sm"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm mb-1 text-gray-700">Color del Botón</label>
+                    <input
+                      type="color"
+                      value={formData.ctaColor}
+                      onChange={(e) => setFormData({ ...formData, ctaColor: e.target.value })}
+                      className="w-full h-10 border border-gray-300 rounded"
+                    />
+                  </div>
+                </div>
+              </details>
+
+              <details className="bg-gray-50 rounded p-4">
+                <summary className="font-semibold cursor-pointer text-gray-900">Planes de Precios (JSON)</summary>
+                <div className="mt-4">
+                  <textarea
+                    value={formData.pricingPlans}
+                    onChange={(e) => setFormData({ ...formData, pricingPlans: e.target.value })}
+                    rows={10}
+                    className="w-full px-3 py-2 border border-gray-300 rounded font-mono text-xs"
+                  />
+                </div>
+              </details>
+
+              <details className="bg-gray-50 rounded p-4">
+                <summary className="font-semibold cursor-pointer text-gray-900">CSS Personalizado</summary>
+                <div className="mt-4">
+                  <textarea
+                    value={formData.customCSS}
+                    onChange={(e) => setFormData({ ...formData, customCSS: e.target.value })}
+                    rows={6}
+                    className="w-full px-3 py-2 border border-gray-300 rounded font-mono text-xs"
+                  />
+                </div>
+              </details>
             </div>
           </div>
 
