@@ -12,37 +12,37 @@ const services = [
     icon: '🎨',
     title: 'Diseño Web',
     description: 'Sitios web rápidos, responsive y optimizados para convertir visitas en clientes. WordPress, landing pages y ecommerce.',
-    link: '/servicios#diseno-web'
+    link: '/diseno-web'
   },
   {
     icon: '🔍',
     title: 'SEO / Posicionamiento',
     description: 'Aparece en Google cuando te buscan. Auditoría SEO, optimización técnica, contenido y link building para primera página.',
-    link: '/servicios#seo'
+    link: '/seo-posicionamiento'
   },
   {
     icon: '📍',
     title: 'SEO Local',
     description: 'Optimización para Google Maps y búsquedas locales. Aparece cuando buscan tu servicio + tu ciudad.',
-    link: '/servicios#seo-local'
+    link: '/seo-local'
   },
   {
     icon: '📸',
     title: 'Fotografía de Producto',
     description: 'Fotos profesionales de productos: fondo blanco para catálogo y lifestyle para redes sociales y web.',
-    link: '/servicios#fotografia'
+    link: '/fotografia-producto'
   },
   {
     icon: '🎥',
     title: 'Video de Producto',
     description: 'Videos cortos de productos para ecommerce, Instagram y campañas publicitarias. Aumenta confianza y conversión.',
-    link: '/servicios#video'
+    link: '/video-producto'
   },
   {
     icon: '📦',
     title: 'Packs Completos',
     description: 'Pack Web, Pack Visual o Pack SEO Mensual. Todo lo que necesitas para vender online desde $169.000 CLP/año.',
-    link: '/servicios#paquetes'
+    link: '/packs-completos'
   }
 ];
 
