@@ -2,10 +2,11 @@
 
 import { useSession } from 'next-auth/react';
 import { useRouter, useParams } from 'next/navigation';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import ClassicEditor from '@/components/ClassicEditor';
+import ClassicEditor, { SelectedImageAttrs } from '@/components/ClassicEditor';
 import AlmaSEO from '@/components/AlmaSEO';
+import { sanitizeHtml } from '@/lib/sanitize';
 import { mockArticles } from '@/data/mockArticles';
 
 type AutoSaveStatus = 'idle' | 'saving' | 'saved' | 'error';
@@ -24,18 +25,22 @@ export default function EditArticlePage() {
   const [publishError, setPublishError] = useState('');
   const [autoSavedAt, setAutoSavedAt] = useState('');
   const hasInitialized = useRef(false);
+  const [selectedImage, setSelectedImage] = useState<SelectedImageAttrs | null>(null);
+  const [pendingImageUpdate, setPendingImageUpdate] = useState<{ alt: string; title: string } | null>(null);
+  const [seoImageAlt, setSeoImageAlt] = useState('');
+  const [seoImageTitle, setSeoImageTitle] = useState('');
 
   const [formData, setFormData] = useState({
     title: '',
     slug: '',
     excerpt: '',
     content: '',
-    category: 'Divisas',
+    category: 'Marketing Digital',
     tags: '',
     metaTitle: '',
     metaDescription: '',
     metaKeywords: '',
-    author: 'Equipo Alma Media',
+    author: 'Equipo AlmaMedia',
     featuredImage: '',
     featuredImageAlt: '',
     status: 'published' as 'published' | 'draft',
@@ -43,8 +48,81 @@ export default function EditArticlePage() {
 
   // Auto-save state
   const [autoSaveStatus, setAutoSaveStatus] = useState<AutoSaveStatus>('idle');
+  const [autoSaveEnabled, setAutoSaveEnabled] = useState(false);
   const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const autoSaveEnabledRef = useRef(false);
+  const isSavingRef = useRef(false);
+  const pendingSaveRef = useRef(false);
+  const formDataRef = useRef(formData);
+  const isMountedRef = useRef(true);
+
+  // Image editor state
+  const [isEditingImage, setIsEditingImage] = useState(false);
+  const [imageToEdit, setImageToEdit] = useState<string>('');
+  const [imageScale, setImageScale] = useState({ width: 0, height: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const imageEditorRef = useRef<HTMLDivElement>(null);
+
+  // Helper function - defined before useEffects
+  const buildSlug = (title: string) =>
+    title.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+  // Convert image to WebP
+  const convertToWebP = async (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          const ctx = canvas.getContext('2d');
+          if (!ctx) {
+            reject(new Error('No se pudo obtener el contexto del canvas'));
+            return;
+          }
+          ctx.drawImage(img, 0, 0);
+          canvas.toBlob(
+            (blob) => {
+              if (!blob) {
+                reject(new Error('Error al convertir imagen'));
+                return;
+              }
+              const reader2 = new FileReader();
+              reader2.onload = () => resolve(reader2.result as string);
+              reader2.onerror = reject;
+              reader2.readAsDataURL(blob);
+            },
+            'image/webp',
+            0.85 // Calidad 85%
+          );
+        };
+        img.onerror = reject;
+        img.src = e.target?.result as string;
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  };
+
+  // Handle file upload with WebP conversion
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 10 * 1024 * 1024) {
+      alert('La imagen debe ser menor a 10MB');
+      return;
+    }
+
+    try {
+      const webpDataUrl = await convertToWebP(file);
+      setFormData(prev => ({ ...prev, featuredImage: webpDataUrl }));
+    } catch (error) {
+      console.error('Error converting image:', error);
+      alert('Error al procesar la imagen');
+    }
+  };
 
   useEffect(() => {
     if (status === 'unauthenticated') router.push('/admin/login');
@@ -64,8 +142,7 @@ export default function EditArticlePage() {
           author: stored.author, featuredImage: stored.featuredImage ?? '',
           featuredImageAlt: stored.featuredImageAlt ?? '', status: stored.status,
         });
-        // Enable auto-save after data has loaded and initial useEffects settle
-        setTimeout(() => { autoSaveEnabledRef.current = true; }, 800);
+        setTimeout(() => setAutoSaveEnabled(true), 800);
         return;
       }
 
@@ -88,6 +165,16 @@ export default function EditArticlePage() {
     loadArticle();
   }, [id, status]);
 
+  useEffect(() => {
+    if (selectedImage) {
+      setSeoImageAlt(selectedImage.alt);
+      setSeoImageTitle(selectedImage.title);
+    }
+  }, [selectedImage]);
+
+  // Sync formDataRef with latest state so unmount cleanup can access it
+  useEffect(() => { formDataRef.current = formData; }, [formData]);
+
   // Auto-sync excerpt → metaDescription (once on load)
   useEffect(() => {
     if (!hasInitialized.current && formData.excerpt && !formData.metaDescription) {
@@ -96,40 +183,69 @@ export default function EditArticlePage() {
     }
   }, [formData.excerpt, formData.metaDescription]);
 
-  // Auto-save (debounced 2 s) — only for real DB articles
+  // Auto-save: debounce 2s tras el último cambio en formData
   useEffect(() => {
-    if (!autoSaveEnabledRef.current) return;
-    if (!formData.title || isMockArticle) return;
+    if (!autoSaveEnabled || !formData.title || isMockArticle) return;
     if (autoSaveTimerRef.current) clearTimeout(autoSaveTimerRef.current);
+    pendingSaveRef.current = true;
 
     autoSaveTimerRef.current = setTimeout(async () => {
-      if (autoSaveStatus === 'saving') return;
-      setAutoSaveStatus('saving');
+      if (isSavingRef.current) return;
+      isSavingRef.current = true;
+      pendingSaveRef.current = false;
+      if (isMountedRef.current) setAutoSaveStatus('saving');
       try {
         const tags = formData.tags.split(',').map(t => t.trim()).filter(Boolean);
+        const slug = formData.slug || buildSlug(formData.title);
         const res = await fetch(`/api/articles/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...formData, tags }),
+          body: JSON.stringify({ ...formData, slug, tags }),
         });
         if (res.ok) {
-          setAutoSaveStatus('saved');
-          setAutoSavedAt(new Date().toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' }));
+          if (isMountedRef.current) {
+            setAutoSaveStatus('saved');
+            setAutoSavedAt(new Date().toLocaleString('es-CL', {
+                    day: '2-digit', month: '2-digit',
+                    hour: '2-digit', minute: '2-digit', hour12: false,
+                  }));
+          }
         } else {
-          setAutoSaveStatus('error');
+          if (isMountedRef.current) setAutoSaveStatus('error');
         }
       } catch {
-        setAutoSaveStatus('error');
+        if (isMountedRef.current) setAutoSaveStatus('error');
+      } finally {
+        isSavingRef.current = false;
       }
     }, 2000);
-  }, [formData, id, isMockArticle, autoSaveStatus]);
+  }, [formData, id, isMockArticle, autoSaveEnabled]);
 
   useEffect(() => {
-    return () => { if (autoSaveTimerRef.current) clearTimeout(autoSaveTimerRef.current); };
+    return () => {
+      isMountedRef.current = false;
+      if (autoSaveTimerRef.current) clearTimeout(autoSaveTimerRef.current);
+      // Flush pending save when navigating away.
+      // No bloqueamos si hay un save en curso (isSavingRef) porque ese save
+      // puede tener contenido anterior (sin imagen). Enviamos igualmente para
+      // que el último write (con imagen) gane en la base de datos.
+      if (pendingSaveRef.current) {
+        const data = formDataRef.current;
+        if (data.title) {
+          const tags = data.tags.split(',').map(t => t.trim()).filter(Boolean);
+          const slug = data.slug || data.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+          // Sin keepalive: soporta payloads grandes (imágenes base64).
+          // Funciona en navegación cliente porque el tab sigue abierto.
+          fetch(`/api/articles/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ...data, slug, tags }),
+          }).catch(() => {});
+        }
+      }
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const buildSlug = (title: string) =>
-    title.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -155,6 +271,10 @@ export default function EditArticlePage() {
       setIsPublishing(false);
     }
   };
+
+  const handleSidebarChange = useCallback((field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  }, []);
 
   if (status === 'loading') {
     return (
@@ -190,7 +310,7 @@ export default function EditArticlePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/admin/dashboard" className="flex items-center gap-2">
-              <svg className="w-8 h-8" viewBox="0 0 512 512" fill="#C8FF00">
+              <svg className="w-8 h-8" viewBox="0 0 512 512" fill="#F59E0B">
                 <path d="M104,480H64a24,24,0,0,1-24-24V328a24,24,0,0,1,24-24h40a24,24,0,0,1,24,24V456A24,24,0,0,1,104,480Z"/>
                 <path d="M232,480H192a24,24,0,0,1-24-24V232a24,24,0,0,1,24-24h40a24,24,0,0,1,24,24V456A24,24,0,0,1,232,480Z"/>
                 <path d="M360,480H320a24,24,0,0,1-24-24V184a24,24,0,0,1,24-24h40a24,24,0,0,1,24,24V456A24,24,0,0,1,360,480Z"/>
@@ -198,8 +318,8 @@ export default function EditArticlePage() {
                 <path d="M104,168c-5.1,0-10.2-2-14.1-5.9L36,108.1c-7.8-7.8-7.8-20.5,0-28.3l53.9-53.9c7.8-7.8,20.5-7.8,28.3,0l107,107,91-91c7.8-7.8,20.5-7.8,28.3,0l120,120c3.9,3.9,5.9,9,5.9,14.1s-2,10.2-5.9,14.1l-16,16c-7.8,7.8-20.5,7.8-28.3,0l-89.9-89.9-91,91c-7.8,7.8-20.5,7.8-28.3,0l-107-107-39.9,39.9C114.2,166,109.1,168,104,168z"/>
               </svg>
               <div>
-                <span className="text-xl font-bold" style={{ color: '#0a0a0a' }}>Divisa</span>
-                <span className="text-xl font-bold" style={{ color: '#C8FF00' }}>Chile</span>
+                <span className="text-xl font-bold" style={{ color: '#064E38' }}>Divisa</span>
+                <span className="text-xl font-bold" style={{ color: '#F59E0B' }}>Chile</span>
               </div>
             </Link>
             <div className="flex items-center gap-4">
@@ -224,9 +344,6 @@ export default function EditArticlePage() {
               {autoSaveStatus === 'error' && (
                 <span className="text-xs text-red-500">⚠ Error al guardar</span>
               )}
-              <Link href="/admin/articles" className="text-sm text-gray-600 hover:text-gray-900">
-                ← Volver a artículos
-              </Link>
             </div>
           </div>
         </div>
@@ -306,6 +423,19 @@ export default function EditArticlePage() {
                   <ClassicEditor
                     initialValue={formData.content}
                     onChange={(content) => setFormData(prev => ({ ...prev, content }))}
+                    onHtmlImport={(data) => setFormData(prev => ({
+                      ...prev,
+                      content: data.content,
+                      ...(data.title && !prev.title && { title: data.title }),
+                      ...(data.excerpt && { excerpt: data.excerpt }),
+                      ...(data.metaTitle && { metaTitle: data.metaTitle }),
+                      ...(data.metaDescription && { metaDescription: data.metaDescription }),
+                      ...(data.metaKeywords && { metaKeywords: data.metaKeywords }),
+                      ...(data.featuredImage && { featuredImage: data.featuredImage }),
+                      ...(data.featuredImageAlt && { featuredImageAlt: data.featuredImageAlt }),
+                    }))}
+                    onImageSelect={setSelectedImage}
+                    pendingImageUpdate={pendingImageUpdate}
                   />
                   {(() => {
                     const words = formData.content.replace(/<[^>]*>/g, ' ').replace(/&[^;]+;/g, ' ').trim().split(/\s+/).filter(Boolean).length;
@@ -345,9 +475,9 @@ export default function EditArticlePage() {
                     {autoSaveStatus === 'idle' && <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14"/></svg>}
                     <span>
                       {autoSaveStatus === 'saving' ? 'Guardando borrador...' :
-                       autoSaveStatus === 'saved' ? `Borrador guardado${autoSavedAt ? ` a las ${autoSavedAt}` : ''}` :
+                       autoSaveStatus === 'saved' ? `Borrador guardado${autoSavedAt ? ` ${autoSavedAt}` : ''}` :
                        autoSaveStatus === 'error' ? 'Error al guardar' :
-                       'Sin cambios pendientes'}
+                       'Auto guardado'}
                     </span>
                   </div>
                   <button
@@ -365,7 +495,9 @@ export default function EditArticlePage() {
                     disabled={isPublishing}
                     className="w-full px-3 py-2 bg-green-600 text-white rounded-lg font-medium text-sm hover:bg-green-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {isPublishing ? 'Actualizando...' : '✓ Actualizar'}
+                    {isPublishing
+                      ? (formData.status === 'draft' ? 'Publicando...' : 'Actualizando...')
+                      : (formData.status === 'draft' ? '✓ Publicar' : '✓ Actualizar')}
                   </button>
                 </div>
 
@@ -395,19 +527,12 @@ export default function EditArticlePage() {
                     className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-green-500 outline-none mb-1.5"
                   />
                   <label className="flex items-center justify-center gap-1.5 w-full px-2 py-1.5 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg text-xs text-gray-700 cursor-pointer transition-colors mb-1.5">
-                    📁 Subir desde equipo
+                    📁 Subir desde equipo (máx 10MB, se convierte a WebP)
                     <input
                       type="file"
                       accept="image/*"
                       className="hidden"
-                      onChange={e => {
-                        const file = e.target.files?.[0];
-                        if (!file) return;
-                        if (file.size > 3 * 1024 * 1024) { alert('La imagen debe ser menor a 3MB'); return; }
-                        const reader = new FileReader();
-                        reader.onload = ev => setFormData(prev => ({ ...prev, featuredImage: ev.target?.result as string }));
-                        reader.readAsDataURL(file);
-                      }}
+                      onChange={handleFileUpload}
                     />
                   </label>
                   <input
@@ -462,6 +587,47 @@ export default function EditArticlePage() {
                   />
                 </div>
 
+                {/* SEO IMAGEN — visible solo al seleccionar imagen en el editor */}
+                {selectedImage && (
+                  <div className="p-3 border-b border-gray-200" style={{ backgroundColor: '#EFF6FF', borderColor: '#BFDBFE' }}>
+                    <h3 className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#1D4ED8' }}>
+                      🖼 SEO IMAGEN
+                    </h3>
+                    <div className="space-y-2">
+                      <div>
+                        <label className="text-xs text-gray-500 block mb-1">Texto alternativo (Alt)</label>
+                        <input
+                          type="text"
+                          value={seoImageAlt}
+                          onChange={e => setSeoImageAlt(e.target.value)}
+                          placeholder="Describe la imagen..."
+                          className="w-full px-2 py-1.5 text-xs border border-blue-300 rounded-lg focus:ring-1 focus:ring-blue-500 outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-xs text-gray-500 block mb-1">Título</label>
+                        <input
+                          type="text"
+                          value={seoImageTitle}
+                          onChange={e => setSeoImageTitle(e.target.value)}
+                          placeholder="Título de la imagen..."
+                          className="w-full px-2 py-1.5 text-xs border border-blue-300 rounded-lg focus:ring-1 focus:ring-blue-500 outline-none"
+                        />
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setPendingImageUpdate({ alt: seoImageAlt, title: seoImageTitle })}
+                        className="w-full px-2 py-1.5 text-xs rounded-lg font-medium transition-colors text-white"
+                        style={{ backgroundColor: '#1D4ED8' }}
+                        onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#1E40AF')}
+                        onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#1D4ED8')}
+                      >
+                        Aplicar cambios
+                      </button>
+                    </div>
+                  </div>
+                )}
+
                 {/* Tags */}
                 <div className="p-3">
                   <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Etiquetas</h3>
@@ -480,7 +646,7 @@ export default function EditArticlePage() {
 
             <div className="flex items-center justify-start pt-6 border-t border-gray-200 mt-6">
               <Link href="/admin/articles" className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors">
-                ← Cancelar
+                ← Volver a los artículos
               </Link>
             </div>
           </form>
@@ -497,7 +663,7 @@ export default function EditArticlePage() {
           articleExcerpt={formData.excerpt}
           featuredImage={formData.featuredImage}
           featuredImageAlt={formData.featuredImageAlt}
-          onChange={(field, value) => setFormData(prev => ({ ...prev, [field]: value }))}
+          onChange={handleSidebarChange}
         />
       </div>
 
@@ -511,7 +677,7 @@ export default function EditArticlePage() {
             </div>
             <div className="px-8 py-6">
               {formData.category && (
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white mb-4" style={{ backgroundColor: '#0a0a0a' }}>
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white mb-4" style={{ backgroundColor: '#064E38' }}>
                   {formData.category}
                 </span>
               )}
@@ -530,12 +696,12 @@ export default function EditArticlePage() {
                 <img src={formData.featuredImage} alt={formData.featuredImageAlt || formData.title} className="w-full h-64 object-cover rounded-lg mb-6" />
               )}
               {formData.excerpt && (
-                <p className="text-gray-600 text-lg italic border-l-4 pl-4 mb-6" style={{ borderColor: '#0a0a0a' }}>
+                <p className="text-gray-600 text-lg italic border-l-4 pl-4 mb-6" style={{ borderColor: '#064E38' }}>
                   {formData.excerpt}
                 </p>
               )}
               {formData.content ? (
-                <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: formData.content }} />
+                <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: sanitizeHtml(formData.content) }} />
               ) : (
                 <p className="text-gray-400 italic text-center py-12">Sin contenido aún</p>
               )}
@@ -549,7 +715,263 @@ export default function EditArticlePage() {
                 disabled={isPublishing}
                 className="px-5 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 disabled:opacity-60"
               >
-                {isPublishing ? 'Actualizando...' : '✓ Actualizar'}
+                {isPublishing
+                  ? (formData.status === 'draft' ? 'Publicando...' : 'Actualizando...')
+                  : (formData.status === 'draft' ? '✓ Publicar' : '✓ Actualizar')}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Image Editor Modal */}
+      {isEditingImage && (
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+              <h2 className="text-xl font-bold text-gray-900">✂️ Escalar Imagen</h2>
+              <button
+                onClick={() => setIsEditingImage(false)}
+                className="text-gray-500 hover:text-gray-700 text-2xl"
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-auto p-6">
+              <div className="mb-4">
+                <div className="flex gap-4 mb-4">
+                  <div className="flex-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Ancho (px)</label>
+                    <input
+                      type="number"
+                      value={imageScale.width}
+                      onChange={e => setImageScale(prev => ({ ...prev, width: parseInt(e.target.value) || 0 }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+                      min="1"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Alto (px)</label>
+                    <input
+                      type="number"
+                      value={imageScale.height}
+                      onChange={e => setImageScale(prev => ({ ...prev, height: parseInt(e.target.value) || 0 }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+                      min="1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-2 border-gray-300 rounded-lg overflow-visible bg-gray-50 p-8 flex justify-center items-center min-h-[400px] relative">
+                {/* Dimensiones flotantes */}
+                {isDragging && (
+                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded-lg font-bold text-lg shadow-lg z-50">
+                    {imageScale.width} × {imageScale.height} px
+                  </div>
+                )}
+
+                <div
+                  ref={imageEditorRef}
+                  className="relative border-4 border-dashed border-green-500"
+                  style={{
+                    width: `${imageScale.width}px`,
+                    height: `${imageScale.height}px`,
+                    maxWidth: '100%',
+                    maxHeight: '60vh'
+                  }}
+                >
+                  <img
+                    src={imageToEdit}
+                    alt="Editando"
+                    className="w-full h-full object-contain pointer-events-none select-none"
+                    draggable={false}
+                  />
+
+                  {/* Esquina Superior Izquierda */}
+                  <div
+                    className="absolute -top-2 -left-2 w-6 h-6 bg-green-600 border-4 border-white rounded-full cursor-nwse-resize shadow-lg hover:scale-125 transition-transform z-10"
+                    title="Arrastrar para redimensionar"
+                    onMouseDown={e => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setIsDragging(true);
+                      const startX = e.clientX;
+                      const startY = e.clientY;
+                      const startWidth = imageScale.width;
+                      const startHeight = imageScale.height;
+                      const aspectRatio = startWidth / startHeight;
+
+                      const handleMouseMove = (e: MouseEvent) => {
+                        const deltaX = startX - e.clientX;
+                        const deltaY = startY - e.clientY;
+                        const newWidth = Math.max(200, startWidth + deltaX);
+                        setImageScale({
+                          width: newWidth,
+                          height: Math.max(200, Math.round(newWidth / aspectRatio))
+                        });
+                      };
+
+                      const handleMouseUp = () => {
+                        setIsDragging(false);
+                        document.removeEventListener('mousemove', handleMouseMove);
+                        document.removeEventListener('mouseup', handleMouseUp);
+                      };
+
+                      document.addEventListener('mousemove', handleMouseMove);
+                      document.addEventListener('mouseup', handleMouseUp);
+                    }}
+                  />
+
+                  {/* Esquina Superior Derecha */}
+                  <div
+                    className="absolute -top-2 -right-2 w-6 h-6 bg-green-600 border-4 border-white rounded-full cursor-nesw-resize shadow-lg hover:scale-125 transition-transform z-10"
+                    title="Arrastrar para redimensionar"
+                    onMouseDown={e => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setIsDragging(true);
+                      const startX = e.clientX;
+                      const startY = e.clientY;
+                      const startWidth = imageScale.width;
+                      const startHeight = imageScale.height;
+                      const aspectRatio = startWidth / startHeight;
+
+                      const handleMouseMove = (e: MouseEvent) => {
+                        const deltaX = e.clientX - startX;
+                        const newWidth = Math.max(200, startWidth + deltaX);
+                        setImageScale({
+                          width: newWidth,
+                          height: Math.max(200, Math.round(newWidth / aspectRatio))
+                        });
+                      };
+
+                      const handleMouseUp = () => {
+                        setIsDragging(false);
+                        document.removeEventListener('mousemove', handleMouseMove);
+                        document.removeEventListener('mouseup', handleMouseUp);
+                      };
+
+                      document.addEventListener('mousemove', handleMouseMove);
+                      document.addEventListener('mouseup', handleMouseUp);
+                    }}
+                  />
+
+                  {/* Esquina Inferior Izquierda */}
+                  <div
+                    className="absolute -bottom-2 -left-2 w-6 h-6 bg-green-600 border-4 border-white rounded-full cursor-nesw-resize shadow-lg hover:scale-125 transition-transform z-10"
+                    title="Arrastrar para redimensionar"
+                    onMouseDown={e => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setIsDragging(true);
+                      const startX = e.clientX;
+                      const startY = e.clientY;
+                      const startWidth = imageScale.width;
+                      const startHeight = imageScale.height;
+                      const aspectRatio = startWidth / startHeight;
+
+                      const handleMouseMove = (e: MouseEvent) => {
+                        const deltaX = startX - e.clientX;
+                        const newWidth = Math.max(200, startWidth + deltaX);
+                        setImageScale({
+                          width: newWidth,
+                          height: Math.max(200, Math.round(newWidth / aspectRatio))
+                        });
+                      };
+
+                      const handleMouseUp = () => {
+                        setIsDragging(false);
+                        document.removeEventListener('mousemove', handleMouseMove);
+                        document.removeEventListener('mouseup', handleMouseUp);
+                      };
+
+                      document.addEventListener('mousemove', handleMouseMove);
+                      document.addEventListener('mouseup', handleMouseUp);
+                    }}
+                  />
+
+                  {/* Esquina Inferior Derecha */}
+                  <div
+                    className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-600 border-4 border-white rounded-full cursor-nwse-resize shadow-lg hover:scale-125 transition-transform z-10"
+                    title="Arrastrar para redimensionar"
+                    onMouseDown={e => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setIsDragging(true);
+                      const startX = e.clientX;
+                      const startY = e.clientY;
+                      const startWidth = imageScale.width;
+                      const startHeight = imageScale.height;
+                      const aspectRatio = startWidth / startHeight;
+
+                      const handleMouseMove = (e: MouseEvent) => {
+                        const deltaX = e.clientX - startX;
+                        const newWidth = Math.max(200, startWidth + deltaX);
+                        setImageScale({
+                          width: newWidth,
+                          height: Math.max(200, Math.round(newWidth / aspectRatio))
+                        });
+                      };
+
+                      const handleMouseUp = () => {
+                        setIsDragging(false);
+                        document.removeEventListener('mousemove', handleMouseMove);
+                        document.removeEventListener('mouseup', handleMouseUp);
+                      };
+
+                      document.addEventListener('mousemove', handleMouseMove);
+                      document.addEventListener('mouseup', handleMouseUp);
+                    }}
+                  />
+                </div>
+              </div>
+
+              <p className="text-sm font-medium text-gray-700 mt-4 text-center bg-green-50 p-3 rounded-lg border border-green-200">
+                📏 Arrastra las <strong className="text-green-600">esquinas verdes</strong> para redimensionar • Mantiene proporción automáticamente
+              </p>
+            </div>
+
+            <div className="flex justify-end gap-3 px-6 py-4 border-t border-gray-200 bg-gray-50">
+              <button
+                onClick={() => setIsEditingImage(false)}
+                className="px-5 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300"
+              >
+                Cancelar
+              </button>
+              <button
+                onClick={async () => {
+                  // Apply scale and convert to WebP
+                  const img = new Image();
+                  img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = imageScale.width;
+                    canvas.height = imageScale.height;
+                    const ctx = canvas.getContext('2d');
+                    if (ctx) {
+                      ctx.drawImage(img, 0, 0, imageScale.width, imageScale.height);
+                      canvas.toBlob(
+                        (blob) => {
+                          if (blob) {
+                            const reader = new FileReader();
+                            reader.onload = () => {
+                              setFormData(prev => ({ ...prev, featuredImage: reader.result as string }));
+                              setIsEditingImage(false);
+                            };
+                            reader.readAsDataURL(blob);
+                          }
+                        },
+                        'image/webp',
+                        0.85
+                      );
+                    }
+                  };
+                  img.src = imageToEdit;
+                }}
+                className="px-5 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700"
+              >
+                ✓ Aplicar
               </button>
             </div>
           </div>
