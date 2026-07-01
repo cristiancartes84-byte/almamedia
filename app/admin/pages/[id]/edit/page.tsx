@@ -239,30 +239,6 @@ export default function EditLandingPagePage() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Título Principal
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.heroTitle}
-                    onChange={(e) => setFormData({ ...formData, heroTitle: e.target.value })}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Subtítulo
-                  </label>
-                  <textarea
-                    value={formData.heroSubtitle}
-                    onChange={(e) => setFormData({ ...formData, heroSubtitle: e.target.value })}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00]"
-                    rows={2}
-                  />
-                </div>
-
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
