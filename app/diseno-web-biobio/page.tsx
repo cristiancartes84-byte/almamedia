@@ -51,7 +51,7 @@ export default function DisenoWebBiobioPage() {
 
         {/* Por qué necesitas web */}
         <section id="por-que-web" className="mb-20">
-          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)]">¿Por qué necesitas un sitio web profesional?</h2>
+          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Por qué necesitas un sitio web profesional?</h2>
           <p className="text-xl mb-8 leading-[1.9] text-justify">
             En 2026, <strong className="text-[var(--color-accent)] font-bold">el 93% de las decisiones de compra comienzan con una búsqueda en Google</strong>. Si tu negocio no tiene presencia web, o tiene un sitio lento y desactualizado, estás perdiendo clientes todos los días.
           </p>
@@ -72,7 +72,7 @@ export default function DisenoWebBiobioPage() {
 
         {/* Qué incluye */}
         <section id="que-incluye" className="mb-20">
-          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)]">¿Qué incluye nuestro diseño web?</h2>
+          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Qué incluye nuestro diseño web?</h2>
           <p className="text-xl mb-10 leading-[1.9] text-justify">
             No hacemos sitios genéricos. Cada web está pensada para tu negocio específico, tu audiencia y tus objetivos de conversión.
           </p>
@@ -127,7 +127,7 @@ export default function DisenoWebBiobioPage() {
 
         {/* Proceso */}
         <section id="proceso" className="mb-20">
-          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)]">Nuestro Proceso de Diseño Web</h2>
+          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Nuestro Proceso de Diseño Web</h2>
           <p className="text-xl mb-10 leading-[1.9] text-justify">
             Proceso transparente en 5 pasos. Sabes exactamente qué esperar en cada etapa.
           </p>
@@ -176,7 +176,7 @@ export default function DisenoWebBiobioPage() {
 
         {/* Tecnologías */}
         <section id="tecnologias" className="mb-20">
-          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)]">Tecnologías que Usamos</h2>
+          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Tecnologías que Usamos</h2>
           <p className="text-xl mb-8 leading-[1.9] text-justify">
             Trabajamos principalmente con <strong className="text-[var(--color-accent)] font-bold">WordPress</strong> — el CMS más popular del mundo, usado por el 43% de todos los sitios web.
           </p>
@@ -203,7 +203,7 @@ export default function DisenoWebBiobioPage() {
 
         {/* Precios */}
         <section id="precios" className="mb-20">
-          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)]">Precios de Diseño Web en Biobío</h2>
+          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Precios de Diseño Web en Biobío</h2>
           <p className="text-xl mb-10 leading-[1.9] text-justify">
             Precios transparentes. Sin sorpresas ni costos ocultos.
           </p>
@@ -263,7 +263,7 @@ export default function DisenoWebBiobioPage() {
 
         {/* Garantía */}
         <section id="garantia" className="mb-20">
-          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)]">Nuestra Garantía</h2>
+          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Nuestra Garantía</h2>
           <p className="text-xl mb-8 leading-[1.9] text-justify">
             Estamos tan seguros de la calidad de nuestro trabajo que ofrecemos:
           </p>
@@ -277,7 +277,7 @@ export default function DisenoWebBiobioPage() {
 
         {/* FAQ */}
         <section id="faq" className="mb-20">
-          <h2 className="text-4xl font-black mb-10 text-[var(--color-accent)]">Preguntas Frecuentes</h2>
+          <h2 className="text-4xl font-black mb-10 text-[var(--color-accent)] text-center">Preguntas Frecuentes</h2>
 
           <div className="space-y-10">
             <div>
@@ -321,7 +321,7 @@ export default function DisenoWebBiobioPage() {
       {/* CTA Final */}
       <div className="relative z-10 max-w-6xl mx-auto px-8 mb-20">
         <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-2xl p-16 text-center">
-          <h2 className="text-4xl font-black mb-6">¿Listo para lanzar tu sitio web?</h2>
+          <h2 className="text-4xl font-black mb-6 text-center">¿Listo para lanzar tu sitio web?</h2>
           <p className="text-xl text-[var(--color-muted)] mb-10 leading-[1.8]">
             Cotiza tu proyecto sin compromiso. Te respondemos en menos de 24 horas con una propuesta personalizada.
           </p>
