@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import ClassicEditor from '@/components/ClassicEditor';
-import RankMathSidebar from '@/components/RankMathSidebar';
+import AlmaSEO from '@/components/AlmaSEO';
 
 type AutoSaveStatus = 'idle' | 'saving' | 'saved' | 'error';
 
