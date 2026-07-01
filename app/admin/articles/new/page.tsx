@@ -69,11 +69,22 @@ export default function NewArticlePage() {
 
   // Auto-save (debounced 2 s)
   useEffect(() => {
-    if (!formData.title) return;
-    if (autoSaveTimerRef.current) clearTimeout(autoSaveTimerRef.current);
+    console.log('👀 useEffect auto-save triggered. Title:', formData.title);
+
+    if (!formData.title || formData.title.trim().length === 0) {
+      console.log('⚠️ No hay título, auto-save cancelado');
+      return;
+    }
+
+    if (autoSaveTimerRef.current) {
+      console.log('⏱️ Limpiando timer anterior');
+      clearTimeout(autoSaveTimerRef.current);
+    }
+
+    setAutoSaveStatus('idle');
 
     autoSaveTimerRef.current = setTimeout(async () => {
-      if (autoSaveStatus === 'saving') return;
+      console.log('🔄 Auto-save iniciado... Título:', formData.title);
       setAutoSaveStatus('saving');
       try {
         const tags = formData.tags.split(',').map(t => t.trim()).filter(Boolean);
@@ -81,14 +92,18 @@ export default function NewArticlePage() {
         const slug = formData.slug || formData.title.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
         const payload = { ...formData, slug, status: 'draft' as const, tags };
 
+        console.log('📦 Payload:', payload);
+
         let res: Response;
         if (autoSavedIdRef.current) {
+          console.log('📝 Actualizando artículo existente:', autoSavedIdRef.current);
           res = await fetch(`/api/articles/${autoSavedIdRef.current}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
           });
         } else {
+          console.log('✨ Creando nuevo artículo...');
           res = await fetch('/api/articles', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -97,20 +112,27 @@ export default function NewArticlePage() {
           if (res.ok) {
             const created = await res.json();
             autoSavedIdRef.current = created.id;
+            console.log('✅ Artículo creado con ID:', created.id);
             window.history.replaceState({}, '', `/admin/articles/${created.id}/edit`);
           }
         }
         if (res.ok) {
+          console.log('✅ Auto-save exitoso');
           setAutoSaveStatus('saved');
           setAutoSavedAt(new Date().toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' }));
+          // Volver a idle después de 1 segundo
+          setTimeout(() => setAutoSaveStatus('idle'), 1000);
         } else {
+          const errorData = await res.json().catch(() => ({}));
+          console.error('❌ Auto-save falló:', res.status, errorData);
           setAutoSaveStatus('error');
         }
-      } catch {
+      } catch (error) {
+        console.error('❌ Auto-save error:', error);
         setAutoSaveStatus('error');
       }
     }, 2000);
-  }, [formData, autoSaveStatus]);
+  }, [formData]);
 
   // Cleanup timer on unmount
   useEffect(() => {
