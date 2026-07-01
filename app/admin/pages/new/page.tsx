@@ -69,13 +69,22 @@ export default function NewArticlePage() {
 
   // Auto-save (debounced 2 s)
   useEffect(() => {
-    if (!formData.title) return;
-    if (autoSaveTimerRef.current) clearTimeout(autoSaveTimerRef.current);
+    console.log('👀 useEffect auto-save triggered. Title:', formData.title);
+
+    if (!formData.title || formData.title.trim().length === 0) {
+      console.log('⚠️ No hay título, auto-save cancelado');
+      return;
+    }
+
+    if (autoSaveTimerRef.current) {
+      console.log('⏱️ Limpiando timer anterior');
+      clearTimeout(autoSaveTimerRef.current);
+    }
 
     setAutoSaveStatus('idle');
 
     autoSaveTimerRef.current = setTimeout(async () => {
-      console.log('🔄 Auto-save iniciado...');
+      console.log('🔄 Auto-save iniciado... Título:', formData.title);
       setAutoSaveStatus('saving');
       try {
         // Build slug inline in case the slug useEffect hasn't fired yet
