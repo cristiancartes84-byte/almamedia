@@ -117,9 +117,12 @@ export default function NewArticlePage() {
           setAutoSaveStatus('saved');
           setAutoSavedAt(new Date().toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' }));
         } else {
+          const errorText = await res.text();
+          console.error('Auto-save failed:', res.status, errorText);
           setAutoSaveStatus('error');
         }
-      } catch {
+      } catch (error) {
+        console.error('Auto-save exception:', error);
         setAutoSaveStatus('error');
       } finally {
         isSavingRef.current = false;
