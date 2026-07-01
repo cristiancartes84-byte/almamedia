@@ -53,28 +53,72 @@ export default function DisenoWebBiobioPage() {
         {/* Por qué necesitas web */}
         <section id="por-que-web" className="mb-20">
           <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Por qué necesitas un sitio web profesional?</h2>
-          <p className="text-xl mb-8 leading-[1.9] text-justify">
-            En 2026, <strong className="text-[var(--color-accent)] font-bold">el 93% de las decisiones de compra comienzan con una búsqueda en Google</strong>. Si tu negocio no tiene presencia web, o tiene un sitio lento y desactualizado, estás perdiendo clientes todos los días.
-          </p>
-          <p className="text-xl mb-8 leading-[1.9] text-justify">
-            Un sitio web profesional no es solo "estar en internet". Es tu vendedor 24/7, tu carta de presentación digital y la base de toda tu estrategia de marketing digital.
-          </p>
 
-          <h3 className="text-2xl font-bold mb-6 mt-10">Beneficios de tener un sitio web profesional:</h3>
-          <ul className="space-y-4 mt-6 text-lg">
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Credibilidad instantánea:</strong> Un sitio profesional transmite confianza y seriedad</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Ventas 24/7:</strong> Tu negocio trabaja mientras duermes</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Alcance ilimitado:</strong> Llegas a clientes en toda la región del Biobío</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Menor costo que publicidad tradicional:</strong> ROI superior a largo plazo</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Datos y métricas:</strong> Sabes exactamente qué funciona y qué no</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Escalabilidad:</strong> Crece al ritmo de tu negocio</li>
-          </ul>
+          <div className="space-y-6">
+            <p className="text-xl leading-[1.8]">
+              En 2026, <strong className="text-[var(--color-accent)] font-bold">el 93% de las decisiones de compra comienzan con una búsqueda en Google</strong>. Si tu negocio no tiene presencia web, o tiene un sitio lento y desactualizado, estás perdiendo clientes todos los días.
+            </p>
+            <p className="text-xl leading-[1.8]">
+              Un sitio web profesional no es solo "estar en internet". Es tu vendedor 24/7, tu carta de presentación digital y la base de toda tu estrategia de marketing digital.
+            </p>
+          </div>
+
+          <h3 className="text-2xl font-bold mb-6 mt-12 text-center">Beneficios de tener un sitio web profesional:</h3>
+          <div className="grid md:grid-cols-2 gap-4 mt-8">
+            <div className="flex gap-3">
+              <span className="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
+              <div>
+                <strong className="text-[var(--color-accent)] font-bold block mb-1">Credibilidad instantánea:</strong>
+                <span className="text-[var(--color-muted)]">Un sitio profesional transmite confianza y seriedad</span>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <span className="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
+              <div>
+                <strong className="text-[var(--color-accent)] font-bold block mb-1">Ventas 24/7:</strong>
+                <span className="text-[var(--color-muted)]">Tu negocio trabaja mientras duermes</span>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <span className="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
+              <div>
+                <strong className="text-[var(--color-accent)] font-bold block mb-1">Alcance ilimitado:</strong>
+                <span className="text-[var(--color-muted)]">Llegas a clientes en toda la región del Biobío</span>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <span className="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
+              <div>
+                <strong className="text-[var(--color-accent)] font-bold block mb-1">Menor costo que publicidad tradicional:</strong>
+                <span className="text-[var(--color-muted)]">ROI superior a largo plazo</span>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <span className="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
+              <div>
+                <strong className="text-[var(--color-accent)] font-bold block mb-1">Datos y métricas:</strong>
+                <span className="text-[var(--color-muted)]">Sabes exactamente qué funciona y qué no</span>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <span className="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
+              <div>
+                <strong className="text-[var(--color-accent)] font-bold block mb-1">Escalabilidad:</strong>
+                <span className="text-[var(--color-muted)]">Crece al ritmo de tu negocio</span>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Qué incluye */}
         <section id="que-incluye" className="mb-20">
           <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Qué incluye nuestro diseño web?</h2>
-          <p className="text-xl mb-10 leading-[1.9] text-justify">
+          <p className="text-xl mb-10 leading-[1.8] text-center max-w-3xl mx-auto">
             No hacemos sitios genéricos. Cada web está pensada para tu negocio específico, tu audiencia y tus objetivos de conversión.
           </p>
 
@@ -147,42 +191,42 @@ export default function DisenoWebBiobioPage() {
         {/* Proceso */}
         <section id="proceso" className="mb-20">
           <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Nuestro Proceso de Diseño Web</h2>
-          <p className="text-xl mb-10 leading-[1.9] text-justify">
+          <p className="text-xl mb-10 leading-[1.8] text-center max-w-3xl mx-auto">
             Proceso transparente en 5 pasos. Sabes exactamente qué esperar en cada etapa.
           </p>
 
           <div className="space-y-10">
             <div>
               <h3 className="text-2xl font-bold mb-4">Paso 1: Descubrimiento (Semana 1)</h3>
-              <p className="text-lg leading-[1.8] text-justify">
+              <p className="text-lg leading-[1.8]">
                 Entrevista para entender tu negocio, audiencia, competencia y objetivos. Definimos estructura del sitio, páginas necesarias y funcionalidades.
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold mb-4">Paso 2: Diseño (Semana 2)</h3>
-              <p className="text-lg leading-[1.8] text-justify">
+              <p className="text-lg leading-[1.8]">
                 Mockup de homepage y 1-2 páginas internas para aprobación. Definimos paleta de colores, tipografías, estilo general.
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold mb-4">Paso 3: Desarrollo (Semana 3-4)</h3>
-              <p className="text-lg leading-[1.8] text-justify">
+              <p className="text-lg leading-[1.8]">
                 Construcción del sitio en WordPress. Todas las páginas, formularios, optimización de velocidad, responsive design.
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold mb-4">Paso 4: Contenido + SEO (Semana 4)</h3>
-              <p className="text-lg leading-[1.8] text-justify">
+              <p className="text-lg leading-[1.8]">
                 Carga de contenidos (que tú proporcionas), optimización SEO on-page, integración de Analytics, pruebas de velocidad.
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold mb-4">Paso 5: Lanzamiento (Semana 5)</h3>
-              <p className="text-lg leading-[1.8] text-justify">
+              <p className="text-lg leading-[1.8]">
                 Revisión final, configuración de dominio y hosting, publicación, capacitación para que puedas administrar el sitio.
               </p>
             </div>
@@ -196,7 +240,7 @@ export default function DisenoWebBiobioPage() {
         {/* Tecnologías */}
         <section id="tecnologias" className="mb-20">
           <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Tecnologías que Usamos</h2>
-          <p className="text-xl mb-8 leading-[1.9] text-justify">
+          <p className="text-xl mb-8 leading-[1.8] text-center max-w-3xl mx-auto">
             Trabajamos principalmente con <strong className="text-[var(--color-accent)] font-bold">WordPress</strong> — el CMS más popular del mundo, usado por el 43% de todos los sitios web.
           </p>
 
@@ -223,7 +267,7 @@ export default function DisenoWebBiobioPage() {
         {/* Precios */}
         <section id="precios" className="mb-20">
           <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Precios de Diseño Web en Biobío</h2>
-          <p className="text-xl mb-10 leading-[1.9] text-justify">
+          <p className="text-xl mb-10 leading-[1.8] text-center max-w-3xl mx-auto">
             Precios transparentes. Sin sorpresas ni costos ocultos.
           </p>
 
@@ -283,7 +327,7 @@ export default function DisenoWebBiobioPage() {
         {/* Garantía */}
         <section id="garantia" className="mb-20">
           <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Nuestra Garantía</h2>
-          <p className="text-xl mb-8 leading-[1.9] text-justify">
+          <p className="text-xl mb-8 leading-[1.8] text-center max-w-3xl mx-auto">
             Estamos tan seguros de la calidad de nuestro trabajo que ofrecemos:
           </p>
 
@@ -301,35 +345,35 @@ export default function DisenoWebBiobioPage() {
           <div className="space-y-10">
             <div>
               <h3 className="text-2xl font-bold mb-4">¿Cuánto tarda en estar listo mi sitio web?</h3>
-              <p className="text-lg leading-[1.8] text-justify">
+              <p className="text-lg leading-[1.8]">
                 Landing page: 1-2 semanas. Sitio corporativo: 4-5 semanas. Ecommerce: 6-8 semanas. Depende del alcance y de la rapidez con que proporciones contenidos (textos, fotos, logos).
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold mb-4">¿Puedo actualizar el sitio yo mismo después?</h3>
-              <p className="text-lg leading-[1.8] text-justify">
+              <p className="text-lg leading-[1.8]">
                 Sí. WordPress es muy intuitivo. Te damos capacitación de 1 hora para que puedas editar textos, subir fotos, crear entradas de blog. Para cambios de diseño o funcionalidad, podemos hacerlos nosotros.
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold mb-4">¿El hosting y dominio están incluidos?</h3>
-              <p className="text-lg leading-[1.8] text-justify">
+              <p className="text-lg leading-[1.8]">
                 En el Pack Web anual ($169.000/año), sí. En sitios corporativos y ecommerce, el hosting es aparte (desde $35.000/año). Podemos contratarlo nosotros o tú puedes usar tu hosting actual.
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold mb-4">¿Qué pasa si quiero agregar funcionalidades después?</h3>
-              <p className="text-lg leading-[1.8] text-justify">
+              <p className="text-lg leading-[1.8]">
                 Podemos agregar lo que necesites: blog, galería, sistema de reservas, membresías, etc. Se cotiza según complejidad.
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold mb-4">¿Trabajan con negocios de toda la región del Biobío?</h3>
-              <p className="text-lg leading-[1.8] text-justify">
+              <p className="text-lg leading-[1.8]">
                 Sí. Atendemos Concepción, Talcahuano, San Pedro, Chiguayante, Coronel, Los Ángeles y toda la región. Todo el proceso puede ser 100% remoto.
               </p>
             </div>
