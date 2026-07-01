@@ -21,12 +21,12 @@ export default function NewArticlePage() {
     slug: '',
     excerpt: '',
     content: '',
-    category: 'Divisas',
+    category: 'Marketing Digital',
     tags: '',
     metaTitle: '',
     metaDescription: '',
     metaKeywords: '',
-    author: 'Equipo DivisaChile',
+    author: 'Equipo AlmaMedia',
     featuredImage: '',
     featuredImageAlt: '',
     status: 'published' as 'published' | 'draft',
@@ -403,14 +403,15 @@ export default function NewArticlePage() {
                     <select
                       value={formData.category}
                       onChange={e => setFormData({ ...formData, category: e.target.value })}
-                      className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-green-500 outline-none"
+                      className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-lg focus:ring-1 focus:ring-yellow-500 outline-none"
                       required
                     >
-                      <option value="Divisas">Divisas</option>
-                      <option value="Guías">Guías</option>
-                      <option value="Criptomonedas">Criptomonedas</option>
-                      <option value="Indicadores">Indicadores</option>
+                      <option value="Marketing Digital">Marketing Digital</option>
+                      <option value="Diseño Web">Diseño Web</option>
+                      <option value="SEO">SEO</option>
+                      <option value="Contenido Visual">Contenido Visual</option>
                       <option value="Noticias">Noticias</option>
+                      <option value="Tutoriales">Tutoriales</option>
                     </select>
                   </div>
                 )}
