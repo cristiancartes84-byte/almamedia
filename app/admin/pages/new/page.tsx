@@ -84,9 +84,10 @@ export default function NewArticlePage() {
     setAutoSaveStatus('idle');
 
     console.log('⏰ Timer creado: guardará en 2 segundos si no hay más cambios');
+    console.log('📊 Estado actual - autoSaveTimerRef:', autoSaveTimerRef.current);
 
     autoSaveTimerRef.current = setTimeout(async () => {
-      console.log('🔄 Auto-save iniciado... Título:', formData.title);
+      console.log('🔄 🔔 ¡TIMER EJECUTADO! Auto-save iniciado... Título:', formData.title);
       setAutoSaveStatus('saving');
       try {
         // Build slug inline in case the slug useEffect hasn't fired yet
@@ -150,6 +151,15 @@ export default function NewArticlePage() {
       }
     }, 2000);
   }, [formData]);
+
+  // TEST: Verificar que setTimeout funciona (solo para debug)
+  useEffect(() => {
+    console.log('🧪 TEST: Iniciando timer de prueba...');
+    const testTimer = setTimeout(() => {
+      console.log('🧪 TEST: ✅ ¡setTimeout FUNCIONA! Este mensaje aparece después de 3 segundos');
+    }, 3000);
+    return () => clearTimeout(testTimer);
+  }, []);
 
   // Cleanup timer on unmount
   useEffect(() => {
