@@ -47,7 +47,7 @@ export default function DisenoWebPage() {
       </section>
 
       {/* Main Content */}
-      <article className="relative z-10 max-w-5xl mx-auto px-8 py-12">
+      <article className="relative z-10 max-w-4xl mx-auto px-8 py-12">
 
         {/* Por qué necesitas web */}
         <section id="por-que-web" className="mb-20">
