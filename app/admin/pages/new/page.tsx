@@ -465,7 +465,7 @@ export default function NewArticlePage() {
         </main>
 
         {/* Alma SEO Sidebar */}
-        <RankMathSidebar
+        <AlmaSEO
           metaTitle={formData.metaTitle}
           metaDescription={formData.metaDescription}
           metaKeywords={formData.metaKeywords}
