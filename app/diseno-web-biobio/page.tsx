@@ -1,4 +1,5 @@
 import ParticlesBackground from '@/components/Particles';
+import FeatureCard from '@/components/FeatureCard';
 import Link from 'next/link';
 
 export const metadata = {
@@ -78,50 +79,68 @@ export default function DisenoWebBiobioPage() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">🎨 Diseño Personalizado</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">Diseño único adaptado a tu marca. Nada de templates genéricos que se ven iguales a otros 1,000 sitios.</p>
-            </div>
+            <FeatureCard
+              icon="🎨"
+              title="Diseño Personalizado"
+              description="Diseño único adaptado a tu marca. Nada de templates genéricos que se ven iguales a otros 1,000 sitios."
+              animationType="design"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">⚡ Velocidad Optimizada</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">Objetivo: menos de 2 segundos de carga. Optimización de imágenes, código limpio, caché configurado.</p>
-            </div>
+            <FeatureCard
+              icon="⚡"
+              title="Velocidad Optimizada"
+              description="Objetivo: menos de 2 segundos de carga. Optimización de imágenes, código limpio, caché configurado."
+              animationType="speed"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">📱 100% Responsive</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">Perfecto en móvil, tablet y desktop. El 70% del tráfico viene de móvil — tu sitio debe verse bien ahí.</p>
-            </div>
+            <FeatureCard
+              icon="📱"
+              title="100% Responsive"
+              description="Perfecto en móvil, tablet y desktop. El 70% del tráfico viene de móvil — tu sitio debe verse bien ahí."
+              animationType="responsive"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">🔍 SEO Base Incluido</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">Títulos, meta descriptions, headings, URLs optimizadas, sitemap, schema markup básico.</p>
-            </div>
+            <FeatureCard
+              icon="🔍"
+              title="SEO Base Incluido"
+              description="Títulos, meta descriptions, headings, URLs optimizadas, sitemap, schema markup básico."
+              animationType="seo"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">📊 Google Analytics</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">Integración completa para medir visitas, conversiones, páginas más vistas, fuentes de tráfico.</p>
-            </div>
+            <FeatureCard
+              icon="📊"
+              title="Google Analytics"
+              description="Integración completa para medir visitas, conversiones, páginas más vistas, fuentes de tráfico."
+              animationType="analytics"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">📝 Formularios Funcionales</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">Formulario de contacto que realmente funciona. Recibe consultas directo a tu email.</p>
-            </div>
+            <FeatureCard
+              icon="📝"
+              title="Formularios Funcionales"
+              description="Formulario de contacto que realmente funciona. Recibe consultas directo a tu email."
+              animationType="forms"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">🔒 HTTPS + Seguridad</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">Certificado SSL incluido, sitio seguro, backups automáticos semanales.</p>
-            </div>
+            <FeatureCard
+              icon="🔒"
+              title="HTTPS + Seguridad"
+              description="Certificado SSL incluido, sitio seguro, backups automáticos semanales."
+              animationType="security"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">✏️ Fácil de Actualizar</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">Panel WordPress intuitivo. Puedes editar textos e imágenes tú mismo sin programar.</p>
-            </div>
+            <FeatureCard
+              icon="✏️"
+              title="Fácil de Actualizar"
+              description="Panel WordPress intuitivo. Puedes editar textos e imágenes tú mismo sin programar."
+              animationType="update"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">🌐 Hosting + Dominio</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">Primer año de hosting y dominio .cl incluidos en pack web anual.</p>
-            </div>
+            <FeatureCard
+              icon="🌐"
+              title="Hosting + Dominio"
+              description="Primer año de hosting y dominio .cl incluidos en pack web anual."
+              animationType="hosting"
+            />
           </div>
         </section>
 
