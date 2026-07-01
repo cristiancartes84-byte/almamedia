@@ -158,20 +158,20 @@ export default function NewLandingPagePage() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Título de la Página
+                    Título de la Página *
                   </label>
                   <input
                     type="text"
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                     className="w-full px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent"
-                    placeholder="Diseño Web en San Pedro de la Paz"
+                    placeholder="Escribe un título"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Slug (URL)
+                    Slug (URL) *
                   </label>
                   <div className="flex items-center gap-2">
                     <span className="text-gray-500 text-sm">almamedia.cl/</span>
@@ -180,7 +180,7 @@ export default function NewLandingPagePage() {
                       value={formData.slug}
                       onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
                       className="flex-1 px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent"
-                      placeholder="diseno-web-san-pedro"
+                      placeholder="mi-pagina"
                     />
                   </div>
                 </div>
@@ -194,14 +194,13 @@ export default function NewLandingPagePage() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Diseño Web de la Red
+                    Badge (etiqueta)
                   </label>
                   <input
                     type="text"
                     value={formData.badge}
                     onChange={(e) => setFormData({ ...formData, badge: e.target.value })}
                     className="w-full px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent"
-                    placeholder="Diseño web profesional"
                   />
                 </div>
 
@@ -219,27 +218,25 @@ export default function NewLandingPagePage() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Diseño Web en San Pedro de la Red - Sitios que Venden
+                    Título Principal
                   </label>
                   <input
                     type="text"
                     value={formData.heroTitle}
                     onChange={(e) => setFormData({ ...formData, heroTitle: e.target.value })}
                     className="w-full px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent"
-                    placeholder="Título principal del hero"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Sitios web profesionales para negocios en San Pedro de la Paz. Especializados en diseños estratégicos con Google Maps, formularios optimizados y entrega garantizada. Impulsamos tu presencia digital con soluciones efectivas.
+                    Subtítulo
                   </label>
                   <textarea
                     value={formData.heroSubtitle}
                     onChange={(e) => setFormData({ ...formData, heroSubtitle: e.target.value })}
                     rows={3}
                     className="w-full px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent resize-none"
-                    placeholder="Subtítulo descriptivo"
                   />
                 </div>
 
@@ -253,7 +250,6 @@ export default function NewLandingPagePage() {
                       value={formData.ctaText}
                       onChange={(e) => setFormData({ ...formData, ctaText: e.target.value })}
                       className="w-full px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent"
-                      placeholder="Cotizar Mi Sitio Web"
                     />
                   </div>
 
@@ -266,7 +262,6 @@ export default function NewLandingPagePage() {
                       value={formData.ctaLink}
                       onChange={(e) => setFormData({ ...formData, ctaLink: e.target.value })}
                       className="w-full px-4 py-2.5 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent"
-                      placeholder="/contacto"
                     />
                   </div>
                 </div>
@@ -302,7 +297,6 @@ export default function NewLandingPagePage() {
                 onChange={(e) => setFormData({ ...formData, pricingPlans: e.target.value })}
                 rows={12}
                 className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg font-mono text-sm focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent resize-none"
-                placeholder='[{"name":"Plan","price":"$100","features":["Feature 1"]}]'
               />
             </div>
 
@@ -314,7 +308,6 @@ export default function NewLandingPagePage() {
                 onChange={(e) => setFormData({ ...formData, customCSS: e.target.value })}
                 rows={8}
                 className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#2a2a2a] text-white rounded-lg font-mono text-sm focus:ring-2 focus:ring-[#C8FF00] focus:border-transparent resize-none"
-                placeholder=".mi-clase { color: #C8FF00; }"
               />
             </div>
           </div>
