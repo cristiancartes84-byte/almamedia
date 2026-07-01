@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-// import { articleInputSchema } from "@/lib/validation";
+import { articleInputSchema } from "@/lib/validation";
 import { Prisma } from "@prisma/client";
 
 export async function GET(_: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -23,22 +23,26 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
 
   try {
     const { id } = await params;
-    const data = await req.json();
+    const parsed = articleInputSchema.safeParse(await req.json());
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Datos de artículo inválidos" }, { status: 400 });
+    }
+    const data = parsed.data;
 
     const buildUpdate = (slug: string | undefined) => ({
       title: data.title,
       slug,
-      excerpt: data.excerpt || '',
-      content: data.content || '',
-      category: data.category || '',
-      author: data.author || 'Admin',
-      tags: Array.isArray(data.tags) ? data.tags.join(', ') : (data.tags || ''),
-      metaTitle: data.metaTitle || '',
-      metaDescription: data.metaDescription || '',
-      metaKeywords: data.metaKeywords || '',
-      featuredImage: data.featuredImage || '',
-      featuredImageAlt: data.featuredImageAlt || '',
-      status: data.status || 'draft',
+      excerpt: data.excerpt,
+      content: data.content,
+      category: data.category,
+      author: data.author,
+      tags: data.tags,
+      metaTitle: data.metaTitle,
+      metaDescription: data.metaDescription,
+      metaKeywords: data.metaKeywords,
+      featuredImage: data.featuredImage,
+      featuredImageAlt: data.featuredImageAlt,
+      status: data.status,
     });
 
     try {
