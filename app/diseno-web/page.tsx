@@ -2,16 +2,16 @@ import ParticlesBackground from '@/components/Particles';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Diseño Web Biobío: Sitios que Cargan Rápido y Convierten - Alma Media',
-  description: 'Diseño web profesional en Biobío: sitios WordPress rápidos, optimizados para Google y enfocados en convertir visitas en clientes. Ver precios y casos de éxito.',
+  title: 'Diseño Web Profesional en Chile: Sitios que Cargan Rápido y Convierten - Alma Media',
+  description: 'Diseño web profesional en Chile: sitios WordPress rápidos, optimizados para Google y enfocados en convertir visitas en clientes. Ver precios y casos de éxito.',
   openGraph: {
-    title: 'Diseño Web Biobío: Sitios que Cargan Rápido y Convierten - Alma Media',
-    description: 'Diseño web profesional en Biobío: sitios WordPress rápidos, optimizados para Google y enfocados en convertir visitas en clientes.',
+    title: 'Diseño Web Profesional en Chile | Sitios Web Optimizados para Conversión',
+    description: 'Diseño web profesional: sitios WordPress rápidos, optimizados para Google y enfocados en convertir visitas en clientes.',
     type: 'website',
   }
 };
 
-export default function DisenoWebBiobioPage() {
+export default function DisenoWebPage() {
   return (
     <>
       <ParticlesBackground />
@@ -21,7 +21,7 @@ export default function DisenoWebBiobioPage() {
         <div className="text-sm text-[var(--color-muted)]">
           <Link href="/" className="hover:text-[var(--color-accent)] transition-colors">Inicio</Link>
           <span className="mx-2">/</span>
-          <span>Diseño Web Biobío</span>
+          <span>Diseño Web Profesional en Chile</span>
         </div>
       </div>
 
@@ -31,10 +31,10 @@ export default function DisenoWebBiobioPage() {
           <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">Diseño Web Profesional</span>
         </div>
         <h1 className="text-5xl md:text-6xl font-black mb-6 max-w-4xl mx-auto leading-tight">
-          Diseño Web en Biobío: Sitios que Cargan Rápido y Convierten
+          Diseño Web Profesional en Chile | Sitios Web Optimizados para Conversión
         </h1>
         <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed">
-          Creamos sitios web WordPress rápidos, optimizados para Google y enfocados en convertir visitas en clientes para empresas en Concepción, Talcahuano y toda la Región del Biobío.
+          Creamos sitios web WordPress rápidos, optimizados para Google y enfocados en convertir visitas en clientes. Diseño web que vende.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Link href="/contacto" className="px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">
@@ -63,7 +63,7 @@ export default function DisenoWebBiobioPage() {
           <ul className="space-y-4 mt-6 text-lg">
             <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Credibilidad instantánea:</strong> Un sitio profesional transmite confianza y seriedad</li>
             <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Ventas 24/7:</strong> Tu negocio trabaja mientras duermes</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Alcance ilimitado:</strong> Llegas a clientes en toda la región del Biobío</li>
+            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Alcance ilimitado:</strong> Llegas a clientes en todo Chile</li>
             <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Menor costo que publicidad tradicional:</strong> ROI superior a largo plazo</li>
             <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Datos y métricas:</strong> Sabes exactamente qué funciona y qué no</li>
             <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Escalabilidad:</strong> Crece al ritmo de tu negocio</li>
@@ -203,7 +203,7 @@ export default function DisenoWebBiobioPage() {
 
         {/* Precios */}
         <section id="precios" className="mb-20">
-          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)]">Precios de Diseño Web en Biobío</h2>
+          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)]">Precios de Diseño Web</h2>
           <p className="text-xl mb-10 leading-[1.9] text-justify">
             Precios transparentes. Sin sorpresas ni costos ocultos.
           </p>
@@ -309,9 +309,9 @@ export default function DisenoWebBiobioPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-4">¿Trabajan con negocios de toda la región del Biobío?</h3>
+              <h3 className="text-2xl font-bold mb-4">¿Trabajan con negocios de todo Chile?</h3>
               <p className="text-lg leading-[1.8] text-justify">
-                Sí. Atendemos Concepción, Talcahuano, San Pedro, Chiguayante, Coronel, Los Ángeles y toda la región. Todo el proceso puede ser 100% remoto.
+                Sí. Atendemos empresas en todo Chile. Todo el proceso puede ser 100% remoto, trabajamos con negocios desde Arica a Punta Arenas.
               </p>
             </div>
           </div>
