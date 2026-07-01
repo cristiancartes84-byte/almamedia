@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { articleInputSchema } from "@/lib/validation";
+// import { articleInputSchema } from "@/lib/validation";
 import { Prisma } from "@prisma/client";
 
 export async function GET(req: NextRequest) {
@@ -40,30 +40,26 @@ export async function POST(req: NextRequest) {
   const session = await getServerSession(authOptions);
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const parsed = articleInputSchema.safeParse(await req.json());
-  if (!parsed.success) {
-    return NextResponse.json({ error: "Datos de artículo inválidos" }, { status: 400 });
-  }
-  const data = parsed.data;
-
-  const baseSlug = data.slug || `articulo-${Date.now()}`;
-  const buildData = (slug: string) => ({
-    title: data.title,
-    slug,
-    excerpt: data.excerpt,
-    content: data.content,
-    category: data.category,
-    author: data.author,
-    tags: data.tags,
-    metaTitle: data.metaTitle,
-    metaDescription: data.metaDescription,
-    metaKeywords: data.metaKeywords,
-    featuredImage: data.featuredImage,
-    featuredImageAlt: data.featuredImageAlt,
-    status: data.status,
-  });
-
   try {
+    const data = await req.json();
+
+    const baseSlug = data.slug || `articulo-${Date.now()}`;
+    const buildData = (slug: string) => ({
+      title: data.title,
+      slug,
+      excerpt: data.excerpt || '',
+      content: data.content || '',
+      category: data.category || '',
+      author: data.author || 'Admin',
+      tags: Array.isArray(data.tags) ? data.tags.join(', ') : (data.tags || ''),
+      metaTitle: data.metaTitle || '',
+      metaDescription: data.metaDescription || '',
+      metaKeywords: data.metaKeywords || '',
+      featuredImage: data.featuredImage || '',
+      featuredImageAlt: data.featuredImageAlt || '',
+      status: data.status || 'draft',
+    });
+
     const article = await prisma.article.create({ data: buildData(baseSlug) });
     return NextResponse.json(article, { status: 201 });
   } catch (err: unknown) {
@@ -71,7 +67,7 @@ export async function POST(req: NextRequest) {
       const article = await prisma.article.create({ data: buildData(`${baseSlug}-${Date.now()}`) });
       return NextResponse.json(article, { status: 201 });
     }
-    console.error("POST /api/articles falló:", err);
-    return NextResponse.json({ error: "Error al crear el artículo" }, { status: 500 });
+    console.error("POST /api/articles error:", err);
+    return NextResponse.json({ error: "Error al crear artículo" }, { status: 500 });
   }
 }
