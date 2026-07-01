@@ -75,21 +75,40 @@ export default function NewArticlePage() {
     setAutoSaveStatus('idle');
 
     autoSaveTimerRef.current = setTimeout(async () => {
+      console.log('🔄 Auto-save iniciado...');
       setAutoSaveStatus('saving');
       try {
-        const tags = formData.tags.split(',').map(t => t.trim()).filter(Boolean);
         // Build slug inline in case the slug useEffect hasn't fired yet
         const slug = formData.slug || formData.title.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-        const payload = { ...formData, slug, status: 'draft' as const, tags };
+
+        const payload = {
+          title: formData.title,
+          slug,
+          content: formData.content,
+          excerpt: formData.excerpt,
+          metaTitle: formData.metaTitle,
+          metaDescription: formData.metaDescription,
+          metaKeywords: formData.metaKeywords,
+          author: formData.author,
+          status: 'draft' as const,
+          // Campos opcionales de LandingPage
+          badge: '',
+          heroTitle: formData.title,
+          heroSubtitle: formData.excerpt || '',
+        };
+
+        console.log('📦 Payload:', payload);
 
         let res: Response;
         if (autoSavedIdRef.current) {
+          console.log('📝 Actualizando página existente:', autoSavedIdRef.current);
           res = await fetch(`/api/landing-pages/${autoSavedIdRef.current}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
           });
         } else {
+          console.log('✨ Creando nueva página...');
           res = await fetch('/api/landing-pages', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -98,19 +117,24 @@ export default function NewArticlePage() {
           if (res.ok) {
             const created = await res.json();
             autoSavedIdRef.current = created.id;
+            console.log('✅ Página creada con ID:', created.id);
             window.history.replaceState({}, '', `/admin/pages/${created.id}/edit`);
           }
         }
+
         if (res.ok) {
+          console.log('✅ Auto-save exitoso');
           setAutoSaveStatus('saved');
           setAutoSavedAt(new Date().toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' }));
           // Volver a idle después de 1 segundo
           setTimeout(() => setAutoSaveStatus('idle'), 1000);
         } else {
+          const errorData = await res.json().catch(() => ({}));
+          console.error('❌ Auto-save falló:', res.status, errorData);
           setAutoSaveStatus('error');
         }
       } catch (error) {
-        console.error('Auto-save error:', error);
+        console.error('❌ Auto-save error:', error);
         setAutoSaveStatus('error');
       }
     }, 2000);

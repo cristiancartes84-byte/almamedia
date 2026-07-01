@@ -565,19 +565,25 @@ export default function ClassicEditor({ initialValue = "", onChange }: ClassicEd
       </div>
 
       {/* Editor area con scroll */}
-      <div className="overflow-y-auto h-[540px]">
+      <div className="overflow-y-auto h-[540px] relative">
         {viewMode === 'visual' ? (
           <EditorContent editor={editor} />
         ) : (
-          <textarea
-            value={htmlContent}
-            onChange={(e) => {
-              setHtmlContent(e.target.value);
-              onChange(e.target.value);
-            }}
-            className="w-full h-full px-5 py-4 font-mono text-sm text-gray-900 bg-white focus:outline-none resize-none"
-            spellCheck={false}
-          />
+          <div className="relative h-full">
+            <div className="absolute top-2 right-2 text-xs text-blue-600 bg-blue-50 px-3 py-1.5 rounded-md border border-blue-200 z-10">
+              Pega tu artículo HTML · al cambiar a Visual se importa el SEO automáticamente
+            </div>
+            <textarea
+              value={htmlContent}
+              onChange={(e) => {
+                setHtmlContent(e.target.value);
+                onChange(e.target.value);
+              }}
+              className="w-full h-full px-5 py-4 pt-12 font-mono text-sm text-gray-900 bg-white focus:outline-none resize-none"
+              spellCheck={false}
+              placeholder="Pega tu HTML aquí..."
+            />
+          </div>
         )}
       </div>
 
