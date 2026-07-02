@@ -1,5 +1,6 @@
 import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import SEOFeatureCard from '@/components/SEOFeatureCard';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -163,39 +164,50 @@ export default function SEOLocalPage() {
 
           <h3 className="text-2xl font-bold mb-6 text-center">Componentes del SEO Local:</h3>
           <div className="grid md:grid-cols-3 gap-6 mt-8">
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">📍 Google Business Profile</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed mb-4">Optimización completa de tu ficha para aparecer en Maps y Local Pack</p>
-              <ul className="text-sm text-[var(--color-muted)] space-y-1">
-                <li>• Información completa y precisa</li>
-                <li>• Categorías estratégicas</li>
-                <li>• Fotos profesionales</li>
-                <li>• Posts semanales</li>
-                <li>• Horarios actualizados</li>
-              </ul>
-            </div>
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">⭐ Gestión de Reseñas</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed mb-4">Estrategia para conseguir y gestionar reseñas positivas</p>
-              <ul className="text-sm text-[var(--color-muted)] space-y-1">
-                <li>• Sistema automatizado de solicitud</li>
-                <li>• Respuesta a todas las reseñas</li>
-                <li>• Gestión de reseñas negativas</li>
-                <li>• Monitoreo de competencia</li>
-                <li>• Reportes mensuales</li>
-              </ul>
-            </div>
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">🗺️ Citaciones Locales</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed mb-4">Alta en directorios y validación de datos NAP consistency</p>
-              <ul className="text-sm text-[var(--color-muted)] space-y-1">
-                <li>• Directorios locales chilenos</li>
-                <li>• Validación NAP (nombre, dirección, teléfono)</li>
-                <li>• Corrección de inconsistencias</li>
-                <li>• Listados en nichos específicos</li>
-                <li>• Monitoreo de citas</li>
-              </ul>
-            </div>
+            <SEOFeatureCard
+              icon="📍"
+              title="Google Business Profile"
+              description="Optimización completa de tu ficha para aparecer en Maps y Local Pack"
+              items={[
+                '• Información completa y precisa',
+                '• Categorías estratégicas',
+                '• Fotos profesionales',
+                '• Posts semanales',
+                '• Horarios actualizados'
+              ]}
+              index={0}
+              size="medium"
+            />
+
+            <SEOFeatureCard
+              icon="⭐"
+              title="Gestión de Reseñas"
+              description="Estrategia para conseguir y gestionar reseñas positivas"
+              items={[
+                '• Sistema automatizado de solicitud',
+                '• Respuesta a todas las reseñas',
+                '• Gestión de reseñas negativas',
+                '• Monitoreo de competencia',
+                '• Reportes mensuales'
+              ]}
+              index={1}
+              size="medium"
+            />
+
+            <SEOFeatureCard
+              icon="🗺️"
+              title="Citaciones Locales"
+              description="Alta en directorios y validación de datos NAP consistency"
+              items={[
+                '• Directorios locales chilenos',
+                '• Validación NAP (nombre, dirección, teléfono)',
+                '• Corrección de inconsistencias',
+                '• Listados en nichos específicos',
+                '• Monitoreo de citas'
+              ]}
+              index={2}
+              size="medium"
+            />
           </div>
         </section>
 
@@ -204,47 +216,53 @@ export default function SEOLocalPage() {
           <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Beneficios del SEO Local</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
-              <h3 className="text-lg font-bold mb-2 text-[var(--color-accent)]">📈 Tráfico Calificado de Alta Conversión</h3>
-              <p className="text-[var(--color-muted)] text-sm">
-                Usuarios con intención de compra inmediata: "cerca de mí" indica urgencia. Tasas de conversión 2-3x superiores vs tráfico genérico.
-              </p>
-            </div>
+            <SEOFeatureCard
+              icon="📈"
+              title="Tráfico Calificado de Alta Conversión"
+              description="Usuarios con intención de compra inmediata: 'cerca de mí' indica urgencia. Tasas de conversión 2-3x superiores vs tráfico genérico."
+              index={0}
+              size="small"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
-              <h3 className="text-lg font-bold mb-2 text-[var(--color-accent)]">⚡ Resultados Más Rápidos</h3>
-              <p className="text-[var(--color-muted)] text-sm">
-                Competencia local vs nacional: 2-4 meses para estar en Local Pack vs 6-12 meses SEO tradicional. Mercado más pequeño = más rápido.
-              </p>
-            </div>
+            <SEOFeatureCard
+              icon="⚡"
+              title="Resultados Más Rápidos"
+              description="Competencia local vs nacional: 2-4 meses para estar en Local Pack vs 6-12 meses SEO tradicional. Mercado más pequeño = más rápido."
+              index={1}
+              size="small"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
-              <h3 className="text-lg font-bold mb-2 text-[var(--color-accent)]">🎯 Visibilidad en el Momento Crítico</h3>
-              <p className="text-[var(--color-muted)] text-sm">
-                Apareces cuando el usuario está listo para comprar. 76% visita el negocio en 24h. Capturas demanda existente, no la creas.
-              </p>
-            </div>
+            <SEOFeatureCard
+              icon="🎯"
+              title="Visibilidad en el Momento Crítico"
+              description="Apareces cuando el usuario está listo para comprar. 76% visita el negocio en 24h. Capturas demanda existente, no la creas."
+              index={2}
+              size="small"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
-              <h3 className="text-lg font-bold mb-2 text-[var(--color-accent)]">💰 Menor Costo que Publicidad</h3>
-              <p className="text-[var(--color-muted)] text-sm">
-                $95k/mes vs $150k-300k/mes en Google Ads local. Tráfico orgánico permanente sin pagar por clic. ROI superior a mediano plazo.
-              </p>
-            </div>
+            <SEOFeatureCard
+              icon="💰"
+              title="Menor Costo que Publicidad"
+              description="$95k/mes vs $150k-300k/mes en Google Ads local. Tráfico orgánico permanente sin pagar por clic. ROI superior a mediano plazo."
+              index={3}
+              size="small"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
-              <h3 className="text-lg font-bold mb-2 text-[var(--color-accent)]">🏆 Ventaja Competitiva Local</h3>
-              <p className="text-[var(--color-muted)] text-sm">
-                Muchos negocios locales no optimizan su Google Business. Estar en Local Pack = superar a 90% de tu competencia local.
-              </p>
-            </div>
+            <SEOFeatureCard
+              icon="🏆"
+              title="Ventaja Competitiva Local"
+              description="Muchos negocios locales no optimizan su Google Business. Estar en Local Pack = superar a 90% de tu competencia local."
+              index={4}
+              size="small"
+            />
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
-              <h3 className="text-lg font-bold mb-2 text-[var(--color-accent)]">📱 Captura Búsquedas Móviles</h3>
-              <p className="text-[var(--color-muted)] text-sm">
-                60% de búsquedas locales desde móvil. Google Maps es la app #1 de navegación. Estar allí = capturar tráfico en movimiento.
-              </p>
-            </div>
+            <SEOFeatureCard
+              icon="📱"
+              title="Captura Búsquedas Móviles"
+              description="60% de búsquedas locales desde móvil. Google Maps es la app #1 de navegación. Estar allí = capturar tráfico en movimiento."
+              index={5}
+              size="small"
+            />
           </div>
         </section>
 
