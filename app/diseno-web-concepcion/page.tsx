@@ -167,8 +167,8 @@ export default function DisenoWebConcepcionPage() {
         <h1 className="text-5xl md:text-6xl font-black mb-6 max-w-4xl mx-auto leading-tight">
           Diseño Web en Concepción: Sitios que Venden
         </h1>
-        <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed">
-          <strong>El diseño web profesional en Concepción</strong> crea sitios WordPress optimizados que convierten visitantes en clientes. Con más de 220.000 habitantes y el 92% buscando en Google antes de comprar, tu negocio necesita presencia digital estratégica. Ofrecemos desarrollo web rápido (carga &lt;2s), SEO local incluido, y diseño responsive para que tu empresa destaque en el segundo polo económico de Chile. <Link href="/" className="text-[var(--color-accent)] hover:underline">Alma Media</Link> construye páginas web que generan resultados medibles para negocios en Concepción y el Gran Concepción.
+        <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
+          <strong>El diseño web profesional en Concepción</strong> crea sitios WordPress optimizados que convierten visitantes en clientes. Con más de 220.000 habitantes y el 92% buscando en Google antes de comprar, tu negocio necesita presencia digital estratégica. Ofrecemos desarrollo web rápido (carga &lt;2s), SEO local incluido, y diseño responsive para que tu empresa destaque en el segundo polo económico de Chile. Alma Media construye páginas web que generan resultados medibles para negocios en Concepción y el Gran Concepción.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link href="/contacto" className="inline-block px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">

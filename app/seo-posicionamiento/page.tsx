@@ -149,8 +149,8 @@ export default function SEOPosicionamientoPage() {
         <h1 className="text-5xl md:text-6xl font-black mb-6 max-w-4xl mx-auto leading-tight">
           SEO y Posicionamiento Web | Aparece en Google
         </h1>
-        <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed">
-          <strong>El SEO profesional en Chile</strong> optimiza tu sitio web para aparecer en primera página de Google cuando tus clientes buscan. El 93% de experiencias online comienzan en buscadores, y estar en primera página captura el 75% del tráfico. Ofrecemos <Link href="/" className="text-[var(--color-accent)] hover:underline">auditoría SEO técnica</Link> completa, optimización on-page, creación de contenido estratégico, link building white-hat y reportes mensuales con resultados medibles. Desde $195.000/mes con compromiso de 6 meses para resultados sostenidos. +45 clientes posicionados en keywords comerciales de alta competencia.
+        <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
+          <strong>El SEO profesional en Chile</strong> optimiza tu sitio web para aparecer en primera página de Google cuando tus clientes buscan. El 93% de experiencias online comienzan en buscadores, y estar en primera página captura el 75% del tráfico. Ofrecemos auditoría SEO técnica completa, optimización on-page, creación de contenido estratégico, link building white-hat y reportes mensuales con resultados medibles. Desde $195.000/mes con compromiso de 6 meses para resultados sostenidos. +45 clientes posicionados en keywords comerciales de alta competencia.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Link href="/contacto" className="px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">
