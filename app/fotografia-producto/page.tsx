@@ -154,13 +154,13 @@ export default function FotografiaProductoPage() {
           <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Por qué Necesitas Fotografía Profesional?</h2>
 
           <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 mb-8">
-            <p className="text-xl mb-6 leading-[1.8]">
+            <p className="text-xl mb-6 leading-[1.8] text-justify">
               <strong className="text-[var(--color-accent)] font-bold">La fotografía profesional de producto</strong> no es un gasto, es una inversión en conversión. El <strong>93% de compradores online</strong> considera las imágenes como el factor MÁS IMPORTANTE al decidir una compra, superando precio y descripción. Una buena foto genera confianza instantánea y reduce la fricción de compra.
             </p>
-            <p className="text-xl mb-6 leading-[1.8]">
+            <p className="text-xl mb-6 leading-[1.8] text-justify">
               Fotos con smartphone vs fotos profesionales pueden significar la diferencia entre <strong>conversión de 1% vs 3.5%</strong> en ecommerce. Si vendes 100 productos/mes a $20.000 promedio, esa diferencia son $600.000/mes adicionales ($7.2M al año). El ROI de fotografía profesional se recupera en el primer mes.
             </p>
-            <p className="text-xl leading-[1.8]">
+            <p className="text-xl leading-[1.8] text-justify">
               Además, fotos profesionales reducen devoluciones (el cliente sabe exactamente qué esperar), aumentan ticket promedio (productos se ven más valiosos), y te permiten competir con grandes marcas en marketplaces como Amazon o Mercado Libre donde las fotos son tu única ventaja diferenciadora.
             </p>
           </div>
