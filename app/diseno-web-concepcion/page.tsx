@@ -1,5 +1,6 @@
 import ParticlesBackground from '@/components/Particles';
 import SectorCard from '@/components/SectorCard';
+import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -324,7 +325,7 @@ export default function DisenoWebConcepcionPage() {
           </p>
           <p className="text-center mb-12">
             <span className="inline-block px-4 py-2 bg-[rgba(200,255,0,0.1)] border border-[rgba(200,255,0,0.3)] rounded-full text-sm font-semibold text-[var(--color-accent)]">
-              ⚡ Promo Julio: Cotiza hoy y recibe análisis SEO gratis (valor $90.000)
+              ⚡ Promo <span className="capitalize"><CurrentMonth /></span>: Cotiza hoy y recibe análisis SEO gratis (valor $90.000)
             </span>
           </p>
 
@@ -491,7 +492,7 @@ export default function DisenoWebConcepcionPage() {
       <div className="relative z-10 max-w-6xl mx-auto px-8 mb-20">
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 md:p-16 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta Especial Julio 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta Especial <CurrentMonth /> 2026</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Destacar en Concepción?
@@ -522,7 +523,7 @@ export default function DisenoWebConcepcionPage() {
             </Link>
           </div>
           <p className="text-sm text-[var(--color-muted)] mt-6">
-            ⏰ Promo válida solo para las primeras 5 cotizaciones de julio • Sin compromiso • Respuesta garantizada
+            ⏰ Promo válida solo para las primeras 5 cotizaciones de <CurrentMonth /> • Sin compromiso • Respuesta garantizada
           </p>
         </div>
       </div>
