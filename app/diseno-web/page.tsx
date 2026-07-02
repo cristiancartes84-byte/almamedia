@@ -309,60 +309,66 @@ export default function DisenoWebPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             {/* Landing Page */}
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Landing Page</h3>
-              <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$169.000</p>
-              <p className="text-[var(--color-muted)] mb-6">CLP/año (incluye hosting + dominio)</p>
-              <ul className="space-y-2 text-left text-sm md:text-base">
-                <li>✓ 1 página optimizada</li>
-                <li>✓ Diseño responsive</li>
-                <li>✓ SEO base</li>
-                <li>✓ Formulario contacto</li>
-                <li>✓ Hosting + dominio .cl</li>
-                <li>✓ SSL (HTTPS) incluido</li>
-              </ul>
-              <Link href="/contacto" className="mt-6 block text-center px-6 py-3 bg-transparent border border-[var(--color-accent)] text-[var(--color-accent)] font-bold rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all flex flex-col">
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Landing Page</h3>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$169.000</p>
+                <p className="text-[var(--color-muted)] mb-6">CLP/año (incluye hosting + dominio)</p>
+                <ul className="space-y-2 text-left text-sm md:text-base mb-6">
+                  <li>✓ 1 página optimizada</li>
+                  <li>✓ Diseño responsive</li>
+                  <li>✓ SEO base</li>
+                  <li>✓ Formulario contacto</li>
+                  <li>✓ Hosting + dominio .cl</li>
+                  <li>✓ SSL (HTTPS) incluido</li>
+                </ul>
+              </div>
+              <Link href="/contacto" className="mt-auto block text-center px-6 py-3 bg-transparent border border-[var(--color-accent)] text-[var(--color-accent)] font-bold rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
                 Cotizar Landing Page
               </Link>
             </div>
 
             {/* Sitio Corporativo */}
-            <div className="bg-[var(--color-card)] border-2 border-[var(--color-accent)] rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all relative">
+            <div className="bg-[var(--color-card)] border-2 border-[var(--color-accent)] rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all relative flex flex-col">
               <div className="absolute top-0 right-0 bg-[var(--color-accent)] text-[var(--color-bg)] px-4 py-1 rounded-bl-lg rounded-tr-lg text-xs font-bold">
                 MÁS POPULAR
               </div>
-              <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Sitio Corporativo</h3>
-              <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$390.000</p>
-              <p className="text-[var(--color-muted)] mb-6">CLP (pago único)</p>
-              <ul className="space-y-2 text-left text-sm md:text-base">
-                <li>✓ Hasta 5 páginas</li>
-                <li>✓ Diseño personalizado</li>
-                <li>✓ WordPress completo</li>
-                <li>✓ SEO optimizado</li>
-                <li>✓ Analytics + formularios</li>
-                <li>✓ Capacitación incluida</li>
-                <li>✓ 1 mes soporte gratis</li>
-              </ul>
-              <Link href="/contacto" className="mt-6 block text-center px-6 py-3 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:scale-105 transition-all">
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Sitio Corporativo</h3>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$390.000</p>
+                <p className="text-[var(--color-muted)] mb-6">CLP (pago único)</p>
+                <ul className="space-y-2 text-left text-sm md:text-base mb-6">
+                  <li>✓ Hasta 5 páginas</li>
+                  <li>✓ Diseño personalizado</li>
+                  <li>✓ WordPress completo</li>
+                  <li>✓ SEO optimizado</li>
+                  <li>✓ Analytics + formularios</li>
+                  <li>✓ Capacitación incluida</li>
+                  <li>✓ 1 mes soporte gratis</li>
+                </ul>
+              </div>
+              <Link href="/contacto" className="mt-auto block text-center px-6 py-3 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:scale-105 transition-all">
                 Cotizar Sitio Corporativo
               </Link>
             </div>
 
             {/* Ecommerce */}
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all">
-              <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Ecommerce</h3>
-              <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $590.000</p>
-              <p className="text-[var(--color-muted)] mb-6">CLP (según productos)</p>
-              <ul className="space-y-2 text-left text-sm md:text-base">
-                <li>✓ WordPress + WooCommerce</li>
-                <li>✓ O Shopify</li>
-                <li>✓ Pagos online (Webpay/Flow)</li>
-                <li>✓ Gestión de productos</li>
-                <li>✓ Carro de compra</li>
-                <li>✓ Envíos configurados</li>
-                <li>✓ Capacitación ecommerce</li>
-              </ul>
-              <Link href="/contacto" className="mt-6 block text-center px-6 py-3 bg-transparent border border-[var(--color-accent)] text-[var(--color-accent)] font-bold rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all flex flex-col">
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Ecommerce</h3>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $590.000</p>
+                <p className="text-[var(--color-muted)] mb-6">CLP (según productos)</p>
+                <ul className="space-y-2 text-left text-sm md:text-base mb-6">
+                  <li>✓ WordPress + WooCommerce</li>
+                  <li>✓ O Shopify</li>
+                  <li>✓ Pagos online (Webpay/Flow)</li>
+                  <li>✓ Gestión de productos</li>
+                  <li>✓ Carro de compra</li>
+                  <li>✓ Envíos configurados</li>
+                  <li>✓ Capacitación ecommerce</li>
+                </ul>
+              </div>
+              <Link href="/contacto" className="mt-auto block text-center px-6 py-3 bg-transparent border border-[var(--color-accent)] text-[var(--color-accent)] font-bold rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
                 Cotizar Ecommerce
               </Link>
             </div>
