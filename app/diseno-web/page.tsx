@@ -324,7 +324,7 @@ export default function DisenoWebPage() {
                 </ul>
               </div>
               <Link href="/contacto" className="mt-auto block text-center px-6 py-3 bg-transparent border border-[var(--color-accent)] text-[var(--color-accent)] font-bold rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
-                Cotizar Landing Page
+                Cotizar
               </Link>
             </div>
 
@@ -348,7 +348,7 @@ export default function DisenoWebPage() {
                 </ul>
               </div>
               <Link href="/contacto" className="mt-auto block text-center px-6 py-3 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:scale-105 transition-all">
-                Cotizar Sitio Corporativo
+                Cotizar
               </Link>
             </div>
 
@@ -369,7 +369,7 @@ export default function DisenoWebPage() {
                 </ul>
               </div>
               <Link href="/contacto" className="mt-auto block text-center px-6 py-3 bg-transparent border border-[var(--color-accent)] text-[var(--color-accent)] font-bold rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
-                Cotizar Ecommerce
+                Cotizar
               </Link>
             </div>
           </div>
