@@ -44,14 +44,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 // Static generation for known slugs
 export async function generateStaticParams() {
-  // Return empty array initially - pages will be generated on-demand (ISR)
-  // You can add known slugs here for build-time generation
-  return [
-    { slug: 'diseno-web-concepcion' },
-    { slug: 'diseno-web-talcahuano' },
-    { slug: 'diseno-web-los-angeles' },
-    { slug: 'diseno-web-san-pedro-paz' },
-  ];
+  // Return empty array - pages will be generated on-demand (ISR)
+  // Static routes like /diseno-web-concepcion now have dedicated pages
+  return [];
 }
 
 export default async function DynamicLandingPage({ params }: PageProps) {
