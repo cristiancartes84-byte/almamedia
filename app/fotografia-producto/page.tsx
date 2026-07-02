@@ -406,42 +406,42 @@ export default function FotografiaProductoPage() {
           <div className="space-y-6">
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Cuánto cuesta la fotografía de producto en Chile?</h3>
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-justify">
                 La <strong>fotografía de producto en Chile</strong> cuesta desde <strong>$9.900 por producto</strong> para fondo blanco (incluye 3-5 fotos con retoque profesional y alta resolución), y <strong>$14.900 por producto</strong> para fotografía lifestyle (5-8 fotos con ambientación profesional). Ofrecemos descuentos por volumen: 10+ productos -15%, 20+ productos -25%, 50+ cotización especial.
               </p>
             </div>
 
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Qué incluye la sesión de fotografía de producto?</h3>
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-justify">
                 La sesión incluye: <strong>fotografía profesional</strong> con iluminación de estudio 3 puntos, retoque profesional de todas las fotos (color, sombras, imperfecciones), entrega en alta resolución (3000x3000px mínimo), fondo blanco puro RGB 255,255,255 (o lifestyle según paquete), múltiples ángulos del producto, formatos JPG + PNG sin fondo, y entrega en 3-7 días hábiles según volumen.
               </p>
             </div>
 
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Por qué necesito fotografía profesional para mi ecommerce?</h3>
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-justify">
                 La <strong>fotografía profesional de producto</strong> aumenta la conversión de ecommerce hasta <strong>35%</strong> según estudios de conversión. El <strong>93% de compradores</strong> considera las fotos como el factor MÁS IMPORTANTE al decidir una compra online, superando precio y descripción. Fotos profesionales generan confianza, reducen devoluciones 40%, permiten precios premium, y te hacen competir con grandes marcas en marketplaces.
               </p>
             </div>
 
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Cuánto demora una sesión fotográfica de productos?</h3>
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-justify">
                 Una <strong>sesión típica</strong> fotografía 20 productos en 3-4 horas. Tú solo entregas los productos, nosotros hacemos fotografía, retoque y entrega. Entrega de fotos editadas: <strong>3-5 días hábiles</strong> para fondo blanco, 5-7 días para lifestyle. Para volúmenes grandes (50+ productos), coordinamos sesiones de múltiples días con entrega escalonada.
               </p>
             </div>
 
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Las fotos cumplen estándares de Amazon y Mercado Libre?</h3>
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-justify">
                 Sí, todas nuestras <strong>fotos de fondo blanco</strong> cumplen los estándares de Amazon, Mercado Libre y otros marketplaces: fondo blanco puro RGB 255,255,255, producto ocupa 85%+ del espacio, alta resolución mínima 1000px (entregamos 3000px), formato JPG, sin textos/logos/watermarks superpuestos. Sabemos los requerimientos de cada plataforma.
               </p>
             </div>
 
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Puedo usar las fotos lifestyle para publicidad en redes sociales?</h3>
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-justify">
                 Sí, las <strong>fotos lifestyle</strong> están optimizadas específicamente para redes sociales: formato vertical (9:16) para Instagram Stories/Reels, formato cuadrado (1:1) para feed, alta resolución para Facebook Ads, composición pensada para engagement. Entregas la imagen y derechos completos de uso comercial: publicidad, branding, catálogos, web, lo que necesites.
               </p>
             </div>
