@@ -1,32 +1,38 @@
 import ParticlesBackground from '@/components/Particles';
 import FeatureCard from '@/components/FeatureCard';
 import ProcessTimeline from '@/components/ProcessTimeline';
+import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Diseño Web Profesional en Concepción 2026 | WordPress Rápido - Alma Media',
-  description: 'Diseño web profesional en Concepción. WordPress optimizado, carga en <2s, SEO incluido. Desde $169k/año. +45 webs exitosas. Cotiza gratis.',
-  keywords: 'diseño web Concepción, diseño web profesional Chile, WordPress Concepción, sitio web Biobío, diseño web responsive, página web empresa',
+export const metadata: Metadata = {
+  title: 'Diseño Web Chile 2026 | WordPress Profesional Desde $169.000',
+  description: 'Diseño web profesional en Chile. WordPress optimizado, carga <2s, SEO incluido. Desde $169.000/año. +45 webs exitosas. Cotiza gratis.',
+  keywords: 'diseño web Chile, diseño web profesional, WordPress Chile, sitio web empresa, diseño web responsive, página web profesional, desarrollo web Chile',
+  authors: [{ name: 'Alma Media' }],
+  creator: 'Alma Media',
+  publisher: 'Alma Media',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://almamedia.cl'),
+  alternates: {
+    canonical: '/diseno-web',
+  },
   openGraph: {
-    title: 'Diseño Web Profesional en Concepción | WordPress que Vende',
-    description: 'Diseño web profesional en Concepción: WordPress optimizado, rápido y enfocado en conversión. +45 proyectos exitosos.',
-    type: 'website',
+    title: 'Diseño Web Chile 2026 | WordPress Profesional Desde $169.000',
+    description: 'Diseño web profesional: WordPress optimizado, rápido y enfocado en conversión. +45 proyectos exitosos.',
     url: 'https://almamedia.cl/diseno-web',
-    images: [{
-      url: 'https://almamedia.cl/img/diseno-web-concepcion.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'Diseño web profesional en Concepción - Alma Media'
-    }]
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Diseño Web Profesional en Concepción | Alma Media',
-    description: 'WordPress optimizado, rápido y enfocado en conversión. Desde $169k/año.',
-    images: ['https://almamedia.cl/img/diseno-web-concepcion.jpg']
-  },
-  alternates: {
-    canonical: 'https://almamedia.cl/diseno-web'
+    title: 'Diseño Web Chile 2026 | WordPress Profesional',
+    description: 'WordPress optimizado, rápido y enfocado en conversión. Desde $169.000/año.',
   },
   robots: {
     index: true,
@@ -37,8 +43,8 @@ export const metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
-    }
-  }
+    },
+  },
 };
 
 export default function DisenoWebPage() {
@@ -46,37 +52,119 @@ export default function DisenoWebPage() {
     <>
       <ParticlesBackground />
 
+      {/* Schema JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Service",
+                "name": "Diseño Web Profesional Chile",
+                "description": "Servicio profesional de diseño web en Chile. Sitios WordPress optimizados para velocidad, SEO y conversión. Diseño personalizado que genera clientes reales para tu negocio.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Alma Media",
+                  "url": "https://almamedia.cl"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Chile"
+                },
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": "Servicios de Diseño Web",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Landing Page"
+                      },
+                      "price": "169000",
+                      "priceCurrency": "CLP"
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Sitio Corporativo"
+                      },
+                      "price": "390000",
+                      "priceCurrency": "CLP"
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Ecommerce"
+                      },
+                      "price": "590000",
+                      "priceCurrency": "CLP"
+                    }
+                  ]
+                }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "¿Cuánto cuesta un diseño web profesional en Chile?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Diseño web profesional en Chile cuesta desde $169.000/año para landing page (incluye hosting + dominio), $390.000 pago único para sitio corporativo hasta 5 páginas, y desde $590.000 para ecommerce completo. Todos incluyen diseño personalizado, WordPress, SEO base, responsive y capacitación."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "¿Cuánto tarda en estar listo un sitio web?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Landing page: 1-2 semanas. Sitio corporativo: 4-5 semanas. Ecommerce: 6-8 semanas. El tiempo depende del alcance del proyecto y de la rapidez con que proporciones contenidos (textos, fotos, logos)."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "¿Puedo actualizar el sitio web yo mismo después del diseño?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Sí, completamente. WordPress es muy intuitivo. Incluimos capacitación de 1 hora para que puedas editar textos, subir fotos y crear entradas de blog sin programar. Para cambios de diseño complejo, podemos ayudarte con cotización aparte."
+                    }
+                  }
+                ]
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Breadcrumb */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8 pt-8">
         <div className="text-sm text-[var(--color-muted)]">
           <Link href="/" className="hover:text-[var(--color-accent)] transition-colors">Inicio</Link>
           <span className="mx-2">/</span>
-          <span>Diseño Web Profesional en Concepción</span>
+          <span>Diseño Web Profesional</span>
         </div>
       </div>
 
       {/* Hero Section */}
       <section className="relative z-10 py-12 md:py-16 text-center px-4 md:px-8">
         <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.1)] border border-[rgba(200,255,0,0.3)] rounded-full">
-          <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">Diseño Web Profesional en Concepción</span>
+          <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Diseño Web Profesional Chile</span>
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 max-w-4xl mx-auto leading-tight">
-          Diseño Web Profesional en Concepción: WordPress Rápido que Genera Ventas
+          Diseño Web Profesional: WordPress Rápido que Genera Ventas
         </h1>
 
-        {/* Featured Snippet Optimization */}
-        <div className="max-w-3xl mx-auto mb-8 bg-[rgba(200,255,0,0.05)] border border-[rgba(200,255,0,0.2)] rounded-lg p-6">
-          <p className="text-lg md:text-xl leading-[1.8]">
-            <strong className="text-[var(--color-accent)]">El diseño web profesional en Concepción</strong> es el proceso de crear sitios web WordPress optimizados para velocidad, SEO y conversión. En Alma Media diseñamos webs que cargan en menos de 2 segundos y están enfocadas en generar clientes para tu negocio.
-          </p>
-        </div>
-
-        <p className="text-base md:text-lg lg:text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed">
-          Creamos <strong className="text-white">sitios web profesionales en Concepción y Biobío</strong>: rápidos, optimizados para Google y diseñados para convertir visitas en clientes reales. Diseño web que vende, no solo "se ve bonito".
+        <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
+          <strong>El diseño web profesional en Chile</strong> crea sitios WordPress optimizados para velocidad, SEO y conversión que generan clientes reales. El 93% de las decisiones de compra comienzan con búsqueda en Google, y tu sitio web es tu vendedor 24/7. Ofrecemos diseño web personalizado desde $169.000/año para landing page (incluye hosting + dominio + SEO base), $390.000 pago único para sitio corporativo hasta 5 páginas con WordPress completo, y desde $590.000 para ecommerce con WooCommerce o Shopify. Todos nuestros diseños web cargan en menos de 2 segundos, son 100% responsive para móvil/tablet/desktop, incluyen SEO on-page completo (meta tags, schema markup, sitemap), Google Analytics integrado, formularios funcionales, HTTPS con SSL, backups automáticos, y capacitación de 1 hora para que puedas actualizar contenido tú mismo. Proceso transparente en 4-5 semanas: descubrimiento, diseño con mockups, desarrollo WordPress, contenido + SEO, lanzamiento. +45 sitios web exitosos en Chile con garantía de velocidad y 1 mes de soporte post-lanzamiento gratis.
         </p>
+
         <div className="flex gap-3 md:gap-4 justify-center flex-wrap px-4">
           <Link href="/contacto" className="px-6 md:px-8 py-3 md:py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">
-            🚀 Cotizar Mi Sitio Web Gratis
+            Cotizar Mi Sitio Web Gratis →
           </Link>
           <a href="#que-incluye" className="px-6 md:px-8 py-3 md:py-4 bg-transparent text-white border border-[var(--color-border)] font-bold rounded-lg hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] transition-all">
             Ver Qué Incluye
@@ -89,13 +177,16 @@ export default function DisenoWebPage() {
 
         {/* Por qué necesitas web */}
         <section id="por-que-web" className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Por qué necesitas un sitio web profesional en Concepción?</h2>
+          <h2 className="text-3xl md:text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Por qué Necesitas un Sitio Web Profesional?</h2>
           <div className="space-y-6">
-            <p className="text-lg md:text-xl leading-[1.8]">
-              En 2026, <strong className="text-[var(--color-accent)] font-bold">el 93% de las decisiones de compra comienzan con una búsqueda en Google</strong>. Si tu negocio en Concepción no tiene presencia web, o tiene un sitio lento y desactualizado, estás perdiendo clientes todos los días frente a tu competencia.
+            <p className="text-lg md:text-xl leading-[1.8] text-justify">
+              <strong className="text-[var(--color-accent)] font-bold">El 93% de las decisiones de compra comienzan con una búsqueda en Google.</strong> Si tu negocio en Chile no tiene presencia web profesional, o tiene un sitio lento y desactualizado, estás perdiendo clientes todos los días frente a tu competencia. Un diseño web profesional no es solo "estar en internet" — es tu vendedor 24/7, tu carta de presentación digital, y la base de toda tu estrategia de marketing digital para generar ventas reales.
             </p>
-            <p className="text-lg md:text-xl leading-[1.8]">
-              Un <Link href="/" className="text-[var(--color-accent)] hover:underline">diseño web profesional</Link> no es solo "estar en internet". Es tu vendedor 24/7, tu carta de presentación digital y la base de toda tu estrategia de <Link href="/seo-posicionamiento" className="text-[var(--color-accent)] hover:underline">marketing digital</Link>.
+            <p className="text-lg md:text-xl leading-[1.8] text-justify">
+              <strong className="text-[var(--color-accent)] font-bold">Un sitio web bien diseñado genera credibilidad instantánea:</strong> el 75% de usuarios admite juzgar la credibilidad de una empresa basándose únicamente en el diseño de su sitio web. Un diseño profesional con carga rápida, navegación intuitiva y contenido claro transmite confianza, mientras que un sitio amateur con errores, lentitud o diseño obsoleto hace que potenciales clientes busquen alternativas en segundos.
+            </p>
+            <p className="text-lg md:text-xl leading-[1.8] text-justify">
+              <strong className="text-[var(--color-accent)] font-bold">Tu sitio web trabaja mientras duermes:</strong> a diferencia de una tienda física o un vendedor, tu sitio web está disponible 24 horas al día, 7 días a la semana, 365 días al año. Clientes pueden conocer tus servicios, ver tus productos, comparar precios, leer testimonios y contactarte en cualquier momento — incluso a las 3 AM. Esta disponibilidad permanente multiplica tus oportunidades de venta sin aumentar costos operativos.
             </p>
           </div>
 
@@ -121,7 +212,7 @@ export default function DisenoWebPage() {
               <span className="text-[var(--color-accent)] text-xl flex-shrink-0">✓</span>
               <div>
                 <strong className="text-[var(--color-accent)] font-bold block mb-1">Alcance ilimitado:</strong>
-                <span className="text-[var(--color-muted)]">Llegas a clientes en toda la región del Biobío</span>
+                <span className="text-[var(--color-muted)]">Llegas a clientes en todo Chile y el mundo</span>
               </div>
             </div>
 
@@ -153,9 +244,9 @@ export default function DisenoWebPage() {
 
         {/* Qué incluye */}
         <section id="que-incluye" className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Qué incluye nuestro diseño web profesional?</h2>
-          <p className="text-lg md:text-xl mb-10 leading-[1.9] text-center max-w-3xl mx-auto">
-            No hacemos sitios genéricos con plantillas baratas. Cada <strong className="text-white">diseño web en Concepción</strong> está pensado para tu negocio específico, tu audiencia y tus objetivos de conversión. Esto es lo que incluimos:
+          <h2 className="text-3xl md:text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Qué Incluye Nuestro Diseño Web Profesional?</h2>
+          <p className="text-lg md:text-xl mb-10 leading-[1.9] text-center max-w-3xl mx-auto text-justify">
+            No hacemos sitios genéricos con plantillas baratas. Cada diseño web está pensado para tu negocio específico, tu audiencia y tus objetivos de conversión. Esto es lo que incluimos:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
@@ -226,9 +317,9 @@ export default function DisenoWebPage() {
 
         {/* Proceso */}
         <section id="proceso" className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Nuestro Proceso de Diseño Web en Concepción</h2>
-          <p className="text-lg md:text-xl mb-10 leading-[1.9] text-center max-w-3xl mx-auto">
-            Proceso transparente en 5 pasos. Sabes exactamente qué esperar en cada etapa del <strong className="text-white">diseño de tu sitio web</strong>.
+          <h2 className="text-3xl md:text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Nuestro Proceso de Diseño Web</h2>
+          <p className="text-lg md:text-xl mb-10 leading-[1.9] text-center max-w-3xl mx-auto text-justify">
+            Proceso transparente en 5 pasos. Sabes exactamente qué esperar en cada etapa del diseño de tu sitio web.
           </p>
 
           <ProcessTimeline
@@ -237,7 +328,7 @@ export default function DisenoWebPage() {
                 number: 1,
                 title: 'Descubrimiento',
                 subtitle: 'Semana 1',
-                description: 'Entrevista para entender tu negocio en Concepción, audiencia, competencia y objetivos. Definimos estructura del sitio, páginas necesarias y funcionalidades clave.',
+                description: 'Entrevista para entender tu negocio, audiencia, competencia y objetivos. Definimos estructura del sitio, páginas necesarias y funcionalidades clave.',
                 icon: '🔍',
               },
               {
@@ -276,35 +367,25 @@ export default function DisenoWebPage() {
         {/* Tecnologías */}
         <section id="tecnologias" className="mb-20">
           <h2 className="text-3xl md:text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Tecnologías que Usamos para Diseño Web</h2>
-          <p className="text-lg md:text-xl mb-8 leading-[1.9] text-center max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl mb-8 leading-[1.9] text-center max-w-3xl mx-auto text-justify">
             Trabajamos principalmente con <strong className="text-[var(--color-accent)] font-bold">WordPress</strong> — el CMS más popular del mundo, usado por el 43% de todos los sitios web profesionales.
           </p>
 
           <h3 className="text-xl md:text-2xl font-bold mb-6 mt-10">¿Por qué WordPress para tu sitio web?</h3>
           <ul className="space-y-4 mt-6 text-base md:text-lg">
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Flexible y escalable:</strong> Desde landing page simple hasta ecommerce complejo con cientos de productos</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Fácil de usar:</strong> Puedes editar contenido sin saber programar. Interfaz intuitiva.</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">SEO-friendly:</strong> Excelente estructura para <Link href="/seo-posicionamiento" className="text-[var(--color-accent)] hover:underline">posicionamiento en Google</Link></li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Miles de plugins:</strong> Funcionalidades adicionales cuando las necesites (reservas, membresías, etc.)</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Comunidad enorme:</strong> Soporte y recursos ilimitados en español</li>
+            <li className="leading-[1.8] text-justify"><strong className="text-[var(--color-accent)] font-bold">Flexible y escalable:</strong> Desde landing page simple hasta ecommerce complejo con cientos de productos</li>
+            <li className="leading-[1.8] text-justify"><strong className="text-[var(--color-accent)] font-bold">Fácil de usar:</strong> Puedes editar contenido sin saber programar. Interfaz intuitiva.</li>
+            <li className="leading-[1.8] text-justify"><strong className="text-[var(--color-accent)] font-bold">SEO-friendly:</strong> Excelente estructura para <Link href="/seo-posicionamiento" className="text-[var(--color-accent)] hover:underline">posicionamiento en Google</Link></li>
+            <li className="leading-[1.8] text-justify"><strong className="text-[var(--color-accent)] font-bold">Miles de plugins:</strong> Funcionalidades adicionales cuando las necesites (reservas, membresías, etc.)</li>
+            <li className="leading-[1.8] text-justify"><strong className="text-[var(--color-accent)] font-bold">Comunidad enorme:</strong> Soporte y recursos ilimitados en español</li>
           </ul>
-
-          <h3 className="text-xl md:text-2xl font-bold mb-6 mt-10">También trabajamos con:</h3>
-          <ul className="space-y-4 mt-6 text-base md:text-lg">
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Shopify:</strong> Para ecommerce que necesitan empezar a vender rápido sin complicaciones técnicas</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">HTML/CSS puro:</strong> Para landing pages ultra-rápidas y optimizadas al máximo</li>
-          </ul>
-
-          <p className="text-[var(--color-muted)] mt-8 italic text-base md:text-lg">
-            Nota: Shopify requiere plan mensual pagado por el cliente según tarifa vigente de Shopify ($29-299 USD/mes).
-          </p>
         </section>
 
         {/* Precios */}
         <section id="precios" className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Precios de Diseño Web en Concepción</h2>
-          <p className="text-lg md:text-xl mb-10 leading-[1.9] text-center max-w-3xl mx-auto">
-            Precios transparentes para <strong className="text-white">diseño web profesional en Concepción</strong>. Sin sorpresas ni costos ocultos. Lo que ves es lo que pagas.
+          <h2 className="text-3xl md:text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Precios de Diseño Web en Chile</h2>
+          <p className="text-lg md:text-xl mb-10 leading-[1.9] text-center max-w-3xl mx-auto text-justify">
+            Precios transparentes para diseño web profesional. Sin sorpresas ni costos ocultos. Lo que ves es lo que pagas.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
@@ -373,72 +454,66 @@ export default function DisenoWebPage() {
               </Link>
             </div>
           </div>
-
-          <div className="text-center mt-12 bg-[rgba(200,255,0,0.05)] border border-[rgba(200,255,0,0.2)] rounded-lg p-6">
-            <p className="text-[var(--color-accent)] font-bold mb-2">🎁 OFERTA: Auditoría SEO Gratuita</p>
-            <p className="text-[var(--color-muted)]">Con cada cotización de diseño web, incluimos una auditoría SEO básica gratis (valor $50.000)</p>
-          </div>
         </section>
 
-        {/* Garantía */}
-        <section id="garantia" className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Nuestra Garantía de Diseño Web</h2>
-          <p className="text-lg md:text-xl mb-8 leading-[1.9] text-center max-w-3xl mx-auto">
-            Estamos tan seguros de la calidad de nuestro <strong className="text-white">diseño web profesional</strong> que ofrecemos:
-          </p>
-
-          <ul className="space-y-4 text-base md:text-lg">
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">1 mes de soporte post-lanzamiento:</strong> Cualquier ajuste o corrección sin costo adicional</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Garantía de velocidad:</strong> Si tu sitio web carga en más de 3 segundos, lo optimizamos gratis</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Revisiones ilimitadas:</strong> Durante la etapa de diseño, ajustamos hasta que estés 100% satisfecho</li>
-            <li className="leading-[1.8]"><strong className="text-[var(--color-accent)] font-bold">Garantía mobile-friendly:</strong> Tu sitio se verá perfecto en todos los dispositivos o lo arreglamos</li>
-          </ul>
-        </section>
-
-        {/* FAQ */}
+        {/* FAQs */}
         <section id="faq" className="mb-20">
           <h2 className="text-3xl md:text-4xl font-black mb-10 text-[var(--color-accent)] text-center">Preguntas Frecuentes sobre Diseño Web</h2>
 
-          <div className="space-y-8">
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 hover:border-[var(--color-accent)] transition-all">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">¿Cuánto tarda en estar listo mi sitio web en Concepción?</h3>
-              <p className="text-base md:text-lg leading-[1.8] text-[var(--color-muted)]">
-                <strong className="text-white">Landing page: 1-2 semanas.</strong> Sitio corporativo: 4-5 semanas. Ecommerce: 6-8 semanas. El tiempo exacto depende del alcance del proyecto y de la rapidez con que proporciones contenidos (textos, fotos, logos).
+          <div className="space-y-6">
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
+              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Cuánto cuesta un diseño web profesional en Chile?</h3>
+              <p className="text-lg leading-relaxed text-justify">
+                El <strong>diseño web profesional en Chile</strong> cuesta desde <strong>$169.000/año</strong> para landing page de 1 página (incluye hosting + dominio .cl + SEO base + formulario + SSL), <strong>$390.000 pago único</strong> para sitio corporativo de hasta 5 páginas con WordPress completo, y desde <strong>$590.000</strong> para ecommerce con WooCommerce o Shopify. Todos incluyen diseño personalizado, 100% responsive, Google Analytics, capacitación y 1 mes de soporte gratis. Sin costos ocultos.
               </p>
             </div>
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 hover:border-[var(--color-accent)] transition-all">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">¿Puedo actualizar el sitio web yo mismo después del diseño?</h3>
-              <p className="text-base md:text-lg leading-[1.8] text-[var(--color-muted)]">
-                <strong className="text-white">Sí, completamente.</strong> WordPress es muy intuitivo. Te damos capacitación de 1 hora para que puedas editar textos, subir fotos, crear entradas de blog sin ayuda. Para cambios de diseño o funcionalidad compleja, podemos hacerlos nosotros con cotización aparte.
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
+              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Cuánto tarda en estar listo un sitio web?</h3>
+              <p className="text-lg leading-relaxed text-justify">
+                <strong>Landing page: 1-2 semanas.</strong> Sitio corporativo: 4-5 semanas. Ecommerce: 6-8 semanas. El tiempo exacto depende del alcance del proyecto y de la rapidez con que proporciones contenidos (textos, fotos, logos). Proceso incluye descubrimiento, diseño de mockups con revisiones ilimitadas, desarrollo WordPress, carga de contenido + SEO, y lanzamiento con capacitación. Plazos pueden acelerarse con fee de urgencia.
               </p>
             </div>
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 hover:border-[var(--color-accent)] transition-all">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">¿El hosting y dominio están incluidos en el precio?</h3>
-              <p className="text-base md:text-lg leading-[1.8] text-[var(--color-muted)]">
-                <strong className="text-white">En el Pack Web anual ($169.000/año), sí está todo incluido.</strong> En sitios corporativos y ecommerce, el diseño es pago único pero el hosting es aparte (desde $35.000/año). Podemos contratarlo nosotros o puedes usar tu hosting actual si ya tienes uno.
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
+              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Puedo actualizar el sitio web yo mismo después del diseño?</h3>
+              <p className="text-lg leading-relaxed text-justify">
+                <strong>Sí, completamente.</strong> WordPress es muy intuitivo — no necesitas saber programar. Te damos capacitación de 1 hora para que puedas editar textos, cambiar imágenes, crear nuevas páginas, agregar entradas de blog, y actualizar información de contacto sin ayuda. Para cambios de diseño estructurales o funcionalidades complejas (agregar pasarela de pago, sistema de membresías, etc.), podemos hacerlos con cotización aparte.
               </p>
             </div>
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 hover:border-[var(--color-accent)] transition-all">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">¿Qué pasa si quiero agregar funcionalidades después al sitio web?</h3>
-              <p className="text-base md:text-lg leading-[1.8] text-[var(--color-muted)]">
-                <strong className="text-white">Podemos agregar lo que necesites:</strong> blog, galería, sistema de reservas, membresías, pagos recurrentes, chat en vivo, etc. Se cotiza según complejidad. La mayoría de funcionalidades se pueden agregar sin rediseñar todo el sitio.
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
+              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿El hosting y dominio están incluidos en el precio?</h3>
+              <p className="text-lg leading-relaxed text-justify">
+                <strong>En el Pack Web anual ($169.000/año), sí está todo incluido:</strong> hosting optimizado, dominio .cl, SSL, backups semanales, soporte técnico básico. En sitios corporativos y ecommerce, el diseño es pago único pero el hosting es aparte (desde $35.000/año). Podemos contratarlo y gestionarlo nosotros por ti, o puedes usar tu hosting actual si ya tienes uno. El dominio se puede comprar por separado (desde $12.000/año .cl).
               </p>
             </div>
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 hover:border-[var(--color-accent)] transition-all">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">¿Trabajan con negocios de todo Chile o solo Concepción?</h3>
-              <p className="text-base md:text-lg leading-[1.8] text-[var(--color-muted)]">
-                <strong className="text-white">Atendemos empresas en todo Chile.</strong> Aunque estamos en Concepción, todo el proceso de diseño web puede ser 100% remoto. Trabajamos con negocios desde Arica a Punta Arenas. Solo necesitamos videollamadas y email para coordinar.
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
+              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿El diseño web incluye SEO o hay que pagarlo aparte?</h3>
+              <p className="text-lg leading-relaxed text-justify">
+                <strong>Incluimos SEO base sin costo extra:</strong> meta tags optimizados (title, description), URLs amigables, headings jerárquicos (H1, H2, H3), sitemap XML para Google, schema markup básico, integración Google Search Console, optimización de velocidad, y diseño responsive (señal SEO importante). Para <Link href="/seo-posicionamiento" className="text-[var(--color-accent)] hover:underline">SEO avanzado</Link> con creación de contenido mensual, link building, posicionamiento de keywords competitivas y auditorías técnicas, ofrecemos planes desde $249.000/mes.
               </p>
             </div>
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 hover:border-[var(--color-accent)] transition-all">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">¿El diseño web incluye SEO o hay que pagarlo aparte?</h3>
-              <p className="text-base md:text-lg leading-[1.8] text-[var(--color-muted)]">
-                <strong className="text-white">Incluimos SEO base sin costo extra:</strong> meta tags, títulos optimizados, sitemap, URLs amigables, schema básico. Para <Link href="/seo-posicionamiento" className="text-[var(--color-accent)] hover:underline">SEO avanzado</Link> (contenido mensual, link building, posicionamiento agresivo) tenemos planes desde $195.000/mes.
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
+              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Qué pasa si quiero agregar funcionalidades después al sitio web?</h3>
+              <p className="text-lg leading-relaxed text-justify">
+                <strong>Podemos agregar cualquier funcionalidad que necesites:</strong> blog para contenido SEO, galería de proyectos/portfolio, sistema de reservas online, área de membresías con login, pagos recurrentes/suscripciones, integración con CRM, chat en vivo, calculadoras personalizadas, calendarios de eventos, multiidioma. Se cotiza según complejidad (desde $50.000 para funcionalidades simples). La mayoría de funcionalidades se agregan con plugins de WordPress sin necesidad de rediseñar todo el sitio.
+              </p>
+            </div>
+
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
+              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Qué garantías ofrecen con el diseño web?</h3>
+              <p className="text-lg leading-relaxed text-justify">
+                Ofrecemos <strong>1 mes de soporte post-lanzamiento gratis</strong> para cualquier ajuste o corrección. <strong>Garantía de velocidad:</strong> si tu sitio web carga en más de 3 segundos en conexión normal, lo optimizamos gratis. <strong>Revisiones ilimitadas</strong> durante la etapa de diseño de mockups hasta que estés 100% satisfecho. <strong>Garantía mobile-friendly:</strong> tu sitio se verá perfecto en todos los dispositivos móviles o lo arreglamos sin costo. Backups automáticos semanales incluidos para proteger tu contenido.
+              </p>
+            </div>
+
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
+              <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Trabajan con negocios de todo Chile o solo ciertas ciudades?</h3>
+              <p className="text-lg leading-relaxed text-justify">
+                <strong>Atendemos empresas en todo Chile:</strong> Santiago, Concepción, Valparaíso, La Serena, Antofagasta, Temuco, Puerto Montt, Arica, Iquique, Rancagua, Talca — desde Arica hasta Punta Arenas. Todo el proceso de diseño web puede ser 100% remoto: reuniones por videollamada, coordinación por email/WhatsApp, revisión de mockups online, capacitación virtual. Solo necesitamos conexión a internet para trabajar juntos. También atendemos clientes fuera de Chile.
               </p>
             </div>
           </div>
@@ -447,145 +522,43 @@ export default function DisenoWebPage() {
 
       {/* CTA Final */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8 mb-20">
-        <div className="bg-gradient-to-br from-[var(--color-card)] to-[#151515] border-2 border-[var(--color-accent)] rounded-2xl p-8 md:p-16 text-center hover:shadow-[0_20px_60px_rgba(200,255,0,0.2)] transition-all">
-          <h2 className="text-3xl md:text-4xl font-black mb-6">¿Listo para lanzar tu sitio web profesional en Concepción?</h2>
-          <p className="text-lg md:text-xl text-[var(--color-muted)] mb-10 leading-[1.8] max-w-2xl mx-auto">
-            Cotiza tu proyecto de <strong className="text-white">diseño web</strong> sin compromiso. Te respondemos en menos de 24 horas con una propuesta personalizada y presupuesto detallado.
+        <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-8 md:p-16 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
+          <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta Especial <CurrentMonth /> 2026</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-black mb-6 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
+            ¿Listo para tu Sitio Web Profesional?
+          </h2>
+          <p className="text-xl text-[var(--color-muted)] mb-10 leading-relaxed max-w-2xl mx-auto text-justify">
+            Únete a <strong className="text-[var(--color-accent)]">+45 empresas</strong> con sitios web que generan clientes reales. Cotiza tu proyecto sin compromiso:
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-3xl mx-auto">
+            <div className="bg-[rgba(200,255,0,0.05)] border border-[rgba(200,255,0,0.2)] rounded-lg p-4">
+              <p className="text-sm">✓ Cotización gratis</p>
+              <p className="text-xs text-[var(--color-muted)]">Respuesta en 24h</p>
+            </div>
+            <div className="bg-[rgba(200,255,0,0.05)] border border-[rgba(200,255,0,0.2)] rounded-lg p-4">
+              <p className="text-sm">✓ Auditoría SEO gratis</p>
+              <p className="text-xs text-[var(--color-muted)]">Valor $50.000</p>
+            </div>
+            <div className="bg-[rgba(200,255,0,0.05)] border border-[rgba(200,255,0,0.2)] rounded-lg p-4">
+              <p className="text-sm">✓ 1 mes soporte gratis</p>
+              <p className="text-xs text-[var(--color-muted)]">Post-lanzamiento</p>
+            </div>
+          </div>
           <div className="flex gap-3 md:gap-4 justify-center flex-wrap">
-            <Link href="/contacto" className="px-6 md:px-8 py-3 md:py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all hover:scale-105">
-              🚀 Cotizar Mi Sitio Web Ahora
+            <Link href="/contacto" className="px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] text-lg font-bold rounded-lg hover:scale-105 hover:shadow-[0_15px_40px_rgba(200,255,0,0.4)] transition-all">
+              Cotizar Mi Sitio Web Ahora →
             </Link>
-            <Link href="/seo-posicionamiento" className="px-6 md:px-8 py-3 md:py-4 bg-transparent text-white border border-[var(--color-border)] font-bold rounded-lg hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] transition-all">
-              Ver Servicios de SEO
+            <Link href="/packs-completos" className="px-8 py-4 bg-transparent text-white border-2 border-[var(--color-border)] font-bold rounded-lg hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] transition-all">
+              Ver Packs Completos
             </Link>
           </div>
           <p className="text-sm text-[var(--color-muted)] mt-6">
-            ⭐ +45 sitios web exitosos en Concepción y Biobío • Respuesta en 24 horas
+            ⭐ +45 sitios web exitosos en Chile • Garantía de velocidad • Soporte incluido
           </p>
         </div>
       </div>
-
-      {/* Schema.org JSON-LD - Service + LocalBusiness + FAQ */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Service",
-                "serviceType": "Diseño Web Profesional",
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Alma Media",
-                  "url": "https://almamedia.cl"
-                },
-                "areaServed": {
-                  "@type": "City",
-                  "name": "Concepción",
-                  "containedIn": {
-                    "@type": "AdministrativeArea",
-                    "name": "Región del Biobío"
-                  }
-                },
-                "hasOfferCatalog": {
-                  "@type": "OfferCatalog",
-                  "name": "Servicios de Diseño Web",
-                  "itemListElement": [
-                    {
-                      "@type": "Offer",
-                      "itemOffered": {
-                        "@type": "Service",
-                        "name": "Landing Page"
-                      },
-                      "price": "169000",
-                      "priceCurrency": "CLP"
-                    },
-                    {
-                      "@type": "Offer",
-                      "itemOffered": {
-                        "@type": "Service",
-                        "name": "Sitio Corporativo"
-                      },
-                      "price": "390000",
-                      "priceCurrency": "CLP"
-                    },
-                    {
-                      "@type": "Offer",
-                      "itemOffered": {
-                        "@type": "Service",
-                        "name": "Ecommerce"
-                      },
-                      "price": "590000",
-                      "priceCurrency": "CLP"
-                    }
-                  ]
-                }
-              },
-              {
-                "@type": "LocalBusiness",
-                "name": "Alma Media - Diseño Web Concepción",
-                "description": "Agencia de diseño web profesional en Concepción. Sitios WordPress rápidos, optimizados para SEO y enfocados en conversión.",
-                "url": "https://almamedia.cl/diseno-web",
-                "telephone": "+56-9-1234-5678",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Concepción",
-                  "addressRegion": "Biobío",
-                  "addressCountry": "CL"
-                },
-                "geo": {
-                  "@type": "GeoCoordinates",
-                  "latitude": "-36.8201",
-                  "longitude": "-73.0444"
-                },
-                "openingHoursSpecification": {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  "opens": "09:00",
-                  "closes": "18:00"
-                },
-                "priceRange": "$$$",
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": "4.8",
-                  "reviewCount": "45"
-                }
-              },
-              {
-                "@type": "FAQPage",
-                "mainEntity": [
-                  {
-                    "@type": "Question",
-                    "name": "¿Cuánto tarda en estar listo mi sitio web en Concepción?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Landing page: 1-2 semanas. Sitio corporativo: 4-5 semanas. Ecommerce: 6-8 semanas. Depende del alcance y de la rapidez con que proporciones contenidos."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "¿El hosting y dominio están incluidos en el precio?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "En el Pack Web anual ($169.000/año), sí. En sitios corporativos y ecommerce, el hosting es aparte (desde $35.000/año)."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "¿Puedo actualizar el sitio web yo mismo después?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Sí. WordPress es muy intuitivo. Te damos capacitación de 1 hora para que puedas editar textos, subir fotos y crear entradas de blog sin programar."
-                    }
-                  }
-                ]
-              }
-            ]
-          })
-        }}
-      />
     </>
   );
 }
