@@ -458,7 +458,7 @@ export default function FotografiaProductoPage() {
           <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Fotos que Venden?
           </h2>
-          <p className="text-xl text-[var(--color-muted)] mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-[var(--color-muted)] mb-8 max-w-2xl mx-auto leading-relaxed text-justify">
             Únete a <strong className="text-[var(--color-accent)]">+500 productos fotografiados</strong> con resultados medibles. Cotiza gratis tu sesión fotográfica:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-3xl mx-auto">
