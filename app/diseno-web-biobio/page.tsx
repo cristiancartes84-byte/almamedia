@@ -152,6 +152,78 @@ export default function DisenoWebBiobioPage() {
           </div>
         </section>
 
+        {/* Precios */}
+        <section className="mb-20">
+          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Precios Diseño Web en Región del Biobío</h2>
+          <p className="text-xl mb-10 leading-[1.8] text-center max-w-3xl mx-auto text-justify">
+            Precios transparentes para toda la región. Sin sorpresas ni costos ocultos:
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all flex flex-col">
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Landing Page</h3>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$169.000</p>
+                <p className="text-[var(--color-muted)] mb-6">CLP/año (hosting incluido)</p>
+                <ul className="space-y-2 text-sm mb-6">
+                  <li>✓ 1 página optimizada</li>
+                  <li>✓ Diseño responsive</li>
+                  <li>✓ SEO local Biobío</li>
+                  <li>✓ Formulario contacto</li>
+                  <li>✓ Hosting + dominio .cl</li>
+                  <li>✓ SSL (HTTPS) incluido</li>
+                </ul>
+              </div>
+              <Link href="/contacto" className="mt-auto block text-center px-6 py-3 bg-transparent border border-[var(--color-accent)] text-[var(--color-accent)] font-bold rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
+                Cotizar
+              </Link>
+            </div>
+
+            <div className="bg-[var(--color-card)] border-2 border-[var(--color-accent)] rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all relative flex flex-col">
+              <div className="absolute top-0 right-0 bg-[var(--color-accent)] text-[var(--color-bg)] px-4 py-1 rounded-bl-lg rounded-tr-lg text-xs font-bold">
+                MÁS POPULAR
+              </div>
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Sitio Corporativo</h3>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$390.000</p>
+                <p className="text-[var(--color-muted)] mb-6">CLP (pago único)</p>
+                <ul className="space-y-2 text-sm mb-6">
+                  <li>✓ Hasta 5 páginas</li>
+                  <li>✓ Diseño personalizado</li>
+                  <li>✓ WordPress completo</li>
+                  <li>✓ SEO optimizado</li>
+                  <li>✓ Analytics + formularios</li>
+                  <li>✓ Capacitación incluida</li>
+                  <li>✓ 1 mes soporte gratis</li>
+                </ul>
+              </div>
+              <Link href="/contacto" className="mt-auto block text-center px-6 py-3 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:scale-105 transition-all">
+                Cotizar
+              </Link>
+            </div>
+
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all flex flex-col">
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Ecommerce</h3>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $590.000</p>
+                <p className="text-[var(--color-muted)] mb-6">CLP (según productos)</p>
+                <ul className="space-y-2 text-sm mb-6">
+                  <li>✓ WordPress + WooCommerce</li>
+                  <li>✓ O Shopify</li>
+                  <li>✓ Pagos online (Webpay/Flow)</li>
+                  <li>✓ Gestión de productos</li>
+                  <li>✓ Carro de compra</li>
+                  <li>✓ Envíos configurados</li>
+                  <li>✓ Capacitación ecommerce</li>
+                </ul>
+              </div>
+              <Link href="/contacto" className="mt-auto block text-center px-6 py-3 bg-transparent border border-[var(--color-accent)] text-[var(--color-accent)] font-bold rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
+                Cotizar
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Final */}
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
