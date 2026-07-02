@@ -59,7 +59,7 @@ export default function Home() {
       <ParticlesBackground />
 
       {/* Hero */}
-      <section className="relative z-10 min-h-[90vh] flex flex-col items-center justify-center px-8 text-center pt-24 pb-16">
+      <section className="relative z-10 min-h-[90vh] flex flex-col items-center justify-center px-4 md:px-8 text-center pt-20 md:pt-24 pb-12 md:pb-16">
         <div className="max-w-[900px]">
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-[rgba(200,255,0,0.1)] border border-[rgba(200,255,0,0.3)] rounded-[20px] text-[var(--color-accent)] text-[0.75rem] font-bold uppercase tracking-[0.1em]">
@@ -67,23 +67,23 @@ export default function Home() {
             </span>
           </div>
 
-          <h1 className="text-[clamp(3rem,6vw,5rem)] font-black leading-[1.1] mb-6 tracking-[-0.02em]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.15] mb-6 tracking-[-0.02em]">
             Transforma tu Negocio con Marketing Digital que Genera Resultados
           </h1>
 
-          <p className="text-xl text-[var(--color-muted)] mb-4 leading-[1.7]">
+          <p className="text-base md:text-lg lg:text-xl text-[var(--color-muted)] mb-4 leading-[1.7]">
             Agencia especializada en <strong className="text-white">diseño web profesional, SEO y contenido visual</strong> para empresas en Concepción y Biobío.
           </p>
 
-          <p className="text-lg text-[var(--color-accent)] mb-10 font-semibold">
+          <p className="text-sm md:text-base lg:text-lg text-[var(--color-accent)] mb-10 font-semibold">
             ✓ Más de 45 proyectos exitosos · ✓ Respuesta en 24 horas · ✓ Cotización gratuita
           </p>
 
-          <div className="flex gap-4 flex-wrap justify-center mb-12">
-            <Link href="/contacto" className="px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-md hover:transform hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all text-[0.95rem]">
+          <div className="flex gap-3 md:gap-4 flex-wrap justify-center mb-8 md:mb-12 px-4">
+            <Link href="/contacto" className="px-6 md:px-8 py-3 md:py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-md hover:transform hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all text-sm md:text-base">
               🚀 Cotizar Proyecto Gratis
             </Link>
-            <Link href="#servicios" className="px-8 py-4 bg-transparent border border-[var(--color-border)] font-bold rounded-md hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] transition-all text-[0.95rem]">
+            <Link href="#servicios" className="px-6 md:px-8 py-3 md:py-4 bg-transparent border border-[var(--color-border)] font-bold rounded-md hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] transition-all text-sm md:text-base">
               Ver Servicios
             </Link>
           </div>
@@ -129,14 +129,14 @@ export default function Home() {
       </section>
 
       {/* Por qué Alma Media */}
-      <section className="relative z-10 max-w-[1200px] mx-auto px-8 py-20">
-        <div className="text-center mb-16">
+      <section className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-20">
+        <div className="text-center mb-12 md:mb-16">
           <div className="flex items-center gap-2 justify-center mb-4">
             <div className="w-2 h-2 bg-[var(--color-accent)] rounded-full"></div>
-            <span className="text-[var(--color-accent)] font-semibold text-[0.85rem] uppercase tracking-[0.1em]">Por Qué Elegirnos</span>
+            <span className="text-[var(--color-accent)] font-semibold text-[0.75rem] md:text-[0.85rem] uppercase tracking-[0.1em]">Por Qué Elegirnos</span>
           </div>
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-black mb-4">Alma Media es diferente</h2>
-          <p className="text-[1.1rem] text-[var(--color-muted)] max-w-[700px] mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">Alma Media es diferente</h2>
+          <p className="text-base md:text-lg lg:text-xl text-[var(--color-muted)] max-w-[700px] mx-auto px-4">
             No somos una agencia más. Somos tu socio estratégico en crecimiento digital.
           </p>
         </div>
@@ -163,14 +163,14 @@ export default function Home() {
       </section>
 
       {/* Servicios */}
-      <section id="servicios" className="relative z-10 max-w-[1400px] mx-auto px-8 py-20">
-        <div className="text-center mb-16">
+      <section id="servicios" className="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 py-12 md:py-20">
+        <div className="text-center mb-12 md:mb-16">
           <div className="flex items-center gap-2 justify-center mb-4">
             <div className="w-2 h-2 bg-[var(--color-accent)] rounded-full"></div>
-            <span className="text-[var(--color-accent)] font-semibold text-[0.85rem] uppercase tracking-[0.1em]">Nuestros Servicios</span>
+            <span className="text-[var(--color-accent)] font-semibold text-[0.75rem] md:text-[0.85rem] uppercase tracking-[0.1em]">Nuestros Servicios</span>
           </div>
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-black mb-4">Marketing Digital que Genera Ventas</h2>
-          <p className="text-[1.1rem] text-[var(--color-muted)] max-w-[700px] mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">Marketing Digital que Genera Ventas</h2>
+          <p className="text-base md:text-lg lg:text-xl text-[var(--color-muted)] max-w-[700px] mx-auto px-4">
             Servicios enfocados en resultados reales: más visitas, más clientes, más ventas.
           </p>
         </div>
@@ -190,8 +190,8 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="relative z-10 py-20 px-8 text-center border-t border-b border-[var(--color-border)]">
-        <h2 className="text-2xl font-bold mb-12">Resultados que Hablan por Sí Solos</h2>
+      <section className="relative z-10 py-12 md:py-20 px-4 md:px-8 text-center border-t border-b border-[var(--color-border)]">
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12">Resultados que Hablan por Sí Solos</h2>
         <div className="grid md:grid-cols-4 gap-12 max-w-[1200px] mx-auto">
           <div>
             <h3 className="text-[4rem] font-black text-[var(--color-accent)] mb-2">45+</h3>
@@ -213,24 +213,24 @@ export default function Home() {
       </section>
 
       {/* Garantía */}
-      <section className="relative z-10 max-w-[900px] mx-auto px-8 py-20">
-        <div className="bg-gradient-to-br from-[var(--color-card)] to-[#151515] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center">
-          <div className="text-6xl mb-6">🛡️</div>
-          <h2 className="text-3xl font-black mb-4">Garantía de Satisfacción Total</h2>
-          <p className="text-lg text-[var(--color-muted)] mb-6">
+      <section className="relative z-10 max-w-[900px] mx-auto px-4 md:px-8 py-12 md:py-20">
+        <div className="bg-gradient-to-br from-[var(--color-card)] to-[#151515] border-2 border-[var(--color-accent)] rounded-2xl p-6 md:p-12 text-center">
+          <div className="text-5xl md:text-6xl mb-4 md:mb-6">🛡️</div>
+          <h2 className="text-2xl md:text-3xl font-black mb-4">Garantía de Satisfacción Total</h2>
+          <p className="text-base md:text-lg text-[var(--color-muted)] mb-6">
             Si tu sitio web carga en más de 3 segundos, <strong className="text-white">lo optimizamos gratis</strong>.
             <br/>1 mes de soporte post-lanzamiento incluido. Revisiones ilimitadas durante el diseño.
           </p>
-          <p className="text-[var(--color-accent)] font-bold">
+          <p className="text-sm md:text-base text-[var(--color-accent)] font-bold">
             ✓ Garantía de velocidad · ✓ Revisiones ilimitadas · ✓ Soporte incluido
           </p>
         </div>
       </section>
 
       {/* FAQ Breve */}
-      <section className="relative z-10 max-w-[800px] mx-auto px-8 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-black mb-4">Preguntas Frecuentes</h2>
+      <section className="relative z-10 max-w-[800px] mx-auto px-4 md:px-8 py-12 md:py-20">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">Preguntas Frecuentes</h2>
         </div>
 
         <div className="space-y-6">
@@ -252,21 +252,21 @@ export default function Home() {
       </section>
 
       {/* CTA Final */}
-      <section className="relative z-10 py-24 px-8 text-center bg-[radial-gradient(circle_at_center,rgba(200,255,0,0.08),transparent_70%)]">
-        <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-black leading-[1.2] mb-6">
+      <section className="relative z-10 py-16 md:py-24 px-4 md:px-8 text-center bg-[radial-gradient(circle_at_center,rgba(200,255,0,0.08),transparent_70%)]">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.2] mb-6">
           ¿Listo para Transformar tu Negocio?
         </h2>
-        <p className="text-xl text-[var(--color-muted)] mb-4 max-w-[600px] mx-auto">
+        <p className="text-base md:text-lg lg:text-xl text-[var(--color-muted)] mb-4 max-w-[600px] mx-auto px-4">
           Cotiza tu proyecto sin compromiso. Te respondemos en menos de 24 horas con una propuesta personalizada.
         </p>
-        <p className="text-lg text-[var(--color-accent)] mb-10 font-semibold">
+        <p className="text-base md:text-lg text-[var(--color-accent)] mb-8 md:mb-10 font-semibold">
           🎁 Auditoría SEO gratuita con cada cotización
         </p>
-        <div className="flex gap-4 justify-center flex-wrap">
-          <Link href="/contacto" className="px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-md hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all text-[0.95rem]">
+        <div className="flex gap-3 md:gap-4 justify-center flex-wrap px-4">
+          <Link href="/contacto" className="px-6 md:px-8 py-3 md:py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-md hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all text-sm md:text-base">
             Cotizar Mi Proyecto Ahora
           </Link>
-          <Link href="/nosotros" className="px-8 py-4 bg-transparent border border-[var(--color-border)] font-bold rounded-md hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] transition-all text-[0.95rem]">
+          <Link href="/nosotros" className="px-6 md:px-8 py-3 md:py-4 bg-transparent border border-[var(--color-border)] font-bold rounded-md hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] transition-all text-sm md:text-base">
             Conocer Más
           </Link>
         </div>
