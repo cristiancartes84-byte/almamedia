@@ -166,13 +166,21 @@ export default function Home() {
             <p className="text-sm text-[var(--color-muted)]">Tecnología, seguridad y soporte profesional garantizado</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             <div className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 text-center hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all cursor-default">
               <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-[var(--color-accent)] to-[#9FCC00] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🏆</span>
               </div>
               <p className="text-sm font-bold mb-1">Google Partner</p>
               <p className="text-[0.7rem] text-[var(--color-muted)]">Certificado oficial</p>
+            </div>
+
+            <div className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 text-center hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all cursor-default">
+              <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-[var(--color-accent)] to-[#9FCC00] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="text-2xl">📱</span>
+              </div>
+              <p className="text-sm font-bold mb-1">Diseño Responsive</p>
+              <p className="text-[0.7rem] text-[var(--color-muted)]">Mobile-first</p>
             </div>
 
             <div className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 text-center hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all cursor-default">
@@ -199,7 +207,7 @@ export default function Home() {
               <p className="text-[0.7rem] text-[var(--color-muted)]">Respuesta rápida</p>
             </div>
 
-            <div className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 text-center hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all cursor-default col-span-2 md:col-span-1">
+            <div className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 text-center hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all cursor-default">
               <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-[var(--color-accent)] to-[#9FCC00] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                 <span className="text-2xl">✅</span>
               </div>
