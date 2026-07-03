@@ -1,0 +1,21 @@
+# almamedia.cl - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://almamedia.cl/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+
+# Allow crawling of all service pages
+Allow: /diseno-web
+Allow: /seo-posicionamiento
+Allow: /fotografia-producto
+Allow: /video-producto
+Allow: /servicios
+
+# Crawl-delay (optional, para bots agresivos)
+Crawl-delay: 1
