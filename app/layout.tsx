@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Analytics from "@/components/Analytics";
 
 export const metadata: Metadata = {
   title: "Alma Media - Marketing Digital Biobío",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
       </head>
       <body className="antialiased">
+        <Analytics />
         <Header />
         <main>{children}</main>
         <Footer />
