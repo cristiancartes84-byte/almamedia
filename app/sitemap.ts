@@ -202,5 +202,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.85,
     },
+    {
+      url: `${baseUrl}/blog/cuanto-cuesta-seo-chile`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/blog/landing-page-vs-sitio-web`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/blog/fotografia-producto-vale-la-pena`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/como-elegir-agencia-marketing-digital-concepcion`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ]
 }
