@@ -5,15 +5,15 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '¿Cuánto Cuesta un Sitio Web en Concepción? [Precios Actualizados]',
-  description: 'Precios reales de diseño web en Concepción: Landing pages desde $169.000, sitios corporativos $390.000, ecommerce $590.000. Guía completa con qué incluye cada opción.',
-  keywords: 'cuanto cuesta diseño web Concepción, precios sitio web Concepción, diseño web precio Chile',
+  title: 'Cómo Elegir Agencia de Marketing Digital en Concepción [Guía]',
+  description: '7 criterios para elegir la agencia de marketing digital correcta en Concepción. Evita errores costosos y contrata la agencia que realmente hará crecer tu negocio.',
+  keywords: 'como elegir agencia marketing digital, agencia marketing Concepción, mejor agencia digital Chile',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
   publisher: 'Alma Media',
   metadataBase: new URL('https://almamedia.cl'),
   alternates: {
-    canonical: '/blog/cuanto-cuesta-diseno-web-concepcion',
+    canonical: '/blog/como-elegir-agencia-marketing-digital-concepcion',
   },
 };
 
@@ -28,145 +28,155 @@ export default function ArticlePage() {
           <span className="mx-2">/</span>
           <Link href="/blog" className="hover:text-[var(--color-accent)] transition-colors">Blog</Link>
           <span className="mx-2">/</span>
-          <span>Precios Diseño Web</span>
+          <span>Elegir Agencia</span>
         </div>
 
         <article className="relative z-10 py-8">
           <div className="mb-8">
             <div className="flex items-center gap-4 mb-6">
               <span className="px-3 py-1 bg-[rgba(200,255,0,0.1)] border border-[rgba(200,255,0,0.3)] rounded-full text-xs font-bold text-[var(--color-accent)]">
-                Precios
+                Guías
               </span>
-              <span className="text-sm text-[var(--color-muted)]">8 min lectura</span>
+              <span className="text-sm text-[var(--color-muted)]">9 min lectura</span>
               <span className="text-sm text-[var(--color-muted)]"><CurrentMonth /> <CurrentYear /></span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-              ¿Cuánto Cuesta un Sitio Web en Concepción? [Precios Reales <CurrentYear />]
+              Cómo Elegir Agencia de Marketing Digital en Concepción [<CurrentYear />]
             </h1>
 
             <p className="text-xl text-[var(--color-muted)] leading-relaxed text-justify">
-              <strong className="text-white">El 73% de negocios en Concepción pierde clientes por no tener sitio web.</strong> Si estás buscando cuánto cuesta diseñar un sitio web profesional en Concepción, esta guía te da precios reales actualizados para <CurrentMonth /> <CurrentYear />, qué incluye cada opción, y cómo elegir según tu tipo de negocio. Precios desde $169.000/año para landing page hasta $590.000+ para ecommerce completo con todas las funcionalidades.
+              <strong className="text-white">El 64% de empresas cambia de agencia en el primer año por resultados insatisfactorios.</strong> Si estás buscando agencia de marketing digital en Concepción, esta guía te enseña los 7 criterios clave para elegir correctamente, qué preguntas hacer antes de contratar, y red flags que indican que debes huir. Aprende a diferenciar agencias serias de vendedores de humo.
             </p>
           </div>
 
           <div className="prose prose-invert max-w-none">
 
-            <h2 className="text-3xl font-black mb-6 mt-12 text-[var(--color-accent)]">Precios Diseño Web Concepción por Tipo</h2>
+            <h2 className="text-3xl font-black mb-6 mt-12 text-[var(--color-accent)]">Los 7 Criterios para Elegir Agencia</h2>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-12 not-prose">
-              <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">Landing Page</h3>
-                <div className="text-4xl font-black mb-4">$169.000</div>
-                <p className="text-sm text-[var(--color-muted)] mb-4">CLP/año (hosting incluido)</p>
-                <ul className="space-y-2 text-sm">
-                  <li>✓ 1 página optimizada</li>
-                  <li>✓ Responsive mobile</li>
-                  <li>✓ Formulario contacto</li>
-                  <li>✓ SEO base</li>
-                  <li>✓ Hosting 1 año</li>
-                </ul>
-              </div>
+            <h3 className="text-2xl font-bold mb-4 mt-8">1. Casos de Éxito Verificables</h3>
+            <p className="text-lg leading-[1.8] text-justify mb-6">
+              <strong className="text-[var(--color-accent)]">Qué preguntar:</strong> "¿Pueden mostrarme 3 casos de clientes similares a mi negocio con resultados medibles?" NO basta que te muestren sitios web bonitos. Necesitas ver ROI real: aumentó tráfico X%, generó Y leads mensuales, aumentó ventas Z%. Si la agencia no puede mostrarte datos concretos, es porque no los tiene (o los resultados fueron malos). Pide contacto de 1-2 clientes para referencias. Agencia seria te conecta con clientes satisfechos. Agencia dudosa pone excusas ("confidencialidad", "no podemos", etc.).
+            </p>
 
-              <div className="bg-[var(--color-card)] border-2 border-[var(--color-accent)] rounded-xl p-6 relative">
-                <div className="absolute top-0 right-0 bg-[var(--color-accent)] text-[var(--color-bg)] px-3 py-1 rounded-bl-lg rounded-tr-lg text-xs font-bold">
-                  MÁS POPULAR
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">Sitio Corporativo</h3>
-                <div className="text-4xl font-black mb-4">$390.000</div>
-                <p className="text-sm text-[var(--color-muted)] mb-4">CLP setup + $9.900/mes</p>
-                <ul className="space-y-2 text-sm">
-                  <li>✓ Hasta 10 páginas</li>
-                  <li>✓ Blog incluido</li>
-                  <li>✓ Email corporativo</li>
-                  <li>✓ Google Analytics</li>
-                  <li>✓ Capacitación CMS</li>
-                </ul>
-              </div>
+            <h3 className="text-2xl font-bold mb-4 mt-8">2. Especialización en Tu Industria</h3>
+            <p className="text-lg leading-[1.8] text-justify mb-6">
+              <strong className="text-[var(--color-accent)]">Qué preguntar:</strong> "¿Han trabajado con negocios de [tu rubro] antes?" Agencia que ya trabajó con restaurantes entiende estacionalidad, Google Maps, reseñas. Agencia que trabajó con ecommerce entiende conversión, carrito abandonado, retargeting. Agencia que trabajó con servicios B2B entiende ciclos de venta largos, lead nurturing, LinkedIn. NO necesariamente tiene que ser experta en tu rubro exacto, pero experiencia en industria similar acorta curva de aprendizaje y reduce errores costosos. Red flag: agencia que dice "trabajamos con TODO tipo de negocio" sin poder mostrar experiencia específica.
+            </p>
 
-              <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">Ecommerce</h3>
-                <div className="text-4xl font-black mb-4">$590.000+</div>
-                <p className="text-sm text-[var(--color-muted)] mb-4">CLP setup + $14.900/mes</p>
-                <ul className="space-y-2 text-sm">
-                  <li>✓ WooCommerce</li>
-                  <li>✓ Pasarelas de pago</li>
-                  <li>✓ Hasta 100 productos</li>
-                  <li>✓ Carrito optimizado</li>
-                  <li>✓ Capacitación completa</li>
-                </ul>
-              </div>
+            <h3 className="text-2xl font-bold mb-4 mt-8">3. Servicios Integrados (No Subcontratados)</h3>
+            <p className="text-lg leading-[1.8] text-justify mb-6">
+              <strong className="text-[var(--color-accent)]">Qué preguntar:</strong> "¿Qué servicios hacen in-house y qué subcontratan?" Agencia seria tiene equipo interno para servicios core: diseñador, desarrollador, especialista SEO, creador contenido. Esto asegura calidad, comunicación rápida, alineación estratégica. Es normal subcontratar servicios especializados ocasionales (video producción, fotografía aérea). Red flag: agencia 1-2 personas que subcontrata TODO. Pierdes control de calidad, tiempos se alargan, comunicación se complica. Terminas pagando intermediario sin valor agregado.
+            </p>
+
+            <h3 className="text-2xl font-bold mb-4 mt-8">4. Transparencia en Reportes y Accesos</h3>
+            <p className="text-lg leading-[1.8] text-justify mb-6">
+              <strong className="text-[var(--color-accent)]">Qué preguntar:</strong> "¿Qué reportes recibiré? ¿Tendré acceso a Google Analytics, Search Console, Google Ads?" Agencia seria te da acceso COMPLETO a todas las herramientas. Son TUS datos, TU cuenta Google Ads, TU sitio web. Reportes mensuales con métricas claras: visitas, conversiones, ROI, próximos pasos. Red flag gigante: agencia que NO te da accesos ("lo manejamos nosotros", "es complicado", "no es necesario"). Esto es SECUESTRO de datos. Si terminas contrato, pierdes todo. También permite ocultar resultados malos. Exige accesos como propietario desde día 1.
+            </p>
+
+            <h3 className="text-2xl font-bold mb-4 mt-8">5. Estrategia Clara Antes de Firmar</h3>
+            <p className="text-lg leading-[1.8] text-justify mb-6">
+              <strong className="text-[var(--color-accent)]">Qué preguntar:</strong> "¿Cuál sería la estrategia para mi negocio?" Agencia seria te presenta propuesta estratégica ANTES de firmar: análisis de situación actual, objetivos específicos, tácticas a usar, cronograma, KPIs a medir. No necesita ser súper detallado (todavía no eres cliente), pero demuestra que pensaron en TU caso específico. Red flag: agencia que vende "paquetes genéricos" sin adaptación. "Plan Básico: 3 posts Instagram + 1 blog/mes" sin saber si Instagram es relevante para TU negocio. Marketing efectivo es estratégico, no copy-paste.
+            </p>
+
+            <h3 className="text-2xl font-bold mb-4 mt-8">6. Presupuesto Realista vs Tu Objetivo</h3>
+            <p className="text-lg leading-[1.8] text-justify mb-6">
+              <strong className="text-[var(--color-accent)]">Qué preguntar:</strong> "Con mi presupuesto de $X, ¿qué resultados puedo esperar realistamente?" Agencia honesta te dirá qué es alcanzable con tu presupuesto y qué NO. Ejemplo: Con $200k/mes puedes hacer SEO básico + contenido, pero NO puedes competir con marcas grandes en Google Ads. Con $50k/mes solo alcanza para gestión redes sociales básica. Red flag: agencia que promete "dominación de mercado" con presupuesto pequeño. Marketing cuesta. Si tu presupuesto es limitado, agencia debe priorizar tácticas con mejor ROI para tu caso, no venderte todo y entregar poco.
+            </p>
+
+            <h3 className="text-2xl font-bold mb-4 mt-8">7. Compromiso a Largo Plazo (No Ventas Rápidas)</h3>
+            <p className="text-lg leading-[1.8] text-justify mb-6">
+              <strong className="text-[var(--color-accent)]">Qué observar:</strong> ¿La agencia presiona para firmar YA con descuentos urgentes? ¿O te da espacio para pensar y comparar? Agencia seria entiende que marketing digital es relación largo plazo (6-12+ meses). No presiona. Te educa, responde dudas, te ayuda a tomar decisión informada. Red flag: tácticas de venta agresivas ("oferta solo hoy", "quedan 2 cupos", "descuento si firmas ahora"). Esto indica que priorizan firmar contratos sobre resultados reales. Cliente bien informado que compara = buen cliente. Cliente presionado = cliente insatisfecho después.
+            </p>
+
+            <h2 className="text-3xl font-black mb-6 mt-12 text-[var(--color-accent)]">Red Flags: Cuándo NO Contratar</h2>
+
+            <div className="bg-[var(--color-card)] border border-red-500 rounded-xl p-6 mb-8 not-prose">
+              <h3 className="text-xl font-bold mb-4 text-red-400">🚩 Señales de Alerta</h3>
+              <ul className="space-y-3 text-sm">
+                <li><strong className="text-red-400">Promesas irreales:</strong> "Primera página Google en 2 semanas", "1000 ventas mes 1", "garantizamos X resultados". Marketing no funciona así.</li>
+                <li><strong className="text-red-400">Sin casos de éxito:</strong> No pueden mostrar resultados medibles de clientes anteriores.</li>
+                <li><strong className="text-red-400">No te dan accesos:</strong> "Lo manejamos nosotros" = secuestro de datos.</li>
+                <li><strong className="text-red-400">Paquetes genéricos:</strong> Misma propuesta para restaurante que para ferretería.</li>
+                <li><strong className="text-red-400">Presión de venta:</strong> "Oferta solo hoy", descuentos urgentes, tácticas de escasez.</li>
+                <li><strong className="text-red-400">Contrato muy largo:</strong> Piden compromiso 12+ meses sin período prueba.</li>
+                <li><strong className="text-red-400">No hablan de ROI:</strong> Solo hablan de "likes", "impresiones", vanity metrics sin conversión.</li>
+              </ul>
             </div>
 
-            <h2 className="text-3xl font-black mb-6 mt-12 text-[var(--color-accent)]">¿Qué Incluye Cada Precio?</h2>
-
-            <h3 className="text-2xl font-bold mb-4 mt-8">Landing Page ($169.000/año)</h3>
-            <p className="text-lg leading-[1.8] text-justify mb-6">
-              <strong className="text-[var(--color-accent)]">Ideal para:</strong> Servicios profesionales, freelancers, negocios con un servicio principal. Una landing page es una página única enfocada en conversión: llevará al visitante a realizar UNA acción específica (contactar, cotizar, llamar). Incluye diseño WordPress responsive, formulario de contacto integrado con email, SEO base (keywords, meta descriptions, sitemap), hosting en servidor chileno primer año, dominio .cl incluido, SSL (HTTPS) para seguridad. Carga menor a 2 segundos garantizada. Entrega en 7-10 días hábiles. Mantenimiento mensual opcional $9.900/mes (actualizaciones, backups, soporte).
-            </p>
-
-            <h3 className="text-2xl font-bold mb-4 mt-8">Sitio Corporativo ($390.000)</h3>
-            <p className="text-lg leading-[1.8] text-justify mb-6">
-              <strong className="text-[var(--color-accent)]">Ideal para:</strong> Empresas establecidas, múltiples servicios, instituciones. Un sitio corporativo completo tiene hasta 10 páginas: inicio, servicios (múltiples), nosotros, equipo, contacto, blog. Incluye diseño profesional personalizado (no plantillas genéricas), WordPress con panel de administración para que actualices contenido tú mismo, blog funcional para SEO, hasta 3 cuentas de email corporativo (@tuempresa.cl), Google Analytics configurado para medir visitas, formularios avanzados (cotizador, multi-paso), integración WhatsApp Business, capacitación 2 horas presencial o remota. Hosting $9.900/mes en servidor optimizado para WordPress. Entrega 15-20 días hábiles.
-            </p>
-
-            <h3 className="text-2xl font-bold mb-4 mt-8">Ecommerce ($590.000+)</h3>
-            <p className="text-lg leading-[1.8] text-justify mb-6">
-              <strong className="text-[var(--color-accent)]">Ideal para:</strong> Retail, venta online, tiendas con catálogo productos. Tienda online completa con WooCommerce (plataforma ecommerce más usada en Chile), pasarelas de pago chilenas integradas (Transbank Webpay, Mercado Pago, Flow), gestión de stock automática, calculadora de envío por zona, hasta 100 productos cargados (fotos y descripciones las proporcionas tú), diseño responsive optimizado para mobile (70% compras desde celular), categorías y filtros de productos, carrito de compras persistente (guarda productos aunque cierren navegador), checkout simplificado (menos pasos = más conversión), Google Analytics Ecommerce (mide ventas, productos más vendidos, tasa conversión). Capacitación completa 4 horas para gestionar tienda. Hosting $14.900/mes. Entrega 25-30 días.
-            </p>
-
-            <h2 className="text-3xl font-black mb-6 mt-12 text-[var(--color-accent)]">Factores que Afectan el Precio</h2>
-
-            <p className="text-lg leading-[1.8] text-justify mb-6">
-              <strong className="text-[var(--color-accent)]">1. Cantidad de páginas:</strong> Cada página adicional al paquete base cuesta $25.000-$40.000 según complejidad. Página simple (solo texto) $25k, página con formularios $35k, página con integraciones $40k.
-            </p>
-
-            <p className="text-lg leading-[1.8] text-justify mb-6">
-              <strong className="text-[var(--color-accent)]">2. Funcionalidades especiales:</strong> Reservas online (+$80.000), calculadoras personalizadas (+$60.000), integración CRM (+$90.000), multiidioma (+$120.000), membresías/área privada (+$150.000).
-            </p>
-
-            <p className="text-lg leading-[1.8] text-justify mb-6">
-              <strong className="text-[var(--color-accent)]">3. Diseño personalizado vs plantilla:</strong> Diseño desde cero (único para tu marca) +$150.000. Plantilla premium adaptada (+ rápido, - personalización) incluido en precio base.
-            </p>
-
-            <p className="text-lg leading-[1.8] text-justify mb-6">
-              <strong className="text-[var(--color-accent)]">4. Contenido:</strong> Si proporcionas textos y fotos = precio base. Redacción profesional $15.000/página. Fotografía profesional productos $9.900/unidad. Video corporativo desde $149.000.
-            </p>
-
-            <h2 className="text-3xl font-black mb-6 mt-12 text-[var(--color-accent)]">Cómo Elegir Según Tu Negocio</h2>
+            <h2 className="text-3xl font-black mb-6 mt-12 text-[var(--color-accent)]">Preguntas Clave al Cotizar</h2>
 
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 mb-8 not-prose">
-              <h3 className="text-xl font-bold mb-4">¿Landing Page, Sitio o Ecommerce?</h3>
-              <ul className="space-y-3">
-                <li><strong className="text-[var(--color-accent)]">Landing Page si:</strong> Ofreces 1-2 servicios específicos, objetivo es generar cotizaciones/llamadas, presupuesto limitado, necesitas algo rápido (7 días).</li>
-                <li><strong className="text-[var(--color-accent)]">Sitio Corporativo si:</strong> Múltiples servicios/productos, quieres crear contenido (blog), necesitas email profesional, empresa mediana-grande.</li>
-                <li><strong className="text-[var(--color-accent)]">Ecommerce si:</strong> Vendes productos online, necesitas cobrar con tarjeta, gestionar stock, envíos a domicilio.</li>
+              <ol className="space-y-4">
+                <li>
+                  <strong className="text-[var(--color-accent)]">1. ¿Pueden mostrarme 3 casos de éxito similares a mi negocio?</strong>
+                  <p className="text-sm text-[var(--color-muted)] mt-1">Busca: Datos concretos (ROI, conversiones), no solo "sitios bonitos".</p>
+                </li>
+                <li>
+                  <strong className="text-[var(--color-accent)]">2. ¿Qué incluye exactamente el servicio mensual?</strong>
+                  <p className="text-sm text-[var(--color-muted)] mt-1">Busca: Desglose claro (X artículos, Y posts, Z reportes), no generalidades.</p>
+                </li>
+                <li>
+                  <strong className="text-[var(--color-accent)]">3. ¿Qué resultados puedo esperar en 3, 6, 12 meses?</strong>
+                  <p className="text-sm text-[var(--color-muted)] mt-1">Busca: Expectativas realistas basadas en casos previos, no promesas vagas.</p>
+                </li>
+                <li>
+                  <strong className="text-[var(--color-accent)]">4. ¿Tendré acceso completo a todas las herramientas?</strong>
+                  <p className="text-sm text-[var(--color-muted)] mt-1">Busca: Sí claro a Analytics, Search Console, Ads. Red flag si dicen no.</p>
+                </li>
+                <li>
+                  <strong className="text-[var(--color-accent)]">5. ¿Qué pasa si quiero terminar el contrato?</strong>
+                  <p className="text-sm text-[var(--color-muted)] mt-1">Busca: Proceso claro, te quedas con accesos, sin penalizaciones excesivas.</p>
+                </li>
+                <li>
+                  <strong className="text-[var(--color-accent)]">6. ¿Quién específicamente trabajará en mi cuenta?</strong>
+                  <p className="text-sm text-[var(--color-muted)] mt-1">Busca: Equipo definido con roles claros, no "lo veremos después".</p>
+                </li>
+                <li>
+                  <strong className="text-[var(--color-accent)]">7. ¿Cómo miden el éxito de la campaña?</strong>
+                  <p className="text-sm text-[var(--color-muted)] mt-1">Busca: KPIs vinculados a ventas/leads, no solo tráfico o likes.</p>
+                </li>
+              </ol>
+            </div>
+
+            <h2 className="text-3xl font-black mb-6 mt-12 text-[var(--color-accent)]">Checklist Final Antes de Firmar</h2>
+
+            <div className="bg-[var(--color-card)] border-l-4 border-[var(--color-accent)] p-6 mb-8 not-prose">
+              <h3 className="font-bold mb-4">✅ Verifica que SÍ tengan:</h3>
+              <ul className="space-y-2">
+                <li>☐ Casos de éxito verificables con datos</li>
+                <li>☐ Propuesta estratégica específica para tu negocio</li>
+                <li>☐ Acceso completo a herramientas como propietario</li>
+                <li>☐ Contrato claro con entregables específicos</li>
+                <li>☐ Proceso de reportes y reuniones definido</li>
+                <li>☐ Referencias de clientes actuales</li>
+                <li>☐ Expectativas realistas de resultados</li>
+                <li>☐ Política de salida clara (si quieres terminar)</li>
               </ul>
             </div>
 
           </div>
 
-          {/* CTA Conversión */}
           <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)] mt-16">
             <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-              <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> <CurrentYear /></span>
+              <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Consulta Gratuita</span>
             </div>
             <h2 className="text-3xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
-              ¿Necesitas un Sitio Web en Concepción?
+              ¿Buscas Agencia de Marketing en Concepción?
             </h2>
             <p className="text-lg text-[var(--color-muted)] mb-8 max-w-2xl mx-auto leading-relaxed text-justify">
-              Cotiza gratis tu proyecto. Te respondemos en 24 horas con presupuesto personalizado y ejemplos similares a tu negocio.
+              Agenda reunión gratuita. Te mostramos casos reales, estrategia específica para tu negocio, y presupuesto transparente. Sin compromisos.
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <Link href="/contacto" className="inline-block px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] text-lg font-bold rounded-lg hover:scale-105 hover:shadow-[0_15px_40px_rgba(200,255,0,0.4)] transition-all">
-                Cotizar Mi Sitio Web Gratis →
+                Agendar Reunión Gratis →
               </Link>
-              <Link href="/diseno-web-concepcion" className="inline-block px-8 py-4 border-2 border-[var(--color-accent)] text-white text-lg font-bold rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
-                Ver Portfolio →
+              <Link href="/nosotros" className="inline-block px-8 py-4 border-2 border-[var(--color-accent)] text-white text-lg font-bold rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
+                Ver Casos de Éxito →
               </Link>
             </div>
             <p className="text-sm text-[var(--color-muted)] mt-6">
-              ⭐ +45 sitios web creados en Concepción • Desde $169.000/año
+              ⭐ Transparencia total • Accesos completos • ROI medible
             </p>
           </div>
 
