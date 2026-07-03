@@ -155,32 +155,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Badges - NUEVO */}
-      <section className="relative z-10 py-12 px-4 md:px-8 border-b border-[var(--color-border)]">
+      {/* Trust Badges - MEJORADO */}
+      <section className="relative z-10 py-16 px-4 md:px-8 border-y border-[var(--color-border)] bg-[radial-gradient(ellipse_at_top,rgba(200,255,0,0.03),transparent_50%)]">
         <div className="max-w-[1200px] mx-auto">
-          <p className="text-center text-sm text-[var(--color-muted)] mb-8 uppercase tracking-wider">
-            Confianza y Calidad Garantizada
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-70">
-            <div className="text-center">
-              <div className="text-4xl mb-2">✓</div>
-              <p className="text-xs font-semibold">Google Partner</p>
+          <div className="text-center mb-10">
+            <div className="inline-block px-4 py-2 mb-4 bg-[rgba(200,255,0,0.1)] border border-[rgba(200,255,0,0.3)] rounded-full">
+              <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">🛡️ Confianza y Calidad</span>
             </div>
-            <div className="text-center">
-              <div className="text-4xl mb-2">✓</div>
-              <p className="text-xs font-semibold">SSL Certificado</p>
+            <h3 className="text-2xl md:text-3xl font-black mb-2">Trabajamos con los Mejores Estándares</h3>
+            <p className="text-sm text-[var(--color-muted)]">Tecnología, seguridad y soporte profesional garantizado</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+            <div className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 text-center hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all cursor-default">
+              <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-[var(--color-accent)] to-[#9FCC00] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="text-2xl">🏆</span>
+              </div>
+              <p className="text-sm font-bold mb-1">Google Partner</p>
+              <p className="text-[0.7rem] text-[var(--color-muted)]">Certificado oficial</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl mb-2">✓</div>
-              <p className="text-xs font-semibold">Pago Seguro</p>
+
+            <div className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 text-center hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all cursor-default">
+              <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-[var(--color-accent)] to-[#9FCC00] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="text-2xl">🔒</span>
+              </div>
+              <p className="text-sm font-bold mb-1">SSL Certificado</p>
+              <p className="text-[0.7rem] text-[var(--color-muted)]">Conexión segura</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl mb-2">✓</div>
-              <p className="text-xs font-semibold">Soporte 24/7</p>
+
+            <div className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 text-center hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all cursor-default">
+              <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-[var(--color-accent)] to-[#9FCC00] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="text-2xl">💳</span>
+              </div>
+              <p className="text-sm font-bold mb-1">Pago Seguro</p>
+              <p className="text-[0.7rem] text-[var(--color-muted)]">Transbank certificado</p>
             </div>
-            <div className="text-center col-span-2 md:col-span-1">
-              <div className="text-4xl mb-2">✓</div>
-              <p className="text-xs font-semibold">Garantía Total</p>
+
+            <div className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 text-center hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all cursor-default">
+              <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-[var(--color-accent)] to-[#9FCC00] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="text-2xl">💬</span>
+              </div>
+              <p className="text-sm font-bold mb-1">Soporte 24/7</p>
+              <p className="text-[0.7rem] text-[var(--color-muted)]">Respuesta rápida</p>
+            </div>
+
+            <div className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 text-center hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all cursor-default col-span-2 md:col-span-1">
+              <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-[var(--color-accent)] to-[#9FCC00] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="text-2xl">✅</span>
+              </div>
+              <p className="text-sm font-bold mb-1">Garantía Total</p>
+              <p className="text-[0.7rem] text-[var(--color-muted)]">100% satisfacción</p>
             </div>
           </div>
         </div>
