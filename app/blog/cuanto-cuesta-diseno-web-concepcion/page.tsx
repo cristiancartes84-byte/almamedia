@@ -1,10 +1,11 @@
 import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '¿Cuánto Cuesta un Sitio Web en Concepción? [Precios 2026]',
+  title: '¿Cuánto Cuesta un Sitio Web en Concepción? [Precios Actualizados]',
   description: 'Precios reales de diseño web en Concepción: Landing pages desde $169.000, sitios corporativos $390.000, ecommerce $590.000. Guía completa con qué incluye cada opción.',
   keywords: 'cuanto cuesta diseño web Concepción, precios sitio web Concepción, diseño web precio Chile',
   authors: [{ name: 'Alma Media' }],
@@ -37,15 +38,15 @@ export default function ArticlePage() {
                 Precios
               </span>
               <span className="text-sm text-[var(--color-muted)]">8 min lectura</span>
-              <span className="text-sm text-[var(--color-muted)]"><CurrentMonth /> 2026</span>
+              <span className="text-sm text-[var(--color-muted)]"><CurrentMonth /> <CurrentYear /></span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-              ¿Cuánto Cuesta un Sitio Web en Concepción? [Precios Reales 2026]
+              ¿Cuánto Cuesta un Sitio Web en Concepción? [Precios Reales <CurrentYear />]
             </h1>
 
             <p className="text-xl text-[var(--color-muted)] leading-relaxed text-justify">
-              <strong className="text-white">El 73% de negocios en Concepción pierde clientes por no tener sitio web.</strong> Si estás buscando cuánto cuesta diseñar un sitio web profesional en Concepción, esta guía te da precios reales actualizados para <CurrentMonth /> 2026, qué incluye cada opción, y cómo elegir según tu tipo de negocio. Precios desde $169.000/año para landing page hasta $590.000+ para ecommerce completo con todas las funcionalidades.
+              <strong className="text-white">El 73% de negocios en Concepción pierde clientes por no tener sitio web.</strong> Si estás buscando cuánto cuesta diseñar un sitio web profesional en Concepción, esta guía te da precios reales actualizados para <CurrentMonth /> <CurrentYear />, qué incluye cada opción, y cómo elegir según tu tipo de negocio. Precios desde $169.000/año para landing page hasta $590.000+ para ecommerce completo con todas las funcionalidades.
             </p>
           </div>
 
@@ -148,7 +149,7 @@ export default function ArticlePage() {
           {/* CTA Conversión */}
           <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)] mt-16">
             <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-              <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> 2026</span>
+              <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> <CurrentYear /></span>
             </div>
             <h2 className="text-3xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
               ¿Necesitas un Sitio Web en Concepción?
