@@ -92,42 +92,65 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Zonas */}
-          <div className="text-center pt-8 pb-8 border-b border-[var(--color-border)]">
-            <p className="text-[var(--color-accent)] text-[0.85rem] mb-6 font-semibold uppercase tracking-[0.1em]">
+          {/* Zonas - MEJORADO */}
+          <div className="pt-12 pb-12 border-t border-[var(--color-border)] mt-12">
+            <p className="text-[var(--color-accent)] text-[0.85rem] mb-8 font-semibold uppercase tracking-[0.1em] text-center">
               📍 Cobertura en toda la Región del Biobío
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-6 text-base font-semibold mb-3">
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Concepción</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Talcahuano</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">San Pedro de la Paz</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Hualpén</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Chiguayante</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Coronel</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Tomé</span>
+
+            {/* Ciudades principales con páginas dedicadas */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-8">
+              <Link href="/diseno-web-concepcion" className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all text-center">
+                <div className="text-2xl mb-2">🏛️</div>
+                <p className="font-bold text-sm group-hover:text-[var(--color-accent)] transition-colors">Concepción</p>
+                <p className="text-[0.65rem] text-[var(--color-muted)] mt-1">Capital Regional</p>
+              </Link>
+
+              <Link href="/diseno-web-talcahuano" className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all text-center">
+                <div className="text-2xl mb-2">⚓</div>
+                <p className="font-bold text-sm group-hover:text-[var(--color-accent)] transition-colors">Talcahuano</p>
+                <p className="text-[0.65rem] text-[var(--color-muted)] mt-1">Puerto Principal</p>
+              </Link>
+
+              <Link href="/diseno-web-san-pedro-paz" className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all text-center">
+                <div className="text-2xl mb-2">🏘️</div>
+                <p className="font-bold text-sm group-hover:text-[var(--color-accent)] transition-colors">San Pedro</p>
+                <p className="text-[0.65rem] text-[var(--color-muted)] mt-1">Residencial</p>
+              </Link>
+
+              <Link href="/diseno-web-los-angeles" className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all text-center">
+                <div className="text-2xl mb-2">🌾</div>
+                <p className="font-bold text-sm group-hover:text-[var(--color-accent)] transition-colors">Los Ángeles</p>
+                <p className="text-[0.65rem] text-[var(--color-muted)] mt-1">Prov. Biobío</p>
+              </Link>
+
+              <Link href="/diseno-web-chillan" className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all text-center">
+                <div className="text-2xl mb-2">🍖</div>
+                <p className="font-bold text-sm group-hover:text-[var(--color-accent)] transition-colors">Chillán</p>
+                <p className="text-[0.65rem] text-[var(--color-muted)] mt-1">Capital Ñuble</p>
+              </Link>
+
+              <Link href="/diseno-web-coronel" className="group bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 hover:border-[var(--color-accent)] hover:bg-[rgba(200,255,0,0.05)] hover:-translate-y-1 transition-all text-center">
+                <div className="text-2xl mb-2">🏖️</div>
+                <p className="font-bold text-sm group-hover:text-[var(--color-accent)] transition-colors">Coronel</p>
+                <p className="text-[0.65rem] text-[var(--color-muted)] mt-1">Turismo Costero</p>
+              </Link>
             </div>
-            <div className="flex flex-wrap justify-center items-center gap-6 text-base font-semibold">
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Los Ángeles</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Lota</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Penco</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Lebu</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Arauco</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Curanilahue</span>
-              <span>·</span>
-              <span className="hover:text-[var(--color-accent)] hover:-translate-y-0.5 transition-all cursor-default">Cabrero</span>
+
+            {/* Otras ciudades */}
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
+              <span className="px-3 py-1.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-full text-xs font-medium hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all cursor-default">Hualpén</span>
+              <span className="px-3 py-1.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-full text-xs font-medium hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all cursor-default">Chiguayante</span>
+              <span className="px-3 py-1.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-full text-xs font-medium hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all cursor-default">Tomé</span>
+              <span className="px-3 py-1.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-full text-xs font-medium hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all cursor-default">Lota</span>
+              <span className="px-3 py-1.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-full text-xs font-medium hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all cursor-default">Penco</span>
+              <span className="px-3 py-1.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-full text-xs font-medium hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all cursor-default">Lebu</span>
+              <span className="px-3 py-1.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-full text-xs font-medium hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all cursor-default">Arauco</span>
+              <span className="px-3 py-1.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-full text-xs font-medium hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all cursor-default">Curanilahue</span>
+              <span className="px-3 py-1.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-full text-xs font-medium hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all cursor-default">Cabrero</span>
             </div>
-            <p className="mt-4 text-[0.75rem] text-[var(--color-muted)]">+ Todas las comunas de la Región del Biobío</p>
+
+            <p className="text-center text-[0.75rem] text-[var(--color-muted)]">+ Todas las comunas de la Región del Biobío</p>
           </div>
         </div>
       </section>
