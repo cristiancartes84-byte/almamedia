@@ -1,9 +1,48 @@
 import ParticlesBackground from '@/components/Particles';
+import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'SEO Local en Biobío: Google Maps y Búsquedas Locales - Alma Media',
-  description: 'Optimización para Google Maps y búsquedas locales en Biobío. Aparece cuando buscan tu servicio + tu ciudad.',
+export const metadata: Metadata = {
+  title: 'SEO Local Biobío 2026 | Google Maps y Búsquedas Locales',
+  description: 'SEO Local profesional en Biobío. Google Maps, Google Business Profile, reseñas. Aparece cuando buscan "servicio + ciudad". Desde $249.000/mes.',
+  keywords: 'SEO local Biobío, Google Maps Biobío, Google Business Profile, SEO local Concepción, búsquedas locales',
+  authors: [{ name: 'Alma Media' }],
+  creator: 'Alma Media',
+  publisher: 'Alma Media',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://almamedia.cl'),
+  alternates: {
+    canonical: '/seo-local-biobio',
+  },
+  openGraph: {
+    title: 'SEO Local Biobío 2026 | Google Maps',
+    description: 'SEO Local profesional. Google Maps y búsquedas locales en toda la región.',
+    url: 'https://almamedia.cl/seo-local-biobio',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SEO Local Biobío 2026',
+    description: 'SEO Local profesional. Google Maps y búsquedas locales.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function SEOLocalBiobioPage() {
@@ -11,55 +50,57 @@ export default function SEOLocalBiobioPage() {
     <>
       <ParticlesBackground />
 
-      <article className="relative z-10 max-w-4xl mx-auto px-8 py-24">
-        <div className="mb-8">
-          <Link href="/servicios" className="text-[var(--color-accent)] hover:underline text-sm">
-            ← Volver a Servicios
-          </Link>
+      <div className="relative z-10 max-w-6xl mx-auto px-8 pt-8">
+        <div className="text-sm text-[var(--color-muted)]">
+          <Link href="/" className="hover:text-[var(--color-accent)] transition-colors">Inicio</Link>
+          <span className="mx-2">/</span>
+          <Link href="/seo-local" className="hover:text-[var(--color-accent)] transition-colors">SEO Local</Link>
+          <span className="mx-2">/</span>
+          <span>Biobío</span>
         </div>
+      </div>
 
-        <h1 className="text-5xl font-black mb-6">SEO Local en Biobío</h1>
-
-        <p className="text-xl text-[var(--color-muted)] mb-12">
-          Optimización para Google Maps y búsquedas locales. Aparece cuando buscan "tu servicio + Concepción" o "cerca de mí".
+      <section className="relative z-10 py-16 text-center px-8">
+        <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.1)] border border-[rgba(200,255,0,0.3)] rounded-full">
+          <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">📍 SEO Local Biobío</span>
+        </div>
+        <h1 className="text-5xl md:text-6xl font-black mb-6 max-w-4xl mx-auto leading-tight">
+          SEO Local en Biobío: Google Maps y Búsquedas Locales
+        </h1>
+        <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
+          <strong>El SEO Local en la Región del Biobío</strong> posiciona tu negocio en Google Maps y búsquedas locales cuando clientes buscan "servicio + ciudad" o "cerca de mí". El 76% de búsquedas locales resultan en visita física en 24 horas. Optimizamos <Link href="/seo-local" className="text-[var(--color-accent)] hover:underline">Google Business Profile</Link>, gestión de reseñas, citaciones en directorios locales, y contenido geo-optimizado para toda la región: Concepción, Talcahuano, San Pedro, Los Ángeles, Chillán. Desde $249.000/mes con auditoría local, optimización NAP (Nombre-Dirección-Teléfono), estrategia de reseñas, y reportes de posicionamiento Maps. Ideal para negocios con ubicación física que atienden clientes locales: restaurantes, clínicas, gimnasios, ferreterías, servicios profesionales.
         </p>
+        <Link href="/contacto" className="inline-block px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">
+          Solicitar Auditoría Local →
+        </Link>
+      </section>
 
-        <div className="prose prose-invert max-w-none">
-          <h2 className="text-3xl font-bold mb-4 text-[var(--color-accent)]">¿Qué es el SEO Local?</h2>
-          <p className="text-[var(--color-muted)] mb-6">
-            El SEO Local te ayuda a aparecer en Google Maps y en los resultados locales cuando alguien busca un servicio en tu zona. Ideal para negocios con ubicación física en Biobío.
-          </p>
-
-          <h2 className="text-3xl font-bold mb-4 text-[var(--color-accent)] mt-12">Servicios de SEO Local</h2>
-
-          <div className="grid gap-6 mt-8">
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
-              <h3 className="text-xl font-bold mb-3">Google Business Profile</h3>
-              <p className="text-[var(--color-muted)]">Optimización completa de tu ficha de Google My Business para aparecer en Maps.</p>
-            </div>
-
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
-              <h3 className="text-xl font-bold mb-3">Gestión de Reseñas</h3>
-              <p className="text-[var(--color-muted)]">Estrategia para conseguir y gestionar reseñas positivas de clientes.</p>
-            </div>
-
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
-              <h3 className="text-xl font-bold mb-3">Citaciones Locales</h3>
-              <p className="text-[var(--color-muted)]">Alta en directorios locales y validación de datos NAP (Nombre, Dirección, Teléfono).</p>
-            </div>
+      <article className="relative z-10 max-w-4xl mx-auto px-8 py-12">
+        <section className="mb-20">
+          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Por qué Necesitas SEO Local en el Biobío?</h2>
+          <div className="space-y-6">
+            <p className="text-xl mb-6 leading-[1.8] text-justify">
+              <strong className="text-[var(--color-accent)] font-bold">El 76% de búsquedas locales resultan en visita física en 24 horas.</strong> Cuando alguien busca "dentista Concepción", "gimnasio San Pedro", "ferretería Talcahuano" o "restaurant Los Ángeles", Google muestra resultados locales con mapa y fichas de Google Business Profile. Si tu negocio NO aparece ahí, pierdes clientes que visitan a competidores que SÍ optimizaron su presencia local. SEO Local convierte búsquedas online en visitas físicas y ventas reales el mismo día.
+            </p>
+            <p className="text-xl leading-[1.8] text-justify">
+              <strong className="text-[var(--color-accent)] font-bold">Google Maps es el segundo buscador más usado después de Google.</strong> Más de 1 billón de búsquedas mensuales en Maps a nivel global. En Biobío, clientes buscan negocios cercanos constantemente: "ferretería cerca de mí", "clínica dental abierta ahora", "supermercado más cercano". SEO Local optimiza tu Google Business Profile para aparecer en esas búsquedas con información actualizada: horarios, fotos, reseñas, dirección exacta, botón de llamada directa.
+            </p>
           </div>
-        </div>
+        </section>
 
-        <div className="mt-16 bg-[var(--color-card)] border border-[var(--color-border)] rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-black mb-4">¿Quieres aparecer en Google Maps?</h2>
-          <p className="text-[var(--color-muted)] mb-8">
-            Cotiza tu proyecto de SEO Local. Desde $95.000/mes.
+        {/* CTA Final */}
+        <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
+          <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> 2026</span>
+          </div>
+          <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
+            ¿Listo para Dominar Google Maps?
+          </h2>
+          <p className="text-xl text-[var(--color-muted)] mb-8 max-w-2xl mx-auto leading-relaxed text-justify">
+            Aparece cuando buscan tu servicio en tu ciudad. Genera visitas físicas desde Google. Cotiza:
           </p>
-          <Link
-            href="/contacto"
-            className="inline-block px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 transition-all"
-          >
-            Cotizar SEO Local
+          <Link href="/contacto" className="inline-block px-10 py-5 bg-[var(--color-accent)] text-[var(--color-bg)] text-lg font-bold rounded-lg hover:scale-105 hover:shadow-[0_15px_40px_rgba(200,255,0,0.4)] transition-all">
+            Solicitar Auditoría Local →
           </Link>
         </div>
       </article>
