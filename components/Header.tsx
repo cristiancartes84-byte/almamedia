@@ -10,8 +10,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-[rgba(10,10,10,0.85)] backdrop-blur-xl border-b border-[var(--color-border)]">
       <nav className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 relative">
+        <Link href="/" className="flex items-center gap-3">
+          <div className="w-32 h-12 relative">
             <Image
               src="/logo.webp"
               alt="Alma Media"
@@ -20,7 +20,6 @@ export default function Header() {
               priority
             />
           </div>
-          <span className="text-xl font-black">Alma Media</span>
         </Link>
 
         <ul className="hidden md:flex gap-8 items-center">
