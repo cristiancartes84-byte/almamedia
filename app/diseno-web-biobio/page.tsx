@@ -140,15 +140,15 @@ export default function DisenoWebBiobioPage() {
               <p className="text-[var(--color-muted)] leading-relaxed">Capital provincial. Comercio, agricultura, ganadería, turismo Alto Biobío.</p>
             </Link>
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
+            <Link href="/diseno-web-chillan" className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all">
               <h3 className="text-lg font-bold mb-2 text-[var(--color-accent)]">Chillán</h3>
               <p className="text-[var(--color-muted)] leading-relaxed">Capital Ñuble. Agricultura, gastronomía, turismo termal, comercio regional.</p>
-            </div>
+            </Link>
 
-            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
+            <Link href="/diseno-web-coronel" className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all">
               <h3 className="text-lg font-bold mb-2 text-[var(--color-accent)]">Coronel</h3>
               <p className="text-[var(--color-muted)] leading-relaxed">Costa carbonifera. Turismo costero, comercio, servicios zona sur Gran Concepción.</p>
-            </div>
+            </Link>
           </div>
         </section>
 
