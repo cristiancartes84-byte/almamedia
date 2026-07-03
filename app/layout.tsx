@@ -16,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <meta name="google-site-verification" content="2aumA2nbinnyOanG1oBvlHK-tCoT9MBQr0zei26gdjY" />
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
       </head>
       <body className="antialiased">
