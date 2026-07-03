@@ -188,5 +188,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+
+    // Blog
+    {
+      url: `${baseUrl}/blog`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/cuanto-cuesta-diseno-web-concepcion`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
   ]
 }
