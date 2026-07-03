@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Header() {
@@ -10,8 +11,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-[rgba(10,10,10,0.85)] backdrop-blur-xl border-b border-[var(--color-border)]">
       <nav className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[var(--color-accent)] rounded-md flex items-center justify-center text-[var(--color-bg)] font-black">
-            A
+          <div className="w-8 h-8 relative">
+            <Image
+              src="/logo.webp"
+              alt="Alma Media"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
           <span className="text-xl font-black">Alma Media</span>
         </Link>
