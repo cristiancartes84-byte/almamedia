@@ -6,9 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Marketing Digital para PYMES: Por Dónde Empezar [Guía 2026]',
-  description: 'Guía completa para PY
-
-MES que empiezan en marketing digital: presupuesto, prioridades, herramientas, estrategia paso a paso. Sin tecnicismos ni humo.',
+  description: 'Guía completa para PYMES que empiezan en marketing digital: presupuesto, prioridades, herramientas, estrategia paso a paso. Sin tecnicismos ni humo.',
   keywords: 'marketing digital pymes, marketing digital pequeñas empresas, por donde empezar marketing digital',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
