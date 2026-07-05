@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/blog/errores-sitio-web',
   },
+  openGraph: {
+    title: '10 Errores que Matan tu Sitio Web y Cómo Solucionarlos',
+    description: 'Los 10 errores más comunes que arruinan sitios web con soluciones prácticas: velocidad, SEO, diseño y contenido.',
+    url: 'https://almamedia.cl/blog/errores-sitio-web',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'article',
+    publishedTime: '2026-07-04T10:00:00Z',
+    authors: ['Alma Media'],
+    images: [{
+      url: '/og-images/errores-sitio-web.jpg',
+      width: 1200,
+      height: 630,
+      alt: '10 Errores que Matan tu Sitio Web 2026',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '10 Errores que Matan tu Sitio Web y Cómo Solucionarlos',
+    description: 'Checklist completa con soluciones prácticas para los 10 errores más comunes en sitios web.',
+    images: ['/og-images/errores-sitio-web.jpg'],
+  },
 };
 
 export default function ArticlePage() {
@@ -262,6 +284,39 @@ export default function ArticlePage() {
 
         </article>
       </div>
+
+      {/* Schema.org Article Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "10 Errores que Matan tu Sitio Web y Cómo Solucionarlos",
+        "description": "Los 10 errores más comunes que arruinan sitios web: velocidad, SEO, diseño, contenido. Checklist completa con soluciones prácticas y fáciles de implementar.",
+        "image": "https://almamedia.cl/og-images/errores-sitio-web.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "url": "https://almamedia.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://almamedia.cl/logo.png"
+          }
+        },
+        "datePublished": "2026-07-04T10:00:00Z",
+        "dateModified": "2026-07-05T10:00:00Z",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://almamedia.cl/blog/errores-sitio-web"
+        },
+        "keywords": "errores sitio web, errores diseño web, problemas sitio web, checklist sitio web",
+        "articleSection": "Consejos",
+        "wordCount": 2300,
+        "timeRequired": "PT9M",
+        "inLanguage": "es-CL"
+      })}} />
     </>
   );
 }

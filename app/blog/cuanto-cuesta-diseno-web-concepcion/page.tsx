@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/blog/cuanto-cuesta-diseno-web-concepcion',
   },
+  openGraph: {
+    title: '¿Cuánto Cuesta un Sitio Web en Concepción? Precios 2026',
+    description: 'Landing pages desde $169.000, sitios corporativos $390.000, ecommerce $590.000. Guía completa de precios de diseño web.',
+    url: 'https://almamedia.cl/blog/cuanto-cuesta-diseno-web-concepcion',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'article',
+    publishedTime: '2026-07-04T10:00:00Z',
+    authors: ['Alma Media'],
+    images: [{
+      url: '/og-images/cuanto-cuesta-diseno-web-concepcion.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Precios Diseño Web Concepción 2026',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Precios Diseño Web Concepción 2026',
+    description: 'Desde $169.000. Landing pages, sitios corporativos y ecommerce. Precios reales actualizados.',
+    images: ['/og-images/cuanto-cuesta-diseno-web-concepcion.jpg'],
+  },
 };
 
 export default function ArticlePage() {
@@ -172,6 +194,39 @@ export default function ArticlePage() {
 
         </article>
       </div>
+
+      {/* Schema.org Article Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "¿Cuánto Cuesta un Sitio Web en Concepción? Precios 2026",
+        "description": "Precios reales de diseño web en Concepción: Landing pages desde $169.000, sitios corporativos $390.000, ecommerce $590.000. Guía completa.",
+        "image": "https://almamedia.cl/og-images/cuanto-cuesta-diseno-web-concepcion.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "url": "https://almamedia.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://almamedia.cl/logo.png"
+          }
+        },
+        "datePublished": "2026-07-04T10:00:00Z",
+        "dateModified": "2026-07-05T10:00:00Z",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://almamedia.cl/blog/cuanto-cuesta-diseno-web-concepcion"
+        },
+        "keywords": "cuanto cuesta diseño web Concepción, precios sitio web",
+        "articleSection": "Precios",
+        "wordCount": 2200,
+        "timeRequired": "PT8M",
+        "inLanguage": "es-CL"
+      })}} />
     </>
   );
 }

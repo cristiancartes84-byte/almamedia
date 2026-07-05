@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/blog/marketing-digital-restaurantes-guia',
   },
+  openGraph: {
+    title: 'Marketing Digital para Restaurantes: Guía Completa 2026',
+    description: 'Estrategia completa: SEO local, redes sociales, fotografía gastronómica, delivery online y Google Maps para restaurantes.',
+    url: 'https://almamedia.cl/blog/marketing-digital-restaurantes-guia',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'article',
+    publishedTime: '2026-07-04T10:00:00Z',
+    authors: ['Alma Media'],
+    images: [{
+      url: '/og-images/marketing-digital-restaurantes-guia.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Marketing Digital Restaurantes Guía 2026',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marketing Digital para Restaurantes: Guía Completa 2026',
+    description: 'SEO local, redes sociales, fotografía gastronómica y más. Estrategia completa para restaurantes.',
+    images: ['/og-images/marketing-digital-restaurantes-guia.jpg'],
+  },
 };
 
 export default function ArticlePage() {
@@ -263,6 +285,39 @@ export default function ArticlePage() {
 
         </article>
       </div>
+
+      {/* Schema.org Article Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Marketing Digital para Restaurantes: Guía Completa 2026",
+        "description": "Estrategia completa de marketing digital para restaurantes: SEO local, redes sociales, fotografía gastronómica, delivery online y Google Maps.",
+        "image": "https://almamedia.cl/og-images/marketing-digital-restaurantes-guia.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "url": "https://almamedia.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://almamedia.cl/logo.png"
+          }
+        },
+        "datePublished": "2026-07-04T10:00:00Z",
+        "dateModified": "2026-07-05T10:00:00Z",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://almamedia.cl/blog/marketing-digital-restaurantes-guia"
+        },
+        "keywords": "marketing digital restaurantes, marketing gastronómico, redes sociales restaurante, SEO restaurantes",
+        "articleSection": "Por Industria",
+        "wordCount": 2400,
+        "timeRequired": "PT10M",
+        "inLanguage": "es-CL"
+      })}} />
     </>
   );
 }

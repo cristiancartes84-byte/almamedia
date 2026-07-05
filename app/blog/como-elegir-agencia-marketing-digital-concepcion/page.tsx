@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/blog/como-elegir-agencia-marketing-digital-concepcion',
   },
+  openGraph: {
+    title: 'Cómo Elegir Agencia Marketing Digital en Concepción 2026',
+    description: '7 criterios clave para elegir la agencia correcta. Evita errores costosos y contrata la que hará crecer tu negocio.',
+    url: 'https://almamedia.cl/blog/como-elegir-agencia-marketing-digital-concepcion',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'article',
+    publishedTime: '2026-07-04T10:00:00Z',
+    authors: ['Alma Media'],
+    images: [{
+      url: '/og-images/como-elegir-agencia-marketing-digital-concepcion.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Cómo Elegir Agencia Marketing Digital 2026',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cómo Elegir Agencia Marketing Digital en Concepción 2026',
+    description: '7 criterios para elegir correctamente. Evita errores costosos y contrata la agencia adecuada.',
+    images: ['/og-images/como-elegir-agencia-marketing-digital-concepcion.jpg'],
+  },
 };
 
 export default function ArticlePage() {
@@ -182,6 +204,39 @@ export default function ArticlePage() {
 
         </article>
       </div>
+
+      {/* Schema.org Article Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Cómo Elegir Agencia Marketing Digital en Concepción 2026",
+        "description": "7 criterios para elegir la agencia de marketing digital correcta en Concepción. Evita errores costosos y contrata la agencia que realmente hará crecer tu negocio.",
+        "image": "https://almamedia.cl/og-images/como-elegir-agencia-marketing-digital-concepcion.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "url": "https://almamedia.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://almamedia.cl/logo.png"
+          }
+        },
+        "datePublished": "2026-07-04T10:00:00Z",
+        "dateModified": "2026-07-05T10:00:00Z",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://almamedia.cl/blog/como-elegir-agencia-marketing-digital-concepcion"
+        },
+        "keywords": "como elegir agencia marketing digital, agencia marketing Concepción, mejor agencia digital Chile",
+        "articleSection": "Guías",
+        "wordCount": 2200,
+        "timeRequired": "PT9M",
+        "inLanguage": "es-CL"
+      })}} />
     </>
   );
 }

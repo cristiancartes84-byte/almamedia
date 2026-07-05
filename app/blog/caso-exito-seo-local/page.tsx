@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/blog/caso-exito-seo-local',
   },
+  openGraph: {
+    title: 'Caso de Éxito: Restaurant Aumentó Ventas 60% con SEO Local',
+    description: 'Estrategia SEO local real: aumentó visitas 300% y ventas 60% en 6 meses. Tácticas exactas, timeline y costos.',
+    url: 'https://almamedia.cl/blog/caso-exito-seo-local',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'article',
+    publishedTime: '2026-07-04T10:00:00Z',
+    authors: ['Alma Media'],
+    images: [{
+      url: '/og-images/caso-exito-seo-local.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Caso Éxito SEO Local Restaurant 2026',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Caso de Éxito: Restaurant Aumentó Ventas 60% con SEO Local',
+    description: 'Visitas 300%, ventas 60% en 6 meses. Estrategia SEO local completa con tácticas exactas.',
+    images: ['/og-images/caso-exito-seo-local.jpg'],
+  },
 };
 
 export default function ArticlePage() {
@@ -265,6 +287,39 @@ export default function ArticlePage() {
 
         </article>
       </div>
+
+      {/* Schema.org Article Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Caso de Éxito: Restaurant Aumentó Ventas 60% con SEO Local",
+        "description": "Caso de éxito real: estrategia SEO local que aumentó visitas 300% y ventas 60% en 6 meses. Tácticas exactas, timeline, costos y resultados medibles.",
+        "image": "https://almamedia.cl/og-images/caso-exito-seo-local.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "url": "https://almamedia.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://almamedia.cl/logo.png"
+          }
+        },
+        "datePublished": "2026-07-04T10:00:00Z",
+        "dateModified": "2026-07-05T10:00:00Z",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://almamedia.cl/blog/caso-exito-seo-local"
+        },
+        "keywords": "caso exito SEO, caso exito SEO local, ejemplo SEO restaurante, resultados SEO",
+        "articleSection": "Casos de Éxito",
+        "wordCount": 1500,
+        "timeRequired": "PT6M",
+        "inLanguage": "es-CL"
+      })}} />
     </>
   );
 }

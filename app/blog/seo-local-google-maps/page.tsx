@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/blog/seo-local-google-maps',
   },
+  openGraph: {
+    title: 'SEO Local: Cómo Aparecer en Google Maps Paso a Paso 2026',
+    description: 'Guía completa para Google Maps y Google Business Profile: optimización, reseñas, fotos y keywords locales.',
+    url: 'https://almamedia.cl/blog/seo-local-google-maps',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'article',
+    publishedTime: '2026-07-04T10:00:00Z',
+    authors: ['Alma Media'],
+    images: [{
+      url: '/og-images/seo-local-google-maps.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'SEO Local Google Maps Guía 2026',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SEO Local: Cómo Aparecer en Google Maps Paso a Paso 2026',
+    description: 'Guía completa: optimización Google Business Profile, reseñas, fotos y keywords locales.',
+    images: ['/og-images/seo-local-google-maps.jpg'],
+  },
 };
 
 export default function ArticlePage() {
@@ -189,6 +211,39 @@ export default function ArticlePage() {
 
         </article>
       </div>
+
+      {/* Schema.org Article Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SEO Local: Cómo Aparecer en Google Maps Paso a Paso 2026",
+        "description": "Guía paso a paso para aparecer en Google Maps y Google Business Profile: optimización, reseñas, fotos, keywords locales. Domina tu zona geográfica.",
+        "image": "https://almamedia.cl/og-images/seo-local-google-maps.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "url": "https://almamedia.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://almamedia.cl/logo.png"
+          }
+        },
+        "datePublished": "2026-07-04T10:00:00Z",
+        "dateModified": "2026-07-05T10:00:00Z",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://almamedia.cl/blog/seo-local-google-maps"
+        },
+        "keywords": "SEO local, Google Maps, Google Business Profile, aparecer Google Maps, SEO local Chile",
+        "articleSection": "SEO",
+        "wordCount": 1900,
+        "timeRequired": "PT8M",
+        "inLanguage": "es-CL"
+      })}} />
     </>
   );
 }

@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/blog/cuanto-cuesta-seo-chile',
   },
+  openGraph: {
+    title: '¿Cuánto Cuesta SEO en Chile? Precios Reales 2026',
+    description: 'Precios reales de SEO en Chile: desde $249.000/mes. Qué incluye cada plan, ROI esperado, y cómo elegir el servicio SEO correcto.',
+    url: 'https://almamedia.cl/blog/cuanto-cuesta-seo-chile',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'article',
+    publishedTime: '2026-07-04T10:00:00Z',
+    authors: ['Alma Media'],
+    images: [{
+      url: '/og-images/cuanto-cuesta-seo-chile.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Precios SEO en Chile 2026',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '¿Cuánto Cuesta SEO en Chile? Precios Reales 2026',
+    description: 'Desde $249.000/mes. Descubre qué incluye cada plan SEO y el ROI esperado.',
+    images: ['/og-images/cuanto-cuesta-seo-chile.jpg'],
+  },
 };
 
 export default function ArticlePage() {
@@ -193,6 +215,39 @@ export default function ArticlePage() {
 
         </article>
       </div>
+
+      {/* Schema.org Article Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "¿Cuánto Cuesta SEO en Chile? Precios Reales 2026",
+        "description": "Precios reales de SEO en Chile: desde $249.000/mes. Descubre qué incluye cada plan, ROI esperado, y cómo elegir el servicio SEO correcto para tu negocio.",
+        "image": "https://almamedia.cl/og-images/cuanto-cuesta-seo-chile.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "url": "https://almamedia.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://almamedia.cl/logo.png"
+          }
+        },
+        "datePublished": "2026-07-04T10:00:00Z",
+        "dateModified": "2026-07-05T10:00:00Z",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://almamedia.cl/blog/cuanto-cuesta-seo-chile"
+        },
+        "keywords": "cuanto cuesta seo Chile, precios seo, posicionamiento google precio",
+        "articleSection": "Precios",
+        "wordCount": 2100,
+        "timeRequired": "PT7M",
+        "inLanguage": "es-CL"
+      })}} />
     </>
   );
 }

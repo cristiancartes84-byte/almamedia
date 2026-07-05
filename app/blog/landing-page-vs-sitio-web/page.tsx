@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/blog/landing-page-vs-sitio-web',
   },
+  openGraph: {
+    title: 'Landing Page vs Sitio Web: ¿Cuál Necesito? Guía 2026',
+    description: 'Diferencias clave entre landing page y sitio web. Descubre cuál necesita tu negocio según objetivos y presupuesto.',
+    url: 'https://almamedia.cl/blog/landing-page-vs-sitio-web',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'article',
+    publishedTime: '2026-07-04T10:00:00Z',
+    authors: ['Alma Media'],
+    images: [{
+      url: '/og-images/landing-page-vs-sitio-web.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Landing Page vs Sitio Web Guía 2026',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Landing Page vs Sitio Web: ¿Cuál Necesito? Guía 2026',
+    description: 'Diferencias clave entre landing page y sitio web. Guía completa para elegir correctamente.',
+    images: ['/og-images/landing-page-vs-sitio-web.jpg'],
+  },
 };
 
 export default function ArticlePage() {
@@ -223,6 +245,39 @@ export default function ArticlePage() {
 
         </article>
       </div>
+
+      {/* Schema.org Article Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Landing Page vs Sitio Web: ¿Cuál Necesito? Guía 2026",
+        "description": "Diferencias entre landing page y sitio web completo. Descubre cuál necesita tu negocio según objetivos, presupuesto y tipo de empresa con ejemplos reales.",
+        "image": "https://almamedia.cl/og-images/landing-page-vs-sitio-web.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "url": "https://almamedia.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://almamedia.cl/logo.png"
+          }
+        },
+        "datePublished": "2026-07-04T10:00:00Z",
+        "dateModified": "2026-07-05T10:00:00Z",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://almamedia.cl/blog/landing-page-vs-sitio-web"
+        },
+        "keywords": "landing page vs sitio web, diferencia landing page sitio web, que necesito landing o sitio web",
+        "articleSection": "Guías",
+        "wordCount": 1800,
+        "timeRequired": "PT6M",
+        "inLanguage": "es-CL"
+      })}} />
     </>
   );
 }

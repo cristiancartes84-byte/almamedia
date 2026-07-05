@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/blog/marketing-digital-pymes',
   },
+  openGraph: {
+    title: 'Marketing Digital para PYMES: Por Dónde Empezar 2026',
+    description: 'Guía completa para PYMES: presupuesto, prioridades, herramientas y estrategia paso a paso. Sin tecnicismos ni humo.',
+    url: 'https://almamedia.cl/blog/marketing-digital-pymes',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'article',
+    publishedTime: '2026-07-04T10:00:00Z',
+    authors: ['Alma Media'],
+    images: [{
+      url: '/og-images/marketing-digital-pymes.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Marketing Digital para PYMES Guía 2026',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marketing Digital para PYMES: Por Dónde Empezar 2026',
+    description: 'Presupuesto, prioridades y estrategia paso a paso para PYMES. Guía completa sin tecnicismos.',
+    images: ['/og-images/marketing-digital-pymes.jpg'],
+  },
 };
 
 export default function ArticlePage() {
@@ -295,6 +317,39 @@ export default function ArticlePage() {
 
         </article>
       </div>
+
+      {/* Schema.org Article Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Marketing Digital para PYMES: Por Dónde Empezar 2026",
+        "description": "Guía completa para PYMES que empiezan en marketing digital: presupuesto, prioridades, herramientas, estrategia paso a paso. Sin tecnicismos ni humo.",
+        "image": "https://almamedia.cl/og-images/marketing-digital-pymes.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "url": "https://almamedia.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://almamedia.cl/logo.png"
+          }
+        },
+        "datePublished": "2026-07-04T10:00:00Z",
+        "dateModified": "2026-07-05T10:00:00Z",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://almamedia.cl/blog/marketing-digital-pymes"
+        },
+        "keywords": "marketing digital pymes, marketing digital pequeñas empresas, por donde empezar marketing digital",
+        "articleSection": "Guías",
+        "wordCount": 2500,
+        "timeRequired": "PT10M",
+        "inLanguage": "es-CL"
+      })}} />
     </>
   );
 }

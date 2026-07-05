@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/blog/fotografia-producto-vale-la-pena',
   },
+  openGraph: {
+    title: 'Fotografía de Producto: ¿Vale la Pena? ROI Real 2026',
+    description: 'Aumenta conversión 35%, reduce devoluciones 40%. Análisis de ROI real con casos reales y cuándo vale la pena invertir.',
+    url: 'https://almamedia.cl/blog/fotografia-producto-vale-la-pena',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'article',
+    publishedTime: '2026-07-04T10:00:00Z',
+    authors: ['Alma Media'],
+    images: [{
+      url: '/og-images/fotografia-producto-vale-la-pena.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'ROI Fotografía de Producto 2026',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fotografía de Producto: ¿Vale la Pena? ROI Real 2026',
+    description: 'Análisis de ROI real: aumenta conversión 35%, reduce devoluciones 40%. Casos reales.',
+    images: ['/og-images/fotografia-producto-vale-la-pena.jpg'],
+  },
 };
 
 export default function ArticlePage() {
@@ -206,6 +228,39 @@ export default function ArticlePage() {
 
         </article>
       </div>
+
+      {/* Schema.org Article Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Fotografía de Producto: ¿Vale la Pena? ROI Real 2026",
+        "description": "Análisis de ROI real de fotografía profesional de producto: aumenta conversión 35%, reduce devoluciones 40%. Casos reales y cuándo vale la pena invertir.",
+        "image": "https://almamedia.cl/og-images/fotografia-producto-vale-la-pena.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "url": "https://almamedia.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Alma Media",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://almamedia.cl/logo.png"
+          }
+        },
+        "datePublished": "2026-07-04T10:00:00Z",
+        "dateModified": "2026-07-05T10:00:00Z",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://almamedia.cl/blog/fotografia-producto-vale-la-pena"
+        },
+        "keywords": "fotografia producto vale la pena, roi fotografia producto, fotografia profesional vs amateur",
+        "articleSection": "ROI",
+        "wordCount": 1700,
+        "timeRequired": "PT7M",
+        "inLanguage": "es-CL"
+      })}} />
     </>
   );
 }
