@@ -20,6 +20,7 @@ export default function Header() {
 
         <ul className="hidden md:flex gap-8 items-center">
           <li><Link href="/servicios" className="text-[var(--color-muted)] hover:text-white transition-colors">Servicios</Link></li>
+          <li><Link href="/blog" className="text-[var(--color-muted)] hover:text-white transition-colors">Blog</Link></li>
           <li><Link href="/nosotros" className="text-[var(--color-muted)] hover:text-white transition-colors">Nosotros</Link></li>
           <li><Link href="/contacto" className="text-[var(--color-muted)] hover:text-white transition-colors">Contacto</Link></li>
           <li>
