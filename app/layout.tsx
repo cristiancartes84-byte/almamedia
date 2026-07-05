@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
+import Particles from "@/components/Particles";
 
 export const metadata: Metadata = {
   title: "Alma Media - Marketing Digital Biobío",
@@ -23,6 +24,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google-analytics.com" />
       </head>
       <body className="antialiased">
+        <Particles />
         <Analytics />
         <Header />
         <main>{children}</main>
