@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import dynamic from 'next/dynamic';
 
-const Particles = dynamic(() => import('@/components/ParticlesDirect'), {
+const Particles = dynamic(() => import('@/components/Particles'), {
   ssr: false,
 });
 

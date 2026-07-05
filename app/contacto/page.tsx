@@ -1,4 +1,5 @@
 import ParticlesBackground from '@/components/Particles';
+import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -50,96 +51,7 @@ export default function ContactoPage() {
       <section className="relative z-10 max-w-6xl mx-auto px-8 pb-24">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Form */}
-          <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-2xl p-8">
-            <h2 className="text-2xl font-bold mb-6">Envía tu consulta</h2>
-
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold mb-2">
-                  Nombre completo *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:outline-none transition-colors"
-                  placeholder="Juan Pérez"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:outline-none transition-colors"
-                  placeholder="juan@empresa.cl"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-semibold mb-2">
-                  Teléfono
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full px-4 py-3 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:outline-none transition-colors"
-                  placeholder="+56 9 1234 5678"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block text-sm font-semibold mb-2">
-                  Servicio de interés
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  className="w-full px-4 py-3 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:outline-none transition-colors"
-                >
-                  <option value="">Selecciona un servicio</option>
-                  <option value="diseno-web">Diseño Web</option>
-                  <option value="seo">SEO</option>
-                  <option value="seo-local">SEO Local</option>
-                  <option value="fotografia">Fotografía de Producto</option>
-                  <option value="video">Video de Producto</option>
-                  <option value="paquete">Paquete Completo</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold mb-2">
-                  Cuéntanos sobre tu proyecto *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:outline-none transition-colors resize-none"
-                  placeholder="Describe brevemente qué necesitas..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all"
-              >
-                Enviar Consulta
-              </button>
-
-              <p className="text-sm text-[var(--color-muted)] text-center">
-                * Campos obligatorios
-              </p>
-            </form>
-          </div>
+          <ContactForm />
 
           {/* Contact Info */}
           <div className="space-y-6">

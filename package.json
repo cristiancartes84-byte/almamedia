@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^5.4.0",
     "@tsparticles/engine": "^4.3.0",
     "@tsparticles/react": "^4.3.1",
