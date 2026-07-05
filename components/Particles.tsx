@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { tsParticles } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
 
-export default function ParticlesDirect() {
+export default function Particles() {
   useEffect(() => {
     console.log('🎨 Starting direct tsParticles initialization...');
 
@@ -16,7 +16,7 @@ export default function ParticlesDirect() {
 
         console.log('🎨 Creating particles container...');
         await tsParticles.load({
-          id: 'particles-direct',
+          id: 'particles-js',
           options: {
             background: {
               color: {
@@ -101,11 +101,11 @@ export default function ParticlesDirect() {
     // cuando el div se desmonta
   }, []);
 
-  console.log('🎨 Rendering ParticlesDirect component');
+  console.log('🎨 Rendering Particles component');
 
   return (
     <div
-      id="particles-direct"
+      id="particles-js"
       style={{
         position: 'fixed',
         top: 0,
