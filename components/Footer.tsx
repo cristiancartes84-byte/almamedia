@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
               <span className="text-lg font-light text-white tracking-widest" style={{letterSpacing: '0.15em'}}>
-                .A L M A
+                A L M A
               </span>
               <span className="text-lg font-black text-white tracking-wider" style={{letterSpacing: '0.1em'}}>
                 MEDIA

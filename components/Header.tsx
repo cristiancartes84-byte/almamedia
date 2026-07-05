@@ -11,7 +11,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-xl md:text-2xl font-light text-white tracking-widest" style={{letterSpacing: '0.15em'}}>
-            .A L M A
+            A L M A
           </span>
           <span className="text-xl md:text-2xl font-black text-white tracking-wider" style={{letterSpacing: '0.1em'}}>
             MEDIA
