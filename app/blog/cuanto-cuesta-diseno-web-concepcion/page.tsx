@@ -3,6 +3,7 @@ import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: '¿Cuánto Cuesta un Sitio Web en Concepción? [Precios Actualizados]',
@@ -227,6 +228,69 @@ export default function ArticlePage() {
         "timeRequired": "PT8M",
         "inLanguage": "es-CL"
       })}} />
+
+      {/* FAQPage Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta hacer un sitio web en Concepción?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Los precios en Concepción van desde $169.000/año para una landing page básica, $390.000 para un sitio corporativo completo con hasta 10 páginas, y $590.000+ para una tienda online ecommerce. Todos los precios incluyen hosting y dominio."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué incluye una landing page de $169.000?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Incluye 1 página optimizada responsive para mobile, formulario de contacto, SEO base, dominio .cl, hosting en servidor chileno por 1 año y certificado SSL. Ideal para servicios profesionales y freelancers. Entrega en 7-10 días hábiles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tiempo tarda en estar listo un sitio web?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Una landing page tarda 7-10 días hábiles, un sitio corporativo 15-20 días, y un ecommerce completo 25-30 días. Los tiempos dependen de que proporciones textos y fotos a tiempo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuál es la diferencia entre sitio corporativo y ecommerce?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El sitio corporativo ($390k) es informativo con hasta 10 páginas y blog, ideal para presentar servicios. El ecommerce ($590k+) permite vender online con carrito de compras, pasarelas de pago chilenas y gestión de stock para hasta 100 productos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué costos mensuales tiene mantener un sitio web?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El hosting va desde incluido el primer año (landing page) hasta $9.900/mes para sitios corporativos y $14.900/mes para ecommerce. El mantenimiento opcional (actualizaciones, backups, soporte) cuesta desde $9.900/mes adicionales."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo actualizar el contenido yo mismo después?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, todos los sitios incluyen WordPress con panel de administración intuitivo. Los planes corporativo y ecommerce incluyen capacitación de 2-4 horas para que puedas actualizar contenido, agregar productos o publicar en el blog tú mismo."
+            }
+          }
+        ]
+      })}} />
+
+      {/* Breadcrumb Schema */}
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "¿Cuánto Cuesta un Sitio Web en Concepción? [Precios Reales 2026]", url: "/blog/cuanto-cuesta-diseno-web-concepcion" }
+      ]} />
     </>
   );
 }

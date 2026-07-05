@@ -3,6 +3,7 @@ import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Cómo Elegir Agencia de Marketing Digital en Concepción [Guía]',
@@ -237,6 +238,69 @@ export default function ArticlePage() {
         "timeRequired": "PT9M",
         "inLanguage": "es-CL"
       })}} />
+
+      {/* FAQPage Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cómo elegir una buena agencia de marketing digital?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Evalúa 7 criterios clave: casos de éxito verificables con datos reales, especialización en tu industria, servicios internos no subcontratados, transparencia total con accesos a herramientas, estrategia clara antes de firmar, presupuesto realista según objetivos, y sin presión de ventas urgentes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué preguntar antes de contratar una agencia de marketing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pregunta por 3 casos de éxito similares a tu negocio con ROI medible, qué incluye el servicio mensual específicamente, qué resultados esperar en 3-6-12 meses, si tendrás acceso completo a Analytics y Google Ads, y cómo miden el éxito de la campaña vinculado a ventas o leads."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuáles son las señales de alerta al elegir agencia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Red flags: promesas irreales como primera página Google en 2 semanas, no mostrar casos de éxito medibles, no dar accesos a herramientas, paquetes genéricos para todos los negocios, presión de venta con descuentos urgentes, contratos muy largos sin período prueba."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Por qué es importante tener acceso a las herramientas de marketing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Son TUS datos y TU inversión publicitaria. Sin accesos como propietario a Google Analytics, Search Console y Google Ads, la agencia puede ocultar malos resultados. Si terminas el contrato sin accesos, pierdes todo el historial y datos acumulados."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Debe la agencia tener experiencia en mi industria específica?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No necesariamente en tu rubro exacto, pero sí en industria similar. Una agencia que trabajó con restaurantes entiende Google Maps y reseñas. Una con experiencia en ecommerce entiende conversión y carrito abandonado. Esto reduce errores costosos y acelera resultados."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto presupuesto necesito para marketing digital efectivo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Depende del objetivo. SEO básico desde $249.000/mes, Google Ads efectivo desde $300.000/mes ($150k clicks + $150k gestión), gestión redes sociales $150.000/mes. Una agencia honesta te dirá qué es alcanzable con tu presupuesto y qué no."
+            }
+          }
+        ]
+      })}} />
+
+      {/* Breadcrumb Schema */}
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Cómo Elegir Agencia de Marketing Digital en Concepción [2026]", url: "/blog/como-elegir-agencia-marketing-digital-concepcion" }
+      ]} />
     </>
   );
 }

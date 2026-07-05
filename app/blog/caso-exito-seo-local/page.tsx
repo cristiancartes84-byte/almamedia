@@ -3,6 +3,7 @@ import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Caso de Éxito: Cómo un Restaurant Aumentó Ventas 60% con SEO Local',
@@ -320,6 +321,13 @@ export default function ArticlePage() {
         "timeRequired": "PT6M",
         "inLanguage": "es-CL"
       })}} />
+
+      {/* Breadcrumb Schema */}
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Caso de Éxito: Cómo un Restaurant Aumentó Ventas 60% con SEO Local", url: "/blog/caso-exito-seo-local" }
+      ]} />
     </>
   );
 }

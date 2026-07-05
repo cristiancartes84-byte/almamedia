@@ -3,6 +3,7 @@ import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'SEO Local: Cómo Aparecer en Google Maps [Paso a Paso 2026]',
@@ -244,6 +245,13 @@ export default function ArticlePage() {
         "timeRequired": "PT8M",
         "inLanguage": "es-CL"
       })}} />
+
+      {/* Breadcrumb Schema */}
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "SEO Local: Cómo Aparecer en Google Maps [Paso a Paso 2026]", url: "/blog/seo-local-google-maps" }
+      ]} />
     </>
   );
 }

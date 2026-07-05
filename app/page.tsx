@@ -461,6 +461,13 @@ export default function Home() {
                   }
                 }
               ]
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "47",
+              "bestRating": "5",
+              "worstRating": "1"
             }
           })
         }}

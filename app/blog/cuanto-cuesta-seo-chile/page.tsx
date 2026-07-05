@@ -3,6 +3,7 @@ import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: '¿Cuánto Cuesta SEO en Chile? [Precios Reales y ROI]',
@@ -248,6 +249,69 @@ export default function ArticlePage() {
         "timeRequired": "PT7M",
         "inLanguage": "es-CL"
       })}} />
+
+      {/* FAQPage Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta SEO en Chile en promedio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El SEO en Chile cuesta desde $249.000/mes para planes básicos hasta $590.000+/mes para campañas agresivas. El plan más popular es el SEO Profesional a $390.000/mes que incluye 4 artículos mensuales, link building y SEO técnico avanzado."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué incluye un plan de SEO básico en Chile?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un plan SEO básico ($249.000/mes) incluye auditoría SEO inicial, optimización on-page de 5-10 páginas, 2 artículos de blog optimizados por mes, optimización técnica básica, investigación de 10-15 keywords locales y reporte mensual de posiciones y tráfico."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tiempo tarda en dar resultados el SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El SEO comienza a mostrar primeros resultados en 3-4 meses con keywords de baja competencia subiendo posiciones. Los resultados significativos con keywords principales en top 10-20 se ven típicamente entre 5-6 meses, y posiciones top 3-5 entre 7-12 meses según la competencia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuál es el ROI esperado de invertir en SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El ROI promedio de SEO es de 250-287% en 6 meses. Por ejemplo, una inversión de $2.340.000 en 6 meses puede generar ingresos mensuales de $6.720.000 desde el mes 6, con tráfico creciendo de 0 a 1,200 visitas mensuales y conversiones constantes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Vale la pena invertir en SEO para mi negocio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, vale la pena si buscas resultados sostenibles a largo plazo. El SEO es ideal para negocios que pueden esperar 3-6 meses por resultados, tienen presupuesto mínimo de $249.000/mes y quieren tráfico orgánico constante sin pagar por cada clic como en publicidad."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué diferencia hay entre SEO básico, profesional y agresivo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El SEO básico ($249k/mes) es para negocios locales pequeños con 2 artículos/mes. El profesional ($390k/mes) añade link building y 4 artículos, ideal para PYMES. El agresivo ($590k+/mes) incluye 8 artículos y link building intensivo para competir en keywords muy competitivas a nivel nacional."
+            }
+          }
+        ]
+      })}} />
+
+      {/* Breadcrumb Schema */}
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "¿Cuánto Cuesta SEO en Chile? [Precios Reales 2026]", url: "/blog/cuanto-cuesta-seo-chile" }
+      ]} />
     </>
   );
 }

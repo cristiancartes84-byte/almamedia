@@ -3,6 +3,7 @@ import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Marketing Digital para PYMES: Por Dónde Empezar [Guía 2026]',
@@ -350,6 +351,69 @@ export default function ArticlePage() {
         "timeRequired": "PT10M",
         "inLanguage": "es-CL"
       })}} />
+
+      {/* FAQPage Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Por dónde empezar con marketing digital para PYMES?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Empieza definiendo un objetivo específico medible (ej: generar 15 cotizaciones/mes en 3 meses). Luego prioriza 2 canales según tu negocio: negocios locales Google Maps + sitio web, ecommerce tienda online + Instagram, servicios profesionales sitio web + SEO."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto presupuesto necesita una PYME para marketing digital?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Etapa fundación (mes 1-3) requiere $300k-$500k para sitio web y presencia básica. Etapa crecimiento (mes 4-12) necesita $150k-$400k/mes para SEO o publicidad. Etapa escala (año 2+) requiere $400k-$1M/mes para dominar el nicho."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué canales de marketing digital debe priorizar una PYME?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Depende del tipo de negocio. Negocio local: Google Maps y sitio web básico. Ecommerce: tienda online e Instagram con Facebook Ads. Servicio profesional: sitio web con SEO y LinkedIn. B2B: LinkedIn, email marketing y sitio web. Mejor 2 canales bien ejecutados que 7 mediocres."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué herramientas gratuitas necesita una PYME para marketing digital?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Herramientas esenciales gratuitas: Google Analytics para medir tráfico, Google Search Console para SEO, Google Business Profile para aparecer en Maps, Canva para diseñar posts, Meta Business Suite para gestionar Instagram y Facebook desde un panel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Debe una PYME hacer marketing digital internamente o contratar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Puedes hacer tú: configurar Google Business Profile, publicar en redes sociales, responder mensajes. Deberías contratar: diseño sitio web, SEO, Google Ads, fotografía profesional y estrategia. Si trabajas 60h/semana, contratar es inversión que libera tu tiempo para el negocio."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué métricas debe medir una PYME en marketing digital?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Métricas que importan: leads generados/mes, costo por lead, tasa de conversión, ROI y tráfico orgánico desde Google. Ignora vanity metrics como likes, seguidores e impresiones que no se traducen directamente en ventas o clientes reales."
+            }
+          }
+        ]
+      })}} />
+
+      {/* Breadcrumb Schema */}
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Marketing Digital para PYMES: Por Dónde Empezar [2026]", url: "/blog/marketing-digital-pymes" }
+      ]} />
     </>
   );
 }

@@ -3,6 +3,7 @@ import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: '10 Errores que Matan tu Sitio Web (y Cómo Solucionarlos) [2026]',
@@ -317,6 +318,13 @@ export default function ArticlePage() {
         "timeRequired": "PT9M",
         "inLanguage": "es-CL"
       })}} />
+
+      {/* Breadcrumb Schema */}
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "10 Errores que Matan tu Sitio Web (y Cómo Solucionarlos)", url: "/blog/errores-sitio-web" }
+      ]} />
     </>
   );
 }

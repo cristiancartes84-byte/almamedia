@@ -3,6 +3,7 @@ import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Landing Page vs Sitio Web: ¿Cuál Necesito? [Guía Completa]',
@@ -278,6 +279,69 @@ export default function ArticlePage() {
         "timeRequired": "PT6M",
         "inLanguage": "es-CL"
       })}} />
+
+      {/* FAQPage Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuál es la diferencia principal entre landing page y sitio web?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Una landing page es una sola página enfocada en un objetivo específico sin menú de navegación, con tasa de conversión de 8-15%. Un sitio web tiene múltiples páginas con navegación completa, ideal para informar sobre varios servicios pero con menor tasa de conversión del 2-4%."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuándo debo usar una landing page en vez de un sitio web?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Usa landing page si: tienes 1-2 servicios específicos, estás invirtiendo en publicidad (Google Ads), lanzas un producto nuevo, tienes presupuesto limitado ($169.000), o necesitas alta conversión inmediata. Es ideal para freelancers y servicios profesionales simples."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuándo necesito un sitio web completo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Necesitas sitio web si: ofreces múltiples servicios o productos, quieres implementar estrategia SEO con blog, eres empresa consolidada o grande, necesitas educar al cliente sobre productos técnicos, o buscas posicionamiento a largo plazo en Google."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta cada opción?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Una landing page cuesta $169.000/año con desarrollo en 7-10 días. Un sitio web corporativo cuesta $390.000 setup + $9.900/mes de hosting con desarrollo en 15-30 días. La diferencia de inversión se justifica según tus objetivos de negocio."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo empezar con landing page y luego escalar a sitio web?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, es la estrategia más inteligente si tienes presupuesto limitado. Comienza con landing page ($169.000) para validar demanda y generar primeros clientes en 3-6 meses. Luego escala a sitio web completo ($390.000) cuando tengas flujo de caja para crecer con SEO."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué convierte más, landing page o sitio web?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La landing page convierte mucho más con tasa del 8-15% vs 2-4% del sitio web, porque está diseñada para un solo objetivo sin distracciones. Sin embargo, el sitio web genera más tráfico orgánico a largo plazo gracias al SEO y múltiples páginas indexadas."
+            }
+          }
+        ]
+      })}} />
+
+      {/* Breadcrumb Schema */}
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Landing Page vs Sitio Web: ¿Cuál Necesito? [Guía 2026]", url: "/blog/landing-page-vs-sitio-web" }
+      ]} />
     </>
   );
 }

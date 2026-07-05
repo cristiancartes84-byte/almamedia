@@ -3,6 +3,7 @@ import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Marketing Digital para Restaurantes [Guía Completa 2026]',
@@ -318,6 +319,13 @@ export default function ArticlePage() {
         "timeRequired": "PT10M",
         "inLanguage": "es-CL"
       })}} />
+
+      {/* Breadcrumb Schema */}
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Marketing Digital para Restaurantes [Guía Completa 2026]", url: "/blog/marketing-digital-restaurantes-guia" }
+      ]} />
     </>
   );
 }

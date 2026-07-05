@@ -3,6 +3,7 @@ import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Fotografía de Producto: ¿Vale la Pena? [ROI Real y Casos]',
@@ -261,6 +262,13 @@ export default function ArticlePage() {
         "timeRequired": "PT7M",
         "inLanguage": "es-CL"
       })}} />
+
+      {/* Breadcrumb Schema */}
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Fotografía de Producto: ¿Vale la Pena? [ROI Real 2026]", url: "/blog/fotografia-producto-vale-la-pena" }
+      ]} />
     </>
   );
 }
