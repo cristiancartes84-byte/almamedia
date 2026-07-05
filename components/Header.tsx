@@ -30,8 +30,13 @@ export default function Header() {
           </li>
         </ul>
 
-        <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button
+          className="md:hidden p-2"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isMenuOpen}
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             {isMenuOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (

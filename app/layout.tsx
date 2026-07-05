@@ -18,7 +18,12 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <meta name="google-site-verification" content="2aumA2nbinnyOanG1oBvlHK-tCoT9MBQr0zei26gdjY" />
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+        {/* Preconnect para recursos externos */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+        {/* Particles.js - lazy load */}
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer async></script>
       </head>
       <body className="antialiased">
         <Analytics />
