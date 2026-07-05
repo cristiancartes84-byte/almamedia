@@ -15,8 +15,11 @@ export default function ParticlesBackground() {
     // En móvil, esperar 2s antes de cargar (prioridad baja)
     const delay = isMobile ? 2000 : 0;
 
+    console.log(`🎨 Particles: Inicializando en ${isMobile ? 'móvil' : 'desktop'} (delay: ${delay}ms)`);
+
     const timer = setTimeout(() => {
       setInit(true);
+      console.log('🎨 Particles: Init completado, renderizando...');
     }, delay);
 
     return () => clearTimeout(timer);
@@ -25,9 +28,10 @@ export default function ParticlesBackground() {
   const particlesInit = useCallback(async (engine: Engine) => {
     // Cargar solo el slim bundle (más ligero)
     await loadSlim(engine);
+    console.log('✅ tsParticles cargado exitosamente');
   }, []);
 
-  if (!init) return <div id="particles-js" className="fixed w-full h-full top-0 left-0 z-0" />;
+  if (!init) return null;
 
   // Detectar móvil para ajustar cantidad de partículas
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -36,7 +40,8 @@ export default function ParticlesBackground() {
     <Particles
       id="particles-js"
       init={particlesInit}
-      className="fixed w-full h-full top-0 left-0 z-0 pointer-events-none"
+      className="fixed w-full h-full top-0 left-0 pointer-events-none"
+      style={{ zIndex: 1 }}
       options={{
         fpsLimit: 60,
         particles: {
