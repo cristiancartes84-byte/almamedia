@@ -1,23 +1,47 @@
 'use client';
 
-import { useEffect, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
+import Particles from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
+import type { Engine } from '@tsparticles/engine';
 
 export default function ParticlesBackground() {
+  const [init, setInit] = useState(false);
+
   useEffect(() => {
-    // Solo cargar particles en el cliente
-    if (typeof window !== 'undefined') {
-      loadParticles();
-    }
+    // Detectar si es móvil para optimización
+    const isMobile = window.innerWidth < 768;
+
+    // En móvil, esperar 2s antes de cargar (prioridad baja)
+    const delay = isMobile ? 2000 : 0;
+
+    const timer = setTimeout(() => {
+      setInit(true);
+    }, delay);
+
+    return () => clearTimeout(timer);
   }, []);
 
-  const loadParticles = useCallback(async () => {
-    const particlesJS = (window as any).particlesJS;
+  const particlesInit = useCallback(async (engine: Engine) => {
+    // Cargar solo el slim bundle (más ligero)
+    await loadSlim(engine);
+  }, []);
 
-    if (particlesJS) {
-      particlesJS('particles-js', {
+  if (!init) return <div id="particles-js" className="fixed w-full h-full top-0 left-0 z-0" />;
+
+  // Detectar móvil para ajustar cantidad de partículas
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+  return (
+    <Particles
+      id="particles-js"
+      init={particlesInit}
+      className="fixed w-full h-full top-0 left-0 z-0 pointer-events-none"
+      options={{
+        fpsLimit: 60,
         particles: {
           number: {
-            value: 80,
+            value: isMobile ? 40 : 80, // 50% menos en móvil
             density: {
               enable: true,
               value_area: 800
@@ -35,7 +59,8 @@ export default function ParticlesBackground() {
             anim: {
               enable: true,
               speed: 1,
-              opacity_min: 0.1
+              opacity_min: 0.1,
+              sync: false
             }
           },
           size: {
@@ -44,10 +69,11 @@ export default function ParticlesBackground() {
             anim: {
               enable: true,
               speed: 2,
-              size_min: 0.1
+              size_min: 0.1,
+              sync: false
             }
           },
-          line_linked: {
+          links: {
             enable: true,
             distance: 150,
             color: '#C8FF00',
@@ -60,37 +86,41 @@ export default function ParticlesBackground() {
             direction: 'none',
             random: true,
             straight: false,
-            out_mode: 'out'
+            outModes: {
+              default: 'out'
+            }
           }
         },
         interactivity: {
-          detect_on: 'canvas',
+          detectsOn: 'canvas',
           events: {
-            onhover: {
-              enable: true,
+            onHover: {
+              enable: !isMobile, // Desactivar en móvil
               mode: 'grab'
             },
-            onclick: {
-              enable: true,
+            onClick: {
+              enable: !isMobile, // Desactivar en móvil
               mode: 'push'
+            },
+            resize: {
+              enable: true,
+              delay: 0.5
             }
           },
           modes: {
             grab: {
               distance: 140,
-              line_linked: {
+              links: {
                 opacity: 0.5
               }
             },
             push: {
-              particles_nb: 4
+              quantity: 4
             }
           }
         },
-        retina_detect: true
-      });
-    }
-  }, []);
-
-  return <div id="particles-js" className="fixed w-full h-full top-0 left-0 z-0 pointer-events-none" />;
+        detectRetina: true
+      }}
+    />
+  );
 }

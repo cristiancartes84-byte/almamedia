@@ -21,9 +21,6 @@ export default function RootLayout({
         {/* Preconnect para recursos externos */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-        {/* Particles.js - lazy load */}
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer async></script>
       </head>
       <body className="antialiased">
         <Analytics />
