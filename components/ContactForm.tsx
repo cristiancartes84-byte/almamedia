@@ -26,7 +26,7 @@ export default function ContactForm() {
         {
           from_name: formData.from_name,
           from_email: formData.from_email,
-          phone: formData.phone || 'No proporcionado',
+          phone: formData.phone,
           service: formData.service || 'No especificado',
           message: formData.message,
         },
@@ -116,7 +116,7 @@ export default function ContactForm() {
 
         <div>
           <label htmlFor="phone" className="block text-sm font-semibold mb-2">
-            Teléfono
+            Teléfono *
           </label>
           <input
             type="tel"
@@ -124,6 +124,7 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
+            required
             disabled={status === 'sending'}
             className="w-full px-4 py-3 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:outline-none transition-colors disabled:opacity-50"
             placeholder="+56 9 1234 5678"
