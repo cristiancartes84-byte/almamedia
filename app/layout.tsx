@@ -3,7 +3,11 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
-import Particles from "@/components/Particles";
+import dynamic from 'next/dynamic';
+
+const Particles = dynamic(() => import('@/components/Particles'), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: "Alma Media - Marketing Digital Biobío",
