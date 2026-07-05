@@ -212,7 +212,7 @@ export default function ArticlePage() {
           "name": "Alma Media",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://almamedia.cl/logo.png"
+            "url": "https://almamedia.cl/logo.jpg"
           }
         },
         "datePublished": "2026-07-04T10:00:00Z",
