@@ -1,9 +1,27 @@
 import ParticlesBackground from '@/components/Particles';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Sobre Alma Media - Agencia de Marketing Digital en Biobío',
   description: 'Alma Media: agencia de marketing digital en Concepción, Biobío. Diseño web, SEO y contenido visual para empresas que quieren crecer online.',
+  metadataBase: new URL('https://almamedia.cl'),
+  alternates: {
+    canonical: '/nosotros',
+  },
+  openGraph: {
+    title: 'Sobre Alma Media - Agencia Digital en Biobío',
+    description: 'Agencia de marketing digital en Concepción. Diseño web, SEO y contenido visual para empresas que quieren crecer online.',
+    url: 'https://almamedia.cl/nosotros',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Sobre Alma Media',
+    description: 'Agencia de marketing digital en Concepción, Biobío.',
+  },
 };
 
 export default function NosotrosPage() {

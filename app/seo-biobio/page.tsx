@@ -135,6 +135,39 @@ export default function SEOBiobioPage() {
           </Link>
         </div>
       </article>
+
+      {/* LocalBusiness Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Alma Media - SEO Región del Biobío",
+        "description": "SEO profesional y posicionamiento en Google para negocios en toda la Región del Biobío. Atendemos Concepción, Talcahuano, San Pedro, Los Ángeles, Chillán.",
+        "url": "https://almamedia.cl/seo-biobio",
+        "telephone": "+56412345678",
+        "email": "contacto@almamedia.cl",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Concepción",
+          "addressRegion": "Región del Biobío",
+          "addressCountry": "CL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -36.8201,
+          "longitude": -73.0444
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Región del Biobío"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": [
+          "https://www.facebook.com/almamedia",
+          "https://www.instagram.com/almamedia",
+          "https://www.linkedin.com/company/almamedia"
+        ]
+      })}} />
     </>
   );
 }

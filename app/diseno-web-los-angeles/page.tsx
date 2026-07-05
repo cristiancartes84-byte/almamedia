@@ -207,6 +207,39 @@ export default function DisenoWebLosAngelesPage() {
           </Link>
         </div>
       </article>
+
+      {/* LocalBusiness Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Alma Media - Diseño Web Los Ángeles",
+        "description": "Diseño web profesional en Los Ángeles, capital provincial del Biobío. Especializados en comercio, agricultura, turismo y servicios provinciales.",
+        "url": "https://almamedia.cl/diseno-web-los-angeles",
+        "telephone": "+56412345678",
+        "email": "contacto@almamedia.cl",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Los Ángeles",
+          "addressRegion": "Provincia del Biobío",
+          "addressCountry": "CL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -37.4697,
+          "longitude": -72.3537
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Los Ángeles"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": [
+          "https://www.facebook.com/almamedia",
+          "https://www.instagram.com/almamedia",
+          "https://www.linkedin.com/company/almamedia"
+        ]
+      })}} />
     </>
   );
 }

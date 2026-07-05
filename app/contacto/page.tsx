@@ -1,9 +1,27 @@
 import ParticlesBackground from '@/components/Particles';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Contacto - Cotiza tu Proyecto | Alma Media Biobío',
   description: 'Contacta con Alma Media para cotizar tu proyecto de diseño web, SEO o contenido visual en Biobío. Te respondemos en menos de 24 horas.',
+  metadataBase: new URL('https://almamedia.cl'),
+  alternates: {
+    canonical: '/contacto',
+  },
+  openGraph: {
+    title: 'Contacto - Cotiza tu Proyecto | Alma Media',
+    description: 'Cotiza tu proyecto de diseño web, SEO o contenido visual. Respuesta en menos de 24 horas.',
+    url: 'https://almamedia.cl/contacto',
+    siteName: 'Alma Media',
+    locale: 'es_CL',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Contacto - Alma Media',
+    description: 'Cotiza tu proyecto de marketing digital. Respuesta en 24h.',
+  },
 };
 
 export default function ContactoPage() {

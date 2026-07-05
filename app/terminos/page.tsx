@@ -3,6 +3,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://almamedia.cl'),
+  alternates: { canonical: '/terminos' },
   title: 'Términos y Condiciones | Alma Media',
   description: 'Términos y condiciones de uso del sitio web almamedia.cl y contratación de servicios de marketing digital.',
   robots: 'noindex, follow',

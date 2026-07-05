@@ -316,6 +316,39 @@ export default function DisenoWebCoronelPage() {
         </div>
 
       </article>
+
+      {/* LocalBusiness Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Alma Media - Diseño Web Coronel",
+        "description": "Diseño web profesional en Coronel. Especializados en turismo costero, pesca artesanal, industria y comercio local.",
+        "url": "https://almamedia.cl/diseno-web-coronel",
+        "telephone": "+56412345678",
+        "email": "contacto@almamedia.cl",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Coronel",
+          "addressRegion": "Región del Biobío",
+          "addressCountry": "CL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -37.0333,
+          "longitude": -73.1500
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Coronel"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": [
+          "https://www.facebook.com/almamedia",
+          "https://www.instagram.com/almamedia",
+          "https://www.linkedin.com/company/almamedia"
+        ]
+      })}} />
     </>
   );
 }

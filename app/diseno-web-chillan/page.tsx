@@ -316,6 +316,39 @@ export default function DisenoWebChillanPage() {
         </div>
 
       </article>
+
+      {/* LocalBusiness Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Alma Media - Diseño Web Chillán",
+        "description": "Diseño web profesional en Chillán, capital de Ñuble. Especializados en agricultura, gastronomía, turismo y comercio regional.",
+        "url": "https://almamedia.cl/diseno-web-chillan",
+        "telephone": "+56412345678",
+        "email": "contacto@almamedia.cl",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Chillán",
+          "addressRegion": "Región de Ñuble",
+          "addressCountry": "CL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -36.6063,
+          "longitude": -72.1034
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Chillán"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": [
+          "https://www.facebook.com/almamedia",
+          "https://www.instagram.com/almamedia",
+          "https://www.linkedin.com/company/almamedia"
+        ]
+      })}} />
     </>
   );
 }

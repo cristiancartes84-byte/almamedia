@@ -3,6 +3,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://almamedia.cl'),
+  alternates: { canonical: '/privacidad' },
   title: 'Política de Privacidad | Alma Media',
   description: 'Política de privacidad de Alma Media. Conoce cómo protegemos y tratamos tus datos personales según la Ley 19.628 de Chile.',
   robots: 'noindex, follow',

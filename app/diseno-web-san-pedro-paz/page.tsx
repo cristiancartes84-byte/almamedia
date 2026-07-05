@@ -207,6 +207,39 @@ export default function DisenoWebSanPedroPazPage() {
           </Link>
         </div>
       </article>
+
+      {/* LocalBusiness Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Alma Media - Diseño Web San Pedro de la Paz",
+        "description": "Diseño web profesional en San Pedro de la Paz. Especializados en negocios locales, educación, salud, fitness y servicios residenciales.",
+        "url": "https://almamedia.cl/diseno-web-san-pedro-paz",
+        "telephone": "+56412345678",
+        "email": "contacto@almamedia.cl",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Pedro de la Paz",
+          "addressRegion": "Región del Biobío",
+          "addressCountry": "CL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -36.8420,
+          "longitude": -73.0937
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "San Pedro de la Paz"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": [
+          "https://www.facebook.com/almamedia",
+          "https://www.instagram.com/almamedia",
+          "https://www.linkedin.com/company/almamedia"
+        ]
+      })}} />
     </>
   );
 }

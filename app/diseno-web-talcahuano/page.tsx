@@ -438,6 +438,39 @@ export default function DisenoWebTalcahuanoPage() {
           </p>
         </div>
       </div>
+
+      {/* LocalBusiness Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Alma Media - Diseño Web Talcahuano",
+        "description": "Diseño web profesional en Talcahuano. Especializados en negocios portuarios, industria naval, pesca y comercio marítimo.",
+        "url": "https://almamedia.cl/diseno-web-talcahuano",
+        "telephone": "+56412345678",
+        "email": "contacto@almamedia.cl",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Talcahuano",
+          "addressRegion": "Región del Biobío",
+          "addressCountry": "CL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -36.7166,
+          "longitude": -73.1166
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Talcahuano"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": [
+          "https://www.facebook.com/almamedia",
+          "https://www.instagram.com/almamedia",
+          "https://www.linkedin.com/company/almamedia"
+        ]
+      })}} />
     </>
   );
 }

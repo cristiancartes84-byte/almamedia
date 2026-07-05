@@ -394,17 +394,74 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Alma Media",
-            "description": "Agencia de marketing digital en Concepción, Biobío. Diseño web, SEO y contenido visual.",
+            "description": "Agencia de marketing digital en Concepción, Biobío. Diseño web, SEO, fotografía y video de producto.",
             "url": "https://almamedia.cl",
             "logo": "https://almamedia.cl/logo.png",
+            "telephone": "+56XXXXXXXXX",
+            "email": "contacto@almamedia.cl",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Concepción",
-              "addressRegion": "Biobío",
+              "addressRegion": "Región del Biobío",
               "addressCountry": "CL"
             },
-            "areaServed": "Región del Biobío, Chile",
-            "priceRange": "$$$"
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -36.8201,
+              "longitude": -73.0444
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Región del Biobío, Chile"
+            },
+            "priceRange": "$$",
+            "foundingDate": "2024",
+            "sameAs": [
+              "https://www.facebook.com/almamedia",
+              "https://www.instagram.com/almamedia",
+              "https://www.linkedin.com/company/almamedia"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+56XXXXXXXXX",
+              "contactType": "customer service",
+              "areaServed": "CL",
+              "availableLanguage": "Spanish"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Servicios de Marketing Digital",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Diseño Web"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "SEO y Posicionamiento"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Fotografía de Producto"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Video de Producto"
+                  }
+                }
+              ]
+            }
           })
         }}
       />
