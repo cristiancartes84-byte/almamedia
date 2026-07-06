@@ -123,7 +123,7 @@ export default function DisenoWebConcepcionPage() {
                   "longitude": -73.0444
                 },
                 "url": "https://almamedia.cl/diseno-web-concepcion",
-                "priceRange": "$169.000 - $590.000"
+                "priceRange": "$199.000 - $690.000"
               },
               {
                 "@type": "FAQPage",
@@ -133,7 +133,7 @@ export default function DisenoWebConcepcionPage() {
                     "name": "¿Cuánto cuesta un sitio web en Concepción?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Los precios varían según el tipo de sitio: Landing Page desde $169.000/año, Sitio Corporativo $390.000 (pago único), y Ecommerce desde $590.000. Todos incluyen hosting, dominio .cl, SEO básico y capacitación."
+                      "text": "Los precios varían según el tipo de sitio: Landing Page desde $199.000/año, Sitio Corporativo $490.000 (pago único), y Ecommerce desde $690.000. Todos incluyen hosting, dominio .cl, SEO básico y capacitación."
                     }
                   },
                   {
@@ -332,7 +332,7 @@ export default function DisenoWebConcepcionPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all flex flex-col">
               <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Landing Page</h3>
-              <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$169.000</p>
+              <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$199.000</p>
               <p className="text-[var(--color-muted)] mb-6 text-sm">CLP/año (todo incluido)</p>
               <div className="flex-grow">
                 <ul className="space-y-2 text-sm mb-6">
@@ -355,7 +355,7 @@ export default function DisenoWebConcepcionPage() {
                 MÁS POPULAR
               </div>
               <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Sitio Corporativo</h3>
-              <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$390.000</p>
+              <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$490.000</p>
               <p className="text-[var(--color-muted)] mb-6 text-sm">CLP (pago único desarrollo)</p>
               <div className="flex-grow">
                 <ul className="space-y-2 text-sm mb-6">
@@ -376,7 +376,7 @@ export default function DisenoWebConcepcionPage() {
 
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all flex flex-col">
               <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Ecommerce</h3>
-              <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $590.000</p>
+              <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $690.000</p>
               <p className="text-[var(--color-muted)] mb-6 text-sm">CLP (según productos)</p>
               <div className="flex-grow">
                 <ul className="space-y-2 text-sm mb-6">
@@ -446,7 +446,7 @@ export default function DisenoWebConcepcionPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Cuánto cuesta un sitio web en Concepción?</h3>
               <p className="text-lg leading-relaxed">
-                Los precios de diseño web en Concepción varían según el tipo de sitio: <strong>Landing Page desde $169.000/año</strong> (incluye hosting + dominio), <strong>Sitio Corporativo $390.000</strong> (pago único de desarrollo), y <strong>Ecommerce desde $590.000</strong>. Todos nuestros paquetes incluyen hosting, dominio .cl, SEO básico on-page y capacitación para administrar tu sitio.
+                Los precios de diseño web en Concepción varían según el tipo de sitio: <strong>Landing Page desde $199.000/año</strong> (incluye hosting + dominio), <strong>Sitio Corporativo $490.000</strong> (pago único de desarrollo), y <strong>Ecommerce desde $690.000</strong>. Todos nuestros paquetes incluyen hosting, dominio .cl, SEO básico on-page y capacitación para administrar tu sitio.
               </p>
             </div>
 

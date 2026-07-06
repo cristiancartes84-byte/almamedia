@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Servicios Marketing Digital Chile 2026 | Alma Media',
-  description: 'Servicios completos de marketing digital: Diseño Web, SEO, Fotografía y Video de Producto, Packs Completos. Desde $169.000. Región del Biobío.',
+  description: 'Servicios completos de marketing digital: Diseño Web, SEO, Fotografía y Video de Producto, Packs Completos. Desde $199.000. Región del Biobío.',
   keywords: 'servicios marketing digital, agencia marketing digital Chile, diseño web SEO fotografía video, marketing digital Biobío',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
@@ -149,7 +149,7 @@ export default function ServiciosPage() {
                 <li>✓ SEO base incluido</li>
                 <li>✓ Google Analytics</li>
               </ul>
-              <div className="text-[var(--color-accent)] font-bold">Desde $169.000/año →</div>
+              <div className="text-[var(--color-accent)] font-bold">Desde $199.000/año →</div>
             </Link>
 
             {/* SEO */}
@@ -217,7 +217,7 @@ export default function ServiciosPage() {
               <h3 className="text-2xl font-bold mb-4 group-hover:text-[var(--color-accent)] transition-colors">Packs Completos</h3>
               <p className="text-[var(--color-muted)] mb-6 leading-relaxed">Combina Web + SEO + Foto + Video. Ahorra hasta 40% vs servicios separados. Solución todo-en-uno.</p>
               <ul className="space-y-2 text-sm mb-6">
-                <li>✓ Pack Web $169.000/año</li>
+                <li>✓ Pack Web $199.000/año</li>
                 <li>✓ Pack Visual $199.000</li>
                 <li>✓ Pack Todo-en-Uno $399.000</li>
                 <li>✓ Ahorro 30-40%</li>
