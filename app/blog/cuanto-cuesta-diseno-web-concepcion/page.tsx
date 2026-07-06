@@ -1,4 +1,4 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: '¿Cuánto Cuesta un Sitio Web en Concepción? [Precios Actualizados]',
-  description: 'Precios reales de diseño web en Concepción: Landing pages desde $169.000, sitios corporativos $390.000, ecommerce $590.000. Guía completa con qué incluye cada opción.',
+  description: 'Precios reales de diseño web en Concepción: Landing pages desde $199.000, sitios corporativos $490.000, ecommerce $690.000. Guía completa con qué incluye cada opción.',
   keywords: 'cuanto cuesta diseño web Concepción, precios sitio web Concepción, diseño web precio Chile',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: '¿Cuánto Cuesta un Sitio Web en Concepción? Precios 2026',
-    description: 'Landing pages desde $169.000, sitios corporativos $390.000, ecommerce $590.000. Guía completa de precios de diseño web.',
+    description: 'Landing pages desde $199.000, sitios corporativos $490.000, ecommerce $690.000. Guía completa de precios de diseño web.',
     url: 'https://almamedia.cl/blog/cuanto-cuesta-diseno-web-concepcion',
     siteName: 'Alma Media',
     locale: 'es_CL',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Precios Diseño Web Concepción 2026',
-    description: 'Desde $169.000. Landing pages, sitios corporativos y ecommerce. Precios reales actualizados.',
+    description: 'Desde $199.000. Landing pages, sitios corporativos y ecommerce. Precios reales actualizados.',
     images: ['/og-images/cuanto-cuesta-diseno-web-concepcion.jpg'],
   },
 };
@@ -69,7 +69,7 @@ export default function ArticlePage() {
             </h1>
 
             <p className="text-xl text-[var(--color-muted)] leading-relaxed text-justify">
-              <strong className="text-white">El 73% de negocios en Concepción pierde clientes por no tener sitio web.</strong> Si estás buscando cuánto cuesta diseñar un sitio web profesional en Concepción, esta guía te da precios reales actualizados para <CurrentMonth /> <CurrentYear />, qué incluye cada opción, y cómo elegir según tu tipo de negocio. Precios desde $169.000/año para landing page hasta $590.000+ para ecommerce completo con todas las funcionalidades.
+              <strong className="text-white">El 73% de negocios en Concepción pierde clientes por no tener sitio web.</strong> Si estás buscando cuánto cuesta diseñar un sitio web profesional en Concepción, esta guía te da precios reales actualizados para <CurrentMonth /> <CurrentYear />, qué incluye cada opción, y cómo elegir según tu tipo de negocio. Precios desde $199.000/año para landing page hasta $690.000+ para ecommerce completo con todas las funcionalidades.
             </p>
           </div>
 
@@ -80,7 +80,7 @@ export default function ArticlePage() {
             <div className="grid md:grid-cols-3 gap-6 mb-12 not-prose">
               <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
                 <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">Landing Page</h3>
-                <div className="text-4xl font-black mb-4">$169.000</div>
+                <div className="text-4xl font-black mb-4">$199.000</div>
                 <p className="text-sm text-[var(--color-muted)] mb-4">CLP/año (hosting incluido)</p>
                 <ul className="space-y-2 text-sm">
                   <li>✓ 1 página optimizada</li>
@@ -96,7 +96,7 @@ export default function ArticlePage() {
                   MÁS POPULAR
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">Sitio Corporativo</h3>
-                <div className="text-4xl font-black mb-4">$390.000</div>
+                <div className="text-4xl font-black mb-4">$490.000</div>
                 <p className="text-sm text-[var(--color-muted)] mb-4">CLP setup + $9.900/mes</p>
                 <ul className="space-y-2 text-sm">
                   <li>✓ Hasta 10 páginas</li>
@@ -109,7 +109,7 @@ export default function ArticlePage() {
 
               <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
                 <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">Ecommerce</h3>
-                <div className="text-4xl font-black mb-4">$590.000+</div>
+                <div className="text-4xl font-black mb-4">$690.000+</div>
                 <p className="text-sm text-[var(--color-muted)] mb-4">CLP setup + $14.900/mes</p>
                 <ul className="space-y-2 text-sm">
                   <li>✓ WooCommerce</li>
@@ -123,17 +123,17 @@ export default function ArticlePage() {
 
             <h2 className="text-3xl font-black mb-6 mt-12 text-[var(--color-accent)]">¿Qué Incluye Cada Precio?</h2>
 
-            <h3 className="text-2xl font-bold mb-4 mt-8">Landing Page ($169.000/año)</h3>
+            <h3 className="text-2xl font-bold mb-4 mt-8">Landing Page ($199.000/año)</h3>
             <p className="text-lg leading-[1.8] text-justify mb-6">
               <strong className="text-[var(--color-accent)]">Ideal para:</strong> Servicios profesionales, freelancers, negocios con un servicio principal. Una landing page es una página única enfocada en conversión: llevará al visitante a realizar UNA acción específica (contactar, cotizar, llamar). Incluye diseño WordPress responsive, formulario de contacto integrado con email, SEO base (keywords, meta descriptions, sitemap), hosting en servidor chileno primer año, dominio .cl incluido, SSL (HTTPS) para seguridad. Carga menor a 2 segundos garantizada. Entrega en 7-10 días hábiles. Mantenimiento mensual opcional $9.900/mes (actualizaciones, backups, soporte).
             </p>
 
-            <h3 className="text-2xl font-bold mb-4 mt-8">Sitio Corporativo ($390.000)</h3>
+            <h3 className="text-2xl font-bold mb-4 mt-8">Sitio Corporativo ($490.000)</h3>
             <p className="text-lg leading-[1.8] text-justify mb-6">
               <strong className="text-[var(--color-accent)]">Ideal para:</strong> Empresas establecidas, múltiples servicios, instituciones. Un sitio corporativo completo tiene hasta 10 páginas: inicio, servicios (múltiples), nosotros, equipo, contacto, blog. Incluye diseño profesional personalizado (no plantillas genéricas), WordPress con panel de administración para que actualices contenido tú mismo, blog funcional para SEO, hasta 3 cuentas de email corporativo (@tuempresa.cl), Google Analytics configurado para medir visitas, formularios avanzados (cotizador, multi-paso), integración WhatsApp Business, capacitación 2 horas presencial o remota. Hosting $9.900/mes en servidor optimizado para WordPress. Entrega 15-20 días hábiles.
             </p>
 
-            <h3 className="text-2xl font-bold mb-4 mt-8">Ecommerce ($590.000+)</h3>
+            <h3 className="text-2xl font-bold mb-4 mt-8">Ecommerce ($690.000+)</h3>
             <p className="text-lg leading-[1.8] text-justify mb-6">
               <strong className="text-[var(--color-accent)]">Ideal para:</strong> Retail, venta online, tiendas con catálogo productos. Tienda online completa con WooCommerce (plataforma ecommerce más usada en Chile), pasarelas de pago chilenas integradas (Transbank Webpay, Mercado Pago, Flow), gestión de stock automática, calculadora de envío por zona, hasta 100 productos cargados (fotos y descripciones las proporcionas tú), diseño responsive optimizado para mobile (70% compras desde celular), categorías y filtros de productos, carrito de compras persistente (guarda productos aunque cierren navegador), checkout simplificado (menos pasos = más conversión), Google Analytics Ecommerce (mide ventas, productos más vendidos, tasa conversión). Capacitación completa 4 horas para gestionar tienda. Hosting $14.900/mes. Entrega 25-30 días.
             </p>
@@ -189,7 +189,7 @@ export default function ArticlePage() {
               </Link>
             </div>
             <p className="text-sm text-[var(--color-muted)] mt-6">
-              ⭐ +45 sitios web creados en Concepción • Desde $169.000/año
+              ⭐ +45 sitios web creados en Concepción • Desde $199.000/año
             </p>
           </div>
 
@@ -201,7 +201,7 @@ export default function ArticlePage() {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "¿Cuánto Cuesta un Sitio Web en Concepción? Precios 2026",
-        "description": "Precios reales de diseño web en Concepción: Landing pages desde $169.000, sitios corporativos $390.000, ecommerce $590.000. Guía completa.",
+        "description": "Precios reales de diseño web en Concepción: Landing pages desde $199.000, sitios corporativos $490.000, ecommerce $690.000. Guía completa.",
         "image": "https://almamedia.cl/og-images/cuanto-cuesta-diseno-web-concepcion.jpg",
         "author": {
           "@type": "Organization",
@@ -239,12 +239,12 @@ export default function ArticlePage() {
             "name": "¿Cuánto cuesta hacer un sitio web en Concepción?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Los precios en Concepción van desde $169.000/año para una landing page básica, $390.000 para un sitio corporativo completo con hasta 10 páginas, y $590.000+ para una tienda online ecommerce. Todos los precios incluyen hosting y dominio."
+              "text": "Los precios en Concepción van desde $199.000/año para una landing page básica, $490.000 para un sitio corporativo completo con hasta 10 páginas, y $690.000+ para una tienda online ecommerce. Todos los precios incluyen hosting y dominio."
             }
           },
           {
             "@type": "Question",
-            "name": "¿Qué incluye una landing page de $169.000?",
+            "name": "¿Qué incluye una landing page de $199.000?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Incluye 1 página optimizada responsive para mobile, formulario de contacto, SEO base, dominio .cl, hosting en servidor chileno por 1 año y certificado SSL. Ideal para servicios profesionales y freelancers. Entrega en 7-10 días hábiles."

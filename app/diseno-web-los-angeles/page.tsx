@@ -1,11 +1,11 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Diseño Web Los Ángeles 2026 | Capital Provincial Biobío',
-  description: 'Diseño web profesional en Los Ángeles. Especializados en comercio, agricultura, turismo y servicios provinciales. Desde $169.000/año. Cotiza gratis.',
+  description: 'Diseño web profesional en Los Ángeles. Especializados en comercio, agricultura, turismo y servicios provinciales. Desde $199.000/año. Cotiza gratis.',
   keywords: 'diseño web Los Ángeles, sitio web Los Ángeles, página web Biobío, diseño web capital provincial, desarrollo web Los Ángeles Chile',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
@@ -94,7 +94,7 @@ export default function DisenoWebLosAngelesPage() {
           Diseño Web en Los Ángeles: Capital Provincial del Biobío
         </h1>
         <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
-          <strong>El diseño web profesional en Los Ángeles</strong> crea sitios WordPress optimizados para comercio, agricultura, turismo y servicios provinciales con alcance regional. Los Ángeles es capital de la Provincia del Biobío y segundo centro urbano más importante de la región con más de 200.000 habitantes, siendo centro de servicios para toda la provincia: Cabrero, Nacimiento, Mulchén, Laja, Santa Bárbara, Antuco, Quilleco. El 78% de angelinos busca en Google antes de comprar. Ofrecemos diseño web desde $169.000/año para landing page, $390.000 para sitio corporativo, especializado en: comercio (tiendas retail, distribuidoras mayoristas, ferreterías), agricultura y ganadería (maquinaria agrícola, insumos, veterinarias, agroservicios), turismo (hoteles, cabañas, turismo aventura Alto Biobío, gastronomía local), servicios profesionales (notarías, estudios jurídicos, corredoras de propiedades), salud y educación (clínicas, colegios particulares). Atendemos Los Ángeles centro, Av. Alemania, Av. Ricardo Vicuña, sectores Plaza de Armas, Mall Portal Los Ángeles, y toda la provincia del Biobío.
+          <strong>El diseño web profesional en Los Ángeles</strong> crea sitios WordPress optimizados para comercio, agricultura, turismo y servicios provinciales con alcance regional. Los Ángeles es capital de la Provincia del Biobío y segundo centro urbano más importante de la región con más de 200.000 habitantes, siendo centro de servicios para toda la provincia: Cabrero, Nacimiento, Mulchén, Laja, Santa Bárbara, Antuco, Quilleco. El 78% de angelinos busca en Google antes de comprar. Ofrecemos diseño web desde $199.000/año para landing page, $490.000 para sitio corporativo, especializado en: comercio (tiendas retail, distribuidoras mayoristas, ferreterías), agricultura y ganadería (maquinaria agrícola, insumos, veterinarias, agroservicios), turismo (hoteles, cabañas, turismo aventura Alto Biobío, gastronomía local), servicios profesionales (notarías, estudios jurídicos, corredoras de propiedades), salud y educación (clínicas, colegios particulares). Atendemos Los Ángeles centro, Av. Alemania, Av. Ricardo Vicuña, sectores Plaza de Armas, Mall Portal Los Ángeles, y toda la provincia del Biobío.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Link href="/contacto" className="px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">
@@ -130,7 +130,7 @@ export default function DisenoWebLosAngelesPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all flex flex-col">
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Landing Page</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$169.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$199.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP/año (hosting incluido)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ 1 página optimizada</li>
@@ -152,7 +152,7 @@ export default function DisenoWebLosAngelesPage() {
               </div>
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Sitio Corporativo</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$390.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$490.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP (pago único)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ Hasta 5 páginas</li>
@@ -172,7 +172,7 @@ export default function DisenoWebLosAngelesPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all flex flex-col">
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Ecommerce</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $590.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $690.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP (según productos)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ WordPress + WooCommerce</li>

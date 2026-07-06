@@ -1,11 +1,11 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Marketing Digital Concepción 2026 | Agencia Alma Media',
-  description: 'Agencia de marketing digital en Concepción. Diseño Web, SEO, Fotografía, Video. Capital regional del Biobío. Desde $169.000. Cotiza gratis.',
+  description: 'Agencia de marketing digital en Concepción. Diseño Web, SEO, Fotografía, Video. Capital regional del Biobío. Desde $199.000. Cotiza gratis.',
   keywords: 'marketing digital Concepción, agencia marketing Concepción, publicidad digital Concepción, SEO Concepción',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
@@ -68,7 +68,7 @@ export default function MarketingDigitalConcepcionPage() {
           Marketing Digital en Concepción
         </h1>
         <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
-          <strong>Agencia de marketing digital en Concepción,</strong> capital de la Región del Biobío. Más de 220.000 habitantes, centro universitario y comercial más importante del sur de Chile. Ofrecemos servicios completos de <Link href="/diseno-web-concepcion" className="text-[var(--color-accent)] hover:underline">diseño web Concepción</Link>, <Link href="/seo-posicionamiento" className="text-[var(--color-accent)] hover:underline">SEO posicionamiento</Link>, <Link href="/fotografia-producto" className="text-[var(--color-accent)] hover:underline">fotografía de producto</Link>, <Link href="/video-producto" className="text-[var(--color-accent)] hover:underline">video marketing</Link>. +200 empresas penquistas confían en nosotros: retail Barrio Estación/Pedro de Valdivia, servicios profesionales centro, educación superior, gastronomía, salud, tecnología. Presencia física en Concepción para reuniones presenciales o 100% remoto. Desde $169.000/año diseño web, $249.000/mes SEO. Atendemos Concepción centro, Pedro de Valdivia, Barrio Universitario, Lorenzo Arenas, Barrio Estación.
+          <strong>Agencia de marketing digital en Concepción,</strong> capital de la Región del Biobío. Más de 220.000 habitantes, centro universitario y comercial más importante del sur de Chile. Ofrecemos servicios completos de <Link href="/diseno-web-concepcion" className="text-[var(--color-accent)] hover:underline">diseño web Concepción</Link>, <Link href="/seo-posicionamiento" className="text-[var(--color-accent)] hover:underline">SEO posicionamiento</Link>, <Link href="/fotografia-producto" className="text-[var(--color-accent)] hover:underline">fotografía de producto</Link>, <Link href="/video-producto" className="text-[var(--color-accent)] hover:underline">video marketing</Link>. +200 empresas penquistas confían en nosotros: retail Barrio Estación/Pedro de Valdivia, servicios profesionales centro, educación superior, gastronomía, salud, tecnología. Presencia física en Concepción para reuniones presenciales o 100% remoto. Desde $199.000/año diseño web, $249.000/mes SEO. Atendemos Concepción centro, Pedro de Valdivia, Barrio Universitario, Lorenzo Arenas, Barrio Estación.
         </p>
         <Link href="/contacto" className="inline-block px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">
           Cotizar Servicios →
@@ -88,7 +88,7 @@ export default function MarketingDigitalConcepcionPage() {
               <p className="text-[var(--color-muted)] mb-6 leading-relaxed text-justify">
                 Sitios web para empresas penquistas: retail Barrio Estación, servicios profesionales centro, educación, gastronomía. WordPress responsive, carga rápida, SEO incluido.
               </p>
-              <div className="text-3xl font-black text-[var(--color-accent)]">$169.000<span className="text-base font-normal text-[var(--color-muted)]">/año</span></div>
+              <div className="text-3xl font-black text-[var(--color-accent)]">$199.000<span className="text-base font-normal text-[var(--color-muted)]">/año</span></div>
             </Link>
 
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">

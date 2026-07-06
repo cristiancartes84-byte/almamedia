@@ -1,4 +1,4 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -126,7 +126,7 @@ export default function ServiciosPage() {
           Servicios de Marketing Digital Profesional
         </h1>
         <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
-          <strong>Servicios completos de marketing digital en Chile:</strong> diseño web WordPress, SEO posicionamiento Google, fotografía de producto profesional, video marketing, y packs completos que combinan múltiples servicios con ahorro hasta 40%. Atendemos empresas en toda la Región del Biobío: Concepción, Talcahuano, San Pedro, Los Ángeles, Chillán. Más de 200 clientes confían en nuestros servicios integrados para vender más online. Desde landing pages $169.000/año hasta ecommerce completo con SEO mensual, fotografía y video. Soluciones personalizadas para cada tipo de negocio: retail, servicios profesionales, industria, turismo, gastronomía, salud, educación.
+          <strong>Servicios completos de marketing digital en Chile:</strong> diseño web WordPress, SEO posicionamiento Google, fotografía de producto profesional, video marketing, y packs completos que combinan múltiples servicios con ahorro hasta 40%. Atendemos empresas en toda la Región del Biobío: Concepción, Talcahuano, San Pedro, Los Ángeles, Chillán. Más de 200 clientes confían en nuestros servicios integrados para vender más online. Desde landing pages $199.000/año hasta ecommerce completo con SEO mensual, fotografía y video. Soluciones personalizadas para cada tipo de negocio: retail, servicios profesionales, industria, turismo, gastronomía, salud, educación.
         </p>
       </section>
 

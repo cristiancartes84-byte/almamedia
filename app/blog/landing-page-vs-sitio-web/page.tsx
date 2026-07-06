@@ -1,4 +1,4 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
@@ -85,7 +85,7 @@ export default function ArticlePage() {
                   <li><strong>✓ Sin navegación</strong> (no distracciones)</li>
                   <li><strong>✓ 1 CTA claro</strong> (cotizar, llamar, comprar)</li>
                   <li><strong>✓ Tasa conversión:</strong> 8-15%</li>
-                  <li><strong>✓ Costo:</strong> $169.000/año</li>
+                  <li><strong>✓ Costo:</strong> $199.000/año</li>
                   <li><strong>✓ Tiempo:</strong> 7-10 días</li>
                   <li><strong>✓ Objetivo:</strong> Convertir visitas en leads</li>
                 </ul>
@@ -98,7 +98,7 @@ export default function ArticlePage() {
                   <li><strong>✓ Navegación completa</strong> (menú, footer)</li>
                   <li><strong>✓ Múltiples CTAs</strong> según página</li>
                   <li><strong>✓ Tasa conversión:</strong> 2-4%</li>
-                  <li><strong>✓ Costo:</strong> $390.000 - $590.000</li>
+                  <li><strong>✓ Costo:</strong> $490.000 - $690.000</li>
                   <li><strong>✓ Tiempo:</strong> 15-30 días</li>
                   <li><strong>✓ Objetivo:</strong> Informar + convertir</li>
                 </ul>
@@ -129,7 +129,7 @@ export default function ArticlePage() {
 
               <div className="bg-[var(--color-card)] border-l-4 border-[var(--color-accent)] p-6 not-prose">
                 <h3 className="font-bold mb-2">4. Presupuesto Limitado</h3>
-                <p className="text-[var(--color-muted)]"><strong>Ejemplo:</strong> Startup con presupuesto $169.000. Landing page te da presencia web profesional + conversión inmediata. Después escalas a sitio completo cuando tengas más presupuesto.</p>
+                <p className="text-[var(--color-muted)]"><strong>Ejemplo:</strong> Startup con presupuesto $199.000. Landing page te da presencia web profesional + conversión inmediata. Después escalas a sitio completo cuando tengas más presupuesto.</p>
               </div>
             </div>
 
@@ -190,8 +190,8 @@ export default function ArticlePage() {
                   </tr>
                   <tr className="border-b border-[var(--color-border)]">
                     <td className="p-4 font-bold">Presupuesto inicial</td>
-                    <td className="text-center p-4">$169.000</td>
-                    <td className="text-center p-4">$390.000+</td>
+                    <td className="text-center p-4">$199.000</td>
+                    <td className="text-center p-4">$490.000+</td>
                   </tr>
                   <tr className="border-b border-[var(--color-border)]">
                     <td className="p-4 font-bold">Tiempo desarrollo</td>
@@ -215,7 +215,7 @@ export default function ArticlePage() {
             <h2 className="text-3xl font-black mb-6 mt-12 text-[var(--color-accent)]">¿Puedo Empezar con Landing y Luego Escalar?</h2>
 
             <p className="text-lg leading-[1.8] text-justify mb-6">
-              <strong className="text-white">Sí, y es la estrategia más inteligente si tienes presupuesto limitado.</strong> Muchos negocios exitosos comienzan con landing page ($169.000) para validar demanda y generar primeros clientes. Después de 3-6 meses, cuando tienen flujo de caja, escalan a sitio web completo ($390.000) para crecer más rápido con SEO y múltiples servicios. Esta estrategia minimiza riesgo inicial.
+              <strong className="text-white">Sí, y es la estrategia más inteligente si tienes presupuesto limitado.</strong> Muchos negocios exitosos comienzan con landing page ($199.000) para validar demanda y generar primeros clientes. Después de 3-6 meses, cuando tienen flujo de caja, escalan a sitio web completo ($490.000) para crecer más rápido con SEO y múltiples servicios. Esta estrategia minimiza riesgo inicial.
             </p>
 
           </div>
@@ -298,7 +298,7 @@ export default function ArticlePage() {
             "name": "¿Cuándo debo usar una landing page en vez de un sitio web?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Usa landing page si: tienes 1-2 servicios específicos, estás invirtiendo en publicidad (Google Ads), lanzas un producto nuevo, tienes presupuesto limitado ($169.000), o necesitas alta conversión inmediata. Es ideal para freelancers y servicios profesionales simples."
+              "text": "Usa landing page si: tienes 1-2 servicios específicos, estás invirtiendo en publicidad (Google Ads), lanzas un producto nuevo, tienes presupuesto limitado ($199.000), o necesitas alta conversión inmediata. Es ideal para freelancers y servicios profesionales simples."
             }
           },
           {
@@ -314,7 +314,7 @@ export default function ArticlePage() {
             "name": "¿Cuánto cuesta cada opción?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Una landing page cuesta $169.000/año con desarrollo en 7-10 días. Un sitio web corporativo cuesta $390.000 setup + $9.900/mes de hosting con desarrollo en 15-30 días. La diferencia de inversión se justifica según tus objetivos de negocio."
+              "text": "Una landing page cuesta $199.000/año con desarrollo en 7-10 días. Un sitio web corporativo cuesta $490.000 setup + $9.900/mes de hosting con desarrollo en 15-30 días. La diferencia de inversión se justifica según tus objetivos de negocio."
             }
           },
           {
@@ -322,7 +322,7 @@ export default function ArticlePage() {
             "name": "¿Puedo empezar con landing page y luego escalar a sitio web?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sí, es la estrategia más inteligente si tienes presupuesto limitado. Comienza con landing page ($169.000) para validar demanda y generar primeros clientes en 3-6 meses. Luego escala a sitio web completo ($390.000) cuando tengas flujo de caja para crecer con SEO."
+              "text": "Sí, es la estrategia más inteligente si tienes presupuesto limitado. Comienza con landing page ($199.000) para validar demanda y generar primeros clientes en 3-6 meses. Luego escala a sitio web completo ($490.000) cuando tengas flujo de caja para crecer con SEO."
             }
           },
           {

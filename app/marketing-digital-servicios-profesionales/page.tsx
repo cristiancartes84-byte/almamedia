@@ -1,4 +1,4 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -148,7 +148,7 @@ export default function MarketingDigitalServiciosProfesionalesPage() {
                 <li>✓ Formulario contacto</li>
                 <li>✓ Google Analytics</li>
               </ul>
-              <div className="text-2xl font-black text-[var(--color-accent)]">$169.000/año</div>
+              <div className="text-2xl font-black text-[var(--color-accent)]">$199.000/año</div>
             </div>
 
             <div className="bg-[var(--color-card)] border-2 border-[var(--color-accent)] rounded-xl p-8 relative">

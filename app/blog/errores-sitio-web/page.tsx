@@ -1,4 +1,4 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
@@ -109,7 +109,7 @@ export default function ArticlePage() {
 
             <h3 className="text-2xl font-bold mb-4 mt-8">Cómo Solucionar</h3>
             <p className="text-lg leading-[1.8] text-justify mb-6">
-              Si tu sitio es viejo (pre-2018), probablemente necesita rediseño completo. Sitios modernos en WordPress con temas actuales (Astra, GeneratePress) son responsive por defecto. Costo rediseño responsive: $290.000-$390.000.
+              Si tu sitio es viejo (pre-2018), probablemente necesita rediseño completo. Sitios modernos en WordPress con temas actuales (Astra, GeneratePress) son responsive por defecto. Costo rediseño responsive: $290.000-$490.000.
             </p>
 
             <h2 className="text-3xl font-black mb-6 mt-12 text-[var(--color-accent)]">Error #3: Sin Call-to-Action Claro</h2>

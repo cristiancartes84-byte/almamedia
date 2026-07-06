@@ -1,11 +1,11 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Diseño Web Talcahuano 2026 | Sitios para Negocios Portuarios',
-  description: 'Diseño web profesional en Talcahuano. Especializados en negocios portuarios, industria naval, pesca y comercio. Desde $169.000/año. Cotiza gratis.',
+  description: 'Diseño web profesional en Talcahuano. Especializados en negocios portuarios, industria naval, pesca y comercio. Desde $199.000/año. Cotiza gratis.',
   keywords: 'diseño web Talcahuano, sitio web Talcahuano, página web puerto Talcahuano, diseño web portuario, desarrollo web Talcahuano, WordPress Talcahuano',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
@@ -116,7 +116,7 @@ export default function DisenoWebTalcahuanoPage() {
                     "name": "¿Cuánto cuesta un sitio web para negocios en Talcahuano?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Diseño web para negocios en Talcahuano cuesta desde $169.000/año para landing B2B con formulario de cotización, $390.000 para catálogo online con hasta 100 productos, y desde $590.000 para ecommerce B2B completo con precios mayoristas y clientes corporativos."
+                      "text": "Diseño web para negocios en Talcahuano cuesta desde $199.000/año para landing B2B con formulario de cotización, $490.000 para catálogo online con hasta 100 productos, y desde $690.000 para ecommerce B2B completo con precios mayoristas y clientes corporativos."
                     }
                   },
                   {
@@ -160,7 +160,7 @@ export default function DisenoWebTalcahuanoPage() {
           Diseño Web en Talcahuano: Sitios para Negocios Portuarios
         </h1>
         <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
-          <strong>El diseño web profesional en Talcahuano</strong> crea sitios WordPress optimizados para negocios portuarios, industria naval, pesca, comercio marítimo y servicios industriales. Talcahuano es la comuna portuaria más importante de Chile con más de 180.000 habitantes y economía basada en Puerto de Talcahuano, ASMAR, Terminal Pesquero, industria naval y logística marítima. Ofrecemos diseño web especializado desde $169.000/año para landing B2B con formulario de cotización, $390.000 para catálogo online con hasta 100 productos (ideal para suministros navales, ferretería industrial), y desde $590.000 para ecommerce B2B con precios mayoristas y clientes corporativos. Especializados en: servicios portuarios y marítimos (suministros navales, agencias navieras, logística), industria pesquera (comercializadoras, plantas procesadoras, distribuidoras), construcción y reparación naval (talleres, mantención embarcaciones, metalmecánica), gastronomía costera (restaurantes mariscos, terminal pesquero), comercio mayorista (ferreterías industriales, repuestos marítimos). Atendemos todas las zonas: Puerto, Base Naval, ASMAR, Higueras, El Morro, Las Salinas, Gaete, Hualpencillo.
+          <strong>El diseño web profesional en Talcahuano</strong> crea sitios WordPress optimizados para negocios portuarios, industria naval, pesca, comercio marítimo y servicios industriales. Talcahuano es la comuna portuaria más importante de Chile con más de 180.000 habitantes y economía basada en Puerto de Talcahuano, ASMAR, Terminal Pesquero, industria naval y logística marítima. Ofrecemos diseño web especializado desde $199.000/año para landing B2B con formulario de cotización, $490.000 para catálogo online con hasta 100 productos (ideal para suministros navales, ferretería industrial), y desde $690.000 para ecommerce B2B con precios mayoristas y clientes corporativos. Especializados en: servicios portuarios y marítimos (suministros navales, agencias navieras, logística), industria pesquera (comercializadoras, plantas procesadoras, distribuidoras), construcción y reparación naval (talleres, mantención embarcaciones, metalmecánica), gastronomía costera (restaurantes mariscos, terminal pesquero), comercio mayorista (ferreterías industriales, repuestos marítimos). Atendemos todas las zonas: Puerto, Base Naval, ASMAR, Higueras, El Morro, Las Salinas, Gaete, Hualpencillo.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Link href="/contacto" className="px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">
@@ -270,7 +270,7 @@ export default function DisenoWebTalcahuanoPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all flex flex-col">
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Landing B2B</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$169.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$199.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP/año (hosting incluido)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ Página servicios B2B</li>
@@ -292,7 +292,7 @@ export default function DisenoWebTalcahuanoPage() {
               </div>
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Catálogo Online</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$390.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$490.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP (pago único)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ Hasta 100 productos</li>
@@ -311,7 +311,7 @@ export default function DisenoWebTalcahuanoPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all flex flex-col">
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Ecommerce B2B</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $590.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $690.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP (según productos)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ Tienda completa</li>
@@ -337,7 +337,7 @@ export default function DisenoWebTalcahuanoPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Cuánto cuesta un sitio web para negocios en Talcahuano?</h3>
               <p className="text-lg leading-relaxed text-justify">
-                El <strong>diseño web para negocios en Talcahuano</strong> cuesta desde <strong>$169.000/año</strong> para landing B2B de 1 página con formulario de cotización (incluye hosting + dominio .cl + email corporativo + SEO local), <strong>$390.000 pago único</strong> para catálogo online con hasta 100 productos (ideal para suministros navales, ferretería industrial, comercializadora pescado), y desde <strong>$590.000</strong> para ecommerce B2B completo con precios mayoristas, clientes corporativos, facturación integrada y gestión de stock. Todos incluyen diseño personalizado, 100% responsive, Google Maps integrado y capacitación.
+                El <strong>diseño web para negocios en Talcahuano</strong> cuesta desde <strong>$199.000/año</strong> para landing B2B de 1 página con formulario de cotización (incluye hosting + dominio .cl + email corporativo + SEO local), <strong>$490.000 pago único</strong> para catálogo online con hasta 100 productos (ideal para suministros navales, ferretería industrial, comercializadora pescado), y desde <strong>$690.000</strong> para ecommerce B2B completo con precios mayoristas, clientes corporativos, facturación integrada y gestión de stock. Todos incluyen diseño personalizado, 100% responsive, Google Maps integrado y capacitación.
               </p>
             </div>
 
@@ -379,7 +379,7 @@ export default function DisenoWebTalcahuanoPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Puedo mostrar catálogo de productos sin vender online?</h3>
               <p className="text-lg leading-relaxed text-justify">
-                <strong>Sí, el Catálogo Online ($390.000)</strong> es perfecto para esto: muestras tus productos (suministros navales, repuestos, equipos industriales) con fotos, descripción técnica, fichas PDF descargables, pero sin precios públicos ni carro de compra. Los clientes ven qué ofreces y solicitan cotización mediante formulario o WhatsApp. Ideal para negocios B2B donde precios varían según volumen, cliente corporativo o son confidenciales. Puedes agregar sistema de login para clientes con crédito que sí ven precios específicos. Muchos negocios portuarios/industriales de Talcahuano prefieren este modelo: catálogo visible pero ventas por cotización.
+                <strong>Sí, el Catálogo Online ($490.000)</strong> es perfecto para esto: muestras tus productos (suministros navales, repuestos, equipos industriales) con fotos, descripción técnica, fichas PDF descargables, pero sin precios públicos ni carro de compra. Los clientes ven qué ofreces y solicitan cotización mediante formulario o WhatsApp. Ideal para negocios B2B donde precios varían según volumen, cliente corporativo o son confidenciales. Puedes agregar sistema de login para clientes con crédito que sí ven precios específicos. Muchos negocios portuarios/industriales de Talcahuano prefieren este modelo: catálogo visible pero ventas por cotización.
               </p>
             </div>
 

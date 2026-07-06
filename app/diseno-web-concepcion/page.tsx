@@ -1,12 +1,15 @@
 import ParticlesBackground from '@/components/Particles';
 import SectorCard from '@/components/SectorCard';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Diseño Web Concepción 2026 | WordPress Rápido Desde $169k',
-  description: 'Diseño web en Concepción. WordPress optimizado, carga <2s, SEO incluido. +45 webs exitosas. Landing desde $169k/año. Cotiza gratis hoy.',
+  title: `Diseño Web Concepción ${currentYear} | WordPress Rápido Desde $199k`,
+  description: 'Diseño web en Concepción. WordPress optimizado, carga <2s, SEO incluido. +45 webs exitosas. Landing desde $199k/año. Cotiza gratis hoy.',
   keywords: 'diseño web Concepción, diseño web profesional Concepción, WordPress Concepción, sitio web Concepción, desarrollo web Biobío, páginas web Concepción, diseño web Chile, web Concepción precio, agencia web Concepción',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
@@ -21,8 +24,8 @@ export const metadata: Metadata = {
     canonical: '/diseno-web-concepcion',
   },
   openGraph: {
-    title: 'Diseño Web Concepción 2026 | WordPress Rápido Desde $169k',
-    description: 'Diseño web en Concepción. WordPress optimizado, carga <2s, SEO incluido. +45 webs exitosas. Landing desde $169k/año.',
+    title: 'Diseño Web Concepción ${currentYear} | WordPress Rápido Desde $199k',
+    description: 'Diseño web en Concepción. WordPress optimizado, carga <2s, SEO incluido. +45 webs exitosas. Landing desde $199k/año.',
     url: 'https://almamedia.cl/diseno-web-concepcion',
     siteName: 'Alma Media',
     locale: 'es_CL',
@@ -30,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Diseño Web Concepción 2026 | WordPress Rápido Desde $169k',
+    title: 'Diseño Web Concepción ${currentYear} | WordPress Rápido Desde $199k',
     description: 'Diseño web en Concepción. WordPress optimizado, carga <2s, SEO incluido. +45 webs exitosas.',
   },
   robots: {
@@ -319,7 +322,7 @@ export default function DisenoWebConcepcionPage() {
 
         {/* Precios */}
         <section className="mb-16">
-          <h2 className="text-4xl font-black mb-6 text-center text-[var(--color-accent)]">Precios de Diseño Web en Concepción 2026</h2>
+          <h2 className="text-4xl font-black mb-6 text-center text-[var(--color-accent)]">Precios de Diseño Web en Concepción <CurrentYear /></h2>
           <p className="text-xl text-center text-[var(--color-muted)] mb-4 leading-relaxed">
             Paquetes adaptados al tamaño de tu negocio en Concepción
           </p>
@@ -492,7 +495,7 @@ export default function DisenoWebConcepcionPage() {
       <div className="relative z-10 max-w-6xl mx-auto px-8 mb-20">
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 md:p-16 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta Especial <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta Especial <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Destacar en Concepción?

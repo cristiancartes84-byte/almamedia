@@ -1,11 +1,11 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Diseño Web Chillán 2026 | Sitios WordPress Profesionales desde $169.000',
-  description: 'Diseño web profesional en Chillán. Sitios WordPress responsive, rápidos y optimizados. Landing pages, sitios corporativos, ecommerce. Desde $169.000/año.',
+  title: 'Diseño Web Chillán 2026 | Sitios WordPress Profesionales desde $199.000',
+  description: 'Diseño web profesional en Chillán. Sitios WordPress responsive, rápidos y optimizados. Landing pages, sitios corporativos, ecommerce. Desde $199.000/año.',
   keywords: 'diseño web Chillán, diseño web Ñuble, páginas web Chillán, sitios WordPress Chillán',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Diseño Web Chillán 2026 | Sitios WordPress Profesionales',
-    description: 'Diseño web profesional en Chillán. WordPress responsive desde $169.000/año.',
+    description: 'Diseño web profesional en Chillán. WordPress responsive desde $199.000/año.',
     url: 'https://almamedia.cl/diseno-web-chillan',
     siteName: 'Alma Media',
     locale: 'es_CL',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Diseño Web Chillán 2026',
-    description: 'Diseño web profesional. WordPress responsive desde $169.000/año.',
+    description: 'Diseño web profesional. WordPress responsive desde $199.000/año.',
   },
   robots: {
     index: true,
@@ -94,7 +94,7 @@ export default function DisenoWebChillanPage() {
           Diseño Web Profesional en Chillán
         </h1>
         <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
-          <strong>Diseño web profesional en Chillán,</strong> capital de la Región de Ñuble. Más de 180.000 habitantes, centro agrícola, gastronómico y turístico. Ofrecemos <Link href="/diseno-web" className="text-[var(--color-accent)] hover:underline">diseño web WordPress</Link> desde $169.000/año con hosting incluido, sitios corporativos desde $390.000, ecommerce completo desde $590.000. Sitios responsive optimizados para mobile, carga menor a 2 segundos, SEO base incluido, Google Analytics configurado, formularios de contacto, integración WhatsApp Business. Ideal para agricultura (maquinaria agrícola, insumos, asesoría), gastronomía (restaurant, café, pastelería), turismo (termas, cabañas, hoteles), comercio (retail, ferreterías, repuestos), servicios profesionales (abogados, contadores, arquitectos). +50 empresas chillanejas confían en nuestros diseños. Atendemos Chillán centro, Chillán Viejo, Valle Hermoso.
+          <strong>Diseño web profesional en Chillán,</strong> capital de la Región de Ñuble. Más de 180.000 habitantes, centro agrícola, gastronómico y turístico. Ofrecemos <Link href="/diseno-web" className="text-[var(--color-accent)] hover:underline">diseño web WordPress</Link> desde $199.000/año con hosting incluido, sitios corporativos desde $490.000, ecommerce completo desde $690.000. Sitios responsive optimizados para mobile, carga menor a 2 segundos, SEO base incluido, Google Analytics configurado, formularios de contacto, integración WhatsApp Business. Ideal para agricultura (maquinaria agrícola, insumos, asesoría), gastronomía (restaurant, café, pastelería), turismo (termas, cabañas, hoteles), comercio (retail, ferreterías, repuestos), servicios profesionales (abogados, contadores, arquitectos). +50 empresas chillanejas confían en nuestros diseños. Atendemos Chillán centro, Chillán Viejo, Valle Hermoso.
         </p>
         <Link href="/contacto" className="inline-block px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">
           Cotizar Sitio Web →
@@ -119,7 +119,7 @@ export default function DisenoWebChillanPage() {
                 <li>✓ Hosting 1 año incluido</li>
                 <li>✓ SEO base</li>
               </ul>
-              <div className="text-3xl font-black text-[var(--color-accent)]">$169.000<span className="text-base font-normal text-[var(--color-muted)]">/año</span></div>
+              <div className="text-3xl font-black text-[var(--color-accent)]">$199.000<span className="text-base font-normal text-[var(--color-muted)]">/año</span></div>
             </div>
 
             <div className="bg-[var(--color-card)] border-2 border-[var(--color-accent)] rounded-xl p-8 relative">
@@ -136,7 +136,7 @@ export default function DisenoWebChillanPage() {
                 <li>✓ Google Analytics</li>
                 <li>✓ Email corporativo</li>
               </ul>
-              <div className="text-3xl font-black text-[var(--color-accent)]">$390.000<span className="text-base font-normal text-[var(--color-muted)]">/setup + $9.900/mes</span></div>
+              <div className="text-3xl font-black text-[var(--color-accent)]">$490.000<span className="text-base font-normal text-[var(--color-muted)]">/setup + $9.900/mes</span></div>
             </div>
 
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
@@ -150,7 +150,7 @@ export default function DisenoWebChillanPage() {
                 <li>✓ Hasta 100 productos</li>
                 <li>✓ Capacitación incluida</li>
               </ul>
-              <div className="text-3xl font-black text-[var(--color-accent)]">$590.000<span className="text-base font-normal text-[var(--color-muted)]">/setup</span></div>
+              <div className="text-3xl font-black text-[var(--color-accent)]">$690.000<span className="text-base font-normal text-[var(--color-muted)]">/setup</span></div>
             </div>
           </div>
         </section>
@@ -206,7 +206,7 @@ export default function DisenoWebChillanPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 text-center">
               <h3 className="text-2xl font-bold mb-4">Landing Page</h3>
-              <div className="text-5xl font-black text-[var(--color-accent)] mb-6">$169.000</div>
+              <div className="text-5xl font-black text-[var(--color-accent)] mb-6">$199.000</div>
               <p className="text-sm text-[var(--color-muted)] mb-6">Hosting 1 año incluido</p>
               <ul className="text-left space-y-2 text-sm mb-6">
                 <li>✓ 1 página optimizada</li>
@@ -222,7 +222,7 @@ export default function DisenoWebChillanPage() {
                 MÁS POPULAR
               </div>
               <h3 className="text-2xl font-bold mb-4">Sitio Corporativo</h3>
-              <div className="text-5xl font-black text-[var(--color-accent)] mb-6">$390.000</div>
+              <div className="text-5xl font-black text-[var(--color-accent)] mb-6">$490.000</div>
               <p className="text-sm text-[var(--color-muted)] mb-6">+ $9.900/mes hosting</p>
               <ul className="text-left space-y-2 text-sm mb-6">
                 <li>✓ Hasta 10 páginas</li>
@@ -235,7 +235,7 @@ export default function DisenoWebChillanPage() {
 
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 text-center">
               <h3 className="text-2xl font-bold mb-4">Ecommerce</h3>
-              <div className="text-5xl font-black text-[var(--color-accent)] mb-6">$590.000</div>
+              <div className="text-5xl font-black text-[var(--color-accent)] mb-6">$690.000</div>
               <p className="text-sm text-[var(--color-muted)] mb-6">+ $14.900/mes hosting</p>
               <ul className="text-left space-y-2 text-sm mb-6">
                 <li>✓ WooCommerce</li>
@@ -269,7 +269,7 @@ export default function DisenoWebChillanPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿El hosting está incluido en el precio?</h3>
               <p className="text-[var(--color-muted)] leading-relaxed text-justify">
-                Landing page incluye hosting primer año ($169.000 todo incluido). Sitio corporativo y ecommerce: setup único + hosting mensual ($9.900-$14.900/mes según tipo). Hosting incluye dominio .cl, email corporativo, SSL, backups diarios, soporte técnico.
+                Landing page incluye hosting primer año ($199.000 todo incluido). Sitio corporativo y ecommerce: setup único + hosting mensual ($9.900-$14.900/mes según tipo). Hosting incluye dominio .cl, email corporativo, SSL, backups diarios, soporte técnico.
               </p>
             </div>
 
@@ -305,13 +305,13 @@ export default function DisenoWebChillanPage() {
             ¿Listo para tu Sitio Web en Chillán?
           </h2>
           <p className="text-xl text-[var(--color-muted)] mb-8 max-w-2xl mx-auto leading-relaxed text-justify">
-            Reuniones presenciales en Chillán. Cotización sin compromiso en 24 horas. Diseño profesional desde $169.000:
+            Reuniones presenciales en Chillán. Cotización sin compromiso en 24 horas. Diseño profesional desde $199.000:
           </p>
           <Link href="/contacto" className="inline-block px-10 py-5 bg-[var(--color-accent)] text-[var(--color-bg)] text-lg font-bold rounded-lg hover:scale-105 hover:shadow-[0_15px_40px_rgba(200,255,0,0.4)] transition-all">
             Cotizar Sitio Web Ahora →
           </Link>
           <p className="text-sm text-[var(--color-muted)] mt-6">
-            ⭐ +50 empresas en Chillán • Reuniones presenciales • Desde $169.000
+            ⭐ +50 empresas en Chillán • Reuniones presenciales • Desde $199.000
           </p>
         </div>
 

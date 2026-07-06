@@ -1,4 +1,4 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import FeatureCard from '@/components/FeatureCard';
 import ProcessTimeline from '@/components/ProcessTimeline';
 import CurrentMonth from '@/components/CurrentMonth';
@@ -6,8 +6,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Diseño Web Chile 2026 | WordPress Profesional Desde $169.000',
-  description: 'Diseño web profesional en Chile. WordPress optimizado, carga <2s, SEO incluido. Desde $169.000/año. +45 webs exitosas. Cotiza gratis.',
+  title: 'Diseño Web Chile 2026 | WordPress Profesional Desde $199.000',
+  description: 'Diseño web profesional en Chile. WordPress optimizado, carga <2s, SEO incluido. Desde $199.000/año. +45 webs exitosas. Cotiza gratis.',
   keywords: 'diseño web Chile, diseño web profesional, WordPress Chile, sitio web empresa, diseño web responsive, página web profesional, desarrollo web Chile',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     canonical: '/diseno-web',
   },
   openGraph: {
-    title: 'Diseño Web Chile 2026 | WordPress Profesional Desde $169.000',
+    title: 'Diseño Web Chile 2026 | WordPress Profesional Desde $199.000',
     description: 'Diseño web profesional: WordPress optimizado, rápido y enfocado en conversión. +45 proyectos exitosos.',
     url: 'https://almamedia.cl/diseno-web',
     siteName: 'Alma Media',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Diseño Web Chile 2026 | WordPress Profesional',
-    description: 'WordPress optimizado, rápido y enfocado en conversión. Desde $169.000/año.',
+    description: 'WordPress optimizado, rápido y enfocado en conversión. Desde $199.000/año.',
   },
   robots: {
     index: true,
@@ -114,7 +114,7 @@ export default function DisenoWebPage() {
                     "name": "¿Cuánto cuesta un diseño web profesional en Chile?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Diseño web profesional en Chile cuesta desde $169.000/año para landing page (incluye hosting + dominio), $390.000 pago único para sitio corporativo hasta 5 páginas, y desde $590.000 para ecommerce completo. Todos incluyen diseño personalizado, WordPress, SEO base, responsive y capacitación."
+                      "text": "Diseño web profesional en Chile cuesta desde $199.000/año para landing page (incluye hosting + dominio), $490.000 pago único para sitio corporativo hasta 5 páginas, y desde $690.000 para ecommerce completo. Todos incluyen diseño personalizado, WordPress, SEO base, responsive y capacitación."
                     }
                   },
                   {
@@ -159,7 +159,7 @@ export default function DisenoWebPage() {
         </h1>
 
         <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
-          <strong>El diseño web profesional en Chile</strong> crea sitios WordPress optimizados para velocidad, SEO y conversión que generan clientes reales. El 93% de las decisiones de compra comienzan con búsqueda en Google, y tu sitio web es tu vendedor 24/7. Ofrecemos diseño web personalizado desde $169.000/año para landing page (incluye hosting + dominio + SEO base), $390.000 pago único para sitio corporativo hasta 5 páginas con WordPress completo, y desde $590.000 para ecommerce con WooCommerce o Shopify. Todos nuestros diseños web cargan en menos de 2 segundos, son 100% responsive para móvil/tablet/desktop, incluyen SEO on-page completo (meta tags, schema markup, sitemap), Google Analytics integrado, formularios funcionales, HTTPS con SSL, backups automáticos, y capacitación de 1 hora para que puedas actualizar contenido tú mismo. Proceso transparente en 4-5 semanas: descubrimiento, diseño con mockups, desarrollo WordPress, contenido + SEO, lanzamiento. +45 sitios web exitosos en Chile con garantía de velocidad y 1 mes de soporte post-lanzamiento gratis.
+          <strong>El diseño web profesional en Chile</strong> crea sitios WordPress optimizados para velocidad, SEO y conversión que generan clientes reales. El 93% de las decisiones de compra comienzan con búsqueda en Google, y tu sitio web es tu vendedor 24/7. Ofrecemos diseño web personalizado desde $199.000/año para landing page (incluye hosting + dominio + SEO base), $490.000 pago único para sitio corporativo hasta 5 páginas con WordPress completo, y desde $690.000 para ecommerce con WooCommerce o Shopify. Todos nuestros diseños web cargan en menos de 2 segundos, son 100% responsive para móvil/tablet/desktop, incluyen SEO on-page completo (meta tags, schema markup, sitemap), Google Analytics integrado, formularios funcionales, HTTPS con SSL, backups automáticos, y capacitación de 1 hora para que puedas actualizar contenido tú mismo. Proceso transparente en 4-5 semanas: descubrimiento, diseño con mockups, desarrollo WordPress, contenido + SEO, lanzamiento. +45 sitios web exitosos en Chile con garantía de velocidad y 1 mes de soporte post-lanzamiento gratis.
         </p>
 
         <div className="flex gap-3 md:gap-4 justify-center flex-wrap px-4">
@@ -393,7 +393,7 @@ export default function DisenoWebPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all flex flex-col">
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Landing Page</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$169.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$199.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP/año (incluye hosting + dominio)</p>
                 <ul className="space-y-2 text-left text-sm md:text-base mb-6">
                   <li>✓ 1 página optimizada</li>
@@ -416,7 +416,7 @@ export default function DisenoWebPage() {
               </div>
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Sitio Corporativo</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$390.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$490.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP (pago único)</p>
                 <ul className="space-y-2 text-left text-sm md:text-base mb-6">
                   <li>✓ Hasta 5 páginas</li>
@@ -437,7 +437,7 @@ export default function DisenoWebPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all flex flex-col">
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Ecommerce</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $590.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $690.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP (según productos)</p>
                 <ul className="space-y-2 text-left text-sm md:text-base mb-6">
                   <li>✓ WordPress + WooCommerce</li>
@@ -464,7 +464,7 @@ export default function DisenoWebPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Cuánto cuesta un diseño web profesional en Chile?</h3>
               <p className="text-lg leading-relaxed text-justify">
-                El <strong>diseño web profesional en Chile</strong> cuesta desde <strong>$169.000/año</strong> para landing page de 1 página (incluye hosting + dominio .cl + SEO base + formulario + SSL), <strong>$390.000 pago único</strong> para sitio corporativo de hasta 5 páginas con WordPress completo, y desde <strong>$590.000</strong> para ecommerce con WooCommerce o Shopify. Todos incluyen diseño personalizado, 100% responsive, Google Analytics, capacitación y 1 mes de soporte gratis. Sin costos ocultos.
+                El <strong>diseño web profesional en Chile</strong> cuesta desde <strong>$199.000/año</strong> para landing page de 1 página (incluye hosting + dominio .cl + SEO base + formulario + SSL), <strong>$490.000 pago único</strong> para sitio corporativo de hasta 5 páginas con WordPress completo, y desde <strong>$690.000</strong> para ecommerce con WooCommerce o Shopify. Todos incluyen diseño personalizado, 100% responsive, Google Analytics, capacitación y 1 mes de soporte gratis. Sin costos ocultos.
               </p>
             </div>
 
@@ -485,7 +485,7 @@ export default function DisenoWebPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿El hosting y dominio están incluidos en el precio?</h3>
               <p className="text-lg leading-relaxed text-justify">
-                <strong>En el Pack Web anual ($169.000/año), sí está todo incluido:</strong> hosting optimizado, dominio .cl, SSL, backups semanales, soporte técnico básico. En sitios corporativos y ecommerce, el diseño es pago único pero el hosting es aparte (desde $35.000/año). Podemos contratarlo y gestionarlo nosotros por ti, o puedes usar tu hosting actual si ya tienes uno. El dominio se puede comprar por separado (desde $12.000/año .cl).
+                <strong>En el Pack Web anual ($199.000/año), sí está todo incluido:</strong> hosting optimizado, dominio .cl, SSL, backups semanales, soporte técnico básico. En sitios corporativos y ecommerce, el diseño es pago único pero el hosting es aparte (desde $35.000/año). Podemos contratarlo y gestionarlo nosotros por ti, o puedes usar tu hosting actual si ya tienes uno. El dominio se puede comprar por separado (desde $12.000/año .cl).
               </p>
             </div>
 

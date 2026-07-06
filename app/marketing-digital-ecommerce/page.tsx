@@ -1,4 +1,4 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -93,7 +93,7 @@ export default function MarketingDigitalEcommercePage() {
                 <li>✓ Checkout 1 página</li>
                 <li>✓ Google Analytics Ecommerce</li>
               </ul>
-              <div className="text-2xl font-black text-[var(--color-accent)]">Desde $390.000</div>
+              <div className="text-2xl font-black text-[var(--color-accent)]">Desde $490.000</div>
             </div>
 
             <div className="bg-[var(--color-card)] border-2 border-[var(--color-accent)] rounded-xl p-8 relative">

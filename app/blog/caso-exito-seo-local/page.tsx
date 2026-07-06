@@ -1,4 +1,4 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
@@ -112,7 +112,7 @@ export default function ArticlePage() {
               <h4 className="font-bold mb-3">Acciones:</h4>
               <ul className="space-y-3">
                 <li>
-                  <strong>1. Rediseño sitio web ($390.000):</strong> Sitio WordPress 7 páginas (Inicio, Menú, Nosotros, Galería, Reservas, Blog, Contacto). Responsive, optimizado velocidad (&lt;2s carga), formulario reservas integrado WhatsApp.
+                  <strong>1. Rediseño sitio web ($490.000):</strong> Sitio WordPress 7 páginas (Inicio, Menú, Nosotros, Galería, Reservas, Blog, Contacto). Responsive, optimizado velocidad (&lt;2s carga), formulario reservas integrado WhatsApp.
                 </li>
                 <li>
                   <strong>2. Sesión fotografía gastronómica ($150.000):</strong> 3 horas, 40 fotos profesionales platos + ambiente + equipo. Fotos usadas en web, Google, Instagram.
@@ -148,7 +148,7 @@ export default function ArticlePage() {
               <p className="text-sm text-white mt-4"><strong>Resultados Mes 4:</strong> Tráfico web 320 visitas/mes (+78%). Reseñas Google 8 → 32 (4.7★). Google Maps 120 clics/mes.</p>
             </div>
 
-            <h3 className="text-2xl font-bold mb-4 mt-8">Fase 3: Escala + Link Building (Mes 5-6) — $390.000/mes</h3>
+            <h3 className="text-2xl font-bold mb-4 mt-8">Fase 3: Escala + Link Building (Mes 5-6) — $490.000/mes</h3>
 
             <div className="bg-[var(--color-card)] border-l-4 border-[var(--color-accent)] p-6 mb-8 not-prose">
               <h4 className="font-bold mb-3">Acciones:</h4>
@@ -204,7 +204,7 @@ export default function ArticlePage() {
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span>Rediseño sitio web (mes 1):</span>
-                  <span className="font-bold">$390.000</span>
+                  <span className="font-bold">$490.000</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Fotografía profesional (mes 1):</span>

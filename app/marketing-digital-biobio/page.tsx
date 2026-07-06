@@ -1,11 +1,11 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Marketing Digital Región del Biobío 2026 | Agencia Alma Media',
-  description: 'Agencia de marketing digital en Región del Biobío. Diseño Web, SEO, Fotografía, Video. Concepción, Talcahuano, Los Ángeles, Chillán. Desde $169.000.',
+  description: 'Agencia de marketing digital en Región del Biobío. Diseño Web, SEO, Fotografía, Video. Concepción, Talcahuano, Los Ángeles, Chillán. Desde $199.000.',
   keywords: 'marketing digital Biobío, agencia marketing Concepción, publicidad digital Biobío, marketing online Talcahuano',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',

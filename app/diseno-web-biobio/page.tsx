@@ -1,11 +1,11 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata} from 'next';
 
 export const metadata: Metadata = {
   title: 'Diseño Web Región del Biobío 2026 | Sitios Profesionales',
-  description: 'Diseño web profesional en toda la Región del Biobío. Concepción, Talcahuano, Los Ángeles, Chillán, Coronel. Desde $169.000/año. Cotiza gratis.',
+  description: 'Diseño web profesional en toda la Región del Biobío. Concepción, Talcahuano, Los Ángeles, Chillán, Coronel. Desde $199.000/año. Cotiza gratis.',
   keywords: 'diseño web Biobío, sitio web región Biobío, página web Concepción, diseño web Gran Concepción, desarrollo web Biobío Chile',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
@@ -92,7 +92,7 @@ export default function DisenoWebBiobioPage() {
           Diseño Web en la Región del Biobío
         </h1>
         <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
-          <strong>El diseño web profesional en la Región del Biobío</strong> crea sitios WordPress optimizados para negocios en toda la región: Gran Concepción (Concepción, Talcahuano, San Pedro de la Paz, Hualpén, Chiguayante, Penco, Tomé, Lota, Coronel), Provincia de Biobío (Los Ángeles, Cabrero, Nacimiento, Mulchén, Laja, Santa Bárbara), Provincia de Ñuble (Chillán, Chillán Viejo, San Carlos, Bulnes). Más de 2 millones de habitantes y economía diversa: industria portuaria, manufactura, servicios, agricultura, turismo, educación superior (4 universidades tradicionales). El 84% de la población del Biobío busca en Google antes de comprar o contratar. Ofrecemos diseño web desde $169.000/año para landing page, $390.000 para sitio corporativo hasta 5 páginas, especializado en todos los sectores regionales: industria y manufactura, comercio retail y mayorista, servicios profesionales, educación y salud, turismo regional, agricultura y ganadería. Atendemos todas las provincias: Concepción, Biobío, Arauco, Ñuble. Presencia en terreno para reuniones presenciales o 100% remoto según prefieras.
+          <strong>El diseño web profesional en la Región del Biobío</strong> crea sitios WordPress optimizados para negocios en toda la región: Gran Concepción (Concepción, Talcahuano, San Pedro de la Paz, Hualpén, Chiguayante, Penco, Tomé, Lota, Coronel), Provincia de Biobío (Los Ángeles, Cabrero, Nacimiento, Mulchén, Laja, Santa Bárbara), Provincia de Ñuble (Chillán, Chillán Viejo, San Carlos, Bulnes). Más de 2 millones de habitantes y economía diversa: industria portuaria, manufactura, servicios, agricultura, turismo, educación superior (4 universidades tradicionales). El 84% de la población del Biobío busca en Google antes de comprar o contratar. Ofrecemos diseño web desde $199.000/año para landing page, $490.000 para sitio corporativo hasta 5 páginas, especializado en todos los sectores regionales: industria y manufactura, comercio retail y mayorista, servicios profesionales, educación y salud, turismo regional, agricultura y ganadería. Atendemos todas las provincias: Concepción, Biobío, Arauco, Ñuble. Presencia en terreno para reuniones presenciales o 100% remoto según prefieras.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Link href="/contacto" className="px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">
@@ -163,7 +163,7 @@ export default function DisenoWebBiobioPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all flex flex-col">
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Landing Page</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$169.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$199.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP/año (hosting incluido)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ 1 página optimizada</li>
@@ -185,7 +185,7 @@ export default function DisenoWebBiobioPage() {
               </div>
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Sitio Corporativo</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$390.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$490.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP (pago único)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ Hasta 5 páginas</li>
@@ -205,7 +205,7 @@ export default function DisenoWebBiobioPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all flex flex-col">
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Ecommerce</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $590.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $690.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP (según productos)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ WordPress + WooCommerce</li>

@@ -1,4 +1,4 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
@@ -69,7 +69,7 @@ export default function ArticlePage() {
             </h1>
 
             <p className="text-xl text-[var(--color-muted)] leading-relaxed text-justify">
-              <strong className="text-white">El 93% de experiencias online comienzan en Google.</strong> Si estás buscando cuánto cuesta SEO en Chile, esta guía te da precios reales actualizados para <CurrentMonth /> <CurrentYear />, qué incluye cada plan, ROI esperado, y cuánto tiempo tarda en dar resultados. Precios desde $249.000/mes para SEO básico hasta $590.000+/mes para campañas agresivas con link building.
+              <strong className="text-white">El 93% de experiencias online comienzan en Google.</strong> Si estás buscando cuánto cuesta SEO en Chile, esta guía te da precios reales actualizados para <CurrentMonth /> <CurrentYear />, qué incluye cada plan, ROI esperado, y cuánto tiempo tarda en dar resultados. Precios desde $249.000/mes para SEO básico hasta $690.000+/mes para campañas agresivas con link building.
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export default function ArticlePage() {
                   MÁS POPULAR
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">SEO Profesional</h3>
-                <div className="text-4xl font-black mb-4">$390.000</div>
+                <div className="text-4xl font-black mb-4">$490.000</div>
                 <p className="text-sm text-[var(--color-muted)] mb-4">CLP/mes (6 meses mínimo)</p>
                 <ul className="space-y-2 text-sm">
                   <li>✓ Todo lo de Básico +</li>
@@ -109,7 +109,7 @@ export default function ArticlePage() {
 
               <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6">
                 <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">SEO Agresivo</h3>
-                <div className="text-4xl font-black mb-4">$590.000+</div>
+                <div className="text-4xl font-black mb-4">$690.000+</div>
                 <p className="text-sm text-[var(--color-muted)] mb-4">CLP/mes (12 meses mínimo)</p>
                 <ul className="space-y-2 text-sm">
                   <li>✓ Todo lo de Profesional +</li>
@@ -128,12 +128,12 @@ export default function ArticlePage() {
               <strong className="text-[var(--color-accent)]">Ideal para:</strong> Negocios locales pequeños, servicios profesionales, keywords de baja-media competencia. Incluye auditoría SEO completa inicial (análisis técnico, contenido, backlinks actuales), optimización on-page de 5-10 páginas principales (títulos, meta descriptions, headings, URLs, imágenes alt text), investigación de 10-15 keywords objetivo (locales, baja competencia), 2 artículos de blog optimizados por mes (800-1200 palabras cada uno), optimización técnica básica (velocidad, mobile, sitemap, robots.txt), reporte mensual con posiciones, tráfico, conversiones. Resultados esperados: primeros movimientos en Google en 2-3 meses, mejoras significativas en 4-6 meses. Compromiso mínimo 3-6 meses (SEO no funciona en 1 mes).
             </p>
 
-            <h3 className="text-2xl font-bold mb-4 mt-8">SEO Profesional ($390.000/mes)</h3>
+            <h3 className="text-2xl font-bold mb-4 mt-8">SEO Profesional ($490.000/mes)</h3>
             <p className="text-lg leading-[1.8] text-justify mb-6">
               <strong className="text-[var(--color-accent)]">Ideal para:</strong> PYMES consolidadas, negocios con múltiples servicios, keywords de competencia media-alta. Todo lo del plan Básico PLUS: 4 artículos blog optimizados/mes (1200-2000 palabras), link building profesional (5-8 backlinks de calidad mensual desde sitios chilenos relevantes), SEO técnico avanzado (schema markup, Core Web Vitals, indexación), optimización Google Business Profile (posts semanales, reseñas, fotos), análisis de competencia mensual (qué hacen los top 3 en tu nicho), optimización de conversión (no solo tráfico, sino ventas). Resultados esperados: primeros resultados visibles en 1-2 meses, posiciones top 3-5 para keywords principales en 6 meses, ROI positivo típicamente en mes 4-6.
             </p>
 
-            <h3 className="text-2xl font-bold mb-4 mt-8">SEO Agresivo ($590.000+/mes)</h3>
+            <h3 className="text-2xl font-bold mb-4 mt-8">SEO Agresivo ($690.000+/mes)</h3>
             <p className="text-lg leading-[1.8] text-justify mb-6">
               <strong className="text-[var(--color-accent)]">Ideal para:</strong> Empresas grandes, ecommerce, keywords altamente competitivas (ej: "abogado Santiago", "notebook Chile"). Todo lo del plan Profesional PLUS: 8 artículos blog optimizados/mes (2000+ palabras, contenido pillar), link building agresivo (15-20 backlinks mensuales alta autoridad), estrategia de contenido 360° (videos, infografías, guías descargables), outreach y relaciones públicas digitales, optimización continua basada en datos, consultor SEO dedicado (acceso directo). Resultados esperados: primeras posiciones top 10 en 2-3 meses para keywords secundarias, top 3 para keywords principales en 6-12 meses, dominio de nicho completo en 12-18 meses.
             </p>
@@ -147,7 +147,7 @@ export default function ArticlePage() {
                   <h4 className="font-bold mb-2 text-[var(--color-accent)]">Inversión</h4>
                   <ul className="space-y-1 text-sm">
                     <li>Plan: SEO Profesional</li>
-                    <li>Costo: $390.000/mes x 6 meses</li>
+                    <li>Costo: $490.000/mes x 6 meses</li>
                     <li>Total: $2.340.000</li>
                   </ul>
                 </div>
@@ -260,7 +260,7 @@ export default function ArticlePage() {
             "name": "¿Cuánto cuesta SEO en Chile en promedio?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "El SEO en Chile cuesta desde $249.000/mes para planes básicos hasta $590.000+/mes para campañas agresivas. El plan más popular es el SEO Profesional a $390.000/mes que incluye 4 artículos mensuales, link building y SEO técnico avanzado."
+              "text": "El SEO en Chile cuesta desde $249.000/mes para planes básicos hasta $690.000+/mes para campañas agresivas. El plan más popular es el SEO Profesional a $490.000/mes que incluye 4 artículos mensuales, link building y SEO técnico avanzado."
             }
           },
           {

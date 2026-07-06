@@ -1,11 +1,11 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Diseño Web San Pedro de la Paz 2026 | Sitios Profesionales',
-  description: 'Diseño web profesional en San Pedro de la Paz. Especializados en negocios locales, educación, salud y servicios. Desde $169.000/año. Cotiza gratis.',
+  description: 'Diseño web profesional en San Pedro de la Paz. Especializados en negocios locales, educación, salud y servicios. Desde $199.000/año. Cotiza gratis.',
   keywords: 'diseño web San Pedro de la Paz, sitio web San Pedro, página web Lomas Coloradas, diseño web Michihue, desarrollo web San Pedro',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
@@ -94,7 +94,7 @@ export default function DisenoWebSanPedroPazPage() {
           Diseño Web en San Pedro de la Paz
         </h1>
         <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
-          <strong>El diseño web profesional en San Pedro de la Paz</strong> crea sitios WordPress optimizados para negocios locales, educación, salud, fitness y servicios residenciales. San Pedro es la tercera comuna más poblada del Gran Concepción con más de 145.000 habitantes, predominantemente residencial con familias jóvenes, profesionales y alta demanda de servicios locales. El 87% busca en Google antes de decidir: colegios, clínicas, gimnasios, centros de estética, veterinarias. Ofrecemos diseño web desde $169.000/año para landing page con formulario de contacto, $390.000 para sitio corporativo hasta 5 páginas, especializado en sectores: educación (colegios, jardines infantiles, preuniversitarios, academias), salud y bienestar (clínicas dentales, centros médicos, veterinarias), fitness (gimnasios, CrossFit, yoga, pilates), estética y belleza (peluquerías, centros de estética, spa), retail local (minimarkets, panaderías, ferreterías de barrio), inmobiliarias (venta y arriendo en Lomas Coloradas, Michihue, Los Conquistadores). Atendemos todas las zonas: Lomas Coloradas, Michihue, Boca Sur, Candelaria, Los Conquistadores, Huertos Familiares, Laguna Grande.
+          <strong>El diseño web profesional en San Pedro de la Paz</strong> crea sitios WordPress optimizados para negocios locales, educación, salud, fitness y servicios residenciales. San Pedro es la tercera comuna más poblada del Gran Concepción con más de 145.000 habitantes, predominantemente residencial con familias jóvenes, profesionales y alta demanda de servicios locales. El 87% busca en Google antes de decidir: colegios, clínicas, gimnasios, centros de estética, veterinarias. Ofrecemos diseño web desde $199.000/año para landing page con formulario de contacto, $490.000 para sitio corporativo hasta 5 páginas, especializado en sectores: educación (colegios, jardines infantiles, preuniversitarios, academias), salud y bienestar (clínicas dentales, centros médicos, veterinarias), fitness (gimnasios, CrossFit, yoga, pilates), estética y belleza (peluquerías, centros de estética, spa), retail local (minimarkets, panaderías, ferreterías de barrio), inmobiliarias (venta y arriendo en Lomas Coloradas, Michihue, Los Conquistadores). Atendemos todas las zonas: Lomas Coloradas, Michihue, Boca Sur, Candelaria, Los Conquistadores, Huertos Familiares, Laguna Grande.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Link href="/contacto" className="px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">
@@ -130,7 +130,7 @@ export default function DisenoWebSanPedroPazPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all flex flex-col">
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Landing Page</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$169.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$199.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP/año (hosting incluido)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ 1 página optimizada</li>
@@ -152,7 +152,7 @@ export default function DisenoWebSanPedroPazPage() {
               </div>
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Sitio Corporativo</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$390.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">$490.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP (pago único)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ Hasta 5 páginas</li>
@@ -172,7 +172,7 @@ export default function DisenoWebSanPedroPazPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all flex flex-col">
               <div className="flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-[var(--color-accent)]">Ecommerce</h3>
-                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $590.000</p>
+                <p className="text-5xl font-black text-[var(--color-accent)] mb-2">Desde $690.000</p>
                 <p className="text-[var(--color-muted)] mb-6">CLP (según productos)</p>
                 <ul className="space-y-2 text-sm mb-6">
                   <li>✓ WordPress + WooCommerce</li>

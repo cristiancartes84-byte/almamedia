@@ -1,4 +1,4 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import ServiceCard from '@/components/ServiceCard';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import Testimonials from '@/components/Testimonials';
@@ -51,7 +51,7 @@ const services = [
   {
     icon: '📦',
     title: 'Packs Completos',
-    description: 'Pack Web, Pack Visual o Pack SEO Mensual. Todo lo que necesitas para vender online desde $169.000 CLP/año.',
+    description: 'Pack Web, Pack Visual o Pack SEO Mensual. Todo lo que necesitas para vender online desde $199.000 CLP/año.',
     link: '/packs-completos'
   }
 ];
@@ -355,7 +355,7 @@ export default function Home() {
 
           <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 hover:border-[var(--color-accent)] transition-all">
             <h3 className="text-lg font-bold mb-2">¿Cuánto cuesta un sitio web?</h3>
-            <p className="text-[var(--color-muted)]">Desde $169.000/año (landing page) hasta $890.000 (ecommerce completo). Cotización personalizada gratuita.</p>
+            <p className="text-[var(--color-muted)]">Desde $199.000/año (landing page) hasta $890.000 (ecommerce completo). Cotización personalizada gratuita.</p>
           </div>
 
           <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 hover:border-[var(--color-accent)] transition-all">

@@ -1,4 +1,4 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
@@ -163,7 +163,7 @@ export default function ArticlePage() {
             <div className="bg-[var(--color-card)] border-l-4 border-[var(--color-accent)] p-6 mb-8 not-prose">
               <h4 className="font-bold mb-3">Qué Hacer:</h4>
               <ul className="space-y-2">
-                <li>• <strong>Sitio web básico:</strong> $169.000-$390.000 (landing o corporativo según necesidad)</li>
+                <li>• <strong>Sitio web básico:</strong> $199.000-$490.000 (landing o corporativo según necesidad)</li>
                 <li>• <strong>Google Business Profile:</strong> $0 (hazlo tú) o $50.000 (agencia lo optimiza)</li>
                 <li>• <strong>Fotografía productos/local:</strong> $150.000 sesión completa</li>
                 <li>• <strong>Setup redes sociales:</strong> $0 (hazlo tú) o perfil profesional ya queda con sitio web</li>
@@ -189,7 +189,7 @@ export default function ArticlePage() {
             <div className="bg-[var(--color-card)] border-l-4 border-[var(--color-accent)] p-6 mb-8 not-prose">
               <h4 className="font-bold mb-3">Qué Hacer:</h4>
               <ul className="space-y-2">
-                <li>• <strong>SEO agresivo:</strong> $590.000/mes (8 artículos, link building, contenido pillar)</li>
+                <li>• <strong>SEO agresivo:</strong> $690.000/mes (8 artículos, link building, contenido pillar)</li>
                 <li>• <strong>Publicidad multicanal:</strong> Google + Meta Ads $500.000/mes</li>
                 <li>• <strong>Automatización:</strong> CRM + email marketing avanzado $100.000/mes</li>
                 <li>• <strong>Video marketing:</strong> 1-2 videos/mes $200.000</li>

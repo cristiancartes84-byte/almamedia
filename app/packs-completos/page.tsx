@@ -1,11 +1,11 @@
-import ParticlesBackground from '@/components/Particles';
+﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Packs Completos Marketing Digital Chile 2026 | Ahorra 30%',
-  description: 'Packs completos de marketing digital: Web + SEO + Foto + Video. Desde $169.000/año. Ahorra hasta 40% vs servicios separados. +200 empresas confían.',
+  description: 'Packs completos de marketing digital: Web + SEO + Foto + Video. Desde $199.000/año. Ahorra hasta 40% vs servicios separados. +200 empresas confían.',
   keywords: 'packs marketing digital Chile, pack web completo, pack visual producto, pack SEO mensual, servicios marketing digital, paquetes marketing digital, combo web SEO foto video',
   authors: [{ name: 'Alma Media' }],
   creator: 'Alma Media',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Packs Completos Marketing Digital Chile 2026 | Ahorra 30%',
-    description: 'Packs completos: Web + SEO + Foto + Video. Desde $169.000/año. Ahorra hasta 40%.',
+    description: 'Packs completos: Web + SEO + Foto + Video. Desde $199.000/año. Ahorra hasta 40%.',
     url: 'https://almamedia.cl/packs-completos',
     siteName: 'Alma Media',
     locale: 'es_CL',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Packs Completos Marketing Digital Chile 2026 | Ahorra 30%',
-    description: 'Packs completos marketing digital. Desde $169.000/año. Ahorra hasta 40%.',
+    description: 'Packs completos marketing digital. Desde $199.000/año. Ahorra hasta 40%.',
   },
   robots: {
     index: true,
@@ -102,7 +102,7 @@ export default function PacksCompletosPage() {
                     "name": "¿Cuánto cuesta un pack completo de marketing digital?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Pack Web Inicial: $169.000 CLP/año, Pack Visual Completo: $199.000 CLP pago único, Pack SEO Mensual: $249.000 CLP/mes, Pack Todo-en-Uno: $399.000 CLP único + $249.000/mes SEO. Incluyen todos los servicios, sin costos ocultos. Ahorro de 30-40% vs servicios individuales."
+                      "text": "Pack Web Inicial: $199.000 CLP/año, Pack Visual Completo: $199.000 CLP pago único, Pack SEO Mensual: $249.000 CLP/mes, Pack Todo-en-Uno: $399.000 CLP único + $249.000/mes SEO. Incluyen todos los servicios, sin costos ocultos. Ahorro de 30-40% vs servicios individuales."
                     }
                   },
                   {
@@ -136,7 +136,7 @@ export default function PacksCompletosPage() {
           Packs Completos de Marketing Digital
         </h1>
         <p className="text-xl text-[var(--color-muted)] mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
-          <strong>Los packs completos de marketing digital en Chile</strong> combinan múltiples servicios profesionales en un solo paquete integrado: diseño web, SEO posicionamiento, fotografía de producto y video marketing. Ahorra hasta 40% vs contratar servicios por separado, con un solo punto de contacto y plazos de entrega coordinados. Ofrecemos Pack Web Inicial desde $169.000/año (landing page + SEO base + hosting + 3 fotos), Pack Visual Completo $199.000 pago único (10 fotos fondo blanco + 10 lifestyle + 3 videos), Pack SEO Mensual $249.000/mes (SEO técnico + local + 3 artículos + link building + reportes), y Pack Todo-en-Uno $399.000 + $249.000/mes (web completa + SEO mensual + 20 fotos + 5 videos). Todos los servicios están integrados y optimizados para funcionar juntos: web diseñada para conversión, fotos optimizadas para SEO, videos para engagement, contenido para posicionamiento. +200 empresas confían en nuestros packs para vender más online con máxima eficiencia y mínimo esfuerzo.
+          <strong>Los packs completos de marketing digital en Chile</strong> combinan múltiples servicios profesionales en un solo paquete integrado: diseño web, SEO posicionamiento, fotografía de producto y video marketing. Ahorra hasta 40% vs contratar servicios por separado, con un solo punto de contacto y plazos de entrega coordinados. Ofrecemos Pack Web Inicial desde $199.000/año (landing page + SEO base + hosting + 3 fotos), Pack Visual Completo $199.000 pago único (10 fotos fondo blanco + 10 lifestyle + 3 videos), Pack SEO Mensual $249.000/mes (SEO técnico + local + 3 artículos + link building + reportes), y Pack Todo-en-Uno $399.000 + $249.000/mes (web completa + SEO mensual + 20 fotos + 5 videos). Todos los servicios están integrados y optimizados para funcionar juntos: web diseñada para conversión, fotos optimizadas para SEO, videos para engagement, contenido para posicionamiento. +200 empresas confían en nuestros packs para vender más online con máxima eficiencia y mínimo esfuerzo.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Link href="/contacto" className="px-8 py-4 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(200,255,0,0.3)] transition-all">
@@ -243,7 +243,7 @@ export default function PacksCompletosPage() {
                 </div>
                 <div className="text-center md:text-right flex-shrink-0">
                   <div className="text-sm text-[var(--color-muted)] line-through mb-1">$280.000</div>
-                  <div className="text-5xl font-black text-[var(--color-accent)] mb-2">$169.000</div>
+                  <div className="text-5xl font-black text-[var(--color-accent)] mb-2">$199.000</div>
                   <div className="text-[var(--color-muted)] mb-4">CLP/año</div>
                   <div className="text-xs text-[var(--color-accent)] font-bold mb-4">Ahorro: $111.000 (40%)</div>
                   <Link href="/contacto" className="inline-block px-6 py-3 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold rounded-lg hover:scale-105 transition-transform">
@@ -404,14 +404,14 @@ export default function PacksCompletosPage() {
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Qué incluyen los packs completos de marketing digital?</h3>
               <p className="text-lg leading-relaxed text-justify">
-                Los <strong>packs completos</strong> combinan múltiples servicios profesionales en un solo paquete integrado: <strong>Pack Web Inicial</strong> ($169.000/año) incluye landing page, SEO base, hosting y 3 fotos. <strong>Pack Visual Completo</strong> ($199.000 único) incluye 10 fotos fondo blanco + 10 lifestyle + 3 videos cortos. <strong>Pack SEO Mensual</strong> ($249.000/mes) incluye SEO técnico + local + 3 artículos + link building + reportes. <strong>Pack Todo-en-Uno</strong> ($399.000 + $249.000/mes) incluye web completa + SEO mensual + 20 fotos + 5 videos. Ahorras 30-40% vs contratar servicios por separado.
+                Los <strong>packs completos</strong> combinan múltiples servicios profesionales en un solo paquete integrado: <strong>Pack Web Inicial</strong> ($199.000/año) incluye landing page, SEO base, hosting y 3 fotos. <strong>Pack Visual Completo</strong> ($199.000 único) incluye 10 fotos fondo blanco + 10 lifestyle + 3 videos cortos. <strong>Pack SEO Mensual</strong> ($249.000/mes) incluye SEO técnico + local + 3 artículos + link building + reportes. <strong>Pack Todo-en-Uno</strong> ($399.000 + $249.000/mes) incluye web completa + SEO mensual + 20 fotos + 5 videos. Ahorras 30-40% vs contratar servicios por separado.
               </p>
             </div>
 
             <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8">
               <h3 className="text-xl font-bold mb-3 text-[var(--color-accent)]">¿Cuánto cuesta un pack completo de marketing digital?</h3>
               <p className="text-lg leading-relaxed text-justify">
-                <strong>Pack Web Inicial:</strong> $169.000 CLP/año (era $280.000, ahorro 40%). <strong>Pack Visual Completo:</strong> $199.000 CLP pago único (era $298.000, ahorro 33%). <strong>Pack SEO Mensual:</strong> $249.000 CLP/mes (era $349.000, ahorro 29%). <strong>Pack Todo-en-Uno:</strong> $399.000 CLP inicial + $249.000/mes SEO (era $649.000, ahorro 38%). Todos los precios incluyen servicios completos, sin costos ocultos. Formas de pago: transferencia, Webpay, PayPal, cuotas con tarjeta.
+                <strong>Pack Web Inicial:</strong> $199.000 CLP/año (era $280.000, ahorro 40%). <strong>Pack Visual Completo:</strong> $199.000 CLP pago único (era $298.000, ahorro 33%). <strong>Pack SEO Mensual:</strong> $249.000 CLP/mes (era $349.000, ahorro 29%). <strong>Pack Todo-en-Uno:</strong> $399.000 CLP inicial + $249.000/mes SEO (era $649.000, ahorro 38%). Todos los precios incluyen servicios completos, sin costos ocultos. Formas de pago: transferencia, Webpay, PayPal, cuotas con tarjeta.
               </p>
             </div>
 
