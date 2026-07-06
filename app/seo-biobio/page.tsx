@@ -1,10 +1,13 @@
 import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'SEO Región del Biobío 2026 | Posicionamiento en Google',
+  title: `SEO Región del Biobío ${currentYear} | Posicionamiento en Google`,
   description: 'SEO profesional en Región del Biobío. Posicionamiento en Google para negocios en Concepción, Talcahuano, Los Ángeles. Desde $249.000/mes. Cotiza gratis.',
   keywords: 'SEO Biobío, posicionamiento Google Biobío, SEO Concepción, SEO región Biobío, marketing digital Biobío',
   authors: [{ name: 'Alma Media' }],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/seo-biobio',
   },
   openGraph: {
-    title: 'SEO Región del Biobío 2026 | Posicionamiento en Google',
+    title: `SEO Región del Biobío ${currentYear} | Posicionamiento en Google`,
     description: 'SEO profesional en toda la Región del Biobío. Posicionamiento Google para negocios locales.',
     url: 'https://almamedia.cl/seo-biobio',
     siteName: 'Alma Media',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Región del Biobío 2026',
+    title: `SEO Región del Biobío ${currentYear}`,
     description: 'SEO profesional. Posicionamiento Google para negocios en Concepción, Talcahuano, Los Ángeles.',
   },
   robots: {
@@ -122,7 +125,7 @@ export default function SEOBiobioPage() {
         {/* CTA Final */}
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Posicionar tu Negocio en Google?

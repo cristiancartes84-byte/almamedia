@@ -1,10 +1,13 @@
 import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Fotografía Producto Chile 2026 | Fondo Blanco $9.900',
+  title: `Fotografía Producto Chile ${currentYear} | Fondo Blanco $9.900`,
   description: 'Fotografía de producto profesional. Fondo blanco $9.900, lifestyle $14.900. +500 productos fotografiados. Aumenta conversión 35%. Cotiza gratis.',
   keywords: 'fotografía de producto Chile, fotografía producto profesional, fotos fondo blanco, fotografía lifestyle, fotografía ecommerce, fotos catálogo producto, sesión fotográfica productos, fotografía comercial Chile',
   authors: [{ name: 'Alma Media' }],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/fotografia-producto',
   },
   openGraph: {
-    title: 'Fotografía Producto Chile 2026 | Fondo Blanco $9.900',
+    title: `Fotografía Producto Chile ${currentYear} | Fondo Blanco $9.900`,
     description: 'Fotografía de producto profesional. Fondo blanco $9.900, lifestyle $14.900. +500 productos fotografiados.',
     url: 'https://almamedia.cl/fotografia-producto',
     siteName: 'Alma Media',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fotografía Producto Chile 2026 | Fondo Blanco $9.900',
+    title: `Fotografía Producto Chile ${currentYear} | Fondo Blanco $9.900`,
     description: 'Fotografía de producto profesional. Fondo blanco $9.900, lifestyle $14.900. +500 productos.',
   },
   robots: {
@@ -318,7 +321,7 @@ export default function FotografiaProductoPage() {
 
         {/* Precios */}
         <section className="mb-20">
-          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Precios Fotografía de Producto Chile 2026</h2>
+          <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">Precios Fotografía de Producto Chile <CurrentYear /></h2>
           <p className="text-center mb-4">
             <span className="inline-block px-4 py-2 bg-[rgba(200,255,0,0.1)] border border-[rgba(200,255,0,0.3)] rounded-full text-sm font-semibold text-[var(--color-accent)]">
               ⚡ Promo <span className="capitalize"><CurrentMonth /></span>: Sesión de 5+ productos incluye 2 fotos lifestyle gratis (valor $29.800)
@@ -453,7 +456,7 @@ export default function FotografiaProductoPage() {
       <div className="relative z-10 max-w-6xl mx-auto px-8 mb-20">
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 md:p-16 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta Especial <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta Especial <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Fotos que Venden?

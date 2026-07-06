@@ -1,10 +1,13 @@
 ﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Diseño Web San Pedro de la Paz 2026 | Sitios Profesionales',
+  title: `Diseño Web San Pedro de la Paz ${currentYear} | Sitios Profesionales`,
   description: 'Diseño web profesional en San Pedro de la Paz. Especializados en negocios locales, educación, salud y servicios. Desde $199.000/año. Cotiza gratis.',
   keywords: 'diseño web San Pedro de la Paz, sitio web San Pedro, página web Lomas Coloradas, diseño web Michihue, desarrollo web San Pedro',
   authors: [{ name: 'Alma Media' }],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/diseno-web-san-pedro-paz',
   },
   openGraph: {
-    title: 'Diseño Web San Pedro de la Paz 2026 | Sitios Profesionales',
+    title: `Diseño Web San Pedro de la Paz ${currentYear} | Sitios Profesionales`,
     description: 'Diseño web profesional en San Pedro. Especializados en educación, salud y servicios locales.',
     url: 'https://almamedia.cl/diseno-web-san-pedro-paz',
     siteName: 'Alma Media',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Diseño Web San Pedro de la Paz 2026',
+    title: `Diseño Web San Pedro de la Paz ${currentYear}`,
     description: 'Diseño web profesional. Especializados en negocios locales, educación y salud.',
   },
   robots: {
@@ -194,7 +197,7 @@ export default function DisenoWebSanPedroPazPage() {
         {/* CTA Final */}
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para tu Sitio Web en San Pedro?

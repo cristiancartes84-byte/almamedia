@@ -5,8 +5,10 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Marketing Digital para Restaurantes [Guía Completa 2026]',
+  title: `Marketing Digital para Restaurantes [Guía Completa ${currentYear}]`,
   description: 'Estrategia completa de marketing digital para restaurantes: SEO local, redes sociales, fotografía gastronómica, delivery online y Google Maps.',
   keywords: 'marketing digital restaurantes, marketing gastronómico, redes sociales restaurante, SEO restaurantes',
   authors: [{ name: 'Alma Media' }],
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     canonical: '/blog/marketing-digital-restaurantes-guia',
   },
   openGraph: {
-    title: 'Marketing Digital para Restaurantes: Guía Completa 2026',
+    title: `Marketing Digital para Restaurantes: Guía Completa ${currentYear}`,
     description: 'Estrategia completa: SEO local, redes sociales, fotografía gastronómica, delivery online y Google Maps para restaurantes.',
     url: 'https://almamedia.cl/blog/marketing-digital-restaurantes-guia',
     siteName: 'Alma Media',
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Marketing Digital para Restaurantes: Guía Completa 2026',
+    title: `Marketing Digital para Restaurantes: Guía Completa ${currentYear}`,
     description: 'SEO local, redes sociales, fotografía gastronómica y más. Estrategia completa para restaurantes.',
     images: ['/og-images/marketing-digital-restaurantes-guia.jpg'],
   },

@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
   title: '¿Cuánto Cuesta SEO en Chile? [Precios Reales y ROI]',
   description: 'Precios reales de SEO en Chile: desde $249.000/mes. Descubre qué incluye cada plan, ROI esperado, y cómo elegir el servicio SEO correcto para tu negocio.',
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     canonical: '/blog/cuanto-cuesta-seo-chile',
   },
   openGraph: {
-    title: '¿Cuánto Cuesta SEO en Chile? Precios Reales 2026',
+    title: `¿Cuánto Cuesta SEO en Chile? Precios Reales ${currentYear}`,
     description: 'Precios reales de SEO en Chile: desde $249.000/mes. Qué incluye cada plan, ROI esperado, y cómo elegir el servicio SEO correcto.',
     url: 'https://almamedia.cl/blog/cuanto-cuesta-seo-chile',
     siteName: 'Alma Media',
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '¿Cuánto Cuesta SEO en Chile? Precios Reales 2026',
+    title: `¿Cuánto Cuesta SEO en Chile? Precios Reales ${currentYear}`,
     description: 'Desde $249.000/mes. Descubre qué incluye cada plan SEO y el ROI esperado.',
     images: ['/og-images/cuanto-cuesta-seo-chile.jpg'],
   },

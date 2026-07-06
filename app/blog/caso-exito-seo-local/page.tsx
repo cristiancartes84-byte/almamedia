@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
   title: 'Caso de Éxito: Cómo un Restaurant Aumentó Ventas 60% con SEO Local',
   description: 'Caso de éxito real: estrategia SEO local que aumentó visitas 300% y ventas 60% en 6 meses. Tácticas exactas, timeline, costos y resultados medibles.',

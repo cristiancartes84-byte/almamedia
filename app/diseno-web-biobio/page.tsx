@@ -1,10 +1,13 @@
 ﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata} from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Diseño Web Región del Biobío 2026 | Sitios Profesionales',
+  title: `Diseño Web Región del Biobío ${currentYear} | Sitios Profesionales`,
   description: 'Diseño web profesional en toda la Región del Biobío. Concepción, Talcahuano, Los Ángeles, Chillán, Coronel. Desde $199.000/año. Cotiza gratis.',
   keywords: 'diseño web Biobío, sitio web región Biobío, página web Concepción, diseño web Gran Concepción, desarrollo web Biobío Chile',
   authors: [{ name: 'Alma Media' }],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/diseno-web-biobio',
   },
   openGraph: {
-    title: 'Diseño Web Región del Biobío 2026 | Sitios Profesionales',
+    title: `Diseño Web Región del Biobío ${currentYear} | Sitios Profesionales`,
     description: 'Diseño web profesional en toda la Región del Biobío. Concepción, Talcahuano, Los Ángeles, Chillán.',
     url: 'https://almamedia.cl/diseno-web-biobio',
     siteName: 'Alma Media',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Diseño Web Región del Biobío 2026',
+    title: `Diseño Web Región del Biobío ${currentYear}`,
     description: 'Diseño web profesional en toda la región. Concepción, Talcahuano, Los Ángeles, Chillán.',
   },
   robots: {
@@ -227,7 +230,7 @@ export default function DisenoWebBiobioPage() {
         {/* CTA Final */}
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para tu Sitio Web en el Biobío?

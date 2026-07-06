@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
   title: 'Landing Page vs Sitio Web: ¿Cuál Necesito? [Guía Completa]',
   description: 'Diferencias entre landing page y sitio web completo. Descubre cuál necesita tu negocio según objetivos, presupuesto y tipo de empresa con ejemplos reales.',
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     canonical: '/blog/landing-page-vs-sitio-web',
   },
   openGraph: {
-    title: 'Landing Page vs Sitio Web: ¿Cuál Necesito? Guía 2026',
+    title: `Landing Page vs Sitio Web: ¿Cuál Necesito? Guía ${currentYear}`,
     description: 'Diferencias clave entre landing page y sitio web. Descubre cuál necesita tu negocio según objetivos y presupuesto.',
     url: 'https://almamedia.cl/blog/landing-page-vs-sitio-web',
     siteName: 'Alma Media',
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Landing Page vs Sitio Web: ¿Cuál Necesito? Guía 2026',
+    title: `Landing Page vs Sitio Web: ¿Cuál Necesito? Guía ${currentYear}`,
     description: 'Diferencias clave entre landing page y sitio web. Guía completa para elegir correctamente.',
     images: ['/og-images/landing-page-vs-sitio-web.jpg'],
   },

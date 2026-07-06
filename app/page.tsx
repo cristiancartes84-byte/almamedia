@@ -3,10 +3,13 @@ import ServiceCard from '@/components/ServiceCard';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import Testimonials from '@/components/Testimonials';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata = {
-  title: 'Agencia de Marketing Digital en Biobío 2026 | Alma Media - Diseño Web y SEO',
+  title: `Agencia de Marketing Digital en Biobío ${currentYear} | Alma Media - Diseño Web y SEO`,
   description: 'Agencia digital #1 en Concepción. Diseño web, SEO y contenido visual. +45 proyectos exitosos. Cotización y auditoría SEO gratis.',
   keywords: 'agencia marketing digital Concepción, diseño web Biobío, SEO Concepción, agencia digital Chile',
   openGraph: {

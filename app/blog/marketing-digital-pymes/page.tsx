@@ -5,8 +5,10 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Marketing Digital para PYMES: Por Dónde Empezar [Guía 2026]',
+  title: `Marketing Digital para PYMES: Por Dónde Empezar [Guía ${currentYear}]`,
   description: 'Guía completa para PYMES que empiezan en marketing digital: presupuesto, prioridades, herramientas, estrategia paso a paso. Sin tecnicismos ni humo.',
   keywords: 'marketing digital pymes, marketing digital pequeñas empresas, por donde empezar marketing digital',
   authors: [{ name: 'Alma Media' }],
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     canonical: '/blog/marketing-digital-pymes',
   },
   openGraph: {
-    title: 'Marketing Digital para PYMES: Por Dónde Empezar 2026',
+    title: `Marketing Digital para PYMES: Por Dónde Empezar ${currentYear}`,
     description: 'Guía completa para PYMES: presupuesto, prioridades, herramientas y estrategia paso a paso. Sin tecnicismos ni humo.',
     url: 'https://almamedia.cl/blog/marketing-digital-pymes',
     siteName: 'Alma Media',
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Marketing Digital para PYMES: Por Dónde Empezar 2026',
+    title: `Marketing Digital para PYMES: Por Dónde Empezar ${currentYear}`,
     description: 'Presupuesto, prioridades y estrategia paso a paso para PYMES. Guía completa sin tecnicismos.',
     images: ['/og-images/marketing-digital-pymes.jpg'],
   },

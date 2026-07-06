@@ -1,10 +1,13 @@
 ﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Diseño Web Talcahuano 2026 | Sitios para Negocios Portuarios',
+  title: `Diseño Web Talcahuano ${currentYear} | Sitios para Negocios Portuarios`,
   description: 'Diseño web profesional en Talcahuano. Especializados en negocios portuarios, industria naval, pesca y comercio. Desde $199.000/año. Cotiza gratis.',
   keywords: 'diseño web Talcahuano, sitio web Talcahuano, página web puerto Talcahuano, diseño web portuario, desarrollo web Talcahuano, WordPress Talcahuano',
   authors: [{ name: 'Alma Media' }],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/diseno-web-talcahuano',
   },
   openGraph: {
-    title: 'Diseño Web Talcahuano 2026 | Sitios para Negocios Portuarios',
+    title: `Diseño Web Talcahuano ${currentYear} | Sitios para Negocios Portuarios`,
     description: 'Diseño web profesional en Talcahuano. Especializados en negocios portuarios, industria naval y pesca.',
     url: 'https://almamedia.cl/diseno-web-talcahuano',
     siteName: 'Alma Media',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Diseño Web Talcahuano 2026 | Negocios Portuarios',
+    title: `Diseño Web Talcahuano ${currentYear} | Negocios Portuarios`,
     description: 'Diseño web profesional. Especializados en negocios portuarios, industria naval y pesca.',
   },
   robots: {
@@ -408,7 +411,7 @@ export default function DisenoWebTalcahuanoPage() {
       <div className="relative z-10 max-w-6xl mx-auto px-8 mb-20">
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 md:p-16 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta Especial <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta Especial <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Digitalizar tu Negocio en Talcahuano?

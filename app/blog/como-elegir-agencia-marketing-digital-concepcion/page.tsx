@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
   title: 'Cómo Elegir Agencia de Marketing Digital en Concepción [Guía]',
   description: '7 criterios para elegir la agencia de marketing digital correcta en Concepción. Evita errores costosos y contrata la agencia que realmente hará crecer tu negocio.',
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     canonical: '/blog/como-elegir-agencia-marketing-digital-concepcion',
   },
   openGraph: {
-    title: 'Cómo Elegir Agencia Marketing Digital en Concepción 2026',
+    title: `Cómo Elegir Agencia Marketing Digital en Concepción ${currentYear}`,
     description: '7 criterios clave para elegir la agencia correcta. Evita errores costosos y contrata la que hará crecer tu negocio.',
     url: 'https://almamedia.cl/blog/como-elegir-agencia-marketing-digital-concepcion',
     siteName: 'Alma Media',
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cómo Elegir Agencia Marketing Digital en Concepción 2026',
+    title: `Cómo Elegir Agencia Marketing Digital en Concepción ${currentYear}`,
     description: '7 criterios para elegir correctamente. Evita errores costosos y contrata la agencia adecuada.',
     images: ['/og-images/como-elegir-agencia-marketing-digital-concepcion.jpg'],
   },

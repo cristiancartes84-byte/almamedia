@@ -5,8 +5,10 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'SEO Local: Cómo Aparecer en Google Maps [Paso a Paso 2026]',
+  title: `SEO Local: Cómo Aparecer en Google Maps [Paso a Paso ${currentYear}]`,
   description: 'Guía paso a paso para aparecer en Google Maps y Google Business Profile: optimización, reseñas, fotos, keywords locales. Domina tu zona geográfica.',
   keywords: 'SEO local, Google Maps, Google Business Profile, aparecer Google Maps, SEO local Chile',
   authors: [{ name: 'Alma Media' }],
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     canonical: '/blog/seo-local-google-maps',
   },
   openGraph: {
-    title: 'SEO Local: Cómo Aparecer en Google Maps Paso a Paso 2026',
+    title: `SEO Local: Cómo Aparecer en Google Maps Paso a Paso ${currentYear}`,
     description: 'Guía completa para Google Maps y Google Business Profile: optimización, reseñas, fotos y keywords locales.',
     url: 'https://almamedia.cl/blog/seo-local-google-maps',
     siteName: 'Alma Media',
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Local: Cómo Aparecer en Google Maps Paso a Paso 2026',
+    title: `SEO Local: Cómo Aparecer en Google Maps Paso a Paso ${currentYear}`,
     description: 'Guía completa: optimización Google Business Profile, reseñas, fotos y keywords locales.',
     images: ['/og-images/seo-local-google-maps.jpg'],
   },

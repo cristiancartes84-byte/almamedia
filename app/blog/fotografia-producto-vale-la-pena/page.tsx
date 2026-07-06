@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
   title: 'Fotografía de Producto: ¿Vale la Pena? [ROI Real y Casos]',
   description: 'Análisis de ROI real de fotografía profesional de producto: aumenta conversión 35%, reduce devoluciones 40%. Casos reales y cuándo vale la pena invertir.',
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     canonical: '/blog/fotografia-producto-vale-la-pena',
   },
   openGraph: {
-    title: 'Fotografía de Producto: ¿Vale la Pena? ROI Real 2026',
+    title: `Fotografía de Producto: ¿Vale la Pena? ROI Real ${currentYear}`,
     description: 'Aumenta conversión 35%, reduce devoluciones 40%. Análisis de ROI real con casos reales y cuándo vale la pena invertir.',
     url: 'https://almamedia.cl/blog/fotografia-producto-vale-la-pena',
     siteName: 'Alma Media',
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fotografía de Producto: ¿Vale la Pena? ROI Real 2026',
+    title: `Fotografía de Producto: ¿Vale la Pena? ROI Real ${currentYear}`,
     description: 'Análisis de ROI real: aumenta conversión 35%, reduce devoluciones 40%. Casos reales.',
     images: ['/og-images/fotografia-producto-vale-la-pena.jpg'],
   },

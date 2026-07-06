@@ -1,10 +1,13 @@
 ﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Marketing Digital Ecommerce 2026 | Diseño Web + SEO + Fotos',
+  title: `Marketing Digital Ecommerce ${currentYear} | Diseño Web + SEO + Fotos`,
   description: 'Marketing digital para ecommerce: diseño web optimizado, SEO transaccional, fotografía de producto, video. Pack completo desde $399.000. Aumenta ventas online.',
   keywords: 'marketing digital ecommerce, SEO ecommerce, diseño web tienda online, fotografía producto ecommerce',
   authors: [{ name: 'Alma Media' }],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/marketing-digital-ecommerce',
   },
   openGraph: {
-    title: 'Marketing Digital Ecommerce 2026 | Diseño Web + SEO + Fotos',
+    title: `Marketing Digital Ecommerce ${currentYear} | Diseño Web + SEO + Fotos`,
     description: 'Marketing digital para tiendas online. Pack completo desde $399.000.',
     url: 'https://almamedia.cl/marketing-digital-ecommerce',
     siteName: 'Alma Media',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Marketing Digital Ecommerce 2026',
+    title: `Marketing Digital Ecommerce ${currentYear}`,
     description: 'Marketing digital para tiendas online. Pack completo.',
   },
   robots: {
@@ -159,7 +162,7 @@ export default function MarketingDigitalEcommercePage() {
         {/* CTA Final */}
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Vender Más en tu Ecommerce?

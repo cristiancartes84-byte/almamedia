@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
   title: '¿Cuánto Cuesta un Sitio Web en Concepción? [Precios Actualizados]',
   description: 'Precios reales de diseño web en Concepción: Landing pages desde $199.000, sitios corporativos $490.000, ecommerce $690.000. Guía completa con qué incluye cada opción.',
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     canonical: '/blog/cuanto-cuesta-diseno-web-concepcion',
   },
   openGraph: {
-    title: '¿Cuánto Cuesta un Sitio Web en Concepción? Precios 2026',
+    title: `¿Cuánto Cuesta un Sitio Web en Concepción? Precios ${currentYear}`,
     description: 'Landing pages desde $199.000, sitios corporativos $490.000, ecommerce $690.000. Guía completa de precios de diseño web.',
     url: 'https://almamedia.cl/blog/cuanto-cuesta-diseno-web-concepcion',
     siteName: 'Alma Media',
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Precios Diseño Web Concepción 2026',
+    title: `Precios Diseño Web Concepción ${currentYear}`,
     description: 'Desde $199.000. Landing pages, sitios corporativos y ecommerce. Precios reales actualizados.',
     images: ['/og-images/cuanto-cuesta-diseno-web-concepcion.jpg'],
   },

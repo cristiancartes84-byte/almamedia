@@ -1,6 +1,9 @@
 import ParticlesBackground from '@/components/Particles';
 import Link from 'next/link';
+import CurrentYear from '@/components/CurrentYear';
 import type { Metadata } from 'next';
+
+const currentYear = new Date().getFullYear();
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://almamedia.cl'),
@@ -28,7 +31,7 @@ export default function PrivacidadPage() {
           </h1>
 
           <p className="text-lg text-[var(--color-muted)] mb-8">
-            Última actualización: 3 de julio de 2026
+            Última actualización: 3 de julio de <CurrentYear />
           </p>
 
           <div className="prose prose-invert max-w-none">

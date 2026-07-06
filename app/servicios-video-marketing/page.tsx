@@ -1,10 +1,13 @@
 import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Servicios Video Marketing 2026 | Video Producto y Publicidad',
+  title: `Servicios Video Marketing ${currentYear} | Video Producto y Publicidad`,
   description: 'Servicios de video marketing: video producto, video publicitario, video redes sociales, video corporativo. Desde $19.900. Para Instagram, TikTok, YouTube.',
   keywords: 'servicios video marketing, video producto, video publicitario, video Instagram, video TikTok',
   authors: [{ name: 'Alma Media' }],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/servicios-video-marketing',
   },
   openGraph: {
-    title: 'Servicios Video Marketing 2026 | Video Producto y Publicidad',
+    title: `Servicios Video Marketing ${currentYear} | Video Producto y Publicidad`,
     description: 'Video marketing profesional: producto, publicidad, redes sociales. Desde $19.900.',
     url: 'https://almamedia.cl/servicios-video-marketing',
     siteName: 'Alma Media',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Servicios Video Marketing 2026',
+    title: `Servicios Video Marketing ${currentYear}`,
     description: 'Video marketing profesional: producto, publicidad, redes sociales.',
   },
   robots: {
@@ -182,7 +185,7 @@ export default function ServiciosVideoMarketingPage() {
           <h2 className="text-4xl font-black mb-8 text-[var(--color-accent)] text-center">¿Por qué Video Marketing?</h2>
           <div className="space-y-6 max-w-4xl mx-auto">
             <p className="text-xl leading-[1.8] text-justify">
-              <strong className="text-[var(--color-accent)] font-bold">El video aumenta conversión hasta 80% vs contenido estático.</strong> Según estudios de Wyzowl 2026, el 73% de consumidores tiene más probabilidad de comprar después de ver un video del producto. Videos muestran características que fotos no pueden: movimiento, tamaño real, facilidad de uso, textura. En ecommerce, productos con video venden 5x más que productos solo con fotos. El retorno de inversión es inmediato: un video de $19.900 se paga con 2-3 ventas extra.
+              <strong className="text-[var(--color-accent)] font-bold">El video aumenta conversión hasta 80% vs contenido estático.</strong> Según estudios de Wyzowl <CurrentYear />, el 73% de consumidores tiene más probabilidad de comprar después de ver un video del producto. Videos muestran características que fotos no pueden: movimiento, tamaño real, facilidad de uso, textura. En ecommerce, productos con video venden 5x más que productos solo con fotos. El retorno de inversión es inmediato: un video de $19.900 se paga con 2-3 ventas extra.
             </p>
             <p className="text-xl leading-[1.8] text-justify">
               <strong className="text-[var(--color-accent)] font-bold">Videos son el formato con mayor engagement en redes sociales.</strong> Instagram Reels, TikTok y YouTube Shorts priorizan contenido de video en sus algoritmos. Un video de producto bien producido genera 10x más interacciones que una foto estática, aumenta alcance orgánico exponencialmente, permite viralización sin inversión publicitaria. Para negocios que venden por Instagram o TikTok, video profesional es la diferencia entre quedar invisible vs alcanzar miles de clientes potenciales.
@@ -236,7 +239,7 @@ export default function ServiciosVideoMarketingPage() {
         {/* CTA Final */}
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Videos que Venden?

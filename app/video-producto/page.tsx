@@ -1,10 +1,13 @@
 import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Video Producto Chile 2026 | Videos Profesionales $19.900',
+  title: `Video Producto Chile ${currentYear} | Videos Profesionales $19.900`,
   description: 'Video de producto profesional para ecommerce y redes sociales. Desde $19.900. Aumenta conversión 80%. +300 videos producidos. Cotiza gratis.',
   keywords: 'video de producto Chile, video producto profesional, videos ecommerce, video marketing producto, videos Instagram, videos TikTok, video publicitario producto, producción video comercial Chile',
   authors: [{ name: 'Alma Media' }],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/video-producto',
   },
   openGraph: {
-    title: 'Video Producto Chile 2026 | Videos Profesionales $19.900',
+    title: `Video Producto Chile ${currentYear} | Videos Profesionales $19.900`,
     description: 'Video de producto profesional para ecommerce y redes. Desde $19.900. Aumenta conversión 80%. +300 videos.',
     url: 'https://almamedia.cl/video-producto',
     siteName: 'Alma Media',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Video Producto Chile 2026 | Videos Profesionales $19.900',
+    title: `Video Producto Chile ${currentYear} | Videos Profesionales $19.900`,
     description: 'Video de producto profesional. Desde $19.900. Aumenta conversión 80%. +300 videos producidos.',
   },
   robots: {
@@ -155,7 +158,7 @@ export default function VideoProductoPage() {
 
           <div className="space-y-6">
             <p className="text-xl mb-6 leading-[1.8] text-justify">
-              <strong className="text-[var(--color-accent)] font-bold">El video de producto profesional</strong> genera 80% más conversión que las fotos estáticas en ecommerce. Cuando un cliente puede VER tu producto en movimiento, desde múltiples ángulos, y en uso real, su confianza aumenta exponencialmente. El 73% de consumidores afirma tener más probabilidad de comprar después de ver un video del producto, según estudios de Wyzowl 2026.
+              <strong className="text-[var(--color-accent)] font-bold">El video de producto profesional</strong> genera 80% más conversión que las fotos estáticas en ecommerce. Cuando un cliente puede VER tu producto en movimiento, desde múltiples ángulos, y en uso real, su confianza aumenta exponencialmente. El 73% de consumidores afirma tener más probabilidad de comprar después de ver un video del producto, según estudios de Wyzowl <CurrentYear />.
             </p>
             <p className="text-xl mb-6 leading-[1.8] text-justify">
               <strong className="text-[var(--color-accent)] font-bold">Los videos son el formato con mayor engagement en redes sociales:</strong> Instagram Reels, TikTok y YouTube Shorts priorizan contenido de video en sus algoritmos. Un video de producto bien producido genera 10x más interacciones que una foto, aumenta el alcance orgánico, y permite mostrar características que una imagen estática no puede: textura, movimiento, tamaño real, facilidad de uso.
@@ -385,7 +388,7 @@ export default function VideoProductoPage() {
       <div className="relative z-10 max-w-6xl mx-auto px-8 mb-20">
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 md:p-16 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta Especial <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta Especial <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Videos que Venden?

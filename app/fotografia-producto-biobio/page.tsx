@@ -1,10 +1,13 @@
 import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Fotografía Producto Biobío 2026 | Fondo Blanco $9.900',
+  title: `Fotografía Producto Biobío ${currentYear} | Fondo Blanco $9.900`,
   description: 'Fotografía de producto profesional en Región del Biobío. Fondo blanco $9.900, lifestyle $14.900. Concepción, Talcahuano, Los Ángeles. Cotiza gratis.',
   keywords: 'fotografía producto Biobío, fotos producto Concepción, fotografía ecommerce Biobío, fotos fondo blanco',
   authors: [{ name: 'Alma Media' }],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/fotografia-producto-biobio',
   },
   openGraph: {
-    title: 'Fotografía Producto Biobío 2026 | Fondo Blanco $9.900',
+    title: `Fotografía Producto Biobío ${currentYear} | Fondo Blanco $9.900`,
     description: 'Fotografía de producto profesional en Región del Biobío. Fondo blanco $9.900, lifestyle $14.900.',
     url: 'https://almamedia.cl/fotografia-producto-biobio',
     siteName: 'Alma Media',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fotografía Producto Biobío 2026',
+    title: `Fotografía Producto Biobío ${currentYear}`,
     description: 'Fotografía de producto profesional. Fondo blanco $9.900, lifestyle $14.900.',
   },
   robots: {
@@ -91,7 +94,7 @@ export default function FotografiaProductoBiobioPage() {
         {/* CTA Final */}
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Fotos que Venden?

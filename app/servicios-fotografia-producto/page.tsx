@@ -1,10 +1,13 @@
 import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Servicios Fotografía Producto 2026 | Fondo Blanco y Lifestyle',
+  title: `Servicios Fotografía Producto ${currentYear} | Fondo Blanco y Lifestyle`,
   description: 'Servicios profesionales de fotografía de producto: fondo blanco $9.900, lifestyle $14.900, 360°, video-foto combos. Para ecommerce, Amazon, redes sociales.',
   keywords: 'servicios fotografía producto, fotografía ecommerce, fotos fondo blanco, fotografía lifestyle, fotografía 360',
   authors: [{ name: 'Alma Media' }],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/servicios-fotografia-producto',
   },
   openGraph: {
-    title: 'Servicios Fotografía Producto 2026 | Fondo Blanco y Lifestyle',
+    title: `Servicios Fotografía Producto ${currentYear} | Fondo Blanco y Lifestyle`,
     description: 'Fotografía profesional: fondo blanco, lifestyle, 360°. Para ecommerce y redes sociales.',
     url: 'https://almamedia.cl/servicios-fotografia-producto',
     siteName: 'Alma Media',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Servicios Fotografía Producto 2026',
+    title: `Servicios Fotografía Producto ${currentYear}`,
     description: 'Fotografía profesional: fondo blanco, lifestyle, 360°.',
   },
   robots: {
@@ -236,7 +239,7 @@ export default function ServiciosFotografiaProductoPage() {
         {/* CTA Final */}
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Fotos que Venden?

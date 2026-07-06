@@ -5,8 +5,10 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: '10 Errores que Matan tu Sitio Web (y Cómo Solucionarlos) [2026]',
+  title: `10 Errores que Matan tu Sitio Web (y Cómo Solucionarlos) [${currentYear}]`,
   description: 'Los 10 errores más comunes que arruinan sitios web: velocidad, SEO, diseño, contenido. Checklist completa con soluciones prácticas y fáciles de implementar.',
   keywords: 'errores sitio web, errores diseño web, problemas sitio web, checklist sitio web',
   authors: [{ name: 'Alma Media' }],

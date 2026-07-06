@@ -1,9 +1,12 @@
 import ParticlesBackground from '@/components/Particles';
 import Link from 'next/link';
+import CurrentYear from '@/components/CurrentYear';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Blog Marketing Digital 2026 | Guías y Consejos SEO - Alma Media',
+  title: `Blog Marketing Digital ${currentYear} | Guías y Consejos SEO - Alma Media`,
   description: 'Blog de marketing digital: guías, precios, consejos SEO, casos de éxito. Aprende cómo hacer crecer tu negocio online en Concepción y Biobío.',
   keywords: 'blog marketing digital, guías SEO, precios diseño web, consejos marketing digital',
   authors: [{ name: 'Alma Media' }],
@@ -18,7 +21,7 @@ export const metadata: Metadata = {
 const articles = [
   {
     slug: 'cuanto-cuesta-diseno-web-concepcion',
-    title: '¿Cuánto Cuesta un Sitio Web en Concepción? [Precios 2026]',
+    title: `¿Cuánto Cuesta un Sitio Web en Concepción? [Precios ${currentYear}]`,
     excerpt: 'Guía completa de precios de diseño web en Concepción: landing pages, sitios corporativos, ecommerce. Precios reales y qué incluye cada opción.',
     category: 'Precios',
     readTime: '8 min',
@@ -26,7 +29,7 @@ const articles = [
   },
   {
     slug: 'cuanto-cuesta-seo-chile',
-    title: '¿Cuánto Cuesta SEO en Chile? [Precios Reales 2026]',
+    title: `¿Cuánto Cuesta SEO en Chile? [Precios Reales ${currentYear}]`,
     excerpt: 'Descubre cuánto cuesta SEO en Chile: precios por servicio, qué incluyen, ROI esperado y cómo elegir el mejor plan para tu negocio.',
     category: 'Precios',
     readTime: '7 min',
@@ -34,7 +37,7 @@ const articles = [
   },
   {
     slug: 'landing-page-vs-sitio-web',
-    title: 'Landing Page vs Sitio Web: ¿Cuál Necesito? [Guía 2026]',
+    title: `Landing Page vs Sitio Web: ¿Cuál Necesito? [Guía ${currentYear}]`,
     excerpt: 'Diferencias entre landing page y sitio web completo. Descubre cuál necesita tu negocio según objetivos, presupuesto y tipo de empresa.',
     category: 'Guías',
     readTime: '6 min',
@@ -58,7 +61,7 @@ const articles = [
   },
   {
     slug: 'marketing-digital-restaurantes-guia',
-    title: 'Marketing Digital para Restaurantes [Guía Completa 2026]',
+    title: `Marketing Digital para Restaurantes [Guía Completa ${currentYear}]`,
     excerpt: 'Estrategia completa de marketing digital para restaurantes: SEO local, redes sociales, fotografía gastronómica, delivery.',
     category: 'Por Industria',
     readTime: '10 min',
@@ -82,7 +85,7 @@ const articles = [
   },
   {
     slug: 'marketing-digital-pymes',
-    title: 'Marketing Digital para PYMES: Por Dónde Empezar [2026]',
+    title: `Marketing Digital para PYMES: Por Dónde Empezar [${currentYear}]`,
     excerpt: 'Guía para PYMES que comienzan en marketing digital: presupuesto, prioridades, herramientas, estrategia paso a paso.',
     category: 'Guías',
     readTime: '10 min',

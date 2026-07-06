@@ -1,10 +1,13 @@
 ﻿import ParticlesBackground from '@/components/Particles';
 import CurrentMonth from '@/components/CurrentMonth';
+import CurrentYear from '@/components/CurrentYear';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const currentYear = new Date().getFullYear();
+
 export const metadata: Metadata = {
-  title: 'Servicios Marketing Digital Chile 2026 | Alma Media',
+  title: `Servicios Marketing Digital Chile ${currentYear} | Alma Media`,
   description: 'Servicios completos de marketing digital: Diseño Web, SEO, Fotografía y Video de Producto, Packs Completos. Desde $199.000. Región del Biobío.',
   keywords: 'servicios marketing digital, agencia marketing digital Chile, diseño web SEO fotografía video, marketing digital Biobío',
   authors: [{ name: 'Alma Media' }],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/servicios',
   },
   openGraph: {
-    title: 'Servicios Marketing Digital Chile 2026 | Alma Media',
+    title: `Servicios Marketing Digital Chile ${currentYear} | Alma Media`,
     description: 'Servicios completos: Diseño Web, SEO, Fotografía y Video de Producto, Packs Completos.',
     url: 'https://almamedia.cl/servicios',
     siteName: 'Alma Media',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Servicios Marketing Digital Chile 2026',
+    title: `Servicios Marketing Digital Chile ${currentYear}`,
     description: 'Diseño Web, SEO, Fotografía y Video de Producto, Packs Completos.',
   },
   robots: {
@@ -244,7 +247,7 @@ export default function ServiciosPage() {
         {/* CTA Final */}
         <div className="bg-gradient-to-br from-[var(--color-card)] to-[#1a1a1a] border-2 border-[var(--color-accent)] rounded-2xl p-12 md:p-16 text-center shadow-[0_20px_60px_rgba(200,255,0,0.2)]">
           <div className="inline-block px-4 py-2 mb-6 bg-[rgba(200,255,0,0.15)] border border-[rgba(200,255,0,0.4)] rounded-full">
-            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> 2026</span>
+            <span className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-wider">⚡ Oferta <CurrentMonth /> <CurrentYear /></span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-[var(--color-accent)] to-[#9FCC00] bg-clip-text text-transparent">
             ¿Listo para Vender Más Online?
