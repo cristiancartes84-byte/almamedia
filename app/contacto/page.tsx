@@ -79,8 +79,8 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="font-bold mb-2">Teléfono</h3>
-                  <a href="tel:+56XXXXXXXXX" className="text-[var(--color-accent)] hover:underline">
-                    +56 X XXXX XXXX
+                  <a href="tel:+56961605142" className="text-[var(--color-accent)] hover:underline">
+                    +56 9 6160 5142
                   </a>
                   <p className="text-sm text-[var(--color-muted)] mt-2">
                     Lun - Vie: 9:00 - 18:00

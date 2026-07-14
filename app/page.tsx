@@ -400,7 +400,7 @@ export default function Home() {
             "description": "Agencia de marketing digital en Concepción, Biobío. Diseño web, SEO, fotografía y video de producto.",
             "url": "https://almamedia.cl",
             "logo": "https://almamedia.cl/logo.png",
-            "telephone": "+56XXXXXXXXX",
+            "telephone": "+56961605142",
             "email": "contacto@almamedia.cl",
             "address": {
               "@type": "PostalAddress",
@@ -426,7 +426,7 @@ export default function Home() {
             ],
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+56XXXXXXXXX",
+              "telephone": "+56961605142",
               "contactType": "customer service",
               "areaServed": "CL",
               "availableLanguage": "Spanish"

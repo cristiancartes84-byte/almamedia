@@ -93,8 +93,8 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[var(--color-accent)] mt-0.5">📱</span>
-                <a href="tel:+56XXXXXXXXX" className="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors">
-                  +56 X XXXX XXXX
+                <a href="tel:+56961605142" className="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors">
+                  +56 9 6160 5142
                 </a>
               </li>
               <li className="flex items-start gap-2">
