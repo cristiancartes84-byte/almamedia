@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(true);
-  const whatsappNumber = '56912345678'; // Cambiar por número real
+  const whatsappNumber = '56961605142'; // +56 9 6160 5142
   const message = encodeURIComponent('Hola! Quiero cotizar un proyecto de marketing digital.');
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;

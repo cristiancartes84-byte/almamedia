@@ -521,7 +521,7 @@ export default function DisenoWebConcepcionPage() {
             <Link href="/contacto" className="inline-block px-10 py-5 bg-[var(--color-accent)] text-[var(--color-bg)] font-bold text-lg rounded-lg hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(200,255,0,0.4)] transition-all">
               🚀 Cotizar Ahora Gratis
             </Link>
-            <Link href="https://wa.me/56912345678?text=Hola!%20Quiero%20cotizar%20diseño%20web%20para%20mi%20negocio%20en%20Concepción" target="_blank" rel="noopener noreferrer" className="inline-block px-10 py-5 bg-transparent border-2 border-[var(--color-accent)] text-[var(--color-accent)] font-bold text-lg rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
+            <Link href="https://wa.me/56961605142?text=Hola!%20Quiero%20cotizar%20diseño%20web%20para%20mi%20negocio%20en%20Concepción" target="_blank" rel="noopener noreferrer" className="inline-block px-10 py-5 bg-transparent border-2 border-[var(--color-accent)] text-[var(--color-accent)] font-bold text-lg rounded-lg hover:bg-[rgba(200,255,0,0.1)] transition-all">
               💬 WhatsApp Directo
             </Link>
           </div>
